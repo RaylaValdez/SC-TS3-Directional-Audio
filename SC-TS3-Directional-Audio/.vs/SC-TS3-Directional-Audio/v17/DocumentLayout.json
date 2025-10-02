@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\ocr\\ocrprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:ocr\\ocrprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\parsing\\scpositionparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:parsing\\scpositionparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\test image\\test.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:test image\\test.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\capture\\screencapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:capture\\screencapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test.png",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Test Image\\test.png",
+              "RelativeDocumentMoniker": "Test Image\\test.png",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Test Image\\test.png",
+              "RelativeToolTip": "Test Image\\test.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-02T20:38:01.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SCPositionParser.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Parsing\\SCPositionParser.cs",
+              "RelativeDocumentMoniker": "Parsing\\SCPositionParser.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Parsing\\SCPositionParser.cs",
+              "RelativeToolTip": "Parsing\\SCPositionParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T20:04:53.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OCRProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\OCR\\OCRProcessor.cs",
+              "RelativeDocumentMoniker": "OCR\\OCRProcessor.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\OCR\\OCRProcessor.cs",
+              "RelativeToolTip": "OCR\\OCRProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T19:52:29.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ScreenCapture.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Capture\\ScreenCapture.cs",
+              "RelativeDocumentMoniker": "Capture\\ScreenCapture.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Capture\\ScreenCapture.cs",
+              "RelativeToolTip": "Capture\\ScreenCapture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T19:45:55.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T19:33:26.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

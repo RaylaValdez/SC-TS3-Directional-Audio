@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SC-TS3-Directional-Audio", "SC-TS3-Directional-Audio.csproj", "{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30FB8BD3-F43D-458E-A319-E9B2381BD421}
+	EndGlobalSection
+EndGlobal
