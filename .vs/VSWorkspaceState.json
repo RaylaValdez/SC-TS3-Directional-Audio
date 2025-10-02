@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Capture",
-    "\\Networking",
-    "\\OCR",
-    "\\Parsing",
-    "\\Utils"
+    "\\SC-TS3-Directional-Audio",
+    "\\SC-TS3-Directional-Audio\\OCR"
   ],
+  "SelectedNode": "\\SC-TS3-Directional-Audio\\OCR\\OCRProcessor.cs",
   "PreviewInSolutionExplorer": false
 }
