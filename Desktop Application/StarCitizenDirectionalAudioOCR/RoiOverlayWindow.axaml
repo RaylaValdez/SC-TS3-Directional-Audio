@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="StarCitizenDirectionalAudioOCR.RoiOverlayWindow"
+        SystemDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent"
+        CanResize="False"
+        Topmost="True"
+        ShowInTaskbar="False">
+  <!-- light tint so SC text stays readable -->
+  <Canvas x:Name="Root" Background="#12000000">
+    <Border x:Name="Selection" BorderBrush="#FFFFFFFF" BorderThickness="2" Background="#22FFFFFF"/>
+    <TextBlock Text="Drag/resize • Enter=Save • Esc=Cancel"
+               Foreground="White" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,6,0,0"/>
+  </Canvas>
+</Window>

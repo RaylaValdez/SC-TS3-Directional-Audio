@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="StarCitizenDirectionalAudioOCR.MainWindow"
+        Width="560" Height="360" Title="SC Directional Audio Debug Menu">
+  <StackPanel Spacing="12" Margin="16">
+    <TextBlock Text="SC Directional Audio Debug Menu" FontSize="20" />
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button x:Name="StartBtn" Content="Start OCR" Width="120"/>
+      <Button x:Name="StopBtn" Content="Stop" Width="100" IsEnabled="False"/>
+      <Button x:Name="CalibrateBtn" Content="Calibrate ROI" Width="140"/>
+      <ToggleButton x:Name="TopmostToggle"
+              Content="Stay on top"
+              Width="120"
+              Margin="8,0,0,0"/>
+
+    </StackPanel>
+
+    <TextBlock Text="Status:" FontWeight="Bold"/>
+    <TextBlock x:Name="StatusText" Text="Idle"/>
+
+    <TextBlock Text="Last Parsed:" FontWeight="Bold" Margin="0,16,0,0"/>
+    <TextBlock x:Name="ParsedText" Text="(none)" FontFamily="Consolas" TextWrapping="Wrap"/>
+
+    <CheckBox x:Name="BinarizeCheck" Content="Binarize pre-processing" />
+    <TextBlock Text="Tick Rate (Hz):" />
+    <Slider x:Name="TickSlider" Minimum="1" Maximum="10" Value="2" Width="200"/>
+  </StackPanel>
+</Window>
