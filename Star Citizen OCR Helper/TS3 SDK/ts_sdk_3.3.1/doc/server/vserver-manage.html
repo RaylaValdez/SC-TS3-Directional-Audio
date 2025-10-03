@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create and stop virtual servers &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced virtual server creation" href="advanced-create.html" />
+    <link rel="prev" title="List available clients, channels, servers" href="list-items.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Create and stop virtual servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#query-keypair-for-future-reuse">Query Keypair for future reuse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stopping-a-virtual-server">Stopping a virtual server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Create and stop virtual servers</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="create-and-stop-virtual-servers">
+<h1>Create and stop virtual servers<a class="headerlink" href="#create-and-stop-virtual-servers" title="Permalink to this heading"></a></h1>
+<p>A new virtual server can be created within the current server process by
+calling</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_createVirtualServer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">serverPort</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverIp</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverKeyPair</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">serverMaxClients</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>create a new virtual server. The server is started automatically after being created. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverPort</strong> – the UDP port to listen for client connections on </p></li>
+<li><p><strong>serverIp</strong> – comma separated list of IP address(es) to listen for client connections on. IPv4 and IPv6 addresses are supported. </p></li>
+<li><p><strong>serverName</strong> – display name of the server. </p></li>
+<li><p><strong>serverKeyPair</strong> – Key pair for encryption. Must be unique for each virtual server. Pass an empty string when originally creating a new server, query the generated encryption key with <a class="reference internal" href="../server_api.html#serverlib_8h_1ad40026c9644902e2e02b50ea18166609"><span class="std std-ref">ts3server_getVirtualServerKeyPair</span></a>, store it and use it on subsequent start ups. </p></li>
+<li><p><strong>serverMaxClients</strong> – maximum number of clients that can be connected simultaneously at any given time </p></li>
+<li><p><strong>result</strong> – address of a variable that will receive the virtual server ID that can be used to specify this server in future calls to server library functions. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>The server name and server slots can later be modified using the
+<code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setServerVariableAsString()</span></code> and <code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setServerVariableAsInt()</span></code>
+function calls if need be, without having to recreate the server.</p>
+<p>On success, the created virtual server will be automatically started.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You should <strong>not</strong> create a virtual server with an empty keypair except
+for the first time. If the server crashes, license problems
+might occur when using “throw-away” keypairs, as the license systems
+may deem you to be running more virtual servers than you actually are.</p>
+<p>Instead query the keypair the first time the virtual server was
+started, save it to a file and reuse it when creating a new virtual
+server. This way licensing issues will not occur.</p>
+<p>See the server sample which is included in the TeamSpeak 3 SDK for an
+example on how to save and restore keypairs.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When a virtual server is started, it will register itself at a
+TeamSpeak licensing server reporting the maximum client count to
+ensure the server is operating within the license limits. On
+shutdown, the virtual server will deregister with the licensing server.</p>
+<p>This leads to two important things to keep in mind:</p>
+<p>1) Don’t just kill your server with Ctrl-C, instead ensure it’s
+shutdown properly calling <a class="reference internal" href="#c.ts3server_stopVirtualServer" title="ts3server_stopVirtualServer"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_stopVirtualServer()</span></code></a>. If killed
+too often, the licensing server might reject this server instance
+because the license seems to be exceeded as client slots are only
+added but never removed.</p>
+<p>2) Don’t start a virtual server too frequently. This may raise an
+error <em>“virtualserver started too many times in a certain time
+period”</em>. Contacting the licensing server will be prevented to
+protect our backend services from getting spammed with frequent
+server updates for the same server.</p>
+<p>The trigger conditions for this error are very specific and are as
+follows:</p>
+<ul class="simple">
+<li><p>You start a server instance and then stop the same instance within
+5 seconds of it being started.</p></li>
+<li><p>The above happens more than 3 times in a 41 minute window.</p></li>
+</ul>
+<p>After you triggered this error, you will be prevented from starting
+any server instance using the affected license for a period of 12
+minutes.</p>
+<p>You should first investigate how you managed to trigger this error
+and change your scripts to avoid triggering the conditions above.
+Then you must not start any server instance for the 12 minute grace
+period mentioned above. After this wait, you should be able to start
+your instance normally.</p>
+</div>
+<section id="query-keypair-for-future-reuse">
+<h2>Query Keypair for future reuse<a class="headerlink" href="#query-keypair-for-future-reuse" title="Permalink to this heading"></a></h2>
+<p>To query the keypair of a virtual server, use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVirtualServerKeyPair</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>retrieve the encryption keys used by the virtual server. </p>
+<p>Store these and use them on subsequent process startup to recreate this server when calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a5175258df0d2a5ab39b36f35f55cc6c2"><span class="std std-ref">ts3server_createVirtualServer</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverID</strong> – the server for which to get the key pair. </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a utf8 encoded c string containing the key pair. Memory is allocated by the server library and must be freed by caller using <a class="reference internal" href="../server_api.html#serverlib_8h_1a6993000e98ccfa4ecf0a6f3d92406e5e"><span class="std std-ref">ts3server_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="stopping-a-virtual-server">
+<h2>Stopping a virtual server<a class="headerlink" href="#stopping-a-virtual-server" title="Permalink to this heading"></a></h2>
+<p>A virtual server can be stopped with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_stopVirtualServer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>deletes a virtual server. All clients will be disconnected and no more connections are accepted. You need to recreate the server using <a class="reference internal" href="../server_api.html#serverlib_8h_1a5175258df0d2a5ab39b36f35f55cc6c2"><span class="std std-ref">ts3server_createVirtualServer</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> to make it available again. </p>
+<p>You may want to save the state of the virtual server if you need persistence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverID</strong> – specifies which server to stop </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Nothing of the virtual server remains after it has stopped.
+You will need to recreate the virtual server afterwards.
+If you need to save state (e.g. channels on the server) you
+need to do so before stopping the virtual server.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="list-items.html" class="btn btn-neutral float-left" title="List available clients, channels, servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advanced-create.html" class="btn btn-neutral float-right" title="Advanced virtual server creation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

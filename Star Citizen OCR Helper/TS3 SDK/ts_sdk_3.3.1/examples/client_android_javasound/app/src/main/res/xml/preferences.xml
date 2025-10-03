@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.teamspeak.ts3sdkclient.preference.VadPreference
+        android:key="pref_vad"
+        android:title="@string/pref_vad"
+        android:summary="@string/pref_vad_summ" />
+
+    <CheckBoxPreference
+        android:key="pref_denoise"
+        android:title="@string/pref_denoise"
+        android:summary="@string/pref_denoise_summ"
+        android:defaultValue="true" />
+
+    <CheckBoxPreference
+        android:key="pref_agc"
+        android:title="@string/pref_agc"
+        android:summary="@string/pref_agc_summ"
+        android:defaultValue="true" />
+
+</PreferenceScreen>

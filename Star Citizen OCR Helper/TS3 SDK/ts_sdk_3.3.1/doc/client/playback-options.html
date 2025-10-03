@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playback options &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Accessing the voice buffer" href="audio-buffer-access.html" />
+    <link rel="prev" title="Preprocessor options" href="preprocessor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="audio.html">Client Audio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="audio-list-device-mode.html">List available modes and devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-init.html">Initializing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-get-current.html">Query current mode and device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-custom-device.html">Using custom devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-activate.html">Activating the capture device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-close.html">Closing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-codecs.html">Audio codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessor.html">Preprocessor options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Playback options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#available-values">Available values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-values">Query values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-values">Setting values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adjust-individual-clients">Adjust individual clients</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="audio-buffer-access.html">Accessing the voice buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-localtest.html">Local Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="audio.html">Client Audio</a></li>
+      <li class="breadcrumb-item active">Playback options</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="playback-options">
+<h1>Playback options<a class="headerlink" href="#playback-options" title="Permalink to this heading"></a></h1>
+<p>Sound output can be configured using playback options. Currently the
+output value can be adjusted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Playback options are tied to a playback device, so querying or changing
+the values only makes sense after a device has been opened.</p>
+</div>
+<section id="available-values">
+<h2>Available values<a class="headerlink" href="#available-values" title="Permalink to this heading"></a></h2>
+<p>The following values are available for the <cite>ident</cite> parameter:</p>
+<ul>
+<li><p>volume_modifier
+Modify the voice volume of other speakers. Value is in decibel, so
+0 is no modification, negative values make the signal quieter and
+values greater than zero boost the signal louder than it is.
+The maximum possible value is 30.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Be careful with high positive values, as you can really cause bad
+audio quality due to clipping.</p>
+</div>
+<p>Zero and all negative values cannot cause clipping and distortion,
+and are preferred for optimal audio quality. Values greater than
+zero and less than +6 dB might cause moderate clipping and
+distortion, but should still be within acceptable bounds. Values
+greater than +6 dB will cause clipping and distortion that
+negatively affects your audio quality. It is advised to choose
+lower values. Generally we recommend to not allow values higher
+than 15 db.</p>
+</li>
+<li><p>volume_factor_wave
+Adjust the volume of wave files played through <a class="reference internal" href="wave-files.html#c.ts3client_playWaveFile" title="ts3client_playWaveFile"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_playWaveFile()</span></code></a>
+and <a class="reference internal" href="wave-files.html#c.ts3client_playWaveFileHandle" title="ts3client_playWaveFileHandle"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_playWaveFileHandle()</span></code></a>. Reasonable values range from
+-40 (very quiet) to 0 (loudest).</p></li>
+</ul>
+</section>
+<section id="query-values">
+<h2>Query values<a class="headerlink" href="#query-values" title="Permalink to this heading"></a></h2>
+<p>Playback options can be queried with:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getPlaybackConfigValueAsFloat</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ident</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve floating point playback configuration settings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to query the playback setting for. </p></li>
+<li><p><strong>ident</strong> – the name of the configuration setting to retrieve. Valid values are volume_modifier and volume_factor_wave </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the current value of the queried setting </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="setting-values">
+<h2>Setting values<a class="headerlink" href="#setting-values" title="Permalink to this heading"></a></h2>
+<p>To change playback options, call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setPlaybackConfigValue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ident</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set playback configuration settings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to set the playback setting on. </p></li>
+<li><p><strong>ident</strong> – the name of the configuration setting to set. Valid values are volume_modifier and volume_factor_wave </p></li>
+<li><p><strong>value</strong> – the new value to set as an utf8 encoded c string. Appropriate conversion takes place within the client lib. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_setPlaybackConfigValue</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;volume_modifier&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5.5&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error setting playback config value: %04X</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_getPlaybackConfigValueAsFloat</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;volume_modifier&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error getting playback config value: %04X</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">12</span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Volume modifier playback option: %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="adjust-individual-clients">
+<h2>Adjust individual clients<a class="headerlink" href="#adjust-individual-clients" title="Permalink to this heading"></a></h2>
+<p>In addition to changing the global voice volume modifier of all speakers
+by changing the “volume_modifier” parameter, voice volume of individual
+clients can be adjusted with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setClientVolumeModifier</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adjust playback volume of an individual client. </p>
+<p>Allows adjustment of single clients in addition to the global playback volume_modifier configuration option. Individual client volume adjustments are temporary and only valid as long as the client is visible. Once the target client leaves to an unsubscribed channel or disconnects from the server, this setting is discarded. If desired, the adjustment needs to be made again after the client reconnects or becomes visible again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for the server on which the client is located </p></li>
+<li><p><strong>clientID</strong> – the id of the client to adjust the volume for. </p></li>
+<li><p><strong>value</strong> – the volume modifier to apply to the client. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When calculating the volume for individual clients, both the global and
+client volume modifiers will be taken into account.</p>
+</div>
+<p>Client volume modifiers are valid as long as the specified client is
+visible. Once the client leaves visibility by joining an unsubscribed
+channel or disconnecting from the server, the client volume modifier
+will be lost. When the client enters visibility again, the modifier has
+to be set again by calling this function.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos">2</span><span class="n">anyID</span><span class="w"> </span><span class="n">clientID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="p">;</span>
+<span class="linenos">3</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0f</span><span class="p">;</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_setClientVolumeModifier</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">clientID</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">6</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error setting client volume modifier: %04X</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos">7</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preprocessor.html" class="btn btn-neutral float-left" title="Preprocessor options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audio-buffer-access.html" class="btn btn-neutral float-right" title="Accessing the voice buffer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

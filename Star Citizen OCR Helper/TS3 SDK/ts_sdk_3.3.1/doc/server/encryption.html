@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom encryption &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom passwords" href="passwords.html" />
+    <link rel="prev" title="Whisper lists" href="whisper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom encryption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#encryption">Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decryption">Decryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Custom encryption</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="custom-encryption">
+<h1>Custom encryption<a class="headerlink" href="#custom-encryption" title="Permalink to this heading"></a></h1>
+<p>As an optional feature, the TeamSpeak 3 SDK allows users to implement
+custom encryption and decryption for all network traffic. Custom
+encryption replaces the default AES encryption implemented by the
+TeamSpeak 3 SDK. A possible reason to apply own encryption might be to
+make ones TeamSpeak 3 client/server incompatible to other SDK
+implementations.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Custom encryption must be implemented the same way in both the client
+and server.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not want to use this feature, just don’t implement the two
+encryption callbacks.</p>
+</div>
+<section id="encryption">
+<h2>Encryption<a class="headerlink" href="#encryption" title="Permalink to this heading"></a></h2>
+<p>To encrypt outgoing data, implement the callback</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ServerLibFunctions</span></span></span><br /></dt>
+<dd><p>Server callbacks. Zero initialize and set members to functions that are to be called when the event in question happens. Every callback you use should exit quickly to avoid stalling the server. If you need any expensive activity upon receiving callbacks, consider starting the activity in a new thread and allow the callback to exit quickly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onCustomPacketEncryptEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">dataToSend</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">sizeOfData</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a packet needs to be encrypted to be sent over the wire. </p>
+<p>Used to implement custom encryption of server communication. This needs to be implemented the same in the client and server, otherwise clients cannot communicate with the server. Only implement this callback when you need custom encryption.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param dataToSend<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to an array of bytes that need to be encrypted. Must not be freed. Encrypt the data in place in this array if the size of your encrypted data is smaller than indicated in the sizeOfData parameter. Otherwise allocate your own memory and replace the pointer to point to your own allocated memory. In this case you need to take care of freeing the memory. </p>
+</dd>
+<dt class="field-even">Param sizeOfData<span class="colon">:</span></dt>
+<dd class="field-even"><p>size in byte of the dataToSend array. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The original memory pointed to by dataToSend must not be freed regardless
+of whether or not you replace the pointer!</p>
+</div>
+</section>
+<section id="decryption">
+<h2>Decryption<a class="headerlink" href="#decryption" title="Permalink to this heading"></a></h2>
+<p>To decrypt incoming data, implement the callback</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ServerLibFunctions</span></span></span><br /></dt>
+<dd><p>Server callbacks. Zero initialize and set members to functions that are to be called when the event in question happens. Every callback you use should exit quickly to avoid stalling the server. If you need any expensive activity upon receiving callbacks, consider starting the activity in a new thread and allow the callback to exit quickly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onCustomPacketDecryptEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">dataReceived</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">dataReceivedSize</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a packet needs to be decrypted after it has been received. </p>
+<p>Used to implement custom encryption of server communication. This needs to be implemented the same in the client and server, otherwise clients cannot communicate with the server. Only implement this callback when you need custom encryption.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param dataReceived<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to an array of bytes that need to be decrypted. Must not be freed. Decrypt the data in place in this array if the size of your decrypted data is smaller than indicated by the dataReceivedSize parameter. Otherwise allocate your own memory and replace the pointer to point to your own allocated memory. In this case you need to take care of freeing the memory </p>
+</dd>
+<dt class="field-even">Param dataReceivedSize<span class="colon">:</span></dt>
+<dd class="field-even"><p>size in byte of the dataReceived array. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The original memory pointed to by dataReceived must not be freed regardless
+of whether or not you replace the pointer!</p>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>Example code implementing a very simple XOR custom encryption and
+decryption (also see the SDK examples):</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">onCustomPacketEncryptEvent</span><span class="p">(</span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">dataToSend</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">sizeOfData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">sizeOfData</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">dataToSend</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">CUSTOM_CRYPT_KEY</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos"> 6</span><span class="p">}</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kt">void</span><span class="w"> </span><span class="nf">onCustomPacketDecryptEvent</span><span class="p">(</span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">dataReceived</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">dataReceivedSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">dataReceivedSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">        </span><span class="p">(</span><span class="o">*</span><span class="n">dataReceived</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">CUSTOM_CRYPT_KEY</span><span class="p">;</span>
+<span class="linenos">12</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">13</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="whisper.html" class="btn btn-neutral float-left" title="Whisper lists" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="passwords.html" class="btn btn-neutral float-right" title="Custom passwords" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

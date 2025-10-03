@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Channel sorting &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deleting a channel" href="channel-delete.html" />
+    <link rel="prev" title="Moving a channel" href="channel-move.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="channels.html">Channel Management</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="channel-list.html">List channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info-channel.html">Channel information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-create.html">Creating a new channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-move.html">Moving a channel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Channel sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-delete.html">Deleting a channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-join.html">Joining a channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-subscribe.html">Channel subscriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="channels.html">Channel Management</a></li>
+      <li class="breadcrumb-item active">Channel sorting</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="channel-sorting">
+<h1>Channel sorting<a class="headerlink" href="#channel-sorting" title="Permalink to this heading"></a></h1>
+<p>The order how channels should be display in the GUI is defined by the
+channel variable <a class="reference internal" href="../properties.html#c.ChannelProperties.CHANNEL_ORDER" title="ChannelProperties.CHANNEL_ORDER"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">CHANNEL_ORDER</span></code></a>, which can be queried with
+<a class="reference internal" href="info-channel.html#c.ts3client_getChannelVariableAsUInt64" title="ts3client_getChannelVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_getChannelVariableAsUInt64()</span></code></a> and changed with
+<a class="reference internal" href="channel-create.html#c.ts3client_setChannelVariableAsUInt64" title="ts3client_setChannelVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_setChannelVariableAsUInt64()</span></code></a>.</p>
+<p>The channel order is the ID of the predecessor channel after which the
+given channel should be sorted. An order of 0 means the channel is
+sorted on the top of its hirarchy.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">Channel_1</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Channel_2</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="n">Subchannel_1</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Subsubchannel_1</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Subsubchannel_2</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span>
+<span class="w">      </span><span class="n">Subchannel_2</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+<span class="n">Channel_3</span><span class="w">  </span><span class="p">(</span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When a new channel is created, the client is responsible to set a proper
+channel order. With the default value of 0 the channel will be sorted on
+the top of its hirarchy right after its parent channel.</p>
+</div>
+<p>When moving a channel to a new parent, the desired channel order can be
+passed to <a class="reference internal" href="channel-move.html#c.ts3client_requestChannelMove" title="ts3client_requestChannelMove"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_requestChannelMove()</span></code></a>.</p>
+<p>To move the channel to another position within the current hirarchy -
+the parent channel stays the same -, adjust the <a class="reference internal" href="../properties.html#c.ChannelProperties.CHANNEL_ORDER" title="ChannelProperties.CHANNEL_ORDER"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">CHANNEL_ORDER</span></code></a>
+variable with <a class="reference internal" href="channel-create.html#c.ts3client_setChannelVariableAsUInt64" title="ts3client_setChannelVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_setChannelVariableAsUInt64()</span></code></a>.</p>
+<p>After connecting to a TeamSpeak 3 server, the client will be informed of
+all channels by the <a class="reference internal" href="../client_api.html#c.ClientUIFunctions.onNewChannelEvent" title="ClientUIFunctions.onNewChannelEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onNewChannelEvent()</span></code></a> callback.</p>
+<p>The order how channels are propagated to the client is:</p>
+<ul>
+<li><p>First the complete channel path to the default channel, which is
+either the servers default channel with the flag <a class="reference internal" href="../properties.html#c.ChannelProperties.CHANNEL_FLAG_DEFAULT" title="CHANNEL_FLAG_DEFAULT"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">CHANNEL_FLAG_DEFAULT</span></code></a>
+or the users default channel passed to <a class="reference internal" href="connections.html#c.ts3client_startConnection" title="ts3client_startConnection"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_startConnection()</span></code></a>.
+This ensures the channel joined on login is visible as soon as
+possible.</p>
+<p>In the above example, assuming the default channel is “Subsubchannel_2”,
+the channels would be announced in the following order: Channel_2,
+Subchannel_1, Subsubchannel_2.</p>
+<p>After the default channel path has completely arrived, the connection
+status (see <a class="reference internal" href="../enumerations.html#c.ConnectStatus" title="ConnectStatus"><code class="xref c c-enum docutils literal notranslate"><span class="pre">ConnectStatus</span></code></a> annouced to the
+client by the callback <a class="reference internal" href="connections.html#c.ClientUIFunctions.onConnectStatusChangeEvent" title="ClientUIFunctions.onConnectStatusChangeEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onConnectStatusChangeEvent()</span></code></a>)
+changes to <a class="reference internal" href="../enumerations.html#c.ConnectStatus.STATUS_CONNECTION_ESTABLISHING" title="ConnectStatus.STATUS_CONNECTION_ESTABLISHING"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">STATUS_CONNECTION_ESTABLISHING</span></code></a>.</p>
+</li>
+<li><p>Next all other channels in the given order, where subchannels are
+announced right after the parent channel.</p>
+<p>To continue the example, the remaining channels would be announced in
+the order of: Channel_1, Subsubchannel_1, Subchannel_2, Channel_3
+(Channel_2, Subchannel_1, Subsubchannel_2 already were announced in
+the previous step).</p>
+<p>When all channels have arrived, the connection status switches to
+<a class="reference internal" href="../enumerations.html#c.ConnectStatus.STATUS_CONNECTION_ESTABLISHED" title="ConnectStatus.STATUS_CONNECTION_ESTABLISHED"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">STATUS_CONNECTION_ESTABLISHED</span></code></a>.</p>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="channel-move.html" class="btn btn-neutral float-left" title="Moving a channel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="channel-delete.html" class="btn btn-neutral float-right" title="Deleting a channel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

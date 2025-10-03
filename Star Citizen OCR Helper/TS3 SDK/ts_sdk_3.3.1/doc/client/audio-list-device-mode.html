@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List available modes and devices &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Initializing devices" href="audio-init.html" />
+    <link rel="prev" title="Client Audio" href="audio.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="audio.html">Client Audio</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">List available modes and devices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#query-default-modes">Query default modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-available-modes">List available modes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#get-default-devices">Get default devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#list-available-devices">List available devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="audio-init.html">Initializing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-get-current.html">Query current mode and device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-custom-device.html">Using custom devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-activate.html">Activating the capture device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-close.html">Closing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-codecs.html">Audio codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessor.html">Preprocessor options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="playback-options.html">Playback options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-buffer-access.html">Accessing the voice buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-localtest.html">Local Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="audio.html">Client Audio</a></li>
+      <li class="breadcrumb-item active">List available modes and devices</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="list-available-modes-and-devices">
+<h1>List available modes and devices<a class="headerlink" href="#list-available-modes-and-devices" title="Permalink to this heading"></a></h1>
+<p>Various playback and capture modes are available: <code class="docutils literal notranslate"><span class="pre">DirectSound</span></code> on all
+Windows platforms, <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Audio</span> <span class="pre">Session</span> <span class="pre">API</span></code> for Windows 7 and newer,
+<code class="docutils literal notranslate"><span class="pre">Alsa</span></code> and <code class="docutils literal notranslate"><span class="pre">PulseAudio</span></code> on Linux and <code class="docutils literal notranslate"><span class="pre">CoreAudio</span></code> on Mac OS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Available device names may differ depending on the mode.</p>
+</div>
+<section id="query-default-modes">
+<h2>Query default modes<a class="headerlink" href="#query-default-modes" title="Permalink to this heading"></a></h2>
+<p>The default capture mode can be queried using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getDefaultCaptureMode</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the current default capture mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – Address of a char array to receive a c string indicating the default mode. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>The default playback mode can be queried using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getDefaultPlayBackMode</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the current default playback mode. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – Address of a char array to receive the c string indicating the default mode. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="list-available-modes">
+<h2>List available modes<a class="headerlink" href="#list-available-modes" title="Permalink to this heading"></a></h2>
+<p>Available capture modes can be queries using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getCaptureModeList</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve available capture modes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable that receives a NULL terminated array of utf8 encoded c strings of available capture modes. Memory is allocated by the client lib and caller must free individual strings and the array itself using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To list available playback modes use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getPlaybackModeList</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve available playback modes. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable that receives a NULL terminated array of utf8 encoded c strings of available playback modes. Memory is allocated by the client lib and caller must free individual strings and the array itself using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<p>Example to query all available playback modes:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getPlaybackModeList</span><span class="p">(</span><span class="o">&amp;</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">5</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Mode: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="linenos">6</span><span class="w">        </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w">  </span><span class="c1">// Free C-string</span>
+<span class="linenos">7</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">8</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">);</span><span class="w">  </span><span class="c1">// Free the array</span>
+<span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="get-default-devices">
+<h2>Get default devices<a class="headerlink" href="#get-default-devices" title="Permalink to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Default devices are set by the operating system.</p>
+</div>
+<p>To get the default capture device use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getDefaultCaptureDevice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">modeID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the current operating system defined default capture device for the indicated mode. </p>
+<p>The operating system may define different devices for different modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modeID</strong> – a string indicating a valid capture mode as retrieved by <a class="reference internal" href="../client_api.html#clientlib_8h_1a80712a74cde0cb73e2e30c0654994120"><span class="std std-ref">ts3client_getCaptureModeList</span></a> or <a class="reference internal" href="../client_api.html#clientlib_8h_1a79856dbbe99235a441a569af2449d526"><span class="std std-ref">ts3client_getDefaultCaptureMode</span></a> </p></li>
+<li><p><strong>result</strong> – Address of a variable that receives a NULL terminated array of two c strings like <code class="docutils literal notranslate"><span class="pre">{char*</span> <span class="pre">deviceName,</span> <span class="pre">char*</span> <span class="pre">deviceID,</span> <span class="pre">NULL}</span></code> Memory is allocated by the client lib and both the array and its individual members must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To get the default playback device use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getDefaultPlaybackDevice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">modeID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get the current operating system defined default playback device for the indicated mode. </p>
+<p>The operating system may define different devices for different modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modeID</strong> – a string indicating a valid playback mode as retrieved by <a class="reference internal" href="../client_api.html#clientlib_8h_1a9f9bfb5ed20220a15be6ce0e3d402395"><span class="std std-ref">ts3client_getPlaybackModeList</span></a> or <a class="reference internal" href="../client_api.html#clientlib_8h_1a062eef0dd3259a8af7f750fe5dd3bed0"><span class="std std-ref">ts3client_getDefaultPlayBackMode</span></a> </p></li>
+<li><p><strong>result</strong> – Address of a variable that receives a NULL terminated array of two c strings like <code class="docutils literal notranslate"><span class="pre">{char*</span> <span class="pre">deviceName,</span> <span class="pre">char*</span> <span class="pre">deviceID,</span> <span class="pre">NULL}</span></code> Memory is allocated by the client lib and caller must free individual strings and the array itself using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>Example to query the default playback device:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">defaultMode</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="cm">/* Get default playback mode */</span>
+<span class="linenos"> 4</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getDefaultPlayBackMode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">defaultMode</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">    </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">defaultPlaybackDevice</span><span class="p">;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="cm">/* Get default playback device */</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getDefaultPlaybackDevice</span><span class="p">(</span><span class="n">defaultMode</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">defaultPlaybackDevice</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Default playback device name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultPlaybackDevice</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* First element: Device name */</span>
+<span class="linenos">10</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Default playback device ID: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">defaultPlaybackDevice</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* Second element: Device ID */</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="w">        </span><span class="cm">/* Release the two array elements and the array */</span>
+<span class="linenos">13</span><span class="w">        </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">defaultPlaybackDevice</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="linenos">14</span><span class="w">        </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">defaultPlaybackDevice</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="linenos">15</span><span class="w">        </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">defaultPlaybackDevice</span><span class="p">);</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">17</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to get default playback device</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">defaultMode</span><span class="p">);</span><span class="w"> </span><span class="c1">// Free default Mode</span>
+<span class="linenos">20</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">21</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to get default playback mode</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">22</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="list-available-devices">
+<h2>List available devices<a class="headerlink" href="#list-available-devices" title="Permalink to this heading"></a></h2>
+<p>To list devices available for capture use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getCaptureDeviceList</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">modeID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve available recording devices as reported by the operating system. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modeID</strong> – a string indicating a valid capture mode as retrieved by ts3client_getCaptureModeList or ts3client_getDefaultCaptureMode </p></li>
+<li><p><strong>result</strong> – address of a variable that receives a NULL terminated array like `{{char* deviceName, char* deviceId, char* interfaceName char* description, char* fromFactor} …, NULL}<code class="docutils literal notranslate"><span class="pre">on</span> <span class="pre">windows,</span></code>{{char* deviceName, char* deviceId}, …, NULL}` on other platforms. Memory is allocated by the client lib and caller must free individual strings and the array itself using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To list devices available for playback use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getPlaybackDeviceList</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">modeID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve available playback devices as reported by the operating system. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modeID</strong> – a string indicating a valid playback mode as retrieved by ts3client_getPlaybackModeList or ts3client_getDefaultPlaybackMode </p></li>
+<li><p><strong>result</strong> – address of a variable that receives a NULL terminated array like <code class="docutils literal notranslate"><span class="pre">{{char*</span> <span class="pre">deviceName,</span> <span class="pre">char*</span> <span class="pre">deviceId,</span> <span class="pre">char*</span> <span class="pre">interfaceName</span> <span class="pre">char*</span> <span class="pre">description,</span> <span class="pre">char*</span> <span class="pre">fromFactor}</span> <span class="pre">...,</span> <span class="pre">NULL}</span></code> on windows, <code class="docutils literal notranslate"><span class="pre">{{char*</span> <span class="pre">deviceName,</span> <span class="pre">char*</span> <span class="pre">deviceId},</span> <span class="pre">...,</span> <span class="pre">NULL}</span></code> on other platforms. Memory is allocated by the client lib and caller must free individual strings, array members and the array itself using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>Example to query all available playback devices:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">defaultMode</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getDefaultPlayBackMode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">defaultMode</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="kt">char</span><span class="o">***</span><span class="w"> </span><span class="n">array</span><span class="p">;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getPlaybackDeviceList</span><span class="p">(</span><span class="n">defaultMode</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Playback device name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* First element: Device name */</span>
+<span class="linenos"> 9</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Playback device ID: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">   </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* Second element: Device ID */</span>
+<span class="linenos">10</span><span class="cp">#ifdef _WIN32</span>
+<span class="linenos">11</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Playback device interface name: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* win only: Third element: Device interface name */</span>
+<span class="linenos">12</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Playback device desription: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">     </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* win only: Forth element: Device description */</span>
+<span class="linenos">13</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Playback device formFactor: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">     </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]);</span><span class="w">  </span><span class="cm">/* win only: Fifth element: Device form factor */</span>
+<span class="linenos">14</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]);</span>
+<span class="linenos">15</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">4</span><span class="p">]);</span>
+<span class="linenos">16</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">5</span><span class="p">]);</span><span class="w"> </span><span class="c1">// also free the last element, being &quot;\0&quot;</span>
+<span class="linenos">17</span><span class="cp">#endif</span>
+<span class="linenos">18</span><span class="w">            </span><span class="cm">/* Free element */</span>
+<span class="linenos">19</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+<span class="linenos">20</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]);</span>
+<span class="linenos">21</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]);</span>
+<span class="linenos">22</span><span class="w">            </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="linenos">23</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">24</span><span class="w">        </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">array</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Free complete array */</span>
+<span class="linenos">25</span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error getting playback device list</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">28</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">defaultMode</span><span class="p">);</span><span class="w"> </span><span class="c1">// free default mode</span>
+<span class="linenos">29</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">30</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error getting default playback mode</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">31</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio.html" class="btn btn-neutral float-left" title="Client Audio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audio-init.html" class="btn btn-neutral float-right" title="Initializing devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

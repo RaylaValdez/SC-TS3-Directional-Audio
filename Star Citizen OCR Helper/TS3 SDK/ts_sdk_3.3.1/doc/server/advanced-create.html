@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced virtual server creation &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Retrieve and store information" href="info.html" />
+    <link rel="prev" title="Create and stop virtual servers" href="vserver-manage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced virtual server creation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-server-structure-pointer">Create server structure pointer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-essential-server-properties">Set essential server properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#query-and-set-optional-server-properties">Query and set optional server properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#query-variables">Query variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-variables">Set variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-the-channel-tree">Initialize the channel tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-essential-channel-properties">Set essential channel properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-and-query-optional-channel-properties">Set and query optional channel properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-virtual-server-and-channels">Create the virtual server and channels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Advanced virtual server creation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-virtual-server-creation">
+<span id="s-server-create-advanced"></span><h1>Advanced virtual server creation<a class="headerlink" href="#advanced-virtual-server-creation" title="Permalink to this heading"></a></h1>
+<p>In addition to the previously mentioned way to create a virtual server
+using <a class="reference internal" href="vserver-manage.html#c.ts3server_createVirtualServer" title="ts3server_createVirtualServer"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_createVirtualServer()</span></code></a>, there is an alternative way to
+create a virtual server. The advantage of this method is the possibility
+to restore the complete channel structure upon server creation including
+the channel IDs in one step. This allows taking and restoring server
+snapshots including the channel tree.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a complete example please see the “server_creation_params” sample
+code in the SDK package.</p>
+</div>
+<section id="create-server-structure-pointer">
+<h2>Create server structure pointer<a class="headerlink" href="#create-server-structure-pointer" title="Permalink to this heading"></a></h2>
+<p>First, a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3VirtualServerCreationParams</span></code> has to be created, which
+will be filled with essential and optional server parameters. This will eventually
+contain the entire virtual server structure and is used to create and start the virtual server.</p>
+<p>Create a new virtual server parameter structure using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_makeVirtualServerCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3VirtualServerCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Creates a structure to define an entire virtual server including the channel layout for server creation for use with <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>. </p>
+<p>This is the first function to call when using the <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> meachanism of creating virtual servers in one go, including all of their channels. After receiving the structure using this function, you need to call <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a> to set basic configuration for this virtual server. Once that is done you can set additional parameters using <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> and <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable to receive a pointer to a structure defining the virtual server. This must be filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a> after this. Pointer must not be freed by caller. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not free or dispose of the structure, it must be valid as long
+as the virtual server exists.
+The server lib will take care of cleaning up the structure at an
+appropriate time.</p>
+</div>
+</section>
+<section id="set-essential-server-properties">
+<h2>Set essential server properties<a class="headerlink" href="#set-essential-server-properties" title="Permalink to this heading"></a></h2>
+<p>Once the <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3VirtualServerCreationParams</span></code> structure has been created, it
+needs to be filled with the essential parameters to create a new virtual
+server. Essential parameters include server port, IP, the key pair, maximum number of
+clients, number of channels we want to start the server with and the
+virtual server ID.</p>
+<p>To set these essential parameters call the function</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setVirtualServerCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3VirtualServerCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">virtualServerCreationParams</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">serverPort</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverIp</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverKeyPair</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">serverMaxClients</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channelCount</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set mandatory server creation properties for server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>. </p>
+<p>This call is mandatory after calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a721abc40a3ce104064cce4448c455ca4"><span class="std std-ref">ts3server_makeVirtualServerCreationParams</span></a> when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> and sets the basic information to create a virtual server. After this call you can optionally set other variables by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> after this.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>virtualServerCreationParams</strong> – pointer to a struct of creation parameters obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a721abc40a3ce104064cce4448c455ca4"><span class="std std-ref">ts3server_makeVirtualServerCreationParams</span></a> </p></li>
+<li><p><strong>serverPort</strong> – the UDP port to listen for client connections on </p></li>
+<li><p><strong>serverIp</strong> – comma separated list of IP address(es) to listen for client connections on. IPv4 and IPv6 addresses are supported. </p></li>
+<li><p><strong>serverKeyPair</strong> – unique key for encryption. Pass an empty string when originally creating a new server, query the generated encryption key with <a class="reference internal" href="../server_api.html#serverlib_8h_1ad40026c9644902e2e02b50ea18166609"><span class="std std-ref">ts3server_getVirtualServerKeyPair</span></a>, store it and use it on subsequent start ups. </p></li>
+<li><p><strong>serverMaxClients</strong> – maximum number of clients that can be connected simultaneously at any given time </p></li>
+<li><p><strong>channelCount</strong> – the amount of channels this server will have after creation. You must call <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> with this virtualServerCreationParams exactly this many times. </p></li>
+<li><p><strong>serverID</strong> – the id this virtual server will have when created. server id must be unique during life time of the server library. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="query-and-set-optional-server-properties">
+<h2>Query and set optional server properties<a class="headerlink" href="#query-and-set-optional-server-properties" title="Permalink to this heading"></a></h2>
+<p>After essential virtual server parameters have been defined with
+<a class="reference internal" href="#c.ts3server_setVirtualServerCreationParams" title="ts3server_setVirtualServerCreationParams"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVirtualServerCreationParams()</span></code></a>, additional parameters can
+be set. For that, we first need to get a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> from the
+<code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3VirtualServerCreationParams</span></code>, in which the additional
+paramters will be written using the functions
+<a class="reference internal" href="#c.ts3server_setVariableAsInt" title="ts3server_setVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsInt()</span></code></a>, <a class="reference internal" href="#c.ts3server_setVariableAsUInt64" title="ts3server_setVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsUInt64()</span></code></a> and
+<a class="reference internal" href="#c.ts3server_setVariableAsString" title="ts3server_setVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsString()</span></code></a>.</p>
+<p>To receive a pointer to a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> structure call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVirtualServerCreationParamsVariables</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3VirtualServerCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">virtualServerCreationParams</span></span>, <span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>create struct to define optional server settings for server creation with <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>virtualServerCreationParams</strong> – </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a pointer to a TS3Variables struct, to set optional server settings using <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a>. Memory must not be freed by caller. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Once you have a pointer to a valid <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> structure, you can query
+and modify various parameters with one of the following functions.
+Select the proper function depending of the type of the parameter you
+want to query or modify.</p>
+<section id="query-variables">
+<h3>Query variables<a class="headerlink" href="#query-variables" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVariableAsInt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as integer. Some are only available as string or unsigned 64 bit integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the desired value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVariableAsUInt64</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as unsigned 64 bit integer. Some are only available as string or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the desired value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVariableAsString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as string. Some are only available as unsigned 64 bit integer or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the desired value. Memory is allocated by the server library and must be freed by caller using <a class="reference internal" href="../server_api.html#serverlib_8h_1a6993000e98ccfa4ecf0a6f3d92406e5e"><span class="std std-ref">ts3server_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-variables">
+<h3>Set variables<a class="headerlink" href="#set-variables" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setVariableAsInt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as integer. Some are only available as string or unsigned 64 bit integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>value</strong> – the new value to set for the variable. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setVariableAsUInt64</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as unsigned 64 bit integer. Some are only available as string or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>value</strong> – the new value to set for the variable. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setVariableAsString</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">var</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the value of a property of a server or channel when using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p>
+<p>Not all properties are available as string. Some are only available as unsigned 64 bit integer or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – pointer to a TS3Variables struct obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive the value of. One of the values from the <a class="reference internal" href="../properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"><span class="std std-ref">VirtualServerProperties</span></a> enum </p></li>
+<li><p><strong>value</strong> – utf8 encoded c string containing the value to set the variable to </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>The following will set the virtual server name of the server to be created later to <em>“My Server”</em></p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3server_setVariableAsString</span><span class="p">(</span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="n">VIRTUALSERVER_NAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My Server&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to set virtual server name: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="initialize-the-channel-tree">
+<h2>Initialize the channel tree<a class="headerlink" href="#initialize-the-channel-tree" title="Permalink to this heading"></a></h2>
+<p>After setting global virtual server parameters we are ready to
+initialize the channel tree.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of created channels must match exactly the previously
+defined <code class="docutils literal notranslate"><span class="pre">channelCount</span></code> in <a class="reference internal" href="#c.ts3server_setVirtualServerCreationParams" title="ts3server_setVirtualServerCreationParams"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVirtualServerCreationParams()</span></code></a>.</p>
+</div>
+<p>For each channel you need to get a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3ChannelCreationParams</span></code> and fill it
+with the desired channel parameters, including the channel ID.</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3VirtualServerCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">virtualServerCreationParams</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channelIdx</span></span>, <span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Used to specify channels to create during advanced server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>. </p>
+<p>Call this function exactly as often as you indicated channels to be created in the <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a> call. Once you have received the struct you must set the details using <a class="reference internal" href="../server_api.html#serverlib_8h_1aa902981e442f7f3eba09518e70b19268"><span class="std std-ref">ts3server_setChannelCreationParams</span></a> and can optionally set additional parameters using <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> to get a structure to fill using <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>virtualServerCreationParams</strong> – pointer to the server structure on which to create this channel. Obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a721abc40a3ce104064cce4448c455ca4"><span class="std std-ref">ts3server_makeVirtualServerCreationParams</span></a> </p></li>
+<li><p><strong>channelIdx</strong> – specifies the channel to specify creation parameters for. Must be &gt; 0 and &lt; the channelCount parameter specified in the <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a> call </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a pointer that is to be filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1aa902981e442f7f3eba09518e70b19268"><span class="std std-ref">ts3server_setChannelCreationParams</span></a>. Must not be freed by caller. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These structures are used by the server library and must remain valid
+for the life time of the virtual server we are creating.
+Do not free or dispose of these structures.</p>
+</div>
+<section id="set-essential-channel-properties">
+<h3>Set essential channel properties<a class="headerlink" href="#set-essential-channel-properties" title="Permalink to this heading"></a></h3>
+<p>Once we have a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3ChannelCreationParams</span></code> pointer for this channel, we can
+start to fill it in two steps. Step 1 is setting the essential data,
+step 2 is setting optional additional data.</p>
+<p>Essential parameters are channel parent ID and channel ID, which define where the
+channel will exist. Set them using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setChannelCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelCreationParams</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelParentID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Specify mandatory details of a channel to be created at server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>. </p>
+<p>Must be called after <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> to set basic properties of a channel. After this call you may set additional channel properties by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> and <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channelCreationParams</strong> – defines the channel for which we set basic properties. Obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> </p></li>
+<li><p><strong>channelParentID</strong> – the id of the channel that this channel is a sub channel of. Pass 0 to make this channel a root channel. </p></li>
+<li><p><strong>channelID</strong> – the id this channel should have. Pass 0 to have the server lib assign a free ID. This is used to identify the channel in other calls to the client and server library. Must be unique across all virtual servers during the lifetime of the server library. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="set-and-query-optional-channel-properties">
+<h3>Set and query optional channel properties<a class="headerlink" href="#set-and-query-optional-channel-properties" title="Permalink to this heading"></a></h3>
+<p>After setting the essential parameters, we can set optional parameters in a similar way
+as we did for the virtual server itself.</p>
+<p>Retrieve a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> pointer for this channel using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getChannelCreationParamsVariables</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelCreationParams</span></span>, <span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Allows settings optional channel properties for channels to be created either at server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or using <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channelCreationParams</strong> – defines which channel to set variables for. Address of the structure obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> when the channel is to be created at server creation (using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>) or obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a1eebf07588b2f72c4fe7d77442382e26"><span class="std std-ref">ts3server_makeChannelCreationParams</span></a> when using with <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a pointer that is to be filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Once we have the structure use the previously described functions
+<a class="reference internal" href="#c.ts3server_setVariableAsInt" title="ts3server_setVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsInt()</span></code></a>, <a class="reference internal" href="#c.ts3server_setVariableAsUInt64" title="ts3server_setVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsUInt64()</span></code></a> and <a class="reference internal" href="#c.ts3server_setVariableAsString" title="ts3server_setVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsString()</span></code></a>
+to modify the properties. You can use <a class="reference internal" href="#c.ts3server_getVariableAsInt" title="ts3server_getVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsInt()</span></code></a>, <a class="reference internal" href="#c.ts3server_getVariableAsUInt64" title="ts3server_getVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsUInt64()</span></code></a> and
+<a class="reference internal" href="#c.ts3server_getVariableAsString" title="ts3server_getVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsString()</span></code></a> to query current properties for the channel.</p>
+</section>
+</section>
+<section id="create-the-virtual-server-and-channels">
+<h2>Create the virtual server and channels<a class="headerlink" href="#create-the-virtual-server-and-channels" title="Permalink to this heading"></a></h2>
+<p>Once we have defined the virtual server, and set up all the channels needed as described before,
+we can finally go ahead and actually create the virtual server and all the channels as specified using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_createVirtualServer2</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3VirtualServerCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">virtualServerCreationParams</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="../server_api.html#c.VirtualServerCreateFlags" title="VirtualServerCreateFlags"><span class="n"><span class="pre">VirtualServerCreateFlags</span></span></a><span class="w"> </span><span class="n"><span class="pre">flags</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Create an entire server structure in a single call. Useful for restoring an entire virtual server including channels including their ids after storing them on shutdown. See the SDK documentation for more in depth information. </p>
+<p>This requires a few other calls to be made in advance. First you need to call <a class="reference internal" href="../server_api.html#serverlib_8h_1a721abc40a3ce104064cce4448c455ca4"><span class="std std-ref">ts3server_makeVirtualServerCreationParams</span></a> to get a TS3VirtualServerCreationParams struct that then needs to be filled via <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a>. You can then use <a class="reference internal" href="../server_api.html#serverlib_8h_1a57d50ad9f5b070e63d7c1a02b5c8781e"><span class="std std-ref">ts3server_getVirtualServerCreationParamsVariables</span></a> to set other server settings and use <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> to specify channels to create using <a class="reference internal" href="../server_api.html#serverlib_8h_1aa902981e442f7f3eba09518e70b19268"><span class="std std-ref">ts3server_setChannelCreationParams</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>virtualServerCreationParams</strong> – pointer to the server parameters obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a721abc40a3ce104064cce4448c455ca4"><span class="std std-ref">ts3server_makeVirtualServerCreationParams</span></a>. These must have been filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1a61075aae119c7d5f16c7601512bbf48e"><span class="std std-ref">ts3server_setVirtualServerCreationParams</span></a> before calling this function. </p></li>
+<li><p><strong>flags</strong> – defines how certain information is present in the virtualServerCreationParams. Combination of the values from the <a class="reference internal" href="../server_api.html#serverlib_8h_1a065f4f9ad6e60befd2020b457e0f113e"><span class="std std-ref">VirtualServerCreateFlags</span></a> enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the created servers id. This is used in other calls to the server library to identify this server. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before this function is called, neither the server nor any of the channels
+actually exist anywhere. We merely described how they should look like and
+where the channels are.
+You cannot use any functions that require things to actually exist before
+this function was successfully called</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vserver-manage.html" class="btn btn-neutral float-left" title="Create and stop virtual servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="info.html" class="btn btn-neutral float-right" title="Retrieve and store information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

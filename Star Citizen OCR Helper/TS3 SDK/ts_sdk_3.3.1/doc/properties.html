@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Enums &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Structures &amp; Enumerations" href="enumerations.html" />
+    <link rel="prev" title="TeamSpeak Error Codes" href="errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Property Enums</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common">Common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#channel">Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client">Client</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Property Enums</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="property-enums">
+<h1>Property Enums<a class="headerlink" href="#property-enums" title="Permalink to this heading"></a></h1>
+<section id="common">
+<span id="x-properties"></span><h2>Common<a class="headerlink" href="#common" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ConnectionProperties">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConnectionProperties</span></span></span><a class="headerlink" href="#c.ConnectionProperties" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Various connection properties. These are all read only, and except for your own client must be requested using <a class="reference internal" href="client_api.html#clientlib_8h_1a70dbf9fbdae6bb1c85da531a57a85273"><span class="std std-ref">ts3client_requestConnectionInfo</span></a> </p>
+<p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PING">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a88d876b1f6671ccbd54c53f755aa4e8f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PING</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Round trip latency for the connection based on the last 5 seconds. On the server this is the average across all connected clients for the last 5 seconds. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PING_DEVIATION">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ab3f2502c028d8e290bd11ac160f190af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PING_DEVIATION</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PING_DEVIATION" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Standard deviation for the round trip latency in <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a88d876b1f6671ccbd54c53f755aa4e8f"><span class="std std-ref">CONNECTION_PING</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CONNECTED_TIME">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65adbe4ddd4587dcf98aac95512ad820784"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CONNECTED_TIME</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CONNECTED_TIME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Seconds the client has been connected. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_IDLE_TIME">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ac2f041974ebeb43841c05e579410e875"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_IDLE_TIME</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_IDLE_TIME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Time in seconds since the last activity (voice transmission, switching channels, changing mic / speaker mute status) of the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT_IP">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a7fda44c8d8b3e937375e27fed6325e45"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT_IP</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT_IP" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. IP of this client (as seen from the server side) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT_PORT">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad738631b0cfdd01cd033bcb066ab8ca0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT_PORT</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT_PORT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Client side port of this client (as seen from the server side) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER_IP">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ac5d66ab8d691bf715ed367546316f344"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER_IP</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER_IP" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. The IP or hostname used to connect to the server. Only available on yourself. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER_PORT">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aae962e7c3e7e342c55299097ebc6bb6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER_PORT</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER_PORT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. The server port connected to. Only available on yourself. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_SENT_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65af94a73b43270e16a0f552e2bf3bbf59a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_SENT_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_SENT_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. The number of voice packets transmitted by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_SENT_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a0e6c732cb617b144fb63c8ef3ada72c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_SENT_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_SENT_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. The number of keep alive packets transmitted by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_SENT_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aaa7bbbcc63d040bd7bc1bd3b0101548c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_SENT_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_SENT_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. The number of command &amp; control packets transmitted by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_SENT_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65afebb1040508cad220132b8bcb09566ed"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_SENT_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_SENT_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total number of packets transmitted by the client. Equal to the sum of <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65af94a73b43270e16a0f552e2bf3bbf59a"><span class="std std-ref">CONNECTION_PACKETS_SENT_SPEECH</span></a>, <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a0e6c732cb617b144fb63c8ef3ada72c2"><span class="std std-ref">CONNECTION_PACKETS_SENT_KEEPALIVE</span></a> and <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65aaa7bbbcc63d040bd7bc1bd3b0101548c"><span class="std std-ref">CONNECTION_PACKETS_SENT_CONTROL</span></a> </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_SENT_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ae1912785a644b711baaf7ef7058b3965"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_SENT_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_SENT_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Outgoing traffic used for voice data by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_SENT_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a0730b948d9bb550c8230424a1d8a7fab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_SENT_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_SENT_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Outgoing traffic used for keeping the connection alive by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_SENT_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a464bafe150eea1d425798791fab014ec"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_SENT_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_SENT_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Outgoing traffic used for command &amp; control data by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_SENT_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a2d06bf5c00cd851e7219f0df7fbc9b47"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_SENT_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_SENT_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total outgoing traffic to the server by this client. Equal to the sum of <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65ae1912785a644b711baaf7ef7058b3965"><span class="std std-ref">CONNECTION_BYTES_SENT_SPEECH</span></a>, <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a0730b948d9bb550c8230424a1d8a7fab"><span class="std std-ref">CONNECTION_BYTES_SENT_KEEPALIVE</span></a> and <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a464bafe150eea1d425798791fab014ec"><span class="std std-ref">CONNECTION_BYTES_SENT_CONTROL</span></a> </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aca1fdf1969688bd466f3abc1c004fe8b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_RECEIVED_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of voice packets received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a19d42d93d57d1717a7151954e7f67d06"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_RECEIVED_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of keep alive packets received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a40bfba2c513e36c9dc75cee82a6af5a9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_RECEIVED_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of command &amp; control packets received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aeb22392558ad2c87542c8535dfa39f0c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETS_RECEIVED_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETS_RECEIVED_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total number of packets received by the client. Equal to the sum of <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65aca1fdf1969688bd466f3abc1c004fe8b"><span class="std std-ref">CONNECTION_PACKETS_RECEIVED_SPEECH</span></a>, <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a19d42d93d57d1717a7151954e7f67d06"><span class="std std-ref">CONNECTION_PACKETS_RECEIVED_KEEPALIVE</span></a> and <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a40bfba2c513e36c9dc75cee82a6af5a9"><span class="std std-ref">CONNECTION_PACKETS_RECEIVED_CONTROL</span></a> </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ac8ccdb47f54f3c8428227279fc257141"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_RECEIVED_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Incoming traffic used by the client for voice data. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a525674e030756ac14a2698af92dc9334"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_RECEIVED_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Incoming traffic used by the client to keep the connection alive. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad5eef74957cb490590bcbc24f0dca69b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_RECEIVED_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Incoming traffic used by the client for command &amp; control data. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aac2ada368fe9fd1df8a634a05c5eddac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BYTES_RECEIVED_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BYTES_RECEIVED_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total incoming traffic used by the client. Equal to the sum of <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65ac8ccdb47f54f3c8428227279fc257141"><span class="std std-ref">CONNECTION_BYTES_RECEIVED_SPEECH</span></a>, <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65a525674e030756ac14a2698af92dc9334"><span class="std std-ref">CONNECTION_BYTES_RECEIVED_KEEPALIVE</span></a> and <a class="reference internal" href="#public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad5eef74957cb490590bcbc24f0dca69b"><span class="std std-ref">CONNECTION_BYTES_RECEIVED_CONTROL</span></a> </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETLOSS_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a3bdb4fea6324dd288eafeda39d583ad2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETLOSS_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETLOSS_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Percentage points of voice packets for the client that did not arrive at the client or server averaged across the last 5 seconds. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETLOSS_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aea41c1c6135abe721be3531e72c619ba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETLOSS_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETLOSS_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Percentage points of keep alive packets for the client that did not arrive at the client or server averaged across the last 5 seconds. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETLOSS_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a14c4107a60669c22dcb9ea20537e994e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETLOSS_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETLOSS_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Percentage points of command &amp; control packets for the client that did not arrive at the client or server averaged across the last 5 seconds. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_PACKETLOSS_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a50263c4079826f468297327dec3bc540"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_PACKETLOSS_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_PACKETLOSS_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Cumulative chance in percentage points with which a packet round trip failed because a packet was lost </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a6cbf73efb35de13bfc2c4b1968642c04"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER2CLIENT_PACKETLOSS_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a voice packet sent by the server was not received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ae8a5487e7d33ea301a5185d72742aa4c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER2CLIENT_PACKETLOSS_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a keepalive packet sent by the server was not received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65adf2e7aecd77d152cf944fc6ae82525be"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER2CLIENT_PACKETLOSS_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a control packet sent by the server was not received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a1375fbeebb7b6d3e7a86e3047b9133fe"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_SERVER2CLIENT_PACKETLOSS_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_SERVER2CLIENT_PACKETLOSS_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a packet sent by the server was not received by the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a4531a0975f7ecc2a3fce807b0bb08a01"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT2SERVER_PACKETLOSS_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a speech packet sent by the client was not received by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a1a127317b07902b00554ef022deb2991"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT2SERVER_PACKETLOSS_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a keepalive packet sent by the client was not received by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aedb4493c9604807d6ea418b6c00e7afb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT2SERVER_PACKETLOSS_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a control packet sent by the client was not received by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a0e7384ca4b53abf5d0ade8316ca86fb1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_CLIENT2SERVER_PACKETLOSS_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_CLIENT2SERVER_PACKETLOSS_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Double. Probability with which a packet sent by the client was not received by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a5894133522e65acde3bdfdc55407a49d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_SECOND_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes sent for speech data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad62829148b9dd8f25dbad96c388188fd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_SECOND_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes sent for keepalive data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a17585b3e14f0db49caf5581c6e9377cb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_SECOND_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes sent for control data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a7f4bff2a8d3a09757baf7b441250cee8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_SECOND_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_SECOND_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes sent in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad954fd61803824e874f0c34fbe443e37"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second sent for speech data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a07f10c3b279ca2823b5ace0c22bd52df"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second sent for keepalive data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a75195e32ee8fa308771f2e2ea368dcff"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second sent for control data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65af66c4e2943c88719c6b3522d1f9c6a45"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_SENT_LAST_MINUTE_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second sent, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a43d2c40b3783a50d22c9d8c14bf65321"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes received for speech data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ad5e46bfd0fcdd452de4ec58d538735aa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes received for keepalive data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a6be966971a027f2f97fac045916c9c9b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes received for control data in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65acb058f4b1d9ea44a80c33b3118831f8c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_SECOND_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Number of bytes received in the last second. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_SPEECH">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a2926752985d91bad1fd8ce58ee429aab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_SPEECH</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_SPEECH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second received for speech data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_KEEPALIVE">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a496e0988fa12bb78901ad8f0345f9207"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_KEEPALIVE</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_KEEPALIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second received for keepalive data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_CONTROL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a785f24dae13c9ddc38cf2fc879ada5b3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_CONTROL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_CONTROL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second received for control data, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a5275d89a873d61f02e866781cfb6e68b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_BANDWIDTH_RECEIVED_LAST_MINUTE_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Bytes per second received, averaged over the last minute. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_0">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a3fbe938cdf15357af79d45e72548651a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_0</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_0" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_1">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a130e2fbb815bef9a7074608df713523f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_1</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_1" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_2">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65ac252e2bb72e83acfe64f1c8d7efee159"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_2</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_2" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_3">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a9177067399e2bf337b2844b8c19526e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_3</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_3" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_4">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aa137dc379b3639f6b69d7bb9d9d21799"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_4</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_4" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_5">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65aa80e720fdb882d7fbf59de77e81f3040"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_5</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_5" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_6">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a35253ca9e1bfd85681684d0b0bc46174"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_6</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_6" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_7">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65af95a370eef812be2298c1139a8d4fb40"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_7</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_7" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_8">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a08531f5c365d4c2cf73bafff3e781b7a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_8</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_8" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_DUMMY_9">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65abf609d35c9a133ed4fc2f1ce9c8ac331"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_DUMMY_9</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_DUMMY_9" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_FILETRANSFER_BANDWIDTH_SENT">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a388f7689586c3e50d7181d5c5fc7433f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_FILETRANSFER_BANDWIDTH_SENT</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_FILETRANSFER_BANDWIDTH_SENT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Current file transfer upstream activity in bytes per second. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a20a6cc2a8dba1a0faf5f031a27ad4102"><span class="std std-ref">ts3client_requestServerConnectionInfo</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_FILETRANSFER_BANDWIDTH_RECEIVED">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65af5dcb0c140a969927f9bb0142c473d42"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_FILETRANSFER_BANDWIDTH_RECEIVED</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_FILETRANSFER_BANDWIDTH_RECEIVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Current file transfer downstream activity in bytes per second. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a20a6cc2a8dba1a0faf5f031a27ad4102"><span class="std std-ref">ts3client_requestServerConnectionInfo</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_FILETRANSFER_BYTES_RECEIVED_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a3391b430b028aff4124fcff22c3ddd22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_FILETRANSFER_BYTES_RECEIVED_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_FILETRANSFER_BYTES_RECEIVED_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total downstream traffic, in bytes, used for file transfer since the server was started. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a20a6cc2a8dba1a0faf5f031a27ad4102"><span class="std std-ref">ts3client_requestServerConnectionInfo</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_FILETRANSFER_BYTES_SENT_TOTAL">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65abbf49effb0fc5bc7dde9b63357b7022b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_FILETRANSFER_BYTES_SENT_TOTAL</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_FILETRANSFER_BYTES_SENT_TOTAL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Total upstream traffic, in bytes, used for file transfer since the server was started. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a20a6cc2a8dba1a0faf5f031a27ad4102"><span class="std std-ref">ts3client_requestServerConnectionInfo</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectionProperties.CONNECTION_ENDMARKER">
+<span class="target" id="public__definitions_8h_1a050954dff4a89322d463770f688b1f65a4682c741147007bd15707476b252c8d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CONNECTION_ENDMARKER</span></span></span><a class="headerlink" href="#c.ConnectionProperties.CONNECTION_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="server">
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.VirtualServerProperties">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VirtualServerProperties</span></span></span><a class="headerlink" href="#c.VirtualServerProperties" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_UNIQUE_IDENTIFIER">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a3f4fbce3d4d145c042e715bf9c7d0141"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_UNIQUE_IDENTIFIER</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_UNIQUE_IDENTIFIER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. Unique identifier for a virtual server, does not change on server restart. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_NAME">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a449aef5a546faf9248bed2804c25196b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_NAME</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_NAME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. The virtual server display name. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_WELCOMEMESSAGE">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a200cc5f36ac2ca8b2ab9fa51eddecb2e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_WELCOMEMESSAGE</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_WELCOMEMESSAGE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. The welcome message displayed to clients on connect. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. Not updated automatically when changed, updates need to be requested (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_PLATFORM">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a4ebaab80ef0568f134d57648b1fc30e6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_PLATFORM</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_PLATFORM" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. The operating system the server is running on. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_VERSION">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9ac076fde99fbd5615551d5528cdcd25e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_VERSION</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_VERSION" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. The server software version string. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_MAXCLIENTS">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a9180608480ee799278f4ed5bb82b7f24"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_MAXCLIENTS</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_MAXCLIENTS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read/Write. The maximum number of clients that can be connected simultaneously. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_PASSWORD">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9ae051786b00561eea44a0d99d4af7ae14"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_PASSWORD</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_PASSWORD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. The server password. Read access is limited to the server. Clients will only get the password they supplied when connecting. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_CLIENTS_ONLINE">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a9abe9edcb691dbfb907af2c80e49d73c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_CLIENTS_ONLINE</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_CLIENTS_ONLINE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read only. The current number of clients connected to the server, including query connections. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_CHANNELS_ONLINE">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9af2606a72ea63a2c7c59e828983a7e663"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_CHANNELS_ONLINE</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_CHANNELS_ONLINE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read only. The current number of channels on the server. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_CREATED">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9ae0f15bdde48b1a73310a74d163b5f795"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_CREATED</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_CREATED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. The time this virtual server was created as unix timestamp. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_UPTIME">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a3010168e3260d6a0ce97e1cc62264fbd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_UPTIME</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_UPTIME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read only. Number of seconds that have passed since the virtual server was started. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_CODEC_ENCRYPTION_MODE">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a2c498be770e816dcdddac39b2b958e39"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_CODEC_ENCRYPTION_MODE</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_CODEC_ENCRYPTION_MODE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0) that specifies if voice data is encrypted during transfer. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1a7e516952fefafad4d932cbc6717989ff"><span class="std std-ref">CodecEncryptionMode</span></a> enum. Available if <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> is &gt;= <a class="reference internal" href="enumerations.html#public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"><span class="std std-ref">STATUS_CONNECTED</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_ENCRYPTION_CIPHERS">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a84131b88a8890071a0c349bc6fc646ef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_ENCRYPTION_CIPHERS</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_ENCRYPTION_CIPHERS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Comma separated list of available ciphers to encrypt the connection. The server will use the first cipher in the list that is also listed in the <a class="reference internal" href="#public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a3819444b9ffab044b7f95c72a4799741"><span class="std std-ref">CLIENT_ENCRYPTION_CIPHERS</span></a> of the connecting client. Clients will fail to connect if no match is found. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_ENDMARKER">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a90f7e186ee1e75028c34982d8b36f5a9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_ENDMARKER</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_FILEBASE">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a124503d0ddba619cf0eb23cd725798e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_FILEBASE</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_FILEBASE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. The path to the base directory used to store files transferred using file transfer. Available only on the server. Is set by <a class="reference internal" href="server_api.html#serverlib_8h_1a4f013fc7cccb234a34fdecf5081bdc3e"><span class="std std-ref">ts3server_enableFileManager</span></a> </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_MAX_DOWNLOAD_TOTAL_BANDWIDTH">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a3dba798b2f90126b6a0db84355560eb2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_MAX_DOWNLOAD_TOTAL_BANDWIDTH</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_MAX_DOWNLOAD_TOTAL_BANDWIDTH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read/Write. Maximum traffic in bytes the server can use for file transfer downloads. Only available on request (<a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_MAX_UPLOAD_TOTAL_BANDWIDTH">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a72a8c864f694491a2d6903f927118b38"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_MAX_UPLOAD_TOTAL_BANDWIDTH</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_MAX_UPLOAD_TOTAL_BANDWIDTH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read/Write. Maximum traffic in bytes the server can use for file transfer uploads. Only available on request (=&gt; requestServerVariables) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.VirtualServerProperties.VIRTUALSERVER_LOG_FILETRANSFER">
+<span class="target" id="public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a037f2d55dfad935796e3ce796272cff4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VIRTUALSERVER_LOG_FILETRANSFER</span></span></span><a class="headerlink" href="#c.VirtualServerProperties.VIRTUALSERVER_LOG_FILETRANSFER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0) indicating whether to include file transfer activities (uploading or downloading of files) in the server log. Always available. </p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="channel">
+<h2>Channel<a class="headerlink" href="#channel" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ChannelProperties">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fc"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ChannelProperties</span></span></span><a class="headerlink" href="#c.ChannelProperties" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_NAME">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcadec72b769d33cb9ae85af90188256339"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_NAME</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_NAME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Name of the channel. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_TOPIC">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcac840bc7ebd7523a27e1a6584825b7ff5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_TOPIC</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_TOPIC" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Short single line text describing what the channel is about. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_DESCRIPTION">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca4d6bcc514837d22e1be0740ed4ac7c4c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_DESCRIPTION</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_DESCRIPTION" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Arbitrary text (up to 8k bytes) with information about the channel. Must be requested (<a class="reference internal" href="client_api.html#clientlib_8h_1a806652361900fb894016df2c14bddc6d"><span class="std std-ref">ts3client_requestChannelDescription</span></a>) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_PASSWORD">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca1d7ffb023c4092f552c8a2d717ad74e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_PASSWORD</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_PASSWORD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Password of the channel. Read access is limited to the server. Clients will only ever see the last password they attempted to use when joining the channel. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_CODEC">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca8449bb18f272a3a8a1e960ff4964b604"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_CODEC</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_CODEC" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. The codec this channel is using. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79"><span class="std std-ref">CodecType</span></a> enum. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_CODEC_QUALITY">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcacce98d6cb76ce6370b7e2132ff804ad8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_CODEC_QUALITY</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_CODEC_QUALITY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. The quality setting of the channel. Valid values are 0 to 10 inclusive. Higher value means better voice quality but also more bandwidth usage. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_MAXCLIENTS">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca538adee3a68e639a85f9e862f01b3c6a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_MAXCLIENTS</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_MAXCLIENTS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. The number of clients that can be in the channel simultaneously. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_MAXFAMILYCLIENTS">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcaf1d391451073ac8a02cc082bebe27b34"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_MAXFAMILYCLIENTS</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_MAXFAMILYCLIENTS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. The total number of clients that can be in this channel and all sub channels of this channel. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_ORDER">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcab4931253c7874c495221af8af8dc9bc8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_ORDER</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_ORDER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read/Write. The ID of the channel below which this channel should be displayed. If 0 the channel is sorted at the top of the current level. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_FLAG_PERMANENT">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcac98c851d5baa3a7e9f755bb4e0246501"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_FLAG_PERMANENT</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_FLAG_PERMANENT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0) indicating whether the channel remains when empty. Permanent channels are stored to the database and available after server restart. SDK users will need to take care of restoring channel at server start on their own. Mutually exclusive with <a class="reference internal" href="#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca6a8cbd05cade55d0174957fe16673856"><span class="std std-ref">CHANNEL_FLAG_SEMI_PERMANENT</span></a>. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_FLAG_SEMI_PERMANENT">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca6a8cbd05cade55d0174957fe16673856"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_FLAG_SEMI_PERMANENT</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_FLAG_SEMI_PERMANENT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0) indicating whether the channel remains when empty. Semi permanent channels are not stored to disk and gone after server restart but remain while empty. Mutually exclusive with <a class="reference internal" href="#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcac98c851d5baa3a7e9f755bb4e0246501"><span class="std std-ref">CHANNEL_FLAG_PERMANENT</span></a>. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_FLAG_DEFAULT">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca2148ba12b8ec6feae9421478d41ac1c3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_FLAG_DEFAULT</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_FLAG_DEFAULT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0). The default channel is the channel that all clients are located in when they join the server, unless the client explicitly specified a different channel when connecting and is allowed to join their preferred channel. Only one channel on the server can have this flag set. The default channel must have <a class="reference internal" href="#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcac98c851d5baa3a7e9f755bb4e0246501"><span class="std std-ref">CHANNEL_FLAG_PERMANENT</span></a> set. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_FLAG_PASSWORD">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcab5167158aaf7c7af6468d8bcd917e0b3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_FLAG_PASSWORD</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_FLAG_PASSWORD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0) indicating whether this channel is password protected. When removing or setting <a class="reference internal" href="#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca1d7ffb023c4092f552c8a2d717ad74e0"><span class="std std-ref">CHANNEL_PASSWORD</span></a> you also need to adjust this flag. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_CODEC_LATENCY_FACTOR">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcada3694b46126d4a2f0c81dd5971eb6ed"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_CODEC_LATENCY_FACTOR</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_CODEC_LATENCY_FACTOR" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(deprecated) Integer. Read/Write. Allows to increase packet size, reducing bandwith at the cost of higher latency of voice transmission. Valid values are 1-10 inclusive. 1 is the default and offers the lowest latency. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_CODEC_IS_UNENCRYPTED">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcabb635100664017377100da46b2189a76"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_CODEC_IS_UNENCRYPTED</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_CODEC_IS_UNENCRYPTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Boolean (1/0). If 0 voice data is encrypted, if 1 the voice data is not encrypted. Only used if the server <a class="reference internal" href="#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a2c498be770e816dcdddac39b2b958e39"><span class="std std-ref">VIRTUALSERVER_CODEC_ENCRYPTION_MODE</span></a> is set to <a class="reference internal" href="enumerations.html#public__definitions_8h_1a7e516952fefafad4d932cbc6717989ffa35854db35891338e0a469f0c27ab267e"><span class="std std-ref">CODEC_ENCRYPTION_PER_CHANNEL</span></a>. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_SECURITY_SALT">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca82f6bbe7aa8075d3394721d0c554d981"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_SECURITY_SALT</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_SECURITY_SALT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. SDK Only, not used by TeamSpeak. This channels security hash. When a client joins their <a class="reference internal" href="#public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a2423997df57968e9d56a0ca536cd24bc"><span class="std std-ref">CLIENT_SECURITY_HASH</span></a> is compared to this value, to allow or deny the client access to the channel. Used to enforce clients joining the server with specific identity and <a class="reference internal" href="#public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a2e28714bccaff27b6a1c8e46961fc7a1"><span class="std std-ref">CLIENT_META_DATA</span></a>. See SDK Documentation about this feature for further details. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_DELETE_DELAY">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcad6a2ed59de513340232279142ae77776"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_DELETE_DELAY</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_DELETE_DELAY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read/Write. Number of seconds deletion of temporary channels is delayed after the last client leaves the channel. Channel is only deleted if empty when the delete delay expired. Always available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_UNIQUE_IDENTIFIER">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcad4c77f1e09abea99c36bc99d39256e62"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_UNIQUE_IDENTIFIER</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_UNIQUE_IDENTIFIER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. An identifier that uniquely identifies a channel. Available in Server &gt;= 3.10.0 </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ChannelProperties.CHANNEL_ENDMARKER">
+<span class="target" id="public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca8e8ae541c07e65e3e98a3b2d7c020b97"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHANNEL_ENDMARKER</span></span></span><a class="headerlink" href="#c.ChannelProperties.CHANNEL_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ClientProperties">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientProperties</span></span></span><a class="headerlink" href="#c.ClientProperties" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_UNIQUE_IDENTIFIER">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01aeb0a02648180f7920ff4a9b41ff64db5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_UNIQUE_IDENTIFIER</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_UNIQUE_IDENTIFIER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. Public Identity, can be used to identify a client installation. Remains identical as long as the client keeps using the same identity. Available for visible clients. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_NICKNAME">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a1f604ae3610caeba20a060f2a33b980e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_NICKNAME</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_NICKNAME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Display name of the client. Available for visible clients. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_VERSION">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a7dec71d6ed598ad6445357b884c5784a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_VERSION</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_VERSION" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. Version String of the client used. For clients other than ourself this needs to be requested (<a class="reference internal" href="client_api.html#clientlib_8h_1ab53d33b3474b18c761b47d4f56c5614c"><span class="std std-ref">ts3client_requestClientVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_PLATFORM">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a3019675ca89e3a60d9200fd8203c9ba7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_PLATFORM</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_PLATFORM" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. Operating system used by the client. For other clients other than ourself this needs to be requested (<a class="reference internal" href="client_api.html#clientlib_8h_1ab53d33b3474b18c761b47d4f56c5614c"><span class="std std-ref">ts3client_requestClientVariables</span></a>). </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_FLAG_TALKING">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01ac7ea119e7287c214929bf4f7d7a44d97"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_FLAG_TALKING</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_FLAG_TALKING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Whether the client is talking. Available on clients that are either whispering to us, or in our channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_INPUT_MUTED">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a6b03a23996e72caf993b39d8036c701c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_INPUT_MUTED</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_INPUT_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Microphone mute status. Available for visible clients. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1ab840a92a6f6b1dc6e5fcd35d7f4645c6"><span class="std std-ref">MuteInputStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_OUTPUT_MUTED">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a75855fcbe77b40f6126803a237e37b8f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_OUTPUT_MUTED</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_OUTPUT_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Speaker mute status. Speaker mute implies microphone mute. Available for visible clients. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1ae3eda81fe1b03a75f1e5b139195398f4"><span class="std std-ref">MuteOutputStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_OUTPUTONLY_MUTED">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01afd1e10272a2ff061d869b74b595b43e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_OUTPUTONLY_MUTED</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_OUTPUTONLY_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Speaker mute status. Microphone may be active. Available for visible clients. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1ae3eda81fe1b03a75f1e5b139195398f4"><span class="std std-ref">MuteOutputStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_INPUT_HARDWARE">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a5e88c3b33e659a86a626e1db3836e8d5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_INPUT_HARDWARE</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_INPUT_HARDWARE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Indicates whether a capture device is open. Available for visible clients. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1aa9937ac1fcafaacf0360ca4bc9f87f91"><span class="std std-ref">HardwareInputStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_OUTPUT_HARDWARE">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01ae356e226f7f0572a9568b2410609de8b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_OUTPUT_HARDWARE</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_OUTPUT_HARDWARE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Indicates whether a playback device is open. Available for visible clients. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1ac22bd489e977a5bb0749c4db0a93805b"><span class="std std-ref">HardwareOutputStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_INPUT_DEACTIVATED">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a4139f06a1dbf8650058500e8ec50f0df"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_INPUT_DEACTIVATED</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_INPUT_DEACTIVATED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read/Write. Not available server side. Local microphone mute status. Available only for own client. Used to implement Push To Talk. One of the values from the <a class="reference internal" href="enumerations.html#public__definitions_8h_1a64d467f3a6e2103fa98f4d8a6b5b5606"><span class="std std-ref">InputDeactivationStatus</span></a> enum. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_IDLE_TIME">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01ac76ca5de9e0ea67033cec66e4b631841"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_IDLE_TIME</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_IDLE_TIME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>UInt64. Read only. Seconds since last activity. Available only for own client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_DEFAULT_CHANNEL">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a711ad38b30200c263b2e6b92754d5516"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_DEFAULT_CHANNEL</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_DEFAULT_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. User specified channel they joined when connecting to the server. Available only for own client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_DEFAULT_CHANNEL_PASSWORD">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01aa54ad7251f54d8322d2809a658dd47db"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_DEFAULT_CHANNEL_PASSWORD</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_DEFAULT_CHANNEL_PASSWORD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. User specified channel password for the channel they attempted to join when connecting to the server. Available only for own client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_SERVER_PASSWORD">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01ae7f525993fb9c55169b36122b049f898"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_SERVER_PASSWORD</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_SERVER_PASSWORD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. User specified server password. Available only for own client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_META_DATA">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a2e28714bccaff27b6a1c8e46961fc7a1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_META_DATA</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_META_DATA" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. Can be used to store up to 4096 bytes of information on clients. Not used by TeamSpeak. Available for visible clients. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_IS_MUTED">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01aa2c5ea0dc4a3a7ad45bf7b1d1ec2f5d8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_IS_MUTED</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_IS_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Not available server side. Indicates whether we have muted the client using <a class="reference internal" href="client_api.html#clientlib_8h_1ade0273ae2c32822ad5e7758cef59a52c"><span class="std std-ref">ts3client_requestMuteClients</span></a>. Available for visible clients other than ourselves. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_IS_RECORDING">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01ac181b4202419dd2c6836d08b7d6ee0cb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_IS_RECORDING</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_IS_RECORDING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Indicates whether the client is recording incoming audio. Available for visible clients. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_VOLUME_MODIFICATOR">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a94be253a03d99f73fd321c8655137573"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_VOLUME_MODIFICATOR</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_VOLUME_MODIFICATOR" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Integer. Read only. Volume adjustment for this client as set by <a class="reference internal" href="client_api.html#clientlib_8h_1a02d9d655e7d0d52ea5bc743dc24497ce"><span class="std std-ref">ts3client_setClientVolumeModifier</span></a>. Available for visible clients. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_VERSION_SIGN">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a0b8a7a6828fd0d0b80afad505e33efc9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_VERSION_SIGN</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_VERSION_SIGN" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. TeamSpeak internal signature. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_SECURITY_HASH">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a2423997df57968e9d56a0ca536cd24bc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_SECURITY_HASH</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_SECURITY_HASH" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read/Write. This clients security hash. Not used by TeamSpeak, SDK only. Hash is provided by an outside source. A channel will use the security salt + other client data to calculate a hash, which must be the same as the one provided here. See SDK documentation about Client / Channel Security Hashes for more details. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_ENCRYPTION_CIPHERS">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a3819444b9ffab044b7f95c72a4799741"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_ENCRYPTION_CIPHERS</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_ENCRYPTION_CIPHERS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>String. Read only. SDK only. List of available ciphers this client can use. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientProperties.CLIENT_ENDMARKER">
+<span class="target" id="public__definitions_8h_1a107aa6e685b210b43b62c6227252bb01a65db5f99a524e73388da55aeaaad6602"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_ENDMARKER</span></span></span><a class="headerlink" href="#c.ClientProperties.CLIENT_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="errors.html" class="btn btn-neutral float-left" title="TeamSpeak Error Codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enumerations.html" class="btn btn-neutral float-right" title="Structures &amp; Enumerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

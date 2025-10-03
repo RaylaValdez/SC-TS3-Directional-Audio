@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filetransfer &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Custom encryption" href="encryption.html" />
+    <link rel="prev" title="Text chat" href="textmessages.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Filetransfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#active-transfer-information">Active transfer information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initiate-transfers">Initiate transfers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upload-a-local-file">Upload a local file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-a-file">Download a file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cancel-a-transfer">Cancel a transfer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#request-file-and-directory-information">Request file and directory information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#speed-limits">Speed limits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-speed-limits">Set speed limits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-speed-limits">Query speed limits</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#callbacks">Callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Filetransfer</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="filetransfer">
+<h1>Filetransfer<a class="headerlink" href="#filetransfer" title="Permalink to this heading"></a></h1>
+<p>The TeamSpeak SDK includes the ability to support filetransfer, like the
+regular TeamSpeak server and client offer. The Server can function as a
+file storage, which can be accessed by Clients who can up- and download
+files. Files are stored on the server side filesystem.</p>
+<p>In general, clients can initiate filetransfer actions like uploading or
+downloading a file, requesting file information (size, name, path etc.),
+list files in a directory and so on. The functions to call these actions
+are explained in detail below. In addition to the functions actively
+called, there are filetransfer related callbacks which are triggered
+when the server returned the requested information (e.g. list of files
+in a directory).</p>
+<p>Each transfer is identified by a transferID, which is passed to most
+filetransfer functions. Transfer IDs are unique during the time of the
+transfer, but may be reused again some time after the previous transfer
+with the same ID has finished.</p>
+<p>Files are organized on the server inside channels (identified by their
+channelID. The top-level directory in each channel is “/”.
+Subdirectories in each channel may exist and are defined with a path of
+the form “/dir1/dir2”. Subdirectories are optional and need to be
+created with <a class="reference internal" href="#c.ts3client_requestCreateDirectory" title="ts3client_requestCreateDirectory"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_requestCreateDirectory()</span></code></a>, the channel root
+directory always exists by default.</p>
+<p>See <a class="reference internal" href="../enumerations.html#x-def-filetransfer"><span class="std std-ref">File Transfer Definitions</span></a> for various
+enums and structs used with file transfer.</p>
+<section id="active-transfer-information">
+<h2>Active transfer information<a class="headerlink" href="#active-transfer-information" title="Permalink to this heading"></a></h2>
+<p>The following functions allow to query information about a file transfer
+identified by its transferID.</p>
+<p>Query the file name of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferFileName</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the local file name for a file transfer </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – identifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive an utf8 encoded c string on success. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the file path of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferFilePath</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the local path of a file transfer </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – identifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive an utf8 encoded c string on success. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the remote path on the server for the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferFileRemotePath</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the server path of the file transfer </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – identifies which file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive an utf8 encoded c string on success. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the file size of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferFileSize</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the total size in bytes of a file transfer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies which file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the file size </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the currently transferred file size</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferFileSizeDone</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the amount of bytes already transferred. </p>
+<p>0 &lt;= result &lt;= ts3client_getTransferFileSize for the same transferID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the result on success </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query if the specified transfer is an upload or download</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_isTransferSender</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>determine if the file transfer is an upload or download </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the result on success. 1 = upload, 0 = download </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the status of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferStatus</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>determine the current status of the transfer in question </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the status on success. One of the values from the FileTransferState enum. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the current speed of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getCurrentTransferSpeed</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the current approximate speed (in bytes/sec) of a file transfer </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the transfer speed in bytes per second, averaged across the past 5 seconds. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the average speed of the specified transfer</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getAverageTransferSpeed</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the average transfer speed (in bytes/sec) of a file transfer since it started </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the approximate speed in bytes per second, averaged across its lifetime. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Query the time the specified transfer has been active</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferRunTime</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the time (in seconds) a file transfer has been active </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies the file transfer to query </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the time in seconds the transfer was active. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="initiate-transfers">
+<h2>Initiate transfers<a class="headerlink" href="#initiate-transfers" title="Permalink to this heading"></a></h2>
+<p>The following functions implement the core functionality of
+filetransfers. They initiate new up- and downloads, request file info,
+delete and rename files, create directories, list directories etc.</p>
+<section id="upload-a-local-file">
+<h3>Upload a local file<a class="headerlink" href="#upload-a-local-file" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_sendFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">file</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">overwrite</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">resume</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">sourceDirectory</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Initiate a file upload to the server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler to which to upload a file </p></li>
+<li><p><strong>channelID</strong> – channel to which to upload the file </p></li>
+<li><p><strong>channelPW</strong> – password of the channel specified in channelID. Pass an empty string if the channel does not have a password. </p></li>
+<li><p><strong>file</strong> – the name of file to upload on the local file system. </p></li>
+<li><p><strong>overwrite</strong> – boolean flag, whether to overwrite the file on the server. If 0 the transfer will fail if the file already exists on the server. </p></li>
+<li><p><strong>resume</strong> – boolean flag, set to 1 to resume a previously aborted or halted transfer. If 1 will append to the file on the server. </p></li>
+<li><p><strong>sourceDirectory</strong> – the absolute path in which the file resides on the local file system. </p></li>
+<li><p><strong>result</strong> – address of a variable in which to store the transferID on success. </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="download-a-file">
+<h3>Download a file<a class="headerlink" href="#download-a-file" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">file</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">overwrite</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">resume</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">destinationDirectory</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Initiate a file download from the server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler from which to download the file </p></li>
+<li><p><strong>channelID</strong> – channel in which the file to download is located </p></li>
+<li><p><strong>channelPW</strong> – password of the channel specified in channelID. Pass an empty string if the channel does not have a password. </p></li>
+<li><p><strong>file</strong> – the name of the file on the server file system. See ts3client_getFileList to receive a list of files. </p></li>
+<li><p><strong>overwrite</strong> – boolean flag, whether to overwrite the local file if it already exists. If set to 0 transfer will fail if local file already exists unless resume is 1. Mutually exclusive to resume. </p></li>
+<li><p><strong>resume</strong> – boolean flag, whether to append to the local file. If set to 1 the contents of the download will be appended to the local file. Mutually exclusive with overwrite. </p></li>
+<li><p><strong>destinationDirectory</strong> – absolute path to the directory in which to store the file. </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the transfer id, used to identity this request in callbacks and other calls regarding the status of this transfer </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="cancel-a-transfer">
+<h3>Cancel a transfer<a class="headerlink" href="#cancel-a-transfer" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_haltTransfer">
+<span class="target" id="clientlib_8h_1a69ce3a18f467228cc9ffbd4b99e39527"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_haltTransfer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">deleteUnfinishedFile</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_haltTransfer" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Cancel a file transfer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the file transfer is happening </p></li>
+<li><p><strong>transferID</strong> – specifies the file transfer to cancel </p></li>
+<li><p><strong>deleteUnfinishedFile</strong> – boolean flag, whether to delete the partially transmitted file from the file system. </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A cancelled transfer can later be resumed by calling <a class="reference internal" href="#c.ts3client_sendFile" title="ts3client_sendFile"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_sendFile()</span></code></a>
+with the same file and target and set <code class="docutils literal notranslate"><span class="pre">resume</span></code> = 1</p>
+</div>
+</section>
+</section>
+<section id="request-file-and-directory-information">
+<h2>Request file and directory information<a class="headerlink" href="#request-file-and-directory-information" title="Permalink to this heading"></a></h2>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestFileList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">path</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>retrieve a list of files in a directory. </p>
+<p>This function is NOT recursive. Only directories and files in the directory specified by path will be listed. You will receive a onFileListEvent callback for every file or directory after this function was successful. Once all files and directories were sent you will receive a onFileListFinishedEvent callback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to request files </p></li>
+<li><p><strong>channelID</strong> – the channel from which to list the files </p></li>
+<li><p><strong>channelPW</strong> – the password of the specified channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>path</strong> – the path in the specified channel from which to list the files. Pass “/” to list the files in the root channel. </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_requestFileInfo">
+<span class="target" id="clientlib_8h_1ae8c0b60065102c7010517b09769692af"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestFileInfo</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">file</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_requestFileInfo" title="Permalink to this definition"></a><br /></dt>
+<dd><p>retrieve information about a specific file. </p>
+<p>You will receive an onFileInfoEvent callback after this function was successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to request the file information. </p></li>
+<li><p><strong>channelID</strong> – the channel in which the file is located </p></li>
+<li><p><strong>channelPW</strong> – the password of the specified channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>file</strong> – absolute path to the file to query information of. Must begin with “/”. </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestDeleteFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">file</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>delete one or more files from a channel. </p>
+<p>You will receive an onServerErrorEvent with the passed returnCode indicating whether or not the operation was successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to delete the file </p></li>
+<li><p><strong>channelID</strong> – the channel in which the file is located </p></li>
+<li><p><strong>channelPW</strong> – the password of the specified channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>file</strong> – a zero terminated array of absolute paths to the files to delete. Each path must begin with “/”. Like {“/file.txt”, “/dir/subdir/test.txt”, …, 0} </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestCreateDirectory</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">directoryPath</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>create a directory in a channel for file organization </p>
+<p>Note: This will NOT recursively create directories. If you need recursive creation call this function again after the intended parent directory has been created. You will receive an onServerErrorEvent with the passed returnCode indicating whether or not the operation was successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the channel is located. </p></li>
+<li><p><strong>channelID</strong> – the channel in which the file is located </p></li>
+<li><p><strong>channelPW</strong> – the password of the specified channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>directoryPath</strong> – absolute path of the directory to create. Must start with “/” e.g. “/existing/newDirName” </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Request renaming or moving a file. If the source and target channels and
+paths are the same, the file will simply be renamed</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestRenameFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">fromChannelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">fromChannelPW</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">toChannelID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">toChannelPW</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">oldFile</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">newFile</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>move or rename a file on the server. </p>
+<p>You will receive an onServerErrorEvent with the passed returnCode indicating whether or not the operation was successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to move/rename the file </p></li>
+<li><p><strong>fromChannelID</strong> – channel the file is currently located in </p></li>
+<li><p><strong>fromChannelPW</strong> – password of the specified channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>toChannelID</strong> – channel id to which to move the file to. Pass the same value as fromChannelID to keep the file in the same channel. </p></li>
+<li><p><strong>toChannelPW</strong> – password of the target channel. Pass an empty string if the channel has no password. </p></li>
+<li><p><strong>oldFile</strong> – current absolute path of the file in the channel. Must start with “/”. </p></li>
+<li><p><strong>newFile</strong> – new absolute path of the file in the target channel. Must start with “/”. e.g. “/subdirectory/filename.txt” </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="speed-limits">
+<h2>Speed limits<a class="headerlink" href="#speed-limits" title="Permalink to this heading"></a></h2>
+<p>The TeamSpeak SDK offers the possibility to control and finetune
+transfer speed limits. These limits can be applied to the complete
+server, specific virtual servers or for each individual transfer. By
+default the transfer speed is unlimited.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Every file transfer should at least have a minimum speed limit of 5kb/s.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Neither the TeamSpeak client nor server will store any of those values.
+When used, they’ll have to be set at each client start to be considered
+permanent.</p>
+</div>
+<section id="set-speed-limits">
+<h3>Set speed limits<a class="headerlink" href="#set-speed-limits" title="Permalink to this heading"></a></h3>
+<p>To set the download speed limit for all virtual servers in bytes/s:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setInstanceSpeedLimitDown</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newLimit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the instance wide download speed limit for file transfer. </p>
+<p>All concurrent file transfers combined will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>newLimit</strong> – maximum download speed in bytes per second. Must be &gt;= 5120. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To set the upload speed limit for all virtual servers in bytes/s:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setInstanceSpeedLimitUp</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newLimit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the instance wide upload speed limit for file transfer. </p>
+<p>All concurrent file transfers combined will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>newLimit</strong> – maximum upload speed in bytes per second. Must be &gt;= 5120. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setServerConnectionHandlerSpeedLimitDown</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newLimit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the virtual server download speed limit for file transfer. </p>
+<p>All concurrent file transfers combined will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to set the limit. </p></li>
+<li><p><strong>newLimit</strong> – maximum download speed in bytes per second. Must be &gt;= 5120. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setServerConnectionHandlerSpeedLimitUp</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newLimit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the virtual server upload speed limit for file transfer. </p>
+<p>All concurrent file transfers combined will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to set the limit. </p></li>
+<li><p><strong>newLimit</strong> – maximum upload speed in bytes per second. Must be &gt;= 5120. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To set the up- or download speed limit for the specified file transfer, first
+determine whether it is an up or download using <a class="reference internal" href="#c.ts3client_isTransferSender" title="ts3client_isTransferSender"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_isTransferSender()</span></code></a>
+The speed limit for the transfer can be set using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setTransferSpeedLimit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newLimit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>set the transfer limit for an individual file transfer. </p>
+<p>The maximum transfer speed will be min(instance limit, virtual server limit, transfer limit). Whether the limit is upload or download depends on what kind of transfer the specified transfer is.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – the transfer to set the limit for </p></li>
+<li><p><strong>newLimit</strong> – the new maximum speed in bytes per second. Must be &gt;= 5120. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="query-speed-limits">
+<h3>Query speed limits<a class="headerlink" href="#query-speed-limits" title="Permalink to this heading"></a></h3>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getInstanceSpeedLimitDown</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">limit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the configured maximum download speed of the server instance. </p>
+<p>The limit is temporary and valid only until ts3client_destroyClientLib is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limit</strong> – address of a variable to receive the limit in bytes per second. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getInstanceSpeedLimitUp</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">limit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the configured maximum upload speed of the server instance. </p>
+<p>The limit is temporary and valid only until ts3client_destroyClientLib is called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limit</strong> – address of a variable to receive the limit in bytes per second. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getServerConnectionHandlerSpeedLimitDown</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">limit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the configured maximum download speed for the virtual server. </p>
+<p>Download speeds on this server will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler to query the value on. </p></li>
+<li><p><strong>limit</strong> – address of a variable to receive the limit in bytes per second. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getServerConnectionHandlerSpeedLimitUp</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">limit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the configured maximum upload speed for the virtual server. </p>
+<p>Upload speeds on this server will not exceed min(instance limit, virtual server limit) bytes per second. The limit is temporary and valid only for the lifetime of the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler to query the value on. </p></li>
+<li><p><strong>limit</strong> – address of a variable to receive the limit in bytes per second. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getTransferSpeedLimit</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">limit</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the speed limit for a specific file transfer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transferID</strong> – specifies which transfer to query. </p></li>
+<li><p><strong>limit</strong> – address of a variable to receive the transfer limit in bytes per second. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="callbacks">
+<h2>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this heading"></a></h2>
+<p>The following callbacks are called for file transfer actions</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onFileTransferStatusEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">transferID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">statusMessage</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">remotefileSize</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when file transfers finish or terminate with an error </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1aa1a520555357d4d5898e9c2d940a1780"><span class="std std-ref">ts3client_sendFile</span></a> </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1a265fe02dadcd06d4002142d7cbbd3c2d"><span class="std std-ref">ts3client_requestFile</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param transferID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>identifies the file transfer the callback was called for. As created by <a class="reference internal" href="../client_api.html#clientlib_8h_1a265fe02dadcd06d4002142d7cbbd3c2d"><span class="std std-ref">ts3client_requestFile</span></a> or <a class="reference internal" href="../client_api.html#clientlib_8h_1aa1a520555357d4d5898e9c2d940a1780"><span class="std std-ref">ts3client_sendFile</span></a> </p>
+</dd>
+<dt class="field-even">Param status<span class="colon">:</span></dt>
+<dd class="field-even"><p>indicates success status or error reason. One of the values from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum. </p>
+</dd>
+<dt class="field-odd">Param statusMessage<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing a human readable description of the status message </p>
+</dd>
+<dt class="field-even">Param remotefileSize<span class="colon">:</span></dt>
+<dd class="field-even"><p>size of the file in bytes at the source of the transfer. </p>
+</dd>
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies the connection the transfer was started on </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onFileListEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">incompletesize</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called as an answer to ts3client_requestFileList. Called once for every file in the requested path, providing file information. </p>
+<p>Followed by a onFileList_FinishedEvent callback after this callback was called for the last file in the requested path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param channelID<span class="colon">:</span></dt>
+<dd class="field-even"><p>the channel in which the file is located </p>
+</dd>
+<dt class="field-odd">Param path<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the folder in which this file or directory is located </p>
+</dd>
+<dt class="field-even">Param name<span class="colon">:</span></dt>
+<dd class="field-even"><p>the name of the file or directory this event is called for </p>
+</dd>
+<dt class="field-odd">Param size<span class="colon">:</span></dt>
+<dd class="field-odd"><p>file size in bytes. 0 if this event describes a directory </p>
+</dd>
+<dt class="field-even">Param datetime<span class="colon">:</span></dt>
+<dd class="field-even"><p>unix timestamp of when this file was last modified </p>
+</dd>
+<dt class="field-odd">Param type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>whether the entry described is a directory or a file. One of the values from the FileTransferType enum. </p>
+</dd>
+<dt class="field-even">Param incompleteSize<span class="colon">:</span></dt>
+<dd class="field-even"><p>number of bytes that have already been transmitted. If not equal to size then this file is still being transmitted or the transfer was aborted. </p>
+</dd>
+<dt class="field-odd">Param returnCode<span class="colon">:</span></dt>
+<dd class="field-odd"><p>allows to identify which call to ts3client_requestFileList caused this event to be fired. Same as given to the ts3client_requestFileList call. Can be NULL </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onFileListFinishedEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called after onFileListEvent was called for all directories / files in a given path. </p>
+<p>This signifies that you now know of all files and directories in the path requested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param channelID<span class="colon">:</span></dt>
+<dd class="field-even"><p>the channel for which the file list is now complete </p>
+</dd>
+<dt class="field-odd">Param path<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the path within the channel that files and directories were requested for. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onFileInfoEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called after a call to ts3client_requestFileInfo providing the requested information about a file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param channelID<span class="colon">:</span></dt>
+<dd class="field-even"><p>the channel in which the file resides </p>
+</dd>
+<dt class="field-odd">Param name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing the absolute path within the channel, including the file / directory name. </p>
+</dd>
+<dt class="field-even">Param size<span class="colon">:</span></dt>
+<dd class="field-even"><p>the size of the file in bytes </p>
+</dd>
+<dt class="field-odd">Param datetime<span class="colon">:</span></dt>
+<dd class="field-odd"><p>unix timestamp for the last time the file was modified </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="textmessages.html" class="btn btn-neutral float-left" title="Text chat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="encryption.html" class="btn btn-neutral float-right" title="Custom encryption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

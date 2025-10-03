@@ -1,0 +1,6 @@
+Button;obj\Debug\res\layout\main.xml
+EditText;obj\Debug\res\layout\main.xml
+LinearLayout;obj\Debug\res\layout\main.xml
+ListView;obj\Debug\res\layout\main.xml
+resources;obj\Debug\res\values\strings.xml
+string;obj\Debug\res\values\strings.xml

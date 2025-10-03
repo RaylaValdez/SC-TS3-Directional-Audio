@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using custom devices &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Activating the capture device" href="audio-activate.html" />
+    <link rel="prev" title="Query current mode and device" href="audio-get-current.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="audio.html">Client Audio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="audio-list-device-mode.html">List available modes and devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-init.html">Initializing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-get-current.html">Query current mode and device</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using custom devices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#register-custom-devices">Register custom devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-custom-devices">Removing custom devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#providing-audio-data">Providing audio data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-playback-data">Retrieve playback data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="audio-activate.html">Activating the capture device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-close.html">Closing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-codecs.html">Audio codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessor.html">Preprocessor options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="playback-options.html">Playback options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-buffer-access.html">Accessing the voice buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-localtest.html">Local Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="audio.html">Client Audio</a></li>
+      <li class="breadcrumb-item active">Using custom devices</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-custom-devices">
+<h1>Using custom devices<a class="headerlink" href="#using-custom-devices" title="Permalink to this heading"></a></h1>
+<p>Instead of opening existing sound devices that TeamSpeak has detected,
+you can also use our custom capture and playback mechanism, which allows
+overriding the way in which TeamSpeak captures and plays back audio. When
+you have opened a custom capture and playback device you must regularly
+supply new sound data via the <a class="reference internal" href="#c.ts3client_processCustomCaptureData" title="ts3client_processCustomCaptureData"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_processCustomCaptureData()</span></code></a>
+function and retrieve data that should be played back via
+<a class="reference internal" href="#c.ts3client_acquireCustomPlaybackData" title="ts3client_acquireCustomPlaybackData"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_acquireCustomPlaybackData()</span></code></a>.</p>
+<p>Where exactly this captured sound data comes from and where the playback
+data goes to is up to you, giving you complete freedom and allows for
+pretty interesting things to be done using this mechanism.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Implementing own custom devices is for special use cases and entirely
+optional.</p>
+</div>
+<section id="register-custom-devices">
+<h2>Register custom devices<a class="headerlink" href="#register-custom-devices" title="Permalink to this heading"></a></h2>
+<p>Registering a custom device announces the device ID and name to the
+Client Lib. Once a custom device has been registered with a device ID,
+the device can be opened like any standard device using
+<a class="reference internal" href="audio-init.html#c.ts3client_openCaptureDevice" title="ts3client_openCaptureDevice"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_openCaptureDevice()</span></code></a> and <a class="reference internal" href="audio-init.html#c.ts3client_openPlaybackDevice" title="ts3client_openPlaybackDevice"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_openPlaybackDevice()</span></code></a>.</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_registerCustomDevice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">deviceID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">deviceDisplayName</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">capFrequency</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">capChannels</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">playFrequency</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">playChannels</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>create a new software device to be used for playback and/or capture. </p>
+<p>This allows you to create custom devices for implementing your own audio capture or playback. For capture devices you will need to regularly provide audio data via the <a class="reference internal" href="../client_api.html#clientlib_8h_1a35ce002bc468262d7324890b874a70a3"><span class="std std-ref">ts3client_processCustomCaptureData</span></a> function. For playback devices you will need to regularly aquire audio data via the <a class="reference internal" href="../client_api.html#clientlib_8h_1a45db2c1d27988dd0b740a6c76756f4e3"><span class="std std-ref">ts3client_acquireCustomPlaybackData</span></a> function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceID</strong> – a unique string by which you will refer to this audio device when opening devices ore removing it. </p></li>
+<li><p><strong>deviceDisplayName</strong> – custom display string for your device. Not required to be unique, you can freely choose this. </p></li>
+<li><p><strong>capFrequency</strong> – The frequency of the capture device. Determines the frequency the audio you’re passing in to <a class="reference internal" href="../client_api.html#clientlib_8h_1a35ce002bc468262d7324890b874a70a3"><span class="std std-ref">ts3client_processCustomCaptureData</span></a> is expected to be in when using this device. </p></li>
+<li><p><strong>capChannels</strong> – The amount of channels the audio source on this device has. Determines the number of audio channels the data you’re passing to <a class="reference internal" href="../client_api.html#clientlib_8h_1a35ce002bc468262d7324890b874a70a3"><span class="std std-ref">ts3client_processCustomCaptureData</span></a> is expected to have when using this device. </p></li>
+<li><p><strong>playFrequency</strong> – Determines which frequency the audio you’re getting out of <a class="reference internal" href="../client_api.html#clientlib_8h_1a45db2c1d27988dd0b740a6c76756f4e3"><span class="std std-ref">ts3client_acquireCustomPlaybackData</span></a> has when using this device. </p></li>
+<li><p><strong>playChannels</strong> – Determines the number of audio channels of the audio you’re getting out of <a class="reference internal" href="../client_api.html#clientlib_8h_1a45db2c1d27988dd0b740a6c76756f4e3"><span class="std std-ref">ts3client_acquireCustomPlaybackData</span></a> has when using this device. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="removing-custom-devices">
+<h2>Removing custom devices<a class="headerlink" href="#removing-custom-devices" title="Permalink to this heading"></a></h2>
+<p>Removing the device will make it unavailable to use and you will no longer
+have to supply audio data or poll playback data.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Playback devices will be instantly closed and no playback data will be
+provided any longer.</p>
+<p>Capture devices must be closed before being removed</p>
+</div>
+</section>
+<section id="providing-audio-data">
+<h2>Providing audio data<a class="headerlink" href="#providing-audio-data" title="Permalink to this heading"></a></h2>
+<p>To send the captured data from your device to the Client lib you have to call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_processCustomCaptureData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">deviceName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">samples</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Provide audio data for a registered custom device. </p>
+<p>When using custom devices, you’re expected to call this function regularly to provide your audio data to the client lib for processing and sending it to the server. The audio will be sent to the connection handler that currently has the specified custom device active (if any). The client lib will read captureChannels * samples * sizeof(short) bytes of data from the buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceName</strong> – the deviceID for which you’re providing audio data. Must be a deviceID previously passed to a <a class="reference internal" href="../client_api.html#clientlib_8h_1a4dcc01743a5de17b4fd608c31022aeee"><span class="std std-ref">ts3client_registerCustomDevice</span></a> call. </p></li>
+<li><p><strong>buffer</strong> – pointer to the beginning of the raw audio data for the device. Caller must ensure that enough data is present in the buffer (samples * channel count of the audio device). </p></li>
+<li><p><strong>samples</strong> – the number of audio frames in the buffer </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="retrieve-playback-data">
+<h2>Retrieve playback data<a class="headerlink" href="#retrieve-playback-data" title="Permalink to this heading"></a></h2>
+<p>To retrieve playback data from the client lib you have to call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_acquireCustomPlaybackData</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">deviceName</span></span>, <span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">buffer</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">samples</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve playback data for the specified device from the client lib. </p>
+<p>When using custom playback devices you’re expected to call this function regularly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deviceName</strong> – the deviceID from which to retrieve audio data. Must be a deviceID previously passed to a <a class="reference internal" href="../client_api.html#clientlib_8h_1a4dcc01743a5de17b4fd608c31022aeee"><span class="std std-ref">ts3client_registerCustomDevice</span></a> call. </p></li>
+<li><p><strong>buffer</strong> – address in which to write the sound data that is pending playback. Caller must allocate sufficient memory (samples * channels of the audio device). </p></li>
+<li><p><strong>samples</strong> – how many audio frames to retrieve. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason. May return ERROR_sound_no_data meaning no sound is currently played on the device. No data has been written to the buffer. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>This function may return <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_sound_no_data" title="Ts3ErrorType.ERROR_sound_no_data"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_sound_no_data</span></code></a>
+which can be used for performance optimization. It means there is currently
+only silence (nobody is talking, no wave files being played etc.) and instead
+of returning a buffer full of zeroes it just notifies the user there is
+currently no data. This allows you to not playback any sound data for that
+moment, if your API supports that (potentially saving some CPU), or to just
+fill the sound buffer with zeroes and playback this if your sound API demands
+you to fill it with something for every given time.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>Overview on registering and opening a custom device:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w"> </span><span class="cm">/* Register a new custom sound device with specified frequency and number of channels */</span>
+<span class="linenos"> 2</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_registerCustomDevice</span><span class="p">(</span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Nice displayable wave device name&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">captureFrequency</span><span class="p">,</span><span class="w"> </span><span class="n">captureChannels</span><span class="p">,</span><span class="w"> </span><span class="n">playbackFrequncy</span><span class="p">,</span><span class="w"> </span><span class="n">playbackChannels</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to register custom device</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="w">     </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="w"> </span><span class="cm">/* Open capture device we created earlier */</span>
+<span class="linenos"> 8</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_openCaptureDevice</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;custom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error opening capture device</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">     </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w"> </span><span class="cm">/* Open playback device we created earlier */</span>
+<span class="linenos">14</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_openPlaybackDevice</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;custom&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error opening playback device</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">16</span><span class="w">     </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">17</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="w"> </span><span class="cm">/* Main loop */</span>
+<span class="linenos">20</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">abort</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">21</span><span class="w">     </span><span class="cm">/* Fill captureBuffer from your custom device */</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="w">     </span><span class="cm">/* Stream your capture data to the client lib */</span>
+<span class="linenos">24</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_processCustomCaptureData</span><span class="p">(</span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">captureBuffer</span><span class="p">,</span><span class="w"> </span><span class="n">captureBufferSize</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">25</span><span class="w">         </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to process capture data</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">     </span><span class="p">}</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="w">     </span><span class="cm">/* Get playback data from the client lib */</span>
+<span class="linenos">29</span><span class="w">     </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_acquireCustomPlaybackData</span><span class="p">(</span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">playbackBuffer</span><span class="p">,</span><span class="w"> </span><span class="n">playbackBufferSize</span><span class="p">);</span>
+<span class="linenos">30</span><span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">31</span><span class="w">         </span><span class="cm">/* Playback data available, send playbackBuffer to your custom device */</span>
+<span class="linenos">32</span><span class="w">     </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_sound_no_data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">33</span><span class="w">         </span><span class="cm">/* Not an error. The client lib has no playback data available. Depending on your custom sound API, either</span>
+<span class="linenos">34</span><span class="cm">            pause playback for performance optimisation or send a buffer of zeros. */</span>
+<span class="linenos">35</span><span class="w">     </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">36</span><span class="w">         </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to get playback data</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Error occured */</span>
+<span class="linenos">37</span><span class="w">     </span><span class="p">}</span>
+<span class="linenos">38</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">39</span>
+<span class="linenos">40</span><span class="w"> </span><span class="cm">/* Unregister the custom device. This automatically close the device. */</span>
+<span class="linenos">41</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_unregisterCustomDevice</span><span class="p">(</span><span class="s">&quot;customWaveDeviceId&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">42</span><span class="w">     </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Failed to unregister custom device</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">43</span><span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Further sample code on how to use a custom device can be found in the
+“client_customdevice” example included in the SDK.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio-get-current.html" class="btn btn-neutral float-left" title="Query current mode and device" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audio-activate.html" class="btn btn-neutral float-right" title="Activating the capture device" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

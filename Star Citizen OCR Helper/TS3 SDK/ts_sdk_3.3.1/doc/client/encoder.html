@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encoder options &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preprocessor options" href="preprocessor.html" />
+    <link rel="prev" title="Audio codecs" href="audio-codecs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="audio.html">Client Audio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="audio-list-device-mode.html">List available modes and devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-init.html">Initializing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-get-current.html">Query current mode and device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-custom-device.html">Using custom devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-activate.html">Activating the capture device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-close.html">Closing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-codecs.html">Audio codecs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Encoder options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessor.html">Preprocessor options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="playback-options.html">Playback options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-buffer-access.html">Accessing the voice buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-localtest.html">Local Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="audio.html">Client Audio</a></li>
+      <li class="breadcrumb-item active">Encoder options</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="encoder-options">
+<h1>Encoder options<a class="headerlink" href="#encoder-options" title="Permalink to this heading"></a></h1>
+<div class="admonition important" id="encoder">
+<p class="admonition-title">Important</p>
+<p>The use of the Speex codec is deprecated and support for it may be
+removed at any time in the future.</p>
+<p>It is highly recommended to use Opus Voice instead.</p>
+</div>
+<p>Speech quality and bandwidth usage depend on the used Speex encoder. As
+Speex is a lossy code, the quality value controls the balance between
+voice quality and network traffic. Valid quality values range from 0 to
+10, default is 7. The encoding quality can be configured for each
+channel using the <a class="reference internal" href="../properties.html#c.ChannelProperties.CHANNEL_CODEC_QUALITY" title="ChannelProperties.CHANNEL_CODEC_QUALITY"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">CHANNEL_CODEC_QUALITY</span></code></a> property.
+The currently used channel codec, codec quality and estimated average
+used bitrate (without overhead) can be queried using <a class="reference internal" href="#c.ts3client_getEncodeConfigValue" title="ts3client_getEncodeConfigValue"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_getEncodeConfigValue()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Encoder options are tied to a capture device, so querying the values
+only makes sense after a device has been opened.</p>
+</div>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getEncodeConfigValue</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ident</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve voice encoder information. </p>
+<p>Encoder options are bound to a capture device. You must open a capture device on the specified connection handler prior to calling this function. bitrate will return the estimated bitrate of audio without any overhead. name will return the used codec name. quality will return the codec quality setting, a value between 0 and 10 inclusive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to query the encoder information for. </p></li>
+<li><p><strong>ident</strong> – the configuration value to query. Valid values are name, quality and bitrate </p></li>
+<li><p><strong>result</strong> – address of a variable to receive an utf8 encoded c string with the value of the option queried. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p>To adjust the channel codec quality to a value of 5, you would call:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ts3client_setChannelVariableAsInt</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">channelID</span><span class="p">,</span><span class="w"> </span><span class="n">CHANNEL_CODEC_QUALITY</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To query information about the current channel quality, do:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">quality</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bitrate</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="n">ts3client_getEncodeConfigValue</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name</span><span class="p">);</span>
+<span class="linenos"> 3</span><span class="n">ts3client_getEncodeConfigValue</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;quality&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">quality</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="n">ts3client_getEncodeConfigValue</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bitrate&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">bitrate</span><span class="p">);</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Name = %s, quality = %s, bitrate = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">quality</span><span class="p">,</span><span class="w"> </span><span class="n">bitrate</span><span class="p">);</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">quality</span><span class="p">);</span>
+<span class="linenos">10</span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">bitrate</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Error checking has been left out of these examples. You should
+check the return value and only access the variables if the function
+returned <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="Ts3ErrorType.ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a></p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio-codecs.html" class="btn btn-neutral float-left" title="Audio codecs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="preprocessor.html" class="btn btn-neutral float-right" title="Preprocessor options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List channels &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a new channel" href="channel-create.html" />
+    <link rel="prev" title="Channel Management" href="channels.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="channels.html">Channel Management</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">List channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="info-channel.html">Channel information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-create.html">Creating a new channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-move.html">Moving a channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-sort.html">Channel sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-delete.html">Deleting a channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-join.html">Joining a channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-subscribe.html">Channel subscriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="channels.html">Channel Management</a></li>
+      <li class="breadcrumb-item active">List channels</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="list-channels">
+<h1>List channels<a class="headerlink" href="#list-channels" title="Permalink to this heading"></a></h1>
+<p>A list of all channels on the specified virtual server can be queried
+with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getChannelList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get a list of all channels currently on the server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to retrieve the channels </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a zero terminated array of channel ids, like {1, 4023, 49, 8534, …, 0} Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To query the id of the channel the specified client has currently joined use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getChannelOfClient</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Get id of the current channel the specified client is in. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the client is located </p></li>
+<li><p><strong>clientID</strong> – the client to receive the current channel for </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the channel id of the specified client </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To get the parent channel of a given channel use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getParentChannelOfChannel</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get the id of the parent channel of the specified channel. </p>
+<p>If the channel specified by channelID is a root channel, the result will be 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the channel is located </p></li>
+<li><p><strong>channelID</strong> – id of the channel to retrieve the parent of </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the parent channel id. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p>Example code to print a list of all channels on a virtual server:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">uint64</span><span class="o">*</span><span class="w"> </span><span class="n">channels</span><span class="p">;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getChannelList</span><span class="p">(</span><span class="n">serverID</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">5</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Channel ID: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">channels</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="linenos">6</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">7</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">channels</span><span class="p">);</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>To print all visible clients:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">anyID</span><span class="o">*</span><span class="w"> </span><span class="n">clients</span><span class="p">;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getClientList</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">clients</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">5</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Client ID: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="linenos">6</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">7</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">clients</span><span class="p">);</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Example to print all clients who are member of channel with ID 123:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">uint64</span><span class="w"> </span><span class="n">channelID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Channel ID in this example */</span>
+<span class="linenos">2</span><span class="n">anyID</span><span class="w"> </span><span class="o">*</span><span class="n">clients</span><span class="p">;</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getChannelClientList</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">channelID</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">5</span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">6</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Client ID: %u</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clients</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="linenos">7</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">8</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">clients</span><span class="p">);</span>
+<span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="channels.html" class="btn btn-neutral float-left" title="Channel Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="channel-create.html" class="btn btn-neutral float-right" title="Creating a new channel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

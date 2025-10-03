@@ -1,0 +1,22 @@
+#
+# Makefile to build TeamSpeak 3 SDK Server Sample on Linux
+#
+
+CFLAGS = -Wall -g -O0
+
+all: ts3_server
+
+ts3_server: id_io.o main.o libts3server.so
+	gcc -o ts3_server id_io.o main.o -Wl,-rpath,"." -L../ts3_sdk_3.0.4/bin/linux/amd64 -lts3server
+
+libts3server.so:
+	ln -sf ../ts3_sdk_3.0.4/bin/linux/amd64/libts3server.so libts3server.so
+
+main.o: main.c
+	gcc -c -I../ts3_sdk_3.0.4/include main.c $(CFLAGS)
+
+id_io.o: id_io.c
+	gcc -c -I../ts3_sdk_3.0.4/include id_io.c $(CFLAGS)
+
+clean:
+	rm -rf *.o ts3_server libts3server.so

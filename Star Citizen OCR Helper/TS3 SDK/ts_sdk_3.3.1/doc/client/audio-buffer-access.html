@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessing the voice buffer &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Local Test mode" href="audio-localtest.html" />
+    <link rel="prev" title="Playback options" href="playback-options.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="audio.html">Client Audio</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="audio-list-device-mode.html">List available modes and devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-init.html">Initializing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-get-current.html">Query current mode and device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-custom-device.html">Using custom devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-activate.html">Activating the capture device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-close.html">Closing devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-codecs.html">Audio codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoder.html">Encoder options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocessor.html">Preprocessor options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="playback-options.html">Playback options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Accessing the voice buffer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#playback">Playback</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#before-effects-or-mixing">Before effects or mixing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#after-effects-but-before-mixing">After effects but before mixing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#after-effects-and-mixing">After effects and mixing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#capture">Capture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#before-preprocessing">Before preprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#after-preprocessing">After preprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#voice-recording">Voice recording</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="audio-localtest.html">Local Test mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="audio.html">Client Audio</a></li>
+      <li class="breadcrumb-item active">Accessing the voice buffer</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="accessing-the-voice-buffer">
+<h1>Accessing the voice buffer<a class="headerlink" href="#accessing-the-voice-buffer" title="Permalink to this heading"></a></h1>
+<p>The TeamSpeak Client Lib allows users to access the raw playback and
+capture voice data and even modify it, for example to add effects to the
+voice. These callbacks are also used by the TeamSpeak client for the
+voice recording feature.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using these low-level callbacks is not required and should be reserved
+for specific needs. Most SDK applications won’t need to implement these
+callbacks.</p>
+</div>
+<section id="playback">
+<h2>Playback<a class="headerlink" href="#playback" title="Permalink to this heading"></a></h2>
+<section id="before-effects-or-mixing">
+<h3>Before effects or mixing<a class="headerlink" href="#before-effects-or-mixing" title="Permalink to this heading"></a></h3>
+<p>The following event is called when a voice packet from a client (not own
+client) is decoded and about to be played over your sound device, but
+before it is 3D positioned and mixed with other sounds. You can use this
+function to alter the voice data (for example when you want to apply
+effects to it) or to simply get voice data. The TeamSpeak client uses
+this function to record sessions.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onEditPlaybackVoiceDataEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">sampleCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channels</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called before any effects are applied, allows access to individual client raw audio data </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>id of the source client for the audio </p>
+</dd>
+<dt class="field-odd">Param samples<span class="colon">:</span></dt>
+<dd class="field-odd"><p>buffer of audio data for the client as 16 bit signed at 48kHz </p>
+</dd>
+<dt class="field-even">Param sampleCount<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many audio frames are available in the buffer </p>
+</dd>
+<dt class="field-odd">Param channels<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of audio channels in the audio data </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="after-effects-but-before-mixing">
+<h3>After effects but before mixing<a class="headerlink" href="#after-effects-but-before-mixing" title="Permalink to this heading"></a></h3>
+<p>The following event is called when a voice packet from a client (not own
+client) is decoded and 3D positioned and about to be played over your
+sound device, but before it is mixed with other sounds. You can use this
+function to alter/get the voice data after 3D positioning.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onEditPostProcessVoiceDataEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">sampleCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channels</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelSpeakerArray</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelFillMask</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called before audio data is mixed together into a single audio stream for playback, but after effects (3D positioning for example) have been applied. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>id of the source client for the audio </p>
+</dd>
+<dt class="field-odd">Param samples<span class="colon">:</span></dt>
+<dd class="field-odd"><p>buffer of audio data for the client as 16 bit signed at 48kHz </p>
+</dd>
+<dt class="field-even">Param sampleCount<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many audio frames are available in the buffer </p>
+</dd>
+<dt class="field-odd">Param channels<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of audio channels in the audio data </p>
+</dd>
+<dt class="field-even">Param channelSpeakerArray<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array with an entry for each channel in the buffer, defining the speaker each channel represents. see SPEAKER_* defines in public_definitions.h </p>
+</dd>
+<dt class="field-odd">Param channelFillMask<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a bit mask of SPEAKER_* that defines which of the channels in the buffer have audio data. Be sure to set the corresponding flag when adding audio to previously empty channels in the buffer. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h4>
+<p>For example, this callback reports:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_FRONT_CENTER</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_LOW_FREQUENCY</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_BACK_LEFT</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_BACK_RIGHT</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_SIDE_LEFT</span>
+<span class="n">channelSpeakerArray</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SPEAKER_SIDE_RIGHT</span><span class="w">  </span><span class="c1">// Quite unusual setup</span>
+<span class="o">*</span><span class="n">channelFillMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This means “samples” points to 6 channel data, but only the
+SPEAKER_FRONT_CENTER channel has data, the other channels are undefined
+(not necessarily 0, but undefined).</p>
+<p>So for the first sample, samples[0] has data and samples[1], samples[2],
+samples[3], samples[4] and samples[5] are undefined.</p>
+<p>If you want to add SPEAKER_BACK_RIGHT channel data you would do
+something like:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">channelFillMask</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// SPEAKER_BACK_RIGHT is the 4th channel (is index 3) according to *channelSpeakerArray.</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">sampleCount</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">samples</span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getChannelSoundData</span><span class="p">(</span><span class="n">SPEAKER_BACK_RIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="after-effects-and-mixing">
+<h3>After effects and mixing<a class="headerlink" href="#after-effects-and-mixing" title="Permalink to this heading"></a></h3>
+<p>The following event is called when all sounds that are about to be
+played back for this server connection are mixed. This is the last
+chance to alter/get sound.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onEditMixedPlaybackVoiceDataEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">sampleCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channels</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelSpeakerArray</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelFillMask</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called after mixing individual client audio together but before sending it to playback device. </p>
+<p>Last chance to access/modify audio data before it gets sent to the playback device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param samples<span class="colon">:</span></dt>
+<dd class="field-even"><p>buffer of audio data as 16 bit signed at 48kHz </p>
+</dd>
+<dt class="field-odd">Param sampleCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>how many audio frames are available in the buffer </p>
+</dd>
+<dt class="field-even">Param channels<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many audio channels are available in the buffer </p>
+</dd>
+<dt class="field-odd">Param channelSpeakerArray<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Array with an entry for each channel in the buffer, defining the speaker each channel represents. See SPEAKER_* defines in public_definitions.h </p>
+</dd>
+<dt class="field-even">Param channelFillMask<span class="colon">:</span></dt>
+<dd class="field-even"><p>a bit mask of SPEAKER_* that defines which of the channels in the buffer have audio data. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="capture">
+<h2>Capture<a class="headerlink" href="#capture" title="Permalink to this heading"></a></h2>
+<section id="before-preprocessing">
+<h3>Before preprocessing<a class="headerlink" href="#before-preprocessing" title="Permalink to this heading"></a></h3>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onEditCapturedVoiceDataPreprocessEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">sampleCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channels</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called after audio data was aquired from the capture device, without any pre processing applied. Allows access to raw audio data. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param samples<span class="colon">:</span></dt>
+<dd class="field-even"><p>buffer of audio data </p>
+</dd>
+<dt class="field-odd">Param sampleCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>how many audio frames are available in the buffer </p>
+</dd>
+<dt class="field-even">Param channels<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many audio channels are available in the buffer </p>
+</dd>
+<dt class="field-odd">Param flags<span class="colon">:</span></dt>
+<dd class="field-odd"><p>allows to mute the audio stream, set LSB to 1 to mute the audio. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="after-preprocessing">
+<h3>After preprocessing<a class="headerlink" href="#after-preprocessing" title="Permalink to this heading"></a></h3>
+<p>The following event is called after sound is recorded from the sound
+device and is preprocessed. This event can be used to get/alter recorded
+sound. It can also be used to determine if this sound will be transmitted
+to the server, or muted.
+This is used by the TeamSpeak client to record sessions.</p>
+<p>If the sound data will be transmitted, (<cite>*edited | 2</cite>) is true. If the sound
+data is changed, set bit 1 (<cite>*edited |= 1</cite>). If the sound should not be
+transmitted, clear bit 2. (<cite>*edited &amp;= ~2</cite>)</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onEditCapturedVoiceDataEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">sampleCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">channels</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">edited</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called after pre processing has been applied to recorded voice data, before it is sent to the server. </p>
+<p>This allows access to or modification of captured data from the recording device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param samples<span class="colon">:</span></dt>
+<dd class="field-even"><p>buffer of audio data as 16 bit signed at 48kHz </p>
+</dd>
+<dt class="field-odd">Param sampleCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>how many audio frames are available in the buffer </p>
+</dd>
+<dt class="field-even">Param channels<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many audio channels are available in the buffer </p>
+</dd>
+<dt class="field-odd">Param edited<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bitMask indicating whether you modified the buffer. Set LSB to 1 if you modified the buffer. Bit 2 indicates whether or not this buffer will be sent to the server. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="voice-recording">
+<h3>Voice recording<a class="headerlink" href="#voice-recording" title="Permalink to this heading"></a></h3>
+<p>When using the above callbacks to record voice, you should notify the
+server when recording starts or stops with the following functions:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_startVoiceRecording</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Flags the client as recording received audio transmissions. </p>
+<p>This does NOT cause any recording to take place, it merely informs other clients that this client is actually recording the conversation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to flag this client for recording. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_stopVoiceRecording</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Flags the client as no longer recording audio transmissions. </p>
+<p>Unsets the flag set by ts3client_startVoiceRecording causing other clients to no longer mark this client as recording the conversation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to unset the recording flag for this client. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="playback-options.html" class="btn btn-neutral float-left" title="Playback options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audio-localtest.html" class="btn btn-neutral float-right" title="Local Test mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

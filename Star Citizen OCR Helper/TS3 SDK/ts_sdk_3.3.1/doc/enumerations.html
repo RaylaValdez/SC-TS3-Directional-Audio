@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structures &amp; Enumerations &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TeamSpeak Client Functions" href="client_api.html" />
+    <link rel="prev" title="Property Enums" href="properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property Enums</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Structures &amp; Enumerations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common">Common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#client">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#voice">Voice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codecs">Codecs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-messaging">Text messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-transfer">File Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#whisper">Whisper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server">Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Structures &amp; Enumerations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="structures-enumerations">
+<h1>Structures &amp; Enumerations<a class="headerlink" href="#structures-enumerations" title="Permalink to this heading"></a></h1>
+<section id="common">
+<h2>Common<a class="headerlink" href="#common" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.LogTypes">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogTypes</span></span></span><a class="headerlink" href="#c.LogTypes" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_NONE">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4aa44aafbb12753244d9b6a191570cfeec"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_NONE</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_NONE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Logging is disabled. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_FILE">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4a32355d99ed66220b5b4847717524d9c3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_FILE</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_FILE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Log to regular log file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_CONSOLE">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4ae67bc4eafe903f804e744adeca9df633"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_CONSOLE</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_CONSOLE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Log to standard output / error. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_USERLOGGING">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4af44106f37836c8f8202f9a2859421bab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_USERLOGGING</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_USERLOGGING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>User defined logging. Will call the <a class="reference internal" href="server_api.html#struct_server_lib_functions_1a9899779b855cfcbe9a90ce3e845f2a26"><span class="std std-ref">ServerLibFunctions::onUserLoggingMessageEvent</span></a> callback for every message to be logged. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_NO_NETLOGGING">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4a620098e0681636f54f35a510a10fef11"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_NO_NETLOGGING</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_NO_NETLOGGING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Not used. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_DATABASE">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4ac91efbc4cd3e83d49dd061c5d302eb3a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_DATABASE</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_DATABASE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Log to database (deprecated, server only, no effect in SDK) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LogTypes.LogType_SYSLOG">
+<span class="target" id="logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4a779b54df6178de5242cf501ecfcc48bd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LogType_SYSLOG</span></span></span><a class="headerlink" href="#c.LogTypes.LogType_SYSLOG" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Log to syslog (only available on Linux) </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ReasonIdentifier">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReasonIdentifier</span></span></span><a class="headerlink" href="#c.ReasonIdentifier" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_NONE">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6abf0afd33f809fbe44411333cba8a6c6b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_NONE</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_NONE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>no reason data </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_MOVED">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a2f246a55f203558a8b81612dbc9c5f6a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_MOVED</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_MOVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client was moved </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_SUBSCRIPTION">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a1946bd3cdbee2b6d513495015dc333c8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_SUBSCRIPTION</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_SUBSCRIPTION" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_LOST_CONNECTION">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a68a963b65854baa6923ba8eba7e18bc1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_LOST_CONNECTION</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_LOST_CONNECTION" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_KICK_CHANNEL">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6ad0e99d3090d3436096e446fdafe5b279"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_KICK_CHANNEL</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_KICK_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_KICK_SERVER">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a08757b8ce0fea56a92660ba1cb637427"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_KICK_SERVER</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_KICK_SERVER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_KICK_SERVER_BAN">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6aac3ac500f762c35d06335d7cd21dec19"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_KICK_SERVER_BAN</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_KICK_SERVER_BAN" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_SERVERSTOP">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a6009c0da7f5a172a7668f15ae23b5f84"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_SERVERSTOP</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_SERVERSTOP" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_CLIENTDISCONNECT">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6ace6a8b27ed725e2fc1c816aeeb6146d2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_CLIENTDISCONNECT</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_CLIENTDISCONNECT" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_CHANNELUPDATE">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6ae4e500e0c3eced4e33b4239fd656cf6a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_CHANNELUPDATE</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_CHANNELUPDATE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_CHANNELEDIT">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a750cfbd55ca01921eb60c37e4155d957"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_CHANNELEDIT</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_CHANNELEDIT" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ReasonIdentifier.REASON_CLIENTDISCONNECT_SERVER_SHUTDOWN">
+<span class="target" id="public__definitions_8h_1a69ec184034d1bca58b0d2220ba192cc6a42e1478d618b3242fed2e0c7fcdc48a2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">REASON_CLIENTDISCONNECT_SERVER_SHUTDOWN</span></span></span><a class="headerlink" href="#c.ReasonIdentifier.REASON_CLIENTDISCONNECT_SERVER_SHUTDOWN" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="client">
+<h2>Client<a class="headerlink" href="#client" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ConnectStatus">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConnectStatus</span></span></span><a class="headerlink" href="#c.ConnectStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectStatus.STATUS_DISCONNECTED">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9a97207f3457ed3b04ca92ff55d1aec3d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_DISCONNECTED</span></span></span><a class="headerlink" href="#c.ConnectStatus.STATUS_DISCONNECTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>There is no activity to the server, this is the default value. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectStatus.STATUS_CONNECTING">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9a6adfabb74b7d99c49c10e7d15b40def7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_CONNECTING</span></span></span><a class="headerlink" href="#c.ConnectStatus.STATUS_CONNECTING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>We are trying to connect, we haven’t got a client id yet, we haven’t been accepted by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectStatus.STATUS_CONNECTED">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9abde580858760435edaac29f8ab85200c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_CONNECTED</span></span></span><a class="headerlink" href="#c.ConnectStatus.STATUS_CONNECTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The server has accepted us, we can talk and hear and we have a client id, but we don’t have the channels and clients yet, we can get server infos (welcome msg etc.) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectStatus.STATUS_CONNECTION_ESTABLISHING">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9a8a99e26c34d05b9665752a5d3d6d60db"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_CONNECTION_ESTABLISHING</span></span></span><a class="headerlink" href="#c.ConnectStatus.STATUS_CONNECTION_ESTABLISHING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>we are connected and we are visible </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ConnectStatus.STATUS_CONNECTION_ESTABLISHED">
+<span class="target" id="public__definitions_8h_1a4ad542bdb9766f9d97ea5a72cd85f5b9a342bc98a6b9735a9aefeea398f36f3a3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_CONNECTION_ESTABLISHED</span></span></span><a class="headerlink" href="#c.ConnectStatus.STATUS_CONNECTION_ESTABLISHED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>we are connected and we have the client and channels available </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.Visibility">
+<span class="target" id="public__definitions_8h_1a53d6f8ccb0015ea020228de41cfd2162"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Visibility</span></span></span><a class="headerlink" href="#c.Visibility" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Visibility.ENTER_VISIBILITY">
+<span class="target" id="public__definitions_8h_1a53d6f8ccb0015ea020228de41cfd2162a4cb17edf4415b02d90d790f9b87b5458"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ENTER_VISIBILITY</span></span></span><a class="headerlink" href="#c.Visibility.ENTER_VISIBILITY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client joined from an unsubscribed channel, or joined the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Visibility.RETAIN_VISIBILITY">
+<span class="target" id="public__definitions_8h_1a53d6f8ccb0015ea020228de41cfd2162a58ba211a892b2338c699d3013d9a7d54"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RETAIN_VISIBILITY</span></span></span><a class="headerlink" href="#c.Visibility.RETAIN_VISIBILITY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client switched from one subscribed channel to a different subscribed channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Visibility.LEAVE_VISIBILITY">
+<span class="target" id="public__definitions_8h_1a53d6f8ccb0015ea020228de41cfd2162af90c8febac03011b6a940cbb60f3298e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LEAVE_VISIBILITY</span></span></span><a class="headerlink" href="#c.Visibility.LEAVE_VISIBILITY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client switches to an unsubscribed channel, or disconnected from server. </p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="voice">
+<h2>Voice<a class="headerlink" href="#voice" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.TalkStatus">
+<span class="target" id="public__definitions_8h_1a1520906bab94ba89da5ef8053572d174"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TalkStatus</span></span></span><a class="headerlink" href="#c.TalkStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TalkStatus.STATUS_NOT_TALKING">
+<span class="target" id="public__definitions_8h_1a1520906bab94ba89da5ef8053572d174adb6dec6dd51104edabfaed7448d58bf9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_NOT_TALKING</span></span></span><a class="headerlink" href="#c.TalkStatus.STATUS_NOT_TALKING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client is not talking </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TalkStatus.STATUS_TALKING">
+<span class="target" id="public__definitions_8h_1a1520906bab94ba89da5ef8053572d174a23d5cb488938c415bc5550c57ceeab9f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_TALKING</span></span></span><a class="headerlink" href="#c.TalkStatus.STATUS_TALKING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client is talking </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TalkStatus.STATUS_TALKING_WHILE_DISABLED">
+<span class="target" id="public__definitions_8h_1a1520906bab94ba89da5ef8053572d174a9b0f3d2d9873fb4073da523a521f23fb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">STATUS_TALKING_WHILE_DISABLED</span></span></span><a class="headerlink" href="#c.TalkStatus.STATUS_TALKING_WHILE_DISABLED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client is talking while the microphone is muted (only valid for own client) </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.MuteInputStatus">
+<span class="target" id="public__definitions_8h_1ab840a92a6f6b1dc6e5fcd35d7f4645c6"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MuteInputStatus</span></span></span><a class="headerlink" href="#c.MuteInputStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.MuteInputStatus.MUTEINPUT_NONE">
+<span class="target" id="public__definitions_8h_1ab840a92a6f6b1dc6e5fcd35d7f4645c6a6e6518cd04ead4f17001e2b4cc1dceda"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MUTEINPUT_NONE</span></span></span><a class="headerlink" href="#c.MuteInputStatus.MUTEINPUT_NONE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Microphone is not muted, audio is sent to the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.MuteInputStatus.MUTEINPUT_MUTED">
+<span class="target" id="public__definitions_8h_1ab840a92a6f6b1dc6e5fcd35d7f4645c6a17b46dc8267ad3cc94c0845646425c3d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MUTEINPUT_MUTED</span></span></span><a class="headerlink" href="#c.MuteInputStatus.MUTEINPUT_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Microphone is muted, no audio is transmitted to the server. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.MuteOutputStatus">
+<span class="target" id="public__definitions_8h_1ae3eda81fe1b03a75f1e5b139195398f4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MuteOutputStatus</span></span></span><a class="headerlink" href="#c.MuteOutputStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.MuteOutputStatus.MUTEOUTPUT_NONE">
+<span class="target" id="public__definitions_8h_1ae3eda81fe1b03a75f1e5b139195398f4a48119ac94b468b316bf905d77aa3f20f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MUTEOUTPUT_NONE</span></span></span><a class="headerlink" href="#c.MuteOutputStatus.MUTEOUTPUT_NONE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Speaker is active, server is sending us audio. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.MuteOutputStatus.MUTEOUTPUT_MUTED">
+<span class="target" id="public__definitions_8h_1ae3eda81fe1b03a75f1e5b139195398f4a9a6727166551b8ca367465348c3014d3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MUTEOUTPUT_MUTED</span></span></span><a class="headerlink" href="#c.MuteOutputStatus.MUTEOUTPUT_MUTED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Speaker is muted, server is not sending audio to us. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.HardwareInputStatus">
+<span class="target" id="public__definitions_8h_1aa9937ac1fcafaacf0360ca4bc9f87f91"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HardwareInputStatus</span></span></span><a class="headerlink" href="#c.HardwareInputStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.HardwareInputStatus.HARDWAREINPUT_DISABLED">
+<span class="target" id="public__definitions_8h_1aa9937ac1fcafaacf0360ca4bc9f87f91a43d6d2798c49e7f185d679c45b533b50"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HARDWAREINPUT_DISABLED</span></span></span><a class="headerlink" href="#c.HardwareInputStatus.HARDWAREINPUT_DISABLED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>no capture device opened </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.HardwareInputStatus.HARDWAREINPUT_ENABLED">
+<span class="target" id="public__definitions_8h_1aa9937ac1fcafaacf0360ca4bc9f87f91a6be99cd4f528e2a04c5e321639848731"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HARDWAREINPUT_ENABLED</span></span></span><a class="headerlink" href="#c.HardwareInputStatus.HARDWAREINPUT_ENABLED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>capture device open </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.HardwareOutputStatus">
+<span class="target" id="public__definitions_8h_1ac22bd489e977a5bb0749c4db0a93805b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HardwareOutputStatus</span></span></span><a class="headerlink" href="#c.HardwareOutputStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.HardwareOutputStatus.HARDWAREOUTPUT_DISABLED">
+<span class="target" id="public__definitions_8h_1ac22bd489e977a5bb0749c4db0a93805bafeadc93a941c340e4a291ac29955263d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HARDWAREOUTPUT_DISABLED</span></span></span><a class="headerlink" href="#c.HardwareOutputStatus.HARDWAREOUTPUT_DISABLED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>no playback device opened </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.HardwareOutputStatus.HARDWAREOUTPUT_ENABLED">
+<span class="target" id="public__definitions_8h_1ac22bd489e977a5bb0749c4db0a93805ba334536ce3e507b3ced21e265067d1183"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">HARDWAREOUTPUT_ENABLED</span></span></span><a class="headerlink" href="#c.HardwareOutputStatus.HARDWAREOUTPUT_ENABLED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>playback device open </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.InputDeactivationStatus">
+<span class="target" id="public__definitions_8h_1a64d467f3a6e2103fa98f4d8a6b5b5606"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputDeactivationStatus</span></span></span><a class="headerlink" href="#c.InputDeactivationStatus" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.InputDeactivationStatus.INPUT_ACTIVE">
+<span class="target" id="public__definitions_8h_1a64d467f3a6e2103fa98f4d8a6b5b5606a26030ac85b5019da124dda5da7077ebb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INPUT_ACTIVE</span></span></span><a class="headerlink" href="#c.InputDeactivationStatus.INPUT_ACTIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Audio is captured from the capture device. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.InputDeactivationStatus.INPUT_DEACTIVATED">
+<span class="target" id="public__definitions_8h_1a64d467f3a6e2103fa98f4d8a6b5b5606a3e2f9fc0ba2ce5c14fa98288ad85f1ef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">INPUT_DEACTIVATED</span></span></span><a class="headerlink" href="#c.InputDeactivationStatus.INPUT_DEACTIVATED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>No audio is captured from the capture device. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.LocalTestMode">
+<span class="target" id="public__definitions_8h_1a58a40851c012a372282518d0f0e80f09"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LocalTestMode</span></span></span><a class="headerlink" href="#c.LocalTestMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LocalTestMode.TEST_MODE_OFF">
+<span class="target" id="public__definitions_8h_1a58a40851c012a372282518d0f0e80f09a10b20e74f21b6071e0c34a7097529827"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TEST_MODE_OFF</span></span></span><a class="headerlink" href="#c.LocalTestMode.TEST_MODE_OFF" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LocalTestMode.TEST_MODE_VOICE_LOCAL_ONLY">
+<span class="target" id="public__definitions_8h_1a58a40851c012a372282518d0f0e80f09a720eda68c4f0e4e23f8fa95ceefce962"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TEST_MODE_VOICE_LOCAL_ONLY</span></span></span><a class="headerlink" href="#c.LocalTestMode.TEST_MODE_VOICE_LOCAL_ONLY" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LocalTestMode.TEST_MODE_VOICE_LOCAL_AND_REMOTE">
+<span class="target" id="public__definitions_8h_1a58a40851c012a372282518d0f0e80f09abcb14ed3b58d51d7c5215f0189f21825"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TEST_MODE_VOICE_LOCAL_AND_REMOTE</span></span></span><a class="headerlink" href="#c.LocalTestMode.TEST_MODE_VOICE_LOCAL_AND_REMOTE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.LocalTestMode.TEST_MODE_TALK_STATUS_CHANGES_ONLY">
+<span class="target" id="public__definitions_8h_1a58a40851c012a372282518d0f0e80f09a7fd1c1db32bbc930852b306e1b94378a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TEST_MODE_TALK_STATUS_CHANGES_ONLY</span></span></span><a class="headerlink" href="#c.LocalTestMode.TEST_MODE_TALK_STATUS_CHANGES_ONLY" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="codecs">
+<h2>Codecs<a class="headerlink" href="#codecs" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.CodecType">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CodecType</span></span></span><a class="headerlink" href="#c.CodecType" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_SPEEX_NARROWBAND">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79a93152af5cb676a4f8211f97aebbf1046"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_SPEEX_NARROWBAND</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_SPEEX_NARROWBAND" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(deprecated) mono, 16bit, 8kHz, bitrate dependent on the quality setting </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_SPEEX_WIDEBAND">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79a568d22870550e117009947d989d61293"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_SPEEX_WIDEBAND</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_SPEEX_WIDEBAND" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(deprecated) mono, 16bit, 16kHz, bitrate dependent on the quality setting </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_SPEEX_ULTRAWIDEBAND">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79a564012f63d7e65e24bb908b7d19dc080"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_SPEEX_ULTRAWIDEBAND</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_SPEEX_ULTRAWIDEBAND" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(deprecated) mono, 16bit, 32kHz, bitrate dependent on the quality setting </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_CELT_MONO">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79ac4ef6d82c0bd0fd58e2f41c824081950"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_CELT_MONO</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_CELT_MONO" title="Permalink to this definition"></a><br /></dt>
+<dd><p>(deprecated) mono, 16bit, 48kHz, bitrate dependent on the quality setting </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_OPUS_VOICE">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79ad768355d0eb183518f392416d09e565a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_OPUS_VOICE</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_OPUS_VOICE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>mono, 16bit, 48khz, bitrate dependent on the quality setting, optimized for voice </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecType.CODEC_OPUS_MUSIC">
+<span class="target" id="public__definitions_8h_1a03b4b6ae5fb82af68d46aaea3d3e4d79a23ff3f6e41467165d2e192220d4e98f0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_OPUS_MUSIC</span></span></span><a class="headerlink" href="#c.CodecType.CODEC_OPUS_MUSIC" title="Permalink to this definition"></a><br /></dt>
+<dd><p>stereo, 16bit, 48khz, bitrate dependent on the quality setting, optimized for music </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.CodecEncryptionMode">
+<span class="target" id="public__definitions_8h_1a7e516952fefafad4d932cbc6717989ff"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CodecEncryptionMode</span></span></span><a class="headerlink" href="#c.CodecEncryptionMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecEncryptionMode.CODEC_ENCRYPTION_PER_CHANNEL">
+<span class="target" id="public__definitions_8h_1a7e516952fefafad4d932cbc6717989ffa35854db35891338e0a469f0c27ab267e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_ENCRYPTION_PER_CHANNEL</span></span></span><a class="headerlink" href="#c.CodecEncryptionMode.CODEC_ENCRYPTION_PER_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>voice data encryption decided per channel </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecEncryptionMode.CODEC_ENCRYPTION_FORCED_OFF">
+<span class="target" id="public__definitions_8h_1a7e516952fefafad4d932cbc6717989ffa7c8f639719907f3bf9b6500cf06c5ed4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_ENCRYPTION_FORCED_OFF</span></span></span><a class="headerlink" href="#c.CodecEncryptionMode.CODEC_ENCRYPTION_FORCED_OFF" title="Permalink to this definition"></a><br /></dt>
+<dd><p>voice data encryption disabled </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.CodecEncryptionMode.CODEC_ENCRYPTION_FORCED_ON">
+<span class="target" id="public__definitions_8h_1a7e516952fefafad4d932cbc6717989ffafefc57d4a7892880ba1e11a84f1a4108"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CODEC_ENCRYPTION_FORCED_ON</span></span></span><a class="headerlink" href="#c.CodecEncryptionMode.CODEC_ENCRYPTION_FORCED_ON" title="Permalink to this definition"></a><br /></dt>
+<dd><p>voice data encryption enabled </p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="text-messaging">
+<h2>Text messaging<a class="headerlink" href="#text-messaging" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.TextMessageTargetMode">
+<span class="target" id="public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextMessageTargetMode</span></span></span><a class="headerlink" href="#c.TextMessageTargetMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TextMessageTargetMode.TextMessageTarget_CLIENT">
+<span class="target" id="public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8ac8a6d95e3bb47e939f6b8749b4701516"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextMessageTarget_CLIENT</span></span></span><a class="headerlink" href="#c.TextMessageTargetMode.TextMessageTarget_CLIENT" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Message is a private message to another client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TextMessageTargetMode.TextMessageTarget_CHANNEL">
+<span class="target" id="public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8a2cac4866178617c6c3ca2cf52a018afa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextMessageTarget_CHANNEL</span></span></span><a class="headerlink" href="#c.TextMessageTargetMode.TextMessageTarget_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Message is sent to a channel, received by all clients in that channel at the time. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TextMessageTargetMode.TextMessageTarget_SERVER">
+<span class="target" id="public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8a9c3ce5f81301ef369ffd2169311ed0f4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextMessageTarget_SERVER</span></span></span><a class="headerlink" href="#c.TextMessageTargetMode.TextMessageTarget_SERVER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Message is sent to every client on the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.TextMessageTargetMode.TextMessageTarget_MAX">
+<span class="target" id="public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8ae05ee2543fafeed8b169135cef2aa0e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TextMessageTarget_MAX</span></span></span><a class="headerlink" href="#c.TextMessageTargetMode.TextMessageTarget_MAX" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="file-transfer">
+<span id="x-def-filetransfer"></span><h2>File Transfer<a class="headerlink" href="#file-transfer" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.FileTransferState">
+<span class="target" id="public__definitions_8h_1aead4d4dfd9de00d5daaeeff10189dc76"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileTransferState</span></span></span><a class="headerlink" href="#c.FileTransferState" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FileTransferState.FILETRANSFER_INITIALISING">
+<span class="target" id="public__definitions_8h_1aead4d4dfd9de00d5daaeeff10189dc76a6da8ae09a0b9f0f3adc6060de49d621a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FILETRANSFER_INITIALISING</span></span></span><a class="headerlink" href="#c.FileTransferState.FILETRANSFER_INITIALISING" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File transfer is establishing connection. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FileTransferState.FILETRANSFER_ACTIVE">
+<span class="target" id="public__definitions_8h_1aead4d4dfd9de00d5daaeeff10189dc76adda4ef8282696641671b3ca041131cfc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FILETRANSFER_ACTIVE</span></span></span><a class="headerlink" href="#c.FileTransferState.FILETRANSFER_ACTIVE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File transfer is in progress. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FileTransferState.FILETRANSFER_FINISHED">
+<span class="target" id="public__definitions_8h_1aead4d4dfd9de00d5daaeeff10189dc76a4aca05e263630335b3b25d6286507260"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FILETRANSFER_FINISHED</span></span></span><a class="headerlink" href="#c.FileTransferState.FILETRANSFER_FINISHED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File transfer has finished. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.FileTransferType">
+<span class="target" id="public__definitions_8h_1a146df237d59ac77fbe2a2e65c5e88f01"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileTransferType</span></span></span><a class="headerlink" href="#c.FileTransferType" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FileTransferType.FileListType_Directory">
+<span class="target" id="public__definitions_8h_1a146df237d59ac77fbe2a2e65c5e88f01a7fddca8a1c922f7fbe1d1046565a75df"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileListType_Directory</span></span></span><a class="headerlink" href="#c.FileTransferType.FileListType_Directory" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file entry is a directory. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FileTransferType.FileListType_File">
+<span class="target" id="public__definitions_8h_1a146df237d59ac77fbe2a2e65c5e88f01a06efbacd312f244638e08f36e2a0184b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileListType_File</span></span></span><a class="headerlink" href="#c.FileTransferType.FileListType_File" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file entry is a regular file. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.FTAction">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FTAction</span></span></span><a class="headerlink" href="#c.FTAction" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_INIT_SERVER">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51a2f306e6a98bc2681fcacf4e9c44e6f50"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_INIT_SERVER</span></span></span><a class="headerlink" href="#c.FTAction.FT_INIT_SERVER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The virtual server is created. result-&gt;channelPath can be changed to create a different directory than the default ‘virtualserver_x’ where x is the virtual server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_INIT_CHANNEL">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51ae871a67db2d9b8a3744dc37460f186f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_INIT_CHANNEL</span></span></span><a class="headerlink" href="#c.FTAction.FT_INIT_CHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A channel is created. result-&gt;channelPath can be changed to create a different directory then the default ‘channel_x’ where x is the channel id. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_UPLOAD">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51aebf0846726944e515da4f867496fbfca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_UPLOAD</span></span></span><a class="headerlink" href="#c.FTAction.FT_UPLOAD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A file is being uploaded. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_DOWNLOAD">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51a902360447d333e16a751c595f0d2083d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_DOWNLOAD</span></span></span><a class="headerlink" href="#c.FTAction.FT_DOWNLOAD" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A file is being downloaded. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_DELETE">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51ae8b184b2ca3c4b7f31614b1e4f3da606"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_DELETE</span></span></span><a class="headerlink" href="#c.FTAction.FT_DELETE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A file is being deleted. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_CREATEDIR">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51ac7df9972fa0a6c56794ca935dc534ba3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_CREATEDIR</span></span></span><a class="headerlink" href="#c.FTAction.FT_CREATEDIR" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A directory is being created in a channel. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_RENAME">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51aa21249fa4c61ed3aa3d906045d5648fd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_RENAME</span></span></span><a class="headerlink" href="#c.FTAction.FT_RENAME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A file or folder is being renamed. The callback will be called twice! Once for the old and then for the new name. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_FILELIST">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51a028661a65e4a7d26f493f2fcb1c8f2ef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_FILELIST</span></span></span><a class="headerlink" href="#c.FTAction.FT_FILELIST" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A directory listing is requested. All values in the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.FTAction.FT_FILEINFO">
+<span class="target" id="public__definitions_8h_1a4daaa3f855117689a500652c300a4f51adbba46d6aeda9d192e8bf7b108f8cebc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FT_FILEINFO</span></span></span><a class="headerlink" href="#c.FTAction.FT_FILEINFO" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Information of a file is requested. All values in the result struct can be modified. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport">
+<span class="target" id="struct_file_transfer_callback_export"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FileTransferCallbackExport</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.clientID">
+<span class="target" id="struct_file_transfer_callback_export_1a7d198d10ab87e3f952ebf670802c4da1"></span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clientID</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.clientID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>the client who started the file transfer </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.transferID">
+<span class="target" id="struct_file_transfer_callback_export_1ab1b6b2301c732d034df973353444fa20"></span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transferID</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.transferID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>local identifier of the transfer that has completed </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.remoteTransferID">
+<span class="target" id="struct_file_transfer_callback_export_1a61f7f10058cafb8f5594b78dd71e9001"></span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remoteTransferID</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.remoteTransferID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>remote identifier of the transfer that has completed </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.status">
+<span class="target" id="struct_file_transfer_callback_export_1ad5cb453c245038d6376a2aec030f7290"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.status" title="Permalink to this definition"></a><br /></dt>
+<dd><p>status of the transfer. One of the values from the <a class="reference internal" href="#public__definitions_8h_1aead4d4dfd9de00d5daaeeff10189dc76"><span class="std std-ref">FileTransferState</span></a> enum </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.statusMessage">
+<span class="target" id="struct_file_transfer_callback_export_1acd5e6e023c435709a12fabe761b3a339"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">statusMessage</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.statusMessage" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing a human readable description of the status </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.remotefileSize">
+<span class="target" id="struct_file_transfer_callback_export_1aeb7d176dca769c190b07bac3e476a88d"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">remotefileSize</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.remotefileSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>size in bytes of the complete file to be transferred </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.bytes">
+<span class="target" id="struct_file_transfer_callback_export_1afcae736ed642bae37d897aa57906599f"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bytes</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.bytes" title="Permalink to this definition"></a><br /></dt>
+<dd><p>number of bytes transferred. Same as remotefileSize when the transfer completed entirely. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.FileTransferCallbackExport.isSender">
+<span class="target" id="struct_file_transfer_callback_export_1af91f64e6bada6ce28ccc2c3f416f98d4"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">isSender</span></span></span><a class="headerlink" href="#c.FileTransferCallbackExport.isSender" title="Permalink to this definition"></a><br /></dt>
+<dd><p>boolean. 1 if the server is sending the file. 0 if the server is receiving the file. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.TransformFilePathExport">
+<span class="target" id="struct_transform_file_path_export"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TransformFilePathExport</span></span></span><a class="headerlink" href="#c.TransformFilePathExport" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Structure used to describe a file transfer in the <a class="reference internal" href="server_api.html#struct_server_lib_functions_1adeecf1c7f9dac16176503e3627e52b96"><span class="std std-ref">ServerLibFunctions::onTransformFilePath</span></a> callback. This describes the original values, and also contains hints for length limitations of the result parameter of the callback. <p><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Which values of the struct can be modified is defined by the action value of the original parameter.</p>
+</div>
+</p>
+ </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExport.channel">
+<span class="target" id="struct_transform_file_path_export_1a9426441c448483104e15c938e8e3576c"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel</span></span></span><a class="headerlink" href="#c.TransformFilePathExport.channel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel id of the file. 0 if action is <a class="reference internal" href="#public__definitions_8h_1a4daaa3f855117689a500652c300a4f51a2f306e6a98bc2681fcacf4e9c44e6f50"><span class="std std-ref">FT_INIT_SERVER</span></a>. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExport.filename">
+<span class="target" id="struct_transform_file_path_export_1a1f722c9e316ce7ecb7f17a68098bca93"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">filename</span></span></span><a class="headerlink" href="#c.TransformFilePathExport.filename" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the original file name as intended by the client. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExport.action">
+<span class="target" id="struct_transform_file_path_export_1a6bfad481e6b30c687e5835323ca0b592"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">action</span></span></span><a class="headerlink" href="#c.TransformFilePathExport.action" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The action to be performed. One of the values from the <a class="reference internal" href="#public__definitions_8h_1a4daaa3f855117689a500652c300a4f51"><span class="std std-ref">FTAction</span></a> enum. Defines which values of the result struct can be modified. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExport.transformedFileNameMaxSize">
+<span class="target" id="struct_transform_file_path_export_1a21197d4ce481afde8da775183936b5ec"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">transformedFileNameMaxSize</span></span></span><a class="headerlink" href="#c.TransformFilePathExport.transformedFileNameMaxSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The maximum length the file name can be rewritten to. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExport.channelPathMaxSize">
+<span class="target" id="struct_transform_file_path_export_1ab74497742d856133284c5faf699ac2e2"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelPathMaxSize</span></span></span><a class="headerlink" href="#c.TransformFilePathExport.channelPathMaxSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The maximum length the path can be rewritten to. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.TransformFilePathExportReturns">
+<span class="target" id="struct_transform_file_path_export_returns"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TransformFilePathExportReturns</span></span></span><a class="headerlink" href="#c.TransformFilePathExportReturns" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Structure to rewrite the file transfer file name and path in the <a class="reference internal" href="server_api.html#struct_server_lib_functions_1adeecf1c7f9dac16176503e3627e52b96"><span class="std std-ref">ServerLibFunctions::onTransformFilePath</span></a> callback. The lengths are limited as described in the original parameter. <p><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Which values of the struct can be modified is defined by the action value of the original parameter.</p>
+</div>
+</p>
+ </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExportReturns.transformedFileName">
+<span class="target" id="struct_transform_file_path_export_returns_1a4cb4ca4b533dd4e958fa0425b92a0f12"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">transformedFileName</span></span></span><a class="headerlink" href="#c.TransformFilePathExportReturns.transformedFileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>pointer to target file name. Fill the memory pointed to with an utf8 encoded c string containing the new file name. Limited to original-&gt;transformedFileNameMaxSize bytes. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExportReturns.channelPath">
+<span class="target" id="struct_transform_file_path_export_returns_1a8008434feec1b92f109dab69fc117b33"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">channelPath</span></span></span><a class="headerlink" href="#c.TransformFilePathExportReturns.channelPath" title="Permalink to this definition"></a><br /></dt>
+<dd><p>pointer to memory for new path. Fill the memory pointed to with an utf8 encoded c string containing the new path. Limited to original-&gt;channelPathMaxSize bytes. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.TransformFilePathExportReturns.logFileAction">
+<span class="target" id="struct_transform_file_path_export_returns_1add0f94cb754f76abc3e1c16a22a45c9d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logFileAction</span></span></span><a class="headerlink" href="#c.TransformFilePathExportReturns.logFileAction" title="Permalink to this definition"></a><br /></dt>
+<dd><p>boolean (1/0). Whether to log this file transfer to the log. Action is not logged regardless of this value if the servers <a class="reference internal" href="properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a037f2d55dfad935796e3ce796272cff4"><span class="std std-ref">VIRTUALSERVER_LOG_FILETRANSFER</span></a> property is 0. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftcreatedir">
+<span class="target" id="structts3sc__data__ftcreatedir"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftcreatedir</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftcreatedir" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftcreatedir message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftcreatedir.channelID">
+<span class="target" id="structts3sc__data__ftcreatedir_1a77db825c90f3145b2acd1a4be00f6a80"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftcreatedir.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the directory is to be created. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftcreatedir.dirname">
+<span class="target" id="structts3sc__data__ftcreatedir_1add398d51c7de5e6f6b361eeed991455a"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">dirname</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftcreatedir.dirname" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the directory name </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftcreatedir">
+<span class="target" id="structts3sc__meta__ftcreatedir"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftcreatedir</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftcreatedir" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftcreatedir message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftcreatedir.RESERVED">
+<span class="target" id="structts3sc__meta__ftcreatedir_1a8ba65877903e8c39c40e20d9dadc535c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftcreatedir.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftcreatedir">
+<span class="target" id="structts3sc__ftcreatedir"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftcreatedir</span></span></span><a class="headerlink" href="#c.ts3sc_ftcreatedir" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftcreatedir message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftcreatedir.m">
+<span class="target" id="structts3sc__ftcreatedir_1a38ee0e2994ceb25bafa5c7c57677f169"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftcreatedir" title="ts3sc_meta_ftcreatedir"><span class="n"><span class="pre">ts3sc_meta_ftcreatedir</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftcreatedir.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftcreatedir.d">
+<span class="target" id="structts3sc__ftcreatedir_1aec2aae84472458a10eec168d3153f584"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftcreatedir" title="ts3sc_data_ftcreatedir"><span class="n"><span class="pre">ts3sc_data_ftcreatedir</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftcreatedir.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftdeletefile">
+<span class="target" id="structts3sc__data__ftdeletefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftdeletefile</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftdeletefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftdeletefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftdeletefile.channelID">
+<span class="target" id="structts3sc__data__ftdeletefile_1a84e94b96fa13e20916eeb16917cb9f8c"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftdeletefile.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is to be deleted. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_array_ftdeletefile">
+<span class="target" id="structts3sc__array__ftdeletefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_array_ftdeletefile</span></span></span><a class="headerlink" href="#c.ts3sc_array_ftdeletefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the repeat command data for an ftdeletefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_array_ftdeletefile.fileName">
+<span class="target" id="structts3sc__array__ftdeletefile_1a6ca33a527d974cc327bd560f79ae49c9"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><a class="headerlink" href="#c.ts3sc_array_ftdeletefile.fileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file name to be deleted. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftdeletefile">
+<span class="target" id="structts3sc__meta__ftdeletefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftdeletefile</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftdeletefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftdeletefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftdeletefile.RESERVED">
+<span class="target" id="structts3sc__meta__ftdeletefile_1a6c50b72108c696c8579cb6614188b1a6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftdeletefile.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftdeletefile">
+<span class="target" id="structts3sc__ftdeletefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftdeletefile</span></span></span><a class="headerlink" href="#c.ts3sc_ftdeletefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftdeletefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftdeletefile.m">
+<span class="target" id="structts3sc__ftdeletefile_1a3dbf783e9add615e392cd4e1a0098d43"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftdeletefile" title="ts3sc_meta_ftdeletefile"><span class="n"><span class="pre">ts3sc_meta_ftdeletefile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftdeletefile.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftdeletefile.d">
+<span class="target" id="structts3sc__ftdeletefile_1ae37b9bf8a23c0a4f43208134d6c1afe6"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftdeletefile" title="ts3sc_data_ftdeletefile"><span class="n"><span class="pre">ts3sc_data_ftdeletefile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftdeletefile.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftdeletefile.r_size">
+<span class="target" id="structts3sc__ftdeletefile_1a4b2849a143533bfbc18e9aa42a09239f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">r_size</span></span></span><a class="headerlink" href="#c.ts3sc_ftdeletefile.r_size" title="Permalink to this definition"></a><br /></dt>
+<dd><p>number of items in r </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftdeletefile.r">
+<span class="target" id="structts3sc__ftdeletefile_1a5a67d16e5513410a222cd0c44eb7c0d8"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_array_ftdeletefile" title="ts3sc_array_ftdeletefile"><span class="n"><span class="pre">ts3sc_array_ftdeletefile</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">r</span></span></span><a class="headerlink" href="#c.ts3sc_ftdeletefile.r" title="Permalink to this definition"></a><br /></dt>
+<dd><p>repeated data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftgetfileinfo">
+<span class="target" id="structts3sc__data__ftgetfileinfo"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftgetfileinfo</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftgetfileinfo" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftgetfileinfo message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftgetfileinfo.RESERVED">
+<span class="target" id="structts3sc__data__ftgetfileinfo_1a6df6769c5d36b9a168fb00a0abdf43ba"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftgetfileinfo.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_array_ftgetfileinfo">
+<span class="target" id="structts3sc__array__ftgetfileinfo"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_array_ftgetfileinfo</span></span></span><a class="headerlink" href="#c.ts3sc_array_ftgetfileinfo" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the repeat command data for an ftgetfileinfo message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_array_ftgetfileinfo.channelID">
+<span class="target" id="structts3sc__array__ftgetfileinfo_1ac61fcd3147cbcf72a1656608f37ba33d"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_array_ftgetfileinfo.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is located. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_array_ftgetfileinfo.fileName">
+<span class="target" id="structts3sc__array__ftgetfileinfo_1aa4047d888a8479c3b020c14c0963cf75"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><a class="headerlink" href="#c.ts3sc_array_ftgetfileinfo.fileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the file name </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftgetfileinfo">
+<span class="target" id="structts3sc__meta__ftgetfileinfo"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftgetfileinfo</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftgetfileinfo" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftgetfileinfo message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftgetfileinfo.RESERVED">
+<span class="target" id="structts3sc__meta__ftgetfileinfo_1a6c4ba99d963298c8cdae6db85baaae93"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftgetfileinfo.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfileinfo">
+<span class="target" id="structts3sc__ftgetfileinfo"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftgetfileinfo</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfileinfo" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftgetfileinfo message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfileinfo.m">
+<span class="target" id="structts3sc__ftgetfileinfo_1ae2a1c77fee720cb337a6395812971369"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftgetfileinfo" title="ts3sc_meta_ftgetfileinfo"><span class="n"><span class="pre">ts3sc_meta_ftgetfileinfo</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfileinfo.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfileinfo.d">
+<span class="target" id="structts3sc__ftgetfileinfo_1a265c14765da63a0554f8436967868d76"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftgetfileinfo" title="ts3sc_data_ftgetfileinfo"><span class="n"><span class="pre">ts3sc_data_ftgetfileinfo</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfileinfo.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfileinfo.r_size">
+<span class="target" id="structts3sc__ftgetfileinfo_1a07d65b9679f3ab36f64c1099f6948102"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">r_size</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfileinfo.r_size" title="Permalink to this definition"></a><br /></dt>
+<dd><p>number of items in r </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfileinfo.r">
+<span class="target" id="structts3sc__ftgetfileinfo_1a342e2eb0403936db2fc2c7f75756edf7"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_array_ftgetfileinfo" title="ts3sc_array_ftgetfileinfo"><span class="n"><span class="pre">ts3sc_array_ftgetfileinfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">r</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfileinfo.r" title="Permalink to this definition"></a><br /></dt>
+<dd><p>repeated data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftgetfilelist">
+<span class="target" id="structts3sc__data__ftgetfilelist"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftgetfilelist</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftgetfilelist" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftgetfilelist message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftgetfilelist.channelID">
+<span class="target" id="structts3sc__data__ftgetfilelist_1a52877da8c9a0e2d4cdb8edb18f70d85c"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftgetfilelist.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftgetfilelist.path">
+<span class="target" id="structts3sc__data__ftgetfilelist_1a8fd5c4daed07a5a6a78236422a4aaf6b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">path</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftgetfilelist.path" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the path to get the files and directories in </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftgetfilelist">
+<span class="target" id="structts3sc__meta__ftgetfilelist"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftgetfilelist</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftgetfilelist" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftgetfilelist message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftgetfilelist.RESERVED">
+<span class="target" id="structts3sc__meta__ftgetfilelist_1a891318c297cb2314316af61c89a3250f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftgetfilelist.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfilelist">
+<span class="target" id="structts3sc__ftgetfilelist"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftgetfilelist</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfilelist" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftgetfilelist message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfilelist.m">
+<span class="target" id="structts3sc__ftgetfilelist_1a13bf21c97e538e6fb91e1d4c7578580b"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftgetfilelist" title="ts3sc_meta_ftgetfilelist"><span class="n"><span class="pre">ts3sc_meta_ftgetfilelist</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfilelist.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftgetfilelist.d">
+<span class="target" id="structts3sc__ftgetfilelist_1adc813759f6d360cd866f7f4c097883ed"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftgetfilelist" title="ts3sc_data_ftgetfilelist"><span class="n"><span class="pre">ts3sc_data_ftgetfilelist</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftgetfilelist.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitdownload">
+<span class="target" id="structts3sc__data__ftinitdownload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftinitdownload</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitdownload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftinitdownload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitdownload.fileName">
+<span class="target" id="structts3sc__data__ftinitdownload_1a5fe7d0bf0f703df179c0e57b13377135"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitdownload.fileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file name. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitdownload.channelID">
+<span class="target" id="structts3sc__data__ftinitdownload_1a10d5b3d1adaf7216f6a37d3f322a4d44"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitdownload.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is to be downloaded from. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftinitdownload">
+<span class="target" id="structts3sc__meta__ftinitdownload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftinitdownload</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftinitdownload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftinitdownload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftinitdownload.RESERVED">
+<span class="target" id="structts3sc__meta__ftinitdownload_1af66d76e7d97eca3e5245d40a7d9e2cc0"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftinitdownload.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitdownload">
+<span class="target" id="structts3sc__ftinitdownload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftinitdownload</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitdownload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftinitdownload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitdownload.m">
+<span class="target" id="structts3sc__ftinitdownload_1ad85f5b9cd13aa13b804ea678ca4356f9"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftinitdownload" title="ts3sc_meta_ftinitdownload"><span class="n"><span class="pre">ts3sc_meta_ftinitdownload</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitdownload.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitdownload.d">
+<span class="target" id="structts3sc__ftinitdownload_1a7395ba29cf8791663cd1e6c9c592b334"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftinitdownload" title="ts3sc_data_ftinitdownload"><span class="n"><span class="pre">ts3sc_data_ftinitdownload</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitdownload.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload">
+<span class="target" id="structts3sc__data__ftinitupload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftinitupload</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftinitupload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload.fileName">
+<span class="target" id="structts3sc__data__ftinitupload_1ab524da742396289b56e3e76d01bc82f5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">fileName</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload.fileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file name. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload.fileSize">
+<span class="target" id="structts3sc__data__ftinitupload_1a4770a34bee2ffdd2d0436daaec7e18a1"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fileSize</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload.fileSize" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The file size. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload.channelID">
+<span class="target" id="structts3sc__data__ftinitupload_1a72b97114d7d83fd293d38a6ef0c4ac3d"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload.channelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is to be uploaded. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload.overwrite">
+<span class="target" id="structts3sc__data__ftinitupload_1a275fee28d0d6c736833ccaa6f5434ff1"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">overwrite</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload.overwrite" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Set to 1 to overwrite files, 0 to prevent overwrites. Mutually exclusive with resume. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftinitupload.resume">
+<span class="target" id="structts3sc__data__ftinitupload_1a66e7e368ed5768db000bc53a9a4802b5"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">resume</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftinitupload.resume" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Set to 1 to resume an existing upload, 0 to start from scratch. Mutually exclusive with overwrite. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftinitupload">
+<span class="target" id="structts3sc__meta__ftinitupload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftinitupload</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftinitupload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftinitupload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftinitupload.RESERVED">
+<span class="target" id="structts3sc__meta__ftinitupload_1ab3f292d81900f07e1028d4b554a5daed"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RESERVED</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftinitupload.RESERVED" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This is here because C forbids empty structs. DO NOT USE. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitupload">
+<span class="target" id="structts3sc__ftinitupload"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftinitupload</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitupload" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftinitupload message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitupload.m">
+<span class="target" id="structts3sc__ftinitupload_1a600b87b190183ef6acab248c76395027"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftinitupload" title="ts3sc_meta_ftinitupload"><span class="n"><span class="pre">ts3sc_meta_ftinitupload</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitupload.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>message meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftinitupload.d">
+<span class="target" id="structts3sc__ftinitupload_1a63777a2b3b55cca16a29a5645210d732"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftinitupload" title="ts3sc_data_ftinitupload"><span class="n"><span class="pre">ts3sc_data_ftinitupload</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftinitupload.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>message data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftrenamefile">
+<span class="target" id="structts3sc__data__ftrenamefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_data_ftrenamefile</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftrenamefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the command data for an ftrenamefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftrenamefile.fromChannelID">
+<span class="target" id="structts3sc__data__ftrenamefile_1a966c604c1ef4c0f5bd9d75c9c88a27c5"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fromChannelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftrenamefile.fromChannelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is located now. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftrenamefile.toChannelID">
+<span class="target" id="structts3sc__data__ftrenamefile_1a68689566ecaccb69a34444c42843b9f8"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">toChannelID</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftrenamefile.toChannelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The channel ID where the file is to be moved to. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftrenamefile.oldFileName">
+<span class="target" id="structts3sc__data__ftrenamefile_1a4006dd45c636457fe4e561ed74387716"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">oldFileName</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftrenamefile.oldFileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the current file name </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_data_ftrenamefile.newFileName">
+<span class="target" id="structts3sc__data__ftrenamefile_1a3066680da25f8ff2681f18fa37ae18b3"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">newFileName</span></span></span><a class="headerlink" href="#c.ts3sc_data_ftrenamefile.newFileName" title="Permalink to this definition"></a><br /></dt>
+<dd><p>utf8 encoded c string containing the new file name </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftrenamefile">
+<span class="target" id="structts3sc__meta__ftrenamefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_meta_ftrenamefile</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftrenamefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>Structure that contains the meta data for an ftrenamefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_meta_ftrenamefile.has_toChannelID">
+<span class="target" id="structts3sc__meta__ftrenamefile_1af3759f032a7b75c7395c4f7809716df0"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_toChannelID</span></span></span><a class="headerlink" href="#c.ts3sc_meta_ftrenamefile.has_toChannelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>boolean. 1 if the file is to be moved to a different channel. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ts3sc_ftrenamefile">
+<span class="target" id="structts3sc__ftrenamefile"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3sc_ftrenamefile</span></span></span><a class="headerlink" href="#c.ts3sc_ftrenamefile" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;server_commands_file_transfer.h&gt;</em></div>
+<p>C Structure that contains the meta data and data for an ftrenamefile message </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftrenamefile.m">
+<span class="target" id="structts3sc__ftrenamefile_1aba8ac0abb95e68753d4fdd5d0fd1eada"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_meta_ftrenamefile" title="ts3sc_meta_ftrenamefile"><span class="n"><span class="pre">ts3sc_meta_ftrenamefile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">m</span></span></span><a class="headerlink" href="#c.ts3sc_ftrenamefile.m" title="Permalink to this definition"></a><br /></dt>
+<dd><p>message meta data </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ts3sc_ftrenamefile.d">
+<span class="target" id="structts3sc__ftrenamefile_1adc5ac249262d437687eec143e8240940"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.ts3sc_data_ftrenamefile" title="ts3sc_data_ftrenamefile"><span class="n"><span class="pre">ts3sc_data_ftrenamefile</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">d</span></span></span><a class="headerlink" href="#c.ts3sc_ftrenamefile.d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>message data </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="whisper">
+<h2>Whisper<a class="headerlink" href="#whisper" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.GroupWhisperType">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GroupWhisperType</span></span></span><a class="headerlink" href="#c.GroupWhisperType" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperType.GROUPWHISPERTYPE_SERVERGROUP">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286add335d2fa7ef77febd39c3a50f48436b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTYPE_SERVERGROUP</span></span></span><a class="headerlink" href="#c.GroupWhisperType.GROUPWHISPERTYPE_SERVERGROUP" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper list consists of server groups. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperType.GROUPWHISPERTYPE_CHANNELGROUP">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286ac8d48ccabbd3cd592edb537af4630d2f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTYPE_CHANNELGROUP</span></span></span><a class="headerlink" href="#c.GroupWhisperType.GROUPWHISPERTYPE_CHANNELGROUP" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper list consists of channel groups. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperType.GROUPWHISPERTYPE_CHANNELCOMMANDER">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286a278eed7e8270f73448a6ab5d7ed1a49c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTYPE_CHANNELCOMMANDER</span></span></span><a class="headerlink" href="#c.GroupWhisperType.GROUPWHISPERTYPE_CHANNELCOMMANDER" title="Permalink to this definition"></a><br /></dt>
+<dd><p>whisper to channel commanders </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperType.GROUPWHISPERTYPE_ALLCLIENTS">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286aa1a91398c454e0abad4421f488fd3e64"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTYPE_ALLCLIENTS</span></span></span><a class="headerlink" href="#c.GroupWhisperType.GROUPWHISPERTYPE_ALLCLIENTS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>whisper to all clients </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperType.GROUPWHISPERTYPE_ENDMARKER">
+<span class="target" id="public__definitions_8h_1ad1c6c66c90d9326bde77e9895d964286a94d59324bd881a6f4de4c636f10bf597"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTYPE_ENDMARKER</span></span></span><a class="headerlink" href="#c.GroupWhisperType.GROUPWHISPERTYPE_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GroupWhisperTargetMode</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ALL">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621daa436d36d90ec4efd39b9871f67d31e3a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_ALL</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ALL" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_CURRENTCHANNEL">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621da1f69f5e57cc94c8e3ae719007660456e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_CURRENTCHANNEL</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_CURRENTCHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper the current channel of the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_PARENTCHANNEL">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621dac33d781d30acba9572aeda83de7f5a22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_PARENTCHANNEL</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_PARENTCHANNEL" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper the parent channel of whatever channel the client is currently in. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ALLPARENTCHANNELS">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621daed7b5f5316afc1650781edf533cc267e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_ALLPARENTCHANNELS</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ALLPARENTCHANNELS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whipser to the parent channel and all their parent channels as well. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_CHANNELFAMILY">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621da901bccaf90d20cd2e6f082a3c0ad9f22"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_CHANNELFAMILY</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_CHANNELFAMILY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper to the current channel and all its sub channels. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ANCESTORCHANNELFAMILY">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621da3a62b12183932a05ce200f62997e7f83"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_ANCESTORCHANNELFAMILY</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ANCESTORCHANNELFAMILY" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper to the current channel, all its parent and sub channels. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_SUBCHANNELS">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621da9fd2fa64105b8a24ee188d50c11c0166"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_SUBCHANNELS</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_SUBCHANNELS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whisper to all sub channels of the current channel of the client. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ENDMARKER">
+<span class="target" id="public__definitions_8h_1aeeadb1e95e673ab7ace2030b14a1621da82b940a07ee495b5319db449d9a2bee7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GROUPWHISPERTARGETMODE_ENDMARKER</span></span></span><a class="headerlink" href="#c.GroupWhisperTargetMode.GROUPWHISPERTARGETMODE_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="server">
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this heading"></a></h2>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.ClientCommand">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientCommand</span></span></span><a class="headerlink" href="#c.ClientCommand" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestConnectionInfo">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a36cbee3c3ed80e5b7dad555495d1d294"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestConnectionInfo</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestConnectionInfo" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable client connection info request (client bandwidth usage, ip, port, ping) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestClientMove">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a84189dd777c465dca833b21e2fd22dca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestClientMove</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestClientMove" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable moving clients </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestXXMuteClients">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311ae2ab3c6084890068165068086f354bc6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestXXMuteClients</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestXXMuteClients" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable muting other clients </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestClientKickFromXXX">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a0e6ca4fb09b0038909383450d9dea916"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestClientKickFromXXX</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestClientKickFromXXX" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable kicking clients </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_flushChannelCreation">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a81b6daa146e39da59282eedde1aef335"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_flushChannelCreation</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_flushChannelCreation" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable creating channels </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_flushChannelUpdates">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a62762ded0855aaf19de5df5746d62164"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_flushChannelUpdates</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_flushChannelUpdates" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable editing channels </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestChannelMove">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311ac720fae9f7d9f4637beb02fce8bbb343"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestChannelMove</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestChannelMove" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable moving channels </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestChannelDelete">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a2904103685daa67071627deacb796665"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestChannelDelete</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestChannelDelete" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable deleting channels </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestChannelDescription">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311aa46e2c7c7bf39c0029806482a0da45bd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestChannelDescription</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestChannelDescription" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable channel descriptions </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestChannelXXSubscribeXXX">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a618704a75b958125ea65a042b8b42a82"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestChannelXXSubscribeXXX</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestChannelXXSubscribeXXX" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable being able to see clients in channels other than the current channel the client is in </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestServerConnectionInfo">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a86a70aa4d6f107202af145b6a262136a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestServerConnectionInfo</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestServerConnectionInfo" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable server connection info request (server bandwidth usage, ip, port, ping) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_requestSendXXXTextMsg">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a31533e2295b38b98f20dcb9bbbefda8a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_requestSendXXXTextMsg</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_requestSendXXXTextMsg" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable text messaging </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_filetransfers">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a479c851d0f88539577e4fd37d3e19ff0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_filetransfers</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_filetransfers" title="Permalink to this definition"></a><br /></dt>
+<dd><p>disable file transfer </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.ClientCommand.CLIENT_COMMAND_ENDMARKER">
+<span class="target" id="public__definitions_8h_1a018ea5b8dcbbf3852163d9a8b17bb311a32df402f7f2dac8baf9a06d8ab277675"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CLIENT_COMMAND_ENDMARKER</span></span></span><a class="headerlink" href="#c.ClientCommand.CLIENT_COMMAND_ENDMARKER" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.SecuritySaltOptions">
+<span class="target" id="public__definitions_8h_1a33449bae9acaa426cceb4a8d52d6eed2"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SecuritySaltOptions</span></span></span><a class="headerlink" href="#c.SecuritySaltOptions" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.SecuritySaltOptions.SECURITY_SALT_CHECK_NICKNAME">
+<span class="target" id="public__definitions_8h_1a33449bae9acaa426cceb4a8d52d6eed2a405749b68840292a897695e8008df87b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SECURITY_SALT_CHECK_NICKNAME</span></span></span><a class="headerlink" href="#c.SecuritySaltOptions.SECURITY_SALT_CHECK_NICKNAME" title="Permalink to this definition"></a><br /></dt>
+<dd><p>put nickname into security hash </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.SecuritySaltOptions.SECURITY_SALT_CHECK_META_DATA">
+<span class="target" id="public__definitions_8h_1a33449bae9acaa426cceb4a8d52d6eed2ad5c9f4b23f9495cae39101c3f192552f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SECURITY_SALT_CHECK_META_DATA</span></span></span><a class="headerlink" href="#c.SecuritySaltOptions.SECURITY_SALT_CHECK_META_DATA" title="Permalink to this definition"></a><br /></dt>
+<dd><p>put meta data into security hash </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.ClientMiniExport">
+<span class="target" id="struct_client_mini_export"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientMiniExport</span></span></span><a class="headerlink" href="#c.ClientMiniExport" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ClientMiniExport.ID">
+<span class="target" id="struct_client_mini_export_1a86afa173d8830d25933f4d134d743cdf"></span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ID</span></span></span><a class="headerlink" href="#c.ClientMiniExport.ID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>id of the client </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ClientMiniExport.channel">
+<span class="target" id="struct_client_mini_export_1a686feb1580815b4c7efe3a2c77cbdfdb"></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">channel</span></span></span><a class="headerlink" href="#c.ClientMiniExport.channel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>the channel the client is in </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ClientMiniExport.ident">
+<span class="target" id="struct_client_mini_export_1ac4c6b5814bc0e70780f6fb7fa5687e9e"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">ident</span></span></span><a class="headerlink" href="#c.ClientMiniExport.ident" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client public identity </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.ClientMiniExport.nickname">
+<span class="target" id="struct_client_mini_export_1a47bc0edfc113a0acb50fab396ad30d78"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">nickname</span></span></span><a class="headerlink" href="#c.ClientMiniExport.nickname" title="Permalink to this definition"></a><br /></dt>
+<dd><p>client display name </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.VariablesExportItem">
+<span class="target" id="struct_variables_export_item"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VariablesExportItem</span></span></span><a class="headerlink" href="#c.VariablesExportItem" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.VariablesExportItem.itemIsValid">
+<span class="target" id="struct_variables_export_item_1ade0867698cf58f4ca6f1b8bd8e66b30f"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">itemIsValid</span></span></span><a class="headerlink" href="#c.VariablesExportItem.itemIsValid" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Whether or not there is any data in this item. Ignore this item if this is 0. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.VariablesExportItem.proposedIsSet">
+<span class="target" id="struct_variables_export_item_1a0efe1e4cdab8d00ac9e65a1f43c08ec5"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">proposedIsSet</span></span></span><a class="headerlink" href="#c.VariablesExportItem.proposedIsSet" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The value in proposed is set. If 0 ignore proposed. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.VariablesExportItem.current">
+<span class="target" id="struct_variables_export_item_1ab07ce05be5f03ebb00943d7f46fd06a5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">current</span></span></span><a class="headerlink" href="#c.VariablesExportItem.current" title="Permalink to this definition"></a><br /></dt>
+<dd><p>current value (stored in memory) </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c" id="c.VariablesExportItem.proposed">
+<span class="target" id="struct_variables_export_item_1af8758abb92d748f1c028b6aa8d9e8ff1"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">proposed</span></span></span><a class="headerlink" href="#c.VariablesExportItem.proposed" title="Permalink to this definition"></a><br /></dt>
+<dd><p>New value to change to (const, so no updates please) </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="c struct">
+<dt class="sig sig-object c" id="c.VariablesExport">
+<span class="target" id="struct_variables_export"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">VariablesExport</span></span></span><a class="headerlink" href="#c.VariablesExport" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c" id="c.VariablesExport.items">
+<span class="target" id="struct_variables_export_1a84c889f110b3d0735283d173804f0f5c"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#c.VariablesExportItem" title="VariablesExportItem"><span class="n"><span class="pre">VariablesExportItem</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">items</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">64</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#c.VariablesExport.items" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="properties.html" class="btn btn-neutral float-left" title="Property Enums" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="client_api.html" class="btn btn-neutral float-right" title="TeamSpeak Client Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

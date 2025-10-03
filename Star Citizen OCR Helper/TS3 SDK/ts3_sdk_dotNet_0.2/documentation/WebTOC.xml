@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the Teamspeak SDK .Net" Url="html/b3c7db30-54f5-41cc-9164-fc6e456f57ba.htm" />
+  <HelpTOCNode Id="2e5448ba-99c0-49ab-baac-af2562394245" Title="Version History" Url="html/57ba9e17-48ea-4c78-b951-0cdc5fcbc84c.htm">
+    <HelpTOCNode Title="v0.1" Url="html/d83c93f3-0b0e-407f-ae45-823eb2ef3ac1.htm" />
+    <HelpTOCNode Title="v0.2" Url="html/7bda83ad-356b-4c5f-bf9e-f0f098c65685.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="7c5c3c62-4eb4-43af-9b03-4df54221ed19" Title="TeamSpeak.Sdk" Url="html/N_TeamSpeak_Sdk.htm">
+    <HelpTOCNode Title="CodecEncryptionMode Enumeration" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+    <HelpTOCNode Title="CodecType Enumeration" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+    <HelpTOCNode Title="ConnectStatus Enumeration" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+    <HelpTOCNode Title="Error Enumeration" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+    <HelpTOCNode Title="FileListType Enumeration" Url="html/T_TeamSpeak_Sdk_FileListType.htm" />
+    <HelpTOCNode Title="FileTransferState Enumeration" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+    <HelpTOCNode Title="LibraryVersion Enumeration" Url="html/T_TeamSpeak_Sdk_LibraryVersion.htm" />
+    <HelpTOCNode Title="LocalTestMode Enumeration" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+    <HelpTOCNode Title="LogLevel Enumeration" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+    <HelpTOCNode Title="LogTypes Enumeration" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+    <HelpTOCNode Title="SamplingRate Enumeration" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+    <HelpTOCNode Title="Speakers Enumeration" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+    <HelpTOCNode Title="SupportedPlatform Enumeration" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+    <HelpTOCNode Title="TalkStatus Enumeration" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+    <HelpTOCNode Id="4a268554-bdba-4494-b254-241aafc2ce47" Title="TeamSpeakException Class" Url="html/T_TeamSpeak_Sdk_TeamSpeakException.htm">
+      <HelpTOCNode Id="e7148ef8-7de9-4df1-aa87-61bb04bdeab6" Title="TeamSpeakException Constructor " Url="html/Overload_TeamSpeak_Sdk_TeamSpeakException__ctor.htm">
+        <HelpTOCNode Title="TeamSpeakException Constructor (SerializationInfo, StreamingContext)" Url="html/M_TeamSpeak_Sdk_TeamSpeakException__ctor.htm" />
+        <HelpTOCNode Title="TeamSpeakException Constructor (Error, String)" Url="html/M_TeamSpeak_Sdk_TeamSpeakException__ctor_1.htm" />
+        <HelpTOCNode Title="TeamSpeakException Constructor (Error, String, Exception)" Url="html/M_TeamSpeak_Sdk_TeamSpeakException__ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="2a9fbfef-f704-494c-b4a8-378dfb45d0c2" Title="TeamSpeakException Properties" Url="html/Properties_T_TeamSpeak_Sdk_TeamSpeakException.htm">
+        <HelpTOCNode Title="ErrorCode Property " Url="html/P_TeamSpeak_Sdk_TeamSpeakException_ErrorCode.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="68d06e2b-e3af-4968-a535-51389a89c1c4" Title="TeamSpeakException Methods" Url="html/Methods_T_TeamSpeak_Sdk_TeamSpeakException.htm">
+        <HelpTOCNode Title="GetObjectData Method " Url="html/M_TeamSpeak_Sdk_TeamSpeakException_GetObjectData.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="TeamSpeakException Events" Url="html/Events_T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="TransferMode Enumeration" Url="html/T_TeamSpeak_Sdk_TransferMode.htm" />
+    <HelpTOCNode Id="9af0e689-d15f-4663-81f5-fabaf885b906" Title="Vector Structure" Url="html/T_TeamSpeak_Sdk_Vector.htm">
+      <HelpTOCNode Title="Vector Constructor " Url="html/M_TeamSpeak_Sdk_Vector__ctor.htm" />
+      <HelpTOCNode Id="c88c148c-3109-4db6-a738-0952e8ae990d" Title="Vector Methods" Url="html/Methods_T_TeamSpeak_Sdk_Vector.htm">
+        <HelpTOCNode Title="ToString Method " Url="html/M_TeamSpeak_Sdk_Vector_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d6409dc5-7421-4b29-83db-3e44fda22d82" Title="Vector Fields" Url="html/Fields_T_TeamSpeak_Sdk_Vector.htm">
+        <HelpTOCNode Title="X Field" Url="html/F_TeamSpeak_Sdk_Vector_X.htm" />
+        <HelpTOCNode Title="Y Field" Url="html/F_TeamSpeak_Sdk_Vector_Y.htm" />
+        <HelpTOCNode Title="Z Field" Url="html/F_TeamSpeak_Sdk_Vector_Z.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="Visibility Enumeration" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="9e1b9b72-7139-42ea-8cf7-4cca70d7224f" Title="TeamSpeak.Sdk.Client" Url="html/N_TeamSpeak_Sdk_Client.htm">
+    <HelpTOCNode Id="41e75caa-1ebf-40b8-8d5d-bb76608f9c77" Title="Channel Class" Url="html/T_TeamSpeak_Sdk_Client_Channel.htm">
+      <HelpTOCNode Title="Channel Constructor " Url="html/M_TeamSpeak_Sdk_Client_Channel__ctor.htm" />
+      <HelpTOCNode Id="8362ae62-8c04-4e29-ba3e-87b649f43088" Title="Channel Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Channel.htm">
+        <HelpTOCNode Title="ChannelEmptyTime Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_ChannelEmptyTime.htm" />
+        <HelpTOCNode Title="Channels Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Channels.htm" />
+        <HelpTOCNode Title="Clients Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Clients.htm" />
+        <HelpTOCNode Title="Codec Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Codec.htm" />
+        <HelpTOCNode Title="CodecIsUnencrypted Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecIsUnencrypted.htm" />
+        <HelpTOCNode Title="CodecLatencyFactor Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecLatencyFactor.htm" />
+        <HelpTOCNode Title="CodecQuality Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecQuality.htm" />
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Connection.htm" />
+        <HelpTOCNode Title="DeleteDelay Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_DeleteDelay.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Description.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_ID.htm" />
+        <HelpTOCNode Title="IsDefault Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_IsDefault.htm" />
+        <HelpTOCNode Title="IsPasswordProtected Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPasswordProtected.htm" />
+        <HelpTOCNode Title="IsPermanent Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPermanent.htm" />
+        <HelpTOCNode Title="IsSemiPermanent Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_IsSemiPermanent.htm" />
+        <HelpTOCNode Title="MaxClients Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxClients.htm" />
+        <HelpTOCNode Title="MaxFamilyClients Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxFamilyClients.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Name.htm" />
+        <HelpTOCNode Title="Order Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Order.htm" />
+        <HelpTOCNode Title="Parent Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Parent.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Password.htm" />
+        <HelpTOCNode Title="Topic Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Topic.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3dcbca79-b81a-47c6-9d46-74d65b0d57b0" Title="Channel Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Channel.htm">
+        <HelpTOCNode Title="CreateDirectory Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_CreateDirectory.htm" />
+        <HelpTOCNode Title="Delete Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_Delete.htm" />
+        <HelpTOCNode Id="54c513c7-6820-430c-b24e-d034c6bffdc8" Title="DeleteFile Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_DeleteFile.htm">
+          <HelpTOCNode Title="DeleteFile Method (String, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_DeleteFile.htm" />
+          <HelpTOCNode Title="DeleteFile Method (String[], String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_DeleteFile_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="295fdb7a-ccb0-4f26-b38d-a2dd793aaeec" Title="Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_Equals.htm">
+          <HelpTOCNode Title="Equals Method (Object)" Url="html/M_TeamSpeak_Sdk_Client_Channel_Equals.htm" />
+          <HelpTOCNode Title="Equals Method (Channel)" Url="html/M_TeamSpeak_Sdk_Client_Channel_Equals_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetChannelDescription Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_GetChannelDescription.htm" />
+        <HelpTOCNode Title="GetFileInfo Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileInfo.htm" />
+        <HelpTOCNode Title="GetFileList Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileList.htm" />
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_GetHashCode.htm" />
+        <HelpTOCNode Id="153feaac-b342-4bf3-aea7-adfd279b34f6" Title="MoveFile Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_MoveFile.htm">
+          <HelpTOCNode Title="MoveFile Method (String, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_MoveFile.htm" />
+          <HelpTOCNode Title="MoveFile Method (String, Channel, String, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_MoveFile_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MoveTo Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_MoveTo.htm" />
+        <HelpTOCNode Id="1bb8228a-c6f7-42c2-81a6-b8d8f792cd16" Title="RequestFile Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_RequestFile.htm">
+          <HelpTOCNode Title="RequestFile Method (String, String, Boolean, Boolean, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_RequestFile.htm" />
+          <HelpTOCNode Title="RequestFile Method (String, String, Boolean, Boolean, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_RequestFile_1.htm" />
+          <HelpTOCNode Title="RequestFile Method (String, String, Boolean, Boolean, String, CancellationToken)" Url="html/M_TeamSpeak_Sdk_Client_Channel_RequestFile_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="fc8ae540-cd84-4705-aaa2-b14c8fbb296b" Title="SendFile Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_SendFile.htm">
+          <HelpTOCNode Title="SendFile Method (String, Boolean, Boolean, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_SendFile.htm" />
+          <HelpTOCNode Title="SendFile Method (String, String, Boolean, Boolean, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_SendFile_1.htm" />
+          <HelpTOCNode Title="SendFile Method (String, String, Boolean, Boolean, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Channel_SendFile_2.htm" />
+          <HelpTOCNode Title="SendFile Method (String, String, Boolean, Boolean, String, CancellationToken)" Url="html/M_TeamSpeak_Sdk_Client_Channel_SendFile_3.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SendTextMessage Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_SendTextMessage.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7bb06c58-8060-4f7b-9913-5b985b0e3d73" Title="Channel Operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_Channel.htm">
+        <HelpTOCNode Title="Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Equality.htm" />
+        <HelpTOCNode Title="Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Inequality.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ChannelChangedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelChangedEventHandler.htm" />
+    <HelpTOCNode Title="ChannelDeletedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDeletedEventHandler.htm" />
+    <HelpTOCNode Title="ChannelDescriptionUpdateEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDescriptionUpdateEventHandler.htm" />
+    <HelpTOCNode Title="ChannelMessageEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMessageEventHandler.htm" />
+    <HelpTOCNode Title="ChannelMoveEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMoveEventHandler.htm" />
+    <HelpTOCNode Title="ChannelPasswordChangedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelPasswordChangedEventHandler.htm" />
+    <HelpTOCNode Title="ChannelSubscribeEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeEventHandler.htm" />
+    <HelpTOCNode Title="ChannelSubscribeFinishedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeFinishedEventHandler.htm" />
+    <HelpTOCNode Title="ChannelUnsubscribeEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeEventHandler.htm" />
+    <HelpTOCNode Title="ChannelUnsubscribeFinishedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeFinishedEventHandler.htm" />
+    <HelpTOCNode Title="CheckServerUniqueIdentifierEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_CheckServerUniqueIdentifierEventHandler.htm" />
+    <HelpTOCNode Id="80525b73-b24b-489c-be88-ce02ccd83ae1" Title="Client Class" Url="html/T_TeamSpeak_Sdk_Client_Client.htm">
+      <HelpTOCNode Title="Client Constructor " Url="html/M_TeamSpeak_Sdk_Client_Client__ctor.htm" />
+      <HelpTOCNode Id="f4771454-84e6-47e1-9dbe-719c00c252af" Title="Client Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Client.htm">
+        <HelpTOCNode Title="Channel Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Channel.htm" />
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Connection.htm" />
+        <HelpTOCNode Title="ConnectionInfo Property " Url="html/P_TeamSpeak_Sdk_Client_Client_ConnectionInfo.htm" />
+        <HelpTOCNode Title="DefaultChannel Property " Url="html/P_TeamSpeak_Sdk_Client_Client_DefaultChannel.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_Client_ID.htm" />
+        <HelpTOCNode Title="IdleTime Property " Url="html/P_TeamSpeak_Sdk_Client_Client_IdleTime.htm" />
+        <HelpTOCNode Title="InputHardwareEnabled Property " Url="html/P_TeamSpeak_Sdk_Client_Client_InputHardwareEnabled.htm" />
+        <HelpTOCNode Title="InputMuted Property " Url="html/P_TeamSpeak_Sdk_Client_Client_InputMuted.htm" />
+        <HelpTOCNode Title="IsInputDeactivated Property " Url="html/P_TeamSpeak_Sdk_Client_Client_IsInputDeactivated.htm" />
+        <HelpTOCNode Title="IsRecording Property " Url="html/P_TeamSpeak_Sdk_Client_Client_IsRecording.htm" />
+        <HelpTOCNode Title="IsTalking Property " Url="html/P_TeamSpeak_Sdk_Client_Client_IsTalking.htm" />
+        <HelpTOCNode Title="MetaData Property " Url="html/P_TeamSpeak_Sdk_Client_Client_MetaData.htm" />
+        <HelpTOCNode Title="Muted Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Muted.htm" />
+        <HelpTOCNode Title="Nickname Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Nickname.htm" />
+        <HelpTOCNode Title="OutputHardware Property " Url="html/P_TeamSpeak_Sdk_Client_Client_OutputHardware.htm" />
+        <HelpTOCNode Title="OutputMuted Property " Url="html/P_TeamSpeak_Sdk_Client_Client_OutputMuted.htm" />
+        <HelpTOCNode Title="OutputOnlyMuted Property " Url="html/P_TeamSpeak_Sdk_Client_Client_OutputOnlyMuted.htm" />
+        <HelpTOCNode Title="Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Platform.htm" />
+        <HelpTOCNode Title="UniqueIdentifier Property " Url="html/P_TeamSpeak_Sdk_Client_Client_UniqueIdentifier.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Version.htm" />
+        <HelpTOCNode Title="VolumeModificator Property " Url="html/P_TeamSpeak_Sdk_Client_Client_VolumeModificator.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="33fe94b9-3934-4bca-8fc5-3c7aa33b8add" Title="Client Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Client.htm">
+        <HelpTOCNode Id="547fb65d-280e-43a4-88f2-bab4f2a6f4fd" Title="Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_Client_Equals.htm">
+          <HelpTOCNode Title="Equals Method (Object)" Url="html/M_TeamSpeak_Sdk_Client_Client_Equals.htm" />
+          <HelpTOCNode Title="Equals Method (Client)" Url="html/M_TeamSpeak_Sdk_Client_Client_Equals_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_Client_GetHashCode.htm" />
+        <HelpTOCNode Title="KickFromChannel Method " Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromChannel.htm" />
+        <HelpTOCNode Title="KickFromServer Method " Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromServer.htm" />
+        <HelpTOCNode Title="MoveTo Method " Url="html/M_TeamSpeak_Sdk_Client_Client_MoveTo.htm" />
+        <HelpTOCNode Title="RequestClientVariables Method " Url="html/M_TeamSpeak_Sdk_Client_Client_RequestClientVariables.htm" />
+        <HelpTOCNode Title="SendTextMessage Method " Url="html/M_TeamSpeak_Sdk_Client_Client_SendTextMessage.htm" />
+        <HelpTOCNode Title="Set3DAttributes Method " Url="html/M_TeamSpeak_Sdk_Client_Client_Set3DAttributes.htm" />
+        <HelpTOCNode Title="SetWhisperList Method " Url="html/M_TeamSpeak_Sdk_Client_Client_SetWhisperList.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_TeamSpeak_Sdk_Client_Client_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="a633861a-d7ea-42ae-9a68-f6a2603ceef2" Title="Client Operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_Client.htm">
+        <HelpTOCNode Title="Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_Client_op_Equality.htm" />
+        <HelpTOCNode Title="Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_Client_op_Inequality.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ClientKickFromChannelEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromChannelEventHandler.htm" />
+    <HelpTOCNode Title="ClientKickFromServerEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromServerEventHandler.htm" />
+    <HelpTOCNode Title="ClientMessageEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMessageEventHandler.htm" />
+    <HelpTOCNode Title="ClientMoveEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveEventHandler.htm" />
+    <HelpTOCNode Title="ClientMoveSubscriptionEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveSubscriptionEventHandler.htm" />
+    <HelpTOCNode Title="ClientMoveTimeoutEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveTimeoutEventHandler.htm" />
+    <HelpTOCNode Title="ClientPasswordEncryptHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientPasswordEncryptHandler.htm" />
+    <HelpTOCNode Id="fd1a2bcd-54cf-41e4-a9bd-0e5cd86c0f05" Title="Connection Class" Url="html/T_TeamSpeak_Sdk_Client_Connection.htm">
+      <HelpTOCNode Title="Connection Constructor " Url="html/M_TeamSpeak_Sdk_Client_Connection__ctor.htm" />
+      <HelpTOCNode Id="a38b36c5-28ab-44f2-85a0-265ed26f7d15" Title="Connection Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Connection.htm">
+        <HelpTOCNode Title="AllChannels Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_AllChannels.htm" />
+        <HelpTOCNode Title="AllClients Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_AllClients.htm" />
+        <HelpTOCNode Title="CaptureDevice Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_CaptureDevice.htm" />
+        <HelpTOCNode Title="Channels Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Channels.htm" />
+        <HelpTOCNode Title="ChannelsOnline Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ChannelsOnline.htm" />
+        <HelpTOCNode Title="ClientsOnline Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ClientsOnline.htm" />
+        <HelpTOCNode Title="CodecEncryptionMode Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_CodecEncryptionMode.htm" />
+        <HelpTOCNode Title="Created Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Created.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ID.htm" />
+        <HelpTOCNode Title="IsVoiceRecording Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_IsVoiceRecording.htm" />
+        <HelpTOCNode Title="LocalTestMode Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_LocalTestMode.htm" />
+        <HelpTOCNode Title="MaxClients Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_MaxClients.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Name.htm" />
+        <HelpTOCNode Title="Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Platform.htm" />
+        <HelpTOCNode Title="PlaybackDevice Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_PlaybackDevice.htm" />
+        <HelpTOCNode Title="Preprocessor Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Preprocessor.htm" />
+        <HelpTOCNode Title="Self Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Self.htm" />
+        <HelpTOCNode Title="ServerIp Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerIp.htm" />
+        <HelpTOCNode Title="ServerPort Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerPort.htm" />
+        <HelpTOCNode Title="SpeedLimitDown Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitDown.htm" />
+        <HelpTOCNode Title="SpeedLimitUp Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitUp.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Status.htm" />
+        <HelpTOCNode Title="Timeout Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Timeout.htm" />
+        <HelpTOCNode Title="UniqueIdentifier Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_UniqueIdentifier.htm" />
+        <HelpTOCNode Title="Uptime Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Uptime.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Version.htm" />
+        <HelpTOCNode Title="VolumeFactorWave Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeFactorWave.htm" />
+        <HelpTOCNode Title="VolumeModifier Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeModifier.htm" />
+        <HelpTOCNode Title="WelcomeMessage Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_WelcomeMessage.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="715ffba1-fcf1-4a02-bb42-931779afdc2e" Title="Connection Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Connection.htm">
+        <HelpTOCNode Title="ActivateCaptureDevice Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_ActivateCaptureDevice.htm" />
+        <HelpTOCNode Title="AllowWhispersFrom Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_AllowWhispersFrom.htm" />
+        <HelpTOCNode Title="Close Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Close.htm" />
+        <HelpTOCNode Title="CloseCaptureDevice Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_CloseCaptureDevice.htm" />
+        <HelpTOCNode Title="ClosePlaybackDevice Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_ClosePlaybackDevice.htm" />
+        <HelpTOCNode Title="CreateChannel Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_CreateChannel.htm" />
+        <HelpTOCNode Title="Dispose Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Dispose.htm" />
+        <HelpTOCNode Title="Finalize Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Finalize.htm" />
+        <HelpTOCNode Title="FindClient Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_FindClient.htm" />
+        <HelpTOCNode Title="InitiateGracefulPlaybackShutdown Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_InitiateGracefulPlaybackShutdown.htm" />
+        <HelpTOCNode Id="021ac4ad-78c5-4bf8-ac26-04e9d1d854a2" Title="Move Method " Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Move.htm">
+          <HelpTOCNode Title="Move Method (Channel, Channel, Channel)" Url="html/M_TeamSpeak_Sdk_Client_Connection_Move.htm" />
+          <HelpTOCNode Title="Move Method (Client, Channel, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_Move_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Mute Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Mute.htm" />
+        <HelpTOCNode Title="OpenCapture Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenCapture.htm" />
+        <HelpTOCNode Title="OpenPlayback Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenPlayback.htm" />
+        <HelpTOCNode Title="PlayWaveFile Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_PlayWaveFile.htm" />
+        <HelpTOCNode Title="RefreshVariables Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_RefreshVariables.htm" />
+        <HelpTOCNode Title="RemoveFromAllowedWhispersFrom Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_RemoveFromAllowedWhispersFrom.htm" />
+        <HelpTOCNode Id="faac90b6-36b3-452e-8cce-bc10b0f0f675" Title="SendTextMessage Method " Url="html/Overload_TeamSpeak_Sdk_Client_Connection_SendTextMessage.htm">
+          <HelpTOCNode Title="SendTextMessage Method (String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_SendTextMessage.htm" />
+          <HelpTOCNode Title="SendTextMessage Method (Channel, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_SendTextMessage_1.htm" />
+          <HelpTOCNode Title="SendTextMessage Method (Client, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_SendTextMessage_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Set3DListenerAttributes Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DListenerAttributes.htm" />
+        <HelpTOCNode Title="Set3DSettings Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DSettings.htm" />
+        <HelpTOCNode Id="8bb270ec-49c7-41bc-9c7d-4c2784138573" Title="Start Method " Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Start.htm">
+          <HelpTOCNode Title="Start Method (String, String, UInt32, String, String, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_Start.htm" />
+          <HelpTOCNode Title="Start Method (String, String, UInt32, String, String[], String, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_Start_1.htm" />
+          <HelpTOCNode Title="Start Method (String, String, UInt32, String, UInt64, String, String)" Url="html/M_TeamSpeak_Sdk_Client_Connection_Start_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Stop Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Stop.htm" />
+        <HelpTOCNode Title="Subscribe Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Subscribe.htm" />
+        <HelpTOCNode Title="SubscribeAll Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_SubscribeAll.htm" />
+        <HelpTOCNode Title="Unmute Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Unmute.htm" />
+        <HelpTOCNode Title="Unsubscribe Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Unsubscribe.htm" />
+        <HelpTOCNode Title="UnsubscribeAll Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_UnsubscribeAll.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="87bcd87f-cc7d-40e8-a7b4-d65442ac5e15" Title="Connection Events" Url="html/Events_T_TeamSpeak_Sdk_Client_Connection.htm">
+        <HelpTOCNode Title="ChannelChanged Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelChanged.htm" />
+        <HelpTOCNode Title="ChannelDeleted Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDeleted.htm" />
+        <HelpTOCNode Title="ChannelDescriptionUpdated Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDescriptionUpdated.htm" />
+        <HelpTOCNode Title="ChannelMessage Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMessage.htm" />
+        <HelpTOCNode Title="ChannelMoved Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMoved.htm" />
+        <HelpTOCNode Title="ChannelPasswordChanged Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelPasswordChanged.htm" />
+        <HelpTOCNode Title="ChannelSubscribed Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribed.htm" />
+        <HelpTOCNode Title="ChannelSubscribesFinished Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribesFinished.htm" />
+        <HelpTOCNode Title="ChannelUnsubscribed Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribed.htm" />
+        <HelpTOCNode Title="ChannelUnsubscribesFinished Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribesFinished.htm" />
+        <HelpTOCNode Title="CheckServerUniqueIdentifier Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_CheckServerUniqueIdentifier.htm" />
+        <HelpTOCNode Title="ClientKickedFromChannel Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromChannel.htm" />
+        <HelpTOCNode Title="ClientKickedFromServer Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromServer.htm" />
+        <HelpTOCNode Title="ClientMessage Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMessage.htm" />
+        <HelpTOCNode Title="ClientMoved Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMoved.htm" />
+        <HelpTOCNode Title="ClientMovedSubscription Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMovedSubscription.htm" />
+        <HelpTOCNode Title="ClientTimeout Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientTimeout.htm" />
+        <HelpTOCNode Title="ClientUpdated Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientUpdated.htm" />
+        <HelpTOCNode Title="Custom3dRolloffCalculationClient Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationClient.htm" />
+        <HelpTOCNode Title="Custom3dRolloffCalculationWaveReceived Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationWaveReceived.htm" />
+        <HelpTOCNode Title="EditCapturedVoiceData Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditCapturedVoiceData.htm" />
+        <HelpTOCNode Title="EditMixedPlaybackVoiceData Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditMixedPlaybackVoiceData.htm" />
+        <HelpTOCNode Title="EditPlaybackVoiceData Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPlaybackVoiceData.htm" />
+        <HelpTOCNode Title="EditPostProcessVoiceData Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPostProcessVoiceData.htm" />
+        <HelpTOCNode Title="FileInfoReceived Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileInfoReceived.htm" />
+        <HelpTOCNode Title="FileTransferStatusReceived Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileTransferStatusReceived.htm" />
+        <HelpTOCNode Title="NewChannel Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannel.htm" />
+        <HelpTOCNode Title="NewChannelCreated Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannelCreated.htm" />
+        <HelpTOCNode Title="PlaybackShutdownCompleted Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_PlaybackShutdownCompleted.htm" />
+        <HelpTOCNode Title="ProtocolVersionReceived Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ProtocolVersionReceived.htm" />
+        <HelpTOCNode Title="ServerError Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerError.htm" />
+        <HelpTOCNode Title="ServerMessage Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerMessage.htm" />
+        <HelpTOCNode Title="ServerStop Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerStop.htm" />
+        <HelpTOCNode Title="ServerUpdated Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerUpdated.htm" />
+        <HelpTOCNode Title="StatusChanged Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_StatusChanged.htm" />
+        <HelpTOCNode Title="TalkStatusChanged Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_TalkStatusChanged.htm" />
+        <HelpTOCNode Title="WhisperIgnored Event" Url="html/E_TeamSpeak_Sdk_Client_Connection_WhisperIgnored.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7e408f9b-14f1-487f-b160-cec004ca5957" Title="ConnectionInfo Class" Url="html/T_TeamSpeak_Sdk_Client_ConnectionInfo.htm">
+      <HelpTOCNode Title="ConnectionInfo Constructor " Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo__ctor.htm" />
+      <HelpTOCNode Id="c25ab641-aeea-4d2b-91a2-c5b342dc36b2" Title="ConnectionInfo Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ConnectionInfo.htm">
+        <HelpTOCNode Title="BandwidthReceivedLastMinuteControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteControl.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastMinuteKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteKeepalive.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastMinuteSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteSpeech.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastMinuteTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteTotal.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastSecondControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondControl.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastSecondKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondKeepalive.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastSecondSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondSpeech.htm" />
+        <HelpTOCNode Title="BandwidthReceivedLastSecondTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondTotal.htm" />
+        <HelpTOCNode Title="BandwidthSentLastMinuteControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteControl.htm" />
+        <HelpTOCNode Title="BandwidthSentLastMinuteKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteKeepalive.htm" />
+        <HelpTOCNode Title="BandwidthSentLastMinuteSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteSpeech.htm" />
+        <HelpTOCNode Title="BandwidthSentLastMinuteTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteTotal.htm" />
+        <HelpTOCNode Title="BandwidthSentLastSecondControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondControl.htm" />
+        <HelpTOCNode Title="BandwidthSentLastSecondKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondKeepalive.htm" />
+        <HelpTOCNode Title="BandwidthSentLastSecondSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondSpeech.htm" />
+        <HelpTOCNode Title="BandwidthSentLastSecondTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondTotal.htm" />
+        <HelpTOCNode Title="BytesReceivedControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedControl.htm" />
+        <HelpTOCNode Title="BytesReceivedKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedKeepalive.htm" />
+        <HelpTOCNode Title="BytesReceivedSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedSpeech.htm" />
+        <HelpTOCNode Title="BytesReceivedTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedTotal.htm" />
+        <HelpTOCNode Title="BytesSentControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentControl.htm" />
+        <HelpTOCNode Title="BytesSentKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentKeepalive.htm" />
+        <HelpTOCNode Title="BytesSentSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentSpeech.htm" />
+        <HelpTOCNode Title="BytesSentTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentTotal.htm" />
+        <HelpTOCNode Title="Client Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Client.htm" />
+        <HelpTOCNode Title="ClientIp Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientIp.htm" />
+        <HelpTOCNode Title="ClientPort Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientPort.htm" />
+        <HelpTOCNode Title="ClientToServerPacketlossControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossControl.htm" />
+        <HelpTOCNode Title="ClientToServerPacketlossKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossKeepalive.htm" />
+        <HelpTOCNode Title="ClientToServerPacketlossSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossSpeech.htm" />
+        <HelpTOCNode Title="ClientToServerPacketlossTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossTotal.htm" />
+        <HelpTOCNode Title="ConnectedTime Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ConnectedTime.htm" />
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Connection.htm" />
+        <HelpTOCNode Title="FiletransferBandwidthReceived Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthReceived.htm" />
+        <HelpTOCNode Title="FiletransferBandwidthSent Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthSent.htm" />
+        <HelpTOCNode Title="IdleTime Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_IdleTime.htm" />
+        <HelpTOCNode Title="PacketlossControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossControl.htm" />
+        <HelpTOCNode Title="PacketlossKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossKeepalive.htm" />
+        <HelpTOCNode Title="PacketlossSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossSpeech.htm" />
+        <HelpTOCNode Title="PacketlossTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossTotal.htm" />
+        <HelpTOCNode Title="PacketsReceivedControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedControl.htm" />
+        <HelpTOCNode Title="PacketsReceivedKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedKeepalive.htm" />
+        <HelpTOCNode Title="PacketsReceivedSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedSpeech.htm" />
+        <HelpTOCNode Title="PacketsReceivedTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedTotal.htm" />
+        <HelpTOCNode Title="PacketsSentControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentControl.htm" />
+        <HelpTOCNode Title="PacketsSentKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentKeepalive.htm" />
+        <HelpTOCNode Title="PacketsSentSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentSpeech.htm" />
+        <HelpTOCNode Title="PacketsSentTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentTotal.htm" />
+        <HelpTOCNode Title="Ping Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Ping.htm" />
+        <HelpTOCNode Title="PingDeviation Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PingDeviation.htm" />
+        <HelpTOCNode Title="ServerToClientPacketlossControl Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossControl.htm" />
+        <HelpTOCNode Title="ServerToClientPacketlossKeepalive Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossKeepalive.htm" />
+        <HelpTOCNode Title="ServerToClientPacketlossSpeech Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossSpeech.htm" />
+        <HelpTOCNode Title="ServerToClientPacketlossTotal Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossTotal.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bac615e1-faee-4cf8-8e3b-7a979c3860c6" Title="ConnectionInfo Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_ConnectionInfo.htm">
+        <HelpTOCNode Title="CleanUp Method " Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_CleanUp.htm" />
+        <HelpTOCNode Title="Refresh Method " Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_Refresh.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ConnectStatusChangeEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ConnectStatusChangeEventHandler.htm" />
+    <HelpTOCNode Title="Custom3dRolloffCalculationClientEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationClientEventHandler.htm" />
+    <HelpTOCNode Title="Custom3dRolloffCalculationWaveEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationWaveEventHandler.htm" />
+    <HelpTOCNode Id="c95d4a47-16e8-4fd8-b6e7-d0026daae1ae" Title="CustomDevice Class" Url="html/T_TeamSpeak_Sdk_Client_CustomDevice.htm">
+      <HelpTOCNode Title="CustomDevice Constructor " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice__ctor.htm" />
+      <HelpTOCNode Id="4911eaf0-6473-40dd-8da8-9577f1fe098f" Title="CustomDevice Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_CustomDevice.htm">
+        <HelpTOCNode Title="CaptureChannels Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureChannels.htm" />
+        <HelpTOCNode Title="CaptureRate Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureRate.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_ID.htm" />
+        <HelpTOCNode Title="Mode Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Mode.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Name.htm" />
+        <HelpTOCNode Title="PlaybackChannels Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackChannels.htm" />
+        <HelpTOCNode Title="PlaybackRate Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackRate.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0bef6900-ecce-49d1-93fe-d9c8873a37c3" Title="CustomDevice Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_CustomDevice.htm">
+        <HelpTOCNode Title="AcquireData Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_AcquireData.htm" />
+        <HelpTOCNode Id="0b708024-a5b1-4f10-830a-1d22406c4111" Title="Dispose Method " Url="html/Overload_TeamSpeak_Sdk_Client_CustomDevice_Dispose.htm">
+          <HelpTOCNode Title="Dispose Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_Dispose.htm" />
+          <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_Dispose_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Finalize Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_Finalize.htm" />
+        <HelpTOCNode Title="ProcessData Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ProcessData.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ToString.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="CustomPacketDecryptHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketDecryptHandler.htm" />
+    <HelpTOCNode Title="CustomPacketEncryptHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketEncryptHandler.htm" />
+    <HelpTOCNode Title="EditCapturedVoiceDataEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_EditCapturedVoiceDataEventHandler.htm" />
+    <HelpTOCNode Title="EditMixedPlaybackVoiceDataEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_EditMixedPlaybackVoiceDataEventHandler.htm" />
+    <HelpTOCNode Title="EditPlaybackVoiceDataEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPlaybackVoiceDataEventHandler.htm" />
+    <HelpTOCNode Title="EditPostProcessVoiceDataEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPostProcessVoiceDataEventHandler.htm" />
+    <HelpTOCNode Id="f67d0334-1c37-42ee-b94f-5385ffe5f56f" Title="FileInfo Class" Url="html/T_TeamSpeak_Sdk_Client_FileInfo.htm">
+      <HelpTOCNode Title="FileInfo Constructor " Url="html/M_TeamSpeak_Sdk_Client_FileInfo__ctor.htm" />
+      <HelpTOCNode Id="85754b24-3ea6-4f63-aa1e-275810d9f5f7" Title="FileInfo Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_FileInfo.htm">
+        <HelpTOCNode Title="Channel Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Channel.htm" />
+        <HelpTOCNode Title="IncompleteSize Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_IncompleteSize.htm" />
+        <HelpTOCNode Title="LastModified Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_LastModified.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Name.htm" />
+        <HelpTOCNode Title="Path Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Path.htm" />
+        <HelpTOCNode Title="Size Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Size.htm" />
+        <HelpTOCNode Title="Type Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Type.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="FileInfo Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="FileInfoEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_FileInfoEventHandler.htm" />
+    <HelpTOCNode Id="219f6cf9-b30b-4c27-9bed-4181a738f439" Title="FileTransfer Class" Url="html/T_TeamSpeak_Sdk_Client_FileTransfer.htm">
+      <HelpTOCNode Title="FileTransfer Constructor " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer__ctor.htm" />
+      <HelpTOCNode Id="25c0e125-78e2-4faf-b8d1-4a8b1cb33fdf" Title="FileTransfer Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_FileTransfer.htm">
+        <HelpTOCNode Title="AverageSpeed Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_AverageSpeed.htm" />
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Connection.htm" />
+        <HelpTOCNode Title="CurrentSpeed Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_CurrentSpeed.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_ID.htm" />
+        <HelpTOCNode Title="Mode Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Mode.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Name.htm" />
+        <HelpTOCNode Title="Path Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Path.htm" />
+        <HelpTOCNode Title="RemotePath Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RemotePath.htm" />
+        <HelpTOCNode Title="RunTime Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RunTime.htm" />
+        <HelpTOCNode Title="Size Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Size.htm" />
+        <HelpTOCNode Title="SizeDone Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SizeDone.htm" />
+        <HelpTOCNode Title="SpeedLimit Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SpeedLimit.htm" />
+        <HelpTOCNode Title="Status Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Status.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9e653ad9-c76b-48f7-9be0-8d63af0a2c95" Title="FileTransfer Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_FileTransfer.htm">
+        <HelpTOCNode Id="5160e18b-c933-4a2f-a91f-14f97df9b3be" Title="Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_FileTransfer_Equals.htm">
+          <HelpTOCNode Title="Equals Method (Object)" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_Equals.htm" />
+          <HelpTOCNode Title="Equals Method (FileTransfer)" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_Equals_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_GetHashCode.htm" />
+        <HelpTOCNode Title="Halt Method " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_Halt.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c27f8932-1494-4011-bac5-026d001606cc" Title="FileTransfer Operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_FileTransfer.htm">
+        <HelpTOCNode Title="Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Equality.htm" />
+        <HelpTOCNode Title="Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Inequality.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="FileTransferStatusEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_FileTransferStatusEventHandler.htm" />
+    <HelpTOCNode Title="IgnoredWhisperEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_IgnoredWhisperEventHandler.htm" />
+    <HelpTOCNode Id="351b6d17-24e8-4aa1-a611-25ea776f9f9b" Title="ISoundDevice Interface" Url="html/T_TeamSpeak_Sdk_Client_ISoundDevice.htm">
+      <HelpTOCNode Id="35041fb9-e46d-43f7-b156-593e078064c8" Title="ISoundDevice Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ISoundDevice.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_ID.htm" />
+        <HelpTOCNode Title="Mode Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Mode.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Name.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="11945301-447b-46c4-a5bd-c77c43d623fe" Title="Library Class" Url="html/T_TeamSpeak_Sdk_Client_Library.htm">
+      <HelpTOCNode Id="c415c0f7-9107-4fde-8ae9-4189de5b7a67" Title="Library Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Library.htm">
+        <HelpTOCNode Title="ClientPasswordEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_ClientPasswordEncrypt.htm" />
+        <HelpTOCNode Title="Connections Property " Url="html/P_TeamSpeak_Sdk_Client_Library_Connections.htm" />
+        <HelpTOCNode Title="CustomDevices Property " Url="html/P_TeamSpeak_Sdk_Client_Library_CustomDevices.htm" />
+        <HelpTOCNode Title="CustomPacketDecrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketDecrypt.htm" />
+        <HelpTOCNode Title="CustomPacketEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketEncrypt.htm" />
+        <HelpTOCNode Title="FunctionRarePointers Property " Url="html/P_TeamSpeak_Sdk_Client_Library_FunctionRarePointers.htm" />
+        <HelpTOCNode Title="IsInitialized Property " Url="html/P_TeamSpeak_Sdk_Client_Library_IsInitialized.htm" />
+        <HelpTOCNode Title="LogFileFolder Property " Url="html/P_TeamSpeak_Sdk_Client_Library_LogFileFolder.htm" />
+        <HelpTOCNode Title="LogLevel Property " Url="html/P_TeamSpeak_Sdk_Client_Library_LogLevel.htm" />
+        <HelpTOCNode Title="NativeBinary Property " Url="html/P_TeamSpeak_Sdk_Client_Library_NativeBinary.htm" />
+        <HelpTOCNode Title="Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Library_Platform.htm" />
+        <HelpTOCNode Title="ResourcesFolder Property " Url="html/P_TeamSpeak_Sdk_Client_Library_ResourcesFolder.htm" />
+        <HelpTOCNode Title="SpeedLimitDown Property " Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitDown.htm" />
+        <HelpTOCNode Title="SpeedLimitUp Property " Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitUp.htm" />
+        <HelpTOCNode Title="UsedLogTypes Property " Url="html/P_TeamSpeak_Sdk_Client_Library_UsedLogTypes.htm" />
+        <HelpTOCNode Title="Version Property " Url="html/P_TeamSpeak_Sdk_Client_Library_Version.htm" />
+        <HelpTOCNode Title="VersionNumber Property " Url="html/P_TeamSpeak_Sdk_Client_Library_VersionNumber.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="70af7af5-31f1-44d9-8da5-5ad4bbe9b203" Title="Library Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Library.htm">
+        <HelpTOCNode Title="CreateCustomDevice Method " Url="html/M_TeamSpeak_Sdk_Client_Library_CreateCustomDevice.htm" />
+        <HelpTOCNode Title="CreateIdentity Method " Url="html/M_TeamSpeak_Sdk_Client_Library_CreateIdentity.htm" />
+        <HelpTOCNode Title="Destroy Method " Url="html/M_TeamSpeak_Sdk_Client_Library_Destroy.htm" />
+        <HelpTOCNode Title="GetCaptureDevices Method " Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureDevices.htm" />
+        <HelpTOCNode Title="GetCaptureModes Method " Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureModes.htm" />
+        <HelpTOCNode Title="GetErrorMessage Method " Url="html/M_TeamSpeak_Sdk_Client_Library_GetErrorMessage.htm" />
+        <HelpTOCNode Title="GetPlaybackDevices Method " Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackDevices.htm" />
+        <HelpTOCNode Title="GetPlaybackModes Method " Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackModes.htm" />
+        <HelpTOCNode Title="IdentityToUniqueIdentifier Method " Url="html/M_TeamSpeak_Sdk_Client_Library_IdentityToUniqueIdentifier.htm" />
+        <HelpTOCNode Id="68131f5f-5011-4c3c-a107-99b13c6db4ac" Title="Initialize Method " Url="html/Overload_TeamSpeak_Sdk_Client_Library_Initialize.htm">
+          <HelpTOCNode Title="Initialize Method " Url="html/M_TeamSpeak_Sdk_Client_Library_Initialize.htm" />
+          <HelpTOCNode Title="Initialize Method (LibraryParameters)" Url="html/M_TeamSpeak_Sdk_Client_Library_Initialize_1.htm" />
+          <HelpTOCNode Title="Initialize Method (LogTypes)" Url="html/M_TeamSpeak_Sdk_Client_Library_Initialize_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Log Method " Url="html/M_TeamSpeak_Sdk_Client_Library_Log.htm" />
+        <HelpTOCNode Title="SpawnNewConnection Method " Url="html/M_TeamSpeak_Sdk_Client_Library_SpawnNewConnection.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bb41315e-d947-4c1e-bc73-9a3a6e42b8d9" Title="Library Events" Url="html/Events_T_TeamSpeak_Sdk_Client_Library.htm">
+        <HelpTOCNode Title="SoundDeviceListChanged Event" Url="html/E_TeamSpeak_Sdk_Client_Library_SoundDeviceListChanged.htm" />
+        <HelpTOCNode Title="UserLogMessage Event" Url="html/E_TeamSpeak_Sdk_Client_Library_UserLogMessage.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="6bf2593a-41d6-4158-b6ba-f52c58c3d975" Title="LibraryParameters Class" Url="html/T_TeamSpeak_Sdk_Client_LibraryParameters.htm">
+      <HelpTOCNode Id="2868de05-2e15-48cd-9d38-cf824e5c3208" Title="LibraryParameters Constructor " Url="html/Overload_TeamSpeak_Sdk_Client_LibraryParameters__ctor.htm">
+        <HelpTOCNode Title="LibraryParameters Constructor " Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters__ctor.htm" />
+        <HelpTOCNode Title="LibraryParameters Constructor (String)" Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters__ctor_1.htm" />
+        <HelpTOCNode Title="LibraryParameters Constructor (String, String)" Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters__ctor_2.htm" />
+        <HelpTOCNode Title="LibraryParameters Constructor (String, SupportedPlatform, String)" Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters__ctor_3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="d369cf8d-4e6f-4d91-990d-a416a958e20f" Title="LibraryParameters Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_LibraryParameters.htm">
+        <HelpTOCNode Title="ClientPasswordEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ClientPasswordEncrypt.htm" />
+        <HelpTOCNode Title="CustomPacketDecrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketDecrypt.htm" />
+        <HelpTOCNode Title="CustomPacketEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketEncrypt.htm" />
+        <HelpTOCNode Title="FunctionRarePointers Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_FunctionRarePointers.htm" />
+        <HelpTOCNode Title="LogFileFolder Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_LogFileFolder.htm" />
+        <HelpTOCNode Title="Platform Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_Platform.htm" />
+        <HelpTOCNode Title="PossibleNativeBinaryLocations Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_PossibleNativeBinaryLocations.htm" />
+        <HelpTOCNode Title="ResourcesFolder Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ResourcesFolder.htm" />
+        <HelpTOCNode Title="UsedLogTypes Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_UsedLogTypes.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7ab3d340-ac30-4b9c-ad81-68e63e8896f2" Title="LibraryParameters Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_LibraryParameters.htm">
+        <HelpTOCNode Title="TryGetNativeBinaryName Method " Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters_TryGetNativeBinaryName.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="NewChannelCreatedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelCreatedEventHandler.htm" />
+    <HelpTOCNode Title="NewChannelEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelEventHandler.htm" />
+    <HelpTOCNode Title="PlaybackShutdownCompleteEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_PlaybackShutdownCompleteEventHandler.htm" />
+    <HelpTOCNode Id="8d1445c3-b9dd-429c-8352-f9a20661c156" Title="Preprocessor Class" Url="html/T_TeamSpeak_Sdk_Client_Preprocessor.htm">
+      <HelpTOCNode Title="Preprocessor Constructor " Url="html/M_TeamSpeak_Sdk_Client_Preprocessor__ctor.htm" />
+      <HelpTOCNode Id="e80d926c-e84a-4d9e-aad3-8dfc5b3a0e04" Title="Preprocessor Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Preprocessor.htm">
+        <HelpTOCNode Title="Agc Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Agc.htm" />
+        <HelpTOCNode Title="AgcLevel Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcLevel.htm" />
+        <HelpTOCNode Title="AgcMaxGain Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcMaxGain.htm" />
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Connection.htm" />
+        <HelpTOCNode Title="DecibelLastPeriod Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_DecibelLastPeriod.htm" />
+        <HelpTOCNode Title="Denoise Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Denoise.htm" />
+        <HelpTOCNode Title="EchoCanceling Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_EchoCanceling.htm" />
+        <HelpTOCNode Title="Vad Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Vad.htm" />
+        <HelpTOCNode Title="VadExtraBufferSize Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadExtraBufferSize.htm" />
+        <HelpTOCNode Title="VadLevel Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadLevel.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Preprocessor Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Title="ProtocolVersionEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ProtocolVersionEventHandler.htm" />
+    <HelpTOCNode Id="4eea8b14-677f-4ff7-b0a6-ff62dc29d20e" Title="ReadonlyChannelCollection Class" Url="html/T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm">
+      <HelpTOCNode Title="ReadonlyChannelCollection Constructor " Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection__ctor.htm" />
+      <HelpTOCNode Id="f211f765-74bf-4899-b336-2773a0ed10c8" Title="ReadonlyChannelCollection Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm">
+        <HelpTOCNode Title="Count Property " Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Count.htm" />
+        <HelpTOCNode Title="IsReadOnly Property " Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_IsReadOnly.htm" />
+        <HelpTOCNode Title="Item Property " Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Item.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="11cbf2e0-525a-4778-b907-54754bb200ac" Title="ReadonlyChannelCollection Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm">
+        <HelpTOCNode Title="Contains Method " Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Contains.htm" />
+        <HelpTOCNode Title="CopyTo Method " Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_CopyTo.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_GetEnumerator.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="ServerErrorEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerErrorEventHandler.htm" />
+    <HelpTOCNode Title="ServerMessageEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerMessageEventHandler.htm" />
+    <HelpTOCNode Title="ServerStopEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerStopEventHandler.htm" />
+    <HelpTOCNode Title="ServerUpdatedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerUpdatedEventHandler.htm" />
+    <HelpTOCNode Id="752f1de9-db7d-411f-9054-5bb8a03a2dd3" Title="SoundDevice Structure" Url="html/T_TeamSpeak_Sdk_Client_SoundDevice.htm">
+      <HelpTOCNode Title="SoundDevice Constructor " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice__ctor.htm" />
+      <HelpTOCNode Id="60609431-0d0f-4b70-be42-aa3f3c9a0cc8" Title="SoundDevice Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_SoundDevice.htm">
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_ID.htm" />
+        <HelpTOCNode Title="Mode Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Mode.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Name.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="72862b0a-4d00-4c91-89ad-9ed513627360" Title="SoundDevice Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_SoundDevice.htm">
+        <HelpTOCNode Title="Equals Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_Equals.htm" />
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_GetHashCode.htm" />
+        <HelpTOCNode Title="ToString Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_ToString.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="00708eb5-98a3-4e9b-816a-90d15afe2bd2" Title="SoundDevice Operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_SoundDevice.htm">
+        <HelpTOCNode Title="Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Equality.htm" />
+        <HelpTOCNode Title="Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Inequality.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="SoundDeviceListChangedEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_SoundDeviceListChangedEventHandler.htm" />
+    <HelpTOCNode Title="TalkStatusChangeEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_TalkStatusChangeEventHandler.htm" />
+    <HelpTOCNode Title="UpdateClientEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_UpdateClientEventHandler.htm" />
+    <HelpTOCNode Title="UserLoggingMessageEventHandler Delegate" Url="html/T_TeamSpeak_Sdk_Client_UserLoggingMessageEventHandler.htm" />
+    <HelpTOCNode Id="719bd3c2-25ea-49a3-8f49-ba67541f9498" Title="WaveHandle Class" Url="html/T_TeamSpeak_Sdk_Client_WaveHandle.htm">
+      <HelpTOCNode Title="WaveHandle Constructor " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle__ctor.htm" />
+      <HelpTOCNode Id="49f874f1-cc20-4c67-870b-3140ac15890c" Title="WaveHandle Properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_WaveHandle.htm">
+        <HelpTOCNode Title="Connection Property " Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Connection.htm" />
+        <HelpTOCNode Title="ID Property " Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_ID.htm" />
+        <HelpTOCNode Title="Paused Property " Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Paused.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9224835b-0668-424a-97bb-461e42028d6a" Title="WaveHandle Methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_WaveHandle.htm">
+        <HelpTOCNode Title="Close Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Close.htm" />
+        <HelpTOCNode Id="7363df22-de42-45f2-8f31-3c975a573551" Title="Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_WaveHandle_Equals.htm">
+          <HelpTOCNode Title="Equals Method (Object)" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Equals.htm" />
+          <HelpTOCNode Title="Equals Method (WaveHandle)" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Equals_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_GetHashCode.htm" />
+        <HelpTOCNode Title="Set3DAttributes Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Set3DAttributes.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="95b02b48-ebef-4433-981a-f4184a8fee08" Title="WaveHandle Operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_WaveHandle.htm">
+        <HelpTOCNode Title="Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Equality.htm" />
+        <HelpTOCNode Title="Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Inequality.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

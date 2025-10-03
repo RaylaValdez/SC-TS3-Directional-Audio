@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced channel creation &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Moving channels" href="channel-move.html" />
+    <link rel="prev" title="Creating a new channel" href="channel-create.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="channels.html">Managing channels</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="channel-list.html">List channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-create.html">Creating a new channel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced channel creation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#obtain-a-channel-creation-structure">Obtain a channel creation structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-basic-channel-properties">Setting basic channel properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-additional-channel-properties">Setting additional channel properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actually-create-the-channel">Actually create the channel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="channel-move.html">Moving channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="channel-delete.html">Deleting channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info-channel.html">Channel information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="channels.html">Managing channels</a></li>
+      <li class="breadcrumb-item active">Advanced channel creation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-channel-creation">
+<h1>Advanced channel creation<a class="headerlink" href="#advanced-channel-creation" title="Permalink to this heading"></a></h1>
+<p>There is an alternative API available for channel creation, similar to the <a class="reference internal" href="advanced-create.html#s-server-create-advanced"><span class="std std-ref">alternative virtual server creation
+API</span></a>. The idea is to create a
+<code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3ChannelCreationParams</span></code> structure, query the attached <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> structure, fill
+it with desired parameters and finally call <a class="reference internal" href="#c.ts3server_createChannel" title="ts3server_createChannel"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_createChannel()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a complete example please see the “server_creation_params” sample
+code in the SDK package.</p>
+</div>
+<section id="obtain-a-channel-creation-structure">
+<h2>Obtain a channel creation structure<a class="headerlink" href="#obtain-a-channel-creation-structure" title="Permalink to this heading"></a></h2>
+<p>First we need to create a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3ChannelCreationParams</span></code> struct using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_makeChannelCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Create a structure that defines channel properties for use with <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable to receive a pointer to the structure. Pointer must not be freed! After receiving the structure pointer, it must be filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1aa902981e442f7f3eba09518e70b19268"><span class="std std-ref">ts3server_setChannelCreationParams</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not free or dispose of the structure, it must be valid as long
+as the channel exists.
+The server lib will take care of cleaning up the structure at an
+appropriate time.</p>
+</div>
+<p>Once we have a <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3ChannelCreationParams</span></code> struct for this channel, we can
+start to fill it in two steps. Step 1 is setting the essential data,
+step 2 is setting additional data.</p>
+</section>
+<section id="setting-basic-channel-properties">
+<h2>Setting basic channel properties<a class="headerlink" href="#setting-basic-channel-properties" title="Permalink to this heading"></a></h2>
+<p>Essential parameters are channel parent ID and channel ID. These are specified using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_setChannelCreationParams</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelCreationParams</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelParentID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Specify mandatory details of a channel to be created at server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>. </p>
+<p>Must be called after <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> to set basic properties of a channel. After this call you may set additional channel properties by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a9377f425b1bba45358cd97c579dc9512"><span class="std std-ref">ts3server_getChannelCreationParamsVariables</span></a> and <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channelCreationParams</strong> – defines the channel for which we set basic properties. Obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> </p></li>
+<li><p><strong>channelParentID</strong> – the id of the channel that this channel is a sub channel of. Pass 0 to make this channel a root channel. </p></li>
+<li><p><strong>channelID</strong> – the id this channel should have. Pass 0 to have the server lib assign a free ID. This is used to identify the channel in other calls to the client and server library. Must be unique across all virtual servers during the lifetime of the server library. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="setting-additional-channel-properties">
+<h2>Setting additional channel properties<a class="headerlink" href="#setting-additional-channel-properties" title="Permalink to this heading"></a></h2>
+<p>After setting the essential parameters, we can set additional
+channel parameters.</p>
+<p>To do so we first need to retrieve the <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> for this channel and
+fill it.</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getChannelCreationParamsVariables</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelCreationParams</span></span>, <span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3Variables</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Allows settings optional channel properties for channels to be created either at server creation using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a> or using <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channelCreationParams</strong> – defines which channel to set variables for. Address of the structure obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a43b890922f8f205e9b725e79c104abd2"><span class="std std-ref">ts3server_getVirtualServerCreationParamsChannelCreationParams</span></a> when the channel is to be created at server creation (using <a class="reference internal" href="../server_api.html#serverlib_8h_1a2cbaee21d0dc163d23ebcc4d15065fbe"><span class="std std-ref">ts3server_createVirtualServer2</span></a>) or obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a1eebf07588b2f72c4fe7d77442382e26"><span class="std std-ref">ts3server_makeChannelCreationParams</span></a> when using with <a class="reference internal" href="../server_api.html#serverlib_8h_1a04c949dd9f95b3d4a56bf843fcf826ba"><span class="std std-ref">ts3server_createChannel</span></a> </p></li>
+<li><p><strong>result</strong> – address of a variable to receive a pointer that is to be filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1a08ad40944701d279e0d417f30bebb035"><span class="std std-ref">ts3server_setVariableAsInt</span></a>, <a class="reference internal" href="../server_api.html#serverlib_8h_1ad3245ab7544e8444f76156f35575e84d"><span class="std std-ref">ts3server_setVariableAsUInt64</span></a> or <a class="reference internal" href="../server_api.html#serverlib_8h_1a1b584647b5c91c42707494ab631c9213"><span class="std std-ref">ts3server_setVariableAsString</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Once we have the <code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3Variables</span></code> we can set them by calling <a class="reference internal" href="advanced-create.html#c.ts3server_setVariableAsInt" title="ts3server_setVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsInt()</span></code></a>,
+<a class="reference internal" href="advanced-create.html#c.ts3server_setVariableAsUInt64" title="ts3server_setVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsUInt64()</span></code></a> or <a class="reference internal" href="advanced-create.html#c.ts3server_setVariableAsString" title="ts3server_setVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_setVariableAsString()</span></code></a>.
+You can also get the current value using <a class="reference internal" href="advanced-create.html#c.ts3server_getVariableAsInt" title="ts3server_getVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsInt()</span></code></a>, <a class="reference internal" href="advanced-create.html#c.ts3server_getVariableAsUInt64" title="ts3server_getVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsUInt64()</span></code></a>
+and <a class="reference internal" href="advanced-create.html#c.ts3server_getVariableAsString" title="ts3server_getVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_getVariableAsString()</span></code></a>.</p>
+</section>
+<section id="actually-create-the-channel">
+<h2>Actually create the channel<a class="headerlink" href="#actually-create-the-channel" title="Permalink to this heading"></a></h2>
+<p>Finally, after setting up channel parameters, create the channel in one
+step with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_createChannel</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span>, <span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">TS3ChannelCreationParams</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">channelCreationParams</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="../server_api.html#c.ChannelCreateFlags" title="ChannelCreateFlags"><span class="n"><span class="pre">ChannelCreateFlags</span></span></a><span class="w"> </span><span class="n"><span class="pre">flags</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>create a new channel on an existing virtual server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverID</strong> – the server on which to create the channel. </p></li>
+<li><p><strong>channelCreationParams</strong> – defines channel properties. Address of the structure obtained by calling <a class="reference internal" href="../server_api.html#serverlib_8h_1a1eebf07588b2f72c4fe7d77442382e26"><span class="std std-ref">ts3server_makeChannelCreationParams</span></a> Must have been filled using <a class="reference internal" href="../server_api.html#serverlib_8h_1aa902981e442f7f3eba09518e70b19268"><span class="std std-ref">ts3server_setChannelCreationParams</span></a> before this call. </p></li>
+<li><p><strong>flags</strong> – defines how certain information is presented in the channelCreationParams. Combination of the values from the <a class="reference internal" href="../server_api.html#serverlib_8h_1a8c51f552b923268b6fb5d67e95c39f78"><span class="std std-ref">ChannelCreateFlags</span></a> enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the channel id of the newly created channel. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="channel-create.html" class="btn btn-neutral float-left" title="Creating a new channel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="channel-move.html" class="btn btn-neutral float-right" title="Moving channels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

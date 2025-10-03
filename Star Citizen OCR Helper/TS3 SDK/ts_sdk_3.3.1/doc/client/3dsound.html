@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Sound &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Whisper lists" href="whisper.html" />
+    <link rel="prev" title="Playing wave files" href="wave-files.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3D Sound</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adjust-general-settings">Adjust general settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#own-client-position">Own client position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-client-position">Other client position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wave-file-position">Wave file position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#callbacks">Callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">3D Sound</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="d-sound">
+<h1>3D Sound<a class="headerlink" href="#d-sound" title="Permalink to this heading"></a></h1>
+<p>TeamSpeak 3 supports 3D sound to assign each speaker a unique position
+in 3D space. Functions to modify the 3D position, velocity
+and orientation of own and foreign clients are discussed in this chapter.</p>
+<p>Positions are described using <a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><code class="xref c c-struct docutils literal notranslate"><span class="pre">TS3_VECTOR</span></code></a></p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TS3_VECTOR</span></span></span><br /></dt>
+<dd><p>Describes a client position in 3 dimensional space, used for 3D Sound. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">x</span></span></span><br /></dt>
+<dd><p>X co-ordinate in 3D space. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">y</span></span></span><br /></dt>
+<dd><p>Y co-ordinate in 3D space. </p>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">z</span></span></span><br /></dt>
+<dd><p>Z co-ordinate in 3D space. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<section id="adjust-general-settings">
+<h2>Adjust general settings<a class="headerlink" href="#adjust-general-settings" title="Permalink to this heading"></a></h2>
+<p>To adjust 3D sound system settings use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_systemset3DSettings</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n"><span class="pre">distanceFactor</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n"><span class="pre">rolloffScale</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change 3D sound attenuation and distance settings. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for which to adjust the settings. </p></li>
+<li><p><strong>distanceFactor</strong> – relative distance factor in meters. Default is 1.0. Use to adjust the distance between two TS3_VECTOR. Distance on x axis in meters = (a.x - b.x) * distanceFactor </p></li>
+<li><p><strong>rolloffScale</strong> – Defines how fast sound volume will attenuate with distance. A higher value will cause sound to be toned down faster with increasing distance. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="own-client-position">
+<h2>Own client position<a class="headerlink" href="#own-client-position" title="Permalink to this heading"></a></h2>
+<p>To set the position, velocity and orientation of the own client in 3D
+space, call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_systemset3DListenerAttributes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><span class="n"><span class="pre">TS3_VECTOR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">position</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><span class="n"><span class="pre">TS3_VECTOR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">forward</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><span class="n"><span class="pre">TS3_VECTOR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">up</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set position, orientation and velocity of own client in 3D space. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for which to set the specified 3D settings. </p></li>
+<li><p><strong>position</strong> – 3D position of own client, pass NULL to ignore. </p></li>
+<li><p><strong>forward</strong> – Forward orientation. Vector must be of unit length and perpendicular to the up vector. Pass NULL to ignore. </p></li>
+<li><p><strong>up</strong> – Upward orientation. Vector must be of unit length and perpendicular to the forward vector. Pass NULL to ignore. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="other-client-position">
+<h2>Other client position<a class="headerlink" href="#other-client-position" title="Permalink to this heading"></a></h2>
+<p>To adjust a clients position and velocity in 3D space, call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_channelset3DAttributes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><span class="n"><span class="pre">TS3_VECTOR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">position</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Adjusts other clients position in 3D space. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for the server on which the client specified by clID is located. </p></li>
+<li><p><strong>clientID</strong> – the client id of the other client we want to adjust the position of. </p></li>
+<li><p><strong>position</strong> – the desired position in 3D space of the other client </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="wave-file-position">
+<h2>Wave file position<a class="headerlink" href="#wave-file-position" title="Permalink to this heading"></a></h2>
+<p>This method is used to 3D position a wave file that was opened
+previously with <a class="reference internal" href="wave-files.html#c.ts3client_playWaveFileHandle" title="ts3client_playWaveFileHandle"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_playWaveFileHandle()</span></code></a>.</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_set3DWaveAttributes</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">waveHandle</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#c.TS3_VECTOR" title="TS3_VECTOR"><span class="n"><span class="pre">TS3_VECTOR</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">position</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Set the 3D position of a wave handle as retrieved by ts3client_playWaveFileHandle. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1a96d9a7a84409b0ecf06851399029b4dc"><span class="std std-ref">ts3client_playWaveFileHandle</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler of the wave handle </p></li>
+<li><p><strong>waveHandle</strong> – a valid wave Handle as retrieved by ts3client_openWaveFileHandle. Specifies the sound file for which to adjust the position </p></li>
+<li><p><strong>position</strong> – the position the wave file should be played from </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="callbacks">
+<h2>Callbacks<a class="headerlink" href="#callbacks" title="Permalink to this heading"></a></h2>
+<p>The following callback funtion is called to calculate volume attenuation for
+distance in 3D positioning of clients.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onCustom3dRolloffCalculationClientEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called to calculate the volume attenuation for the distance in 3D positioning of clients </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>id of the client for which the position is calculated </p>
+</dd>
+<dt class="field-odd">Param distance<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the distance from own client to the client </p>
+</dd>
+<dt class="field-even">Param volume<span class="colon">:</span></dt>
+<dd class="field-even"><p>the volume calculated by the client lib. Can be modified in the callback. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The following event is called to calculate volume attenuation for
+distance in 3D positioning of a wave file that was opened previously
+with <a class="reference internal" href="wave-files.html#c.ts3client_playWaveFileHandle" title="ts3client_playWaveFileHandle"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_playWaveFileHandle()</span></code></a>.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onCustom3dRolloffCalculationWaveEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">waveHandle</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called to calculate the volume attenuation for the distance in 3D positioning of wave files </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1a96d9a7a84409b0ecf06851399029b4dc"><span class="std std-ref">ts3client_playWaveFileHandle</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param waveHandle<span class="colon">:</span></dt>
+<dd class="field-even"><p>identifies the wave file to calculate the volume for. A handle previously created with <a class="reference internal" href="../client_api.html#clientlib_8h_1a96d9a7a84409b0ecf06851399029b4dc"><span class="std std-ref">ts3client_playWaveFileHandle</span></a> </p>
+</dd>
+<dt class="field-odd">Param distance<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the distance from own client to the source of the wave file </p>
+</dd>
+<dt class="field-even">Param volume<span class="colon">:</span></dt>
+<dd class="field-even"><p>the volume of the wave file calculated by the client lib. Can be modified in the callback. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wave-files.html" class="btn btn-neutral float-left" title="Playing wave files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="whisper.html" class="btn btn-neutral float-right" title="Whisper lists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

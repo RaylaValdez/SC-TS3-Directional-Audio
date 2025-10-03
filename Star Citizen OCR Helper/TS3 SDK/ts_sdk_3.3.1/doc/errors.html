@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeamSpeak Error Codes &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Property Enums" href="properties.html" />
+    <link rel="prev" title="Welcome to TeamSpeak SDK’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TeamSpeak Error Codes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="teamspeak-error-codes">
+<h1>TeamSpeak Error Codes<a class="headerlink" href="#teamspeak-error-codes" title="Permalink to this heading"></a></h1>
+<dl class="c enum">
+<dt class="sig sig-object c" id="c.Ts3ErrorType">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Ts3ErrorType</span></span></span><a class="headerlink" href="#c.Ts3ErrorType" title="Permalink to this definition"></a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_ok">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_ok</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_ok" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Indicates success. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_undefined">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab472013bd3e14b06ec6024180c21869c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_undefined</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_undefined" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_not_implemented">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bade5826724aaf8448da2e5650907f5bcc"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_not_implemented</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_not_implemented" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The attempted operation is not available in this context. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_ok_no_update">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba143c3e185770caea1d3dac54fa954fa1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_ok_no_update</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_ok_no_update" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Indicates success, but no change occurred. Returned for example upon flushing (e.g. using <a class="reference internal" href="client_api.html#clientlib_8h_1a0129b5b9b242d360b2fff9e26556ad22"><span class="std std-ref">ts3client_flushChannelUpdates</span></a>) when all indicated changes already matched the current state. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_dont_notify">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba018eaca2dbe407f9e718597503352997"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_dont_notify</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_dont_notify" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_lib_time_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba75c0136cb5613c031e1d689067c163fd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_lib_time_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_lib_time_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_out_of_memory">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba4f15b5c854fa86b331b3f58a5c27cd25"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_out_of_memory</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_out_of_memory" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Not enough system memory to perform operation. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_canceled">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab038f52d0e49a45366ddc37877f16e19"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_canceled</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_canceled" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_command_not_found">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba34f69d43af5d256632c56b15299adbcf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_command_not_found</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_command_not_found" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_unable_to_bind_network_port">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba544d953241ca1b0ce64be3448685b28d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_unable_to_bind_network_port</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_unable_to_bind_network_port" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Unspecified failure to create a listening port. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_no_network_port_available">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf630be5d36d73a22717a0478e7f45c96"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_no_network_port_available</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_no_network_port_available" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to initialize a listening port for FileTransfer. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_port_already_in_use">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab9bd0b0269a294d87b34675b476c571e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_port_already_in_use</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_port_already_in_use" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Specified port is already in use by a different application. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_invalid_id">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba25e86fda58f5c9cfd8399050f5f669fa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_invalid_id</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_invalid_id" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client no longer connected. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_nickname_inuse">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba7446eba07c5397f271480365b8ab6308"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_nickname_inuse</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_nickname_inuse" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client name is already in use. Client names must be unique. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_protocol_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba729779fa0d5c7869e301f63ef5d2eb84"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_protocol_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_protocol_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Too many clients on the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_invalid_type">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba17c2372eaa6ae77614c2cbd721a27d2b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_invalid_type</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_invalid_type" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function called for normal clients that is only available for query clients or vice versa. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_already_subscribed">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7babda6a6b47fcb84a97be5aadced31cf4b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_already_subscribed</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_already_subscribed" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to subscribe to a channel already subscribed to. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_not_logged_in">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba85c807d27026dbf0cfc19a122ddef365"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_not_logged_in</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_not_logged_in" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_could_not_validate_identity">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba079b62e9de293b45ef16ebe134d1ef0a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_could_not_validate_identity</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_could_not_validate_identity" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Identity not valid or insufficient security level. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_invalid_password">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bae6f92dba11ab7d96f3b0d6d5c3e7ce40"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_invalid_password</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_invalid_password" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_version_outdated">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacca15a258d0b30f2b440f8077d3fdbc9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_version_outdated</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_version_outdated" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Server requires newer client version as determined by the min_client_version properties. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_is_flooding">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab21722b921f341bd5336a0da9a8342df"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_is_flooding</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_is_flooding" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Triggered flood protection. Further information is supplied in the extra message if applicable. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_hacked">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba7095eb2650a060c09fc80d3f0b93a959"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_hacked</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_hacked" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_cannot_verify_now">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba006dd51f586b61858e89f24291f883bb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_cannot_verify_now</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_cannot_verify_now" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_login_not_permitted">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baa71e21b5a9d8abe00ce4652cafad6e08"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_login_not_permitted</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_login_not_permitted" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_client_not_subscribed">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf350178587303e4a06bd0da02323db56"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_client_not_subscribed</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_client_not_subscribed" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Action is only available on subscribed channels. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_invalid_id">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba4c482e84eb3e4446d49bb988affdd3a3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_invalid_id</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_invalid_id" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel does not exist on the server (any longer) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_protocol_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9e1a86780ded3d0503d50782621dfe6e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_protocol_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_protocol_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Too many channels on the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_already_in">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bae046ff20e6580e9d9fb8cf63bc836618"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_already_in</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_already_in" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to move a client or channel to its current channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_name_inuse">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9c53fc03f7eec08d3665164378fa9941"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_name_inuse</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_name_inuse" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel name is already taken by another channel. Channel names must be unique. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_not_empty">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba6a0f0de6bc22cd9a0817a71d27bd173e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_not_empty</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_not_empty" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to delete a channel with clients or sub channels in it. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_can_not_delete_default">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bad92974fc887d0f4be488bca06483a167"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_can_not_delete_default</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_can_not_delete_default" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Default channel cannot be deleted. Set a new default channel first (see <a class="reference internal" href="client_api.html#clientlib_8h_1a9ac69253da16b12c09d7358d0e290bcd"><span class="std std-ref">ts3client_setChannelVariableAsInt</span></a> or <a class="reference internal" href="server_api.html#serverlib_8h_1a9d606e3815260bef7abe609c58ad843f"><span class="std std-ref">ts3server_setChannelVariableAsInt</span></a> ) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_default_require_permanent">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba2def0811c9496cc0e6ddabb94765efc7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_default_require_permanent</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_default_require_permanent" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to set a non permanent channel as default channel. Set channel to permanent first (see <a class="reference internal" href="client_api.html#clientlib_8h_1a9ac69253da16b12c09d7358d0e290bcd"><span class="std std-ref">ts3client_setChannelVariableAsInt</span></a> or <a class="reference internal" href="server_api.html#serverlib_8h_1a9d606e3815260bef7abe609c58ad843f"><span class="std std-ref">ts3server_setChannelVariableAsInt</span></a> ) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_invalid_flags">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba0f1f48526ac27f919a87d1155418e186"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_invalid_flags</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_invalid_flags" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid combination of <a class="reference internal" href="properties.html#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fc"><span class="std std-ref">ChannelProperties</span></a>, trying to remove <a class="reference internal" href="properties.html#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca2148ba12b8ec6feae9421478d41ac1c3"><span class="std std-ref">CHANNEL_FLAG_DEFAULT</span></a> or set a password on the default channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_parent_not_permanent">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba5cccf2ccad6e031a8f00256cfae65952"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_parent_not_permanent</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_parent_not_permanent" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to move a permanent channel into a non-permanent one, or set a channel to be permanent that is a sub channel of a non-permanent one. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_maxclients_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba4f2a6ee66dae06d8e4f56d3eb360dd0d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_maxclients_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_maxclients_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel is full as determined by its <a class="reference internal" href="properties.html#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fca538adee3a68e639a85f9e862f01b3c6a"><span class="std std-ref">CHANNEL_MAXCLIENTS</span></a> setting. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_maxfamily_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacc0f4dabd749716b905b9bad0d93cbd0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_maxfamily_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_maxfamily_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel tree is full as determined by its <a class="reference internal" href="properties.html#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcaf1d391451073ac8a02cc082bebe27b34"><span class="std std-ref">CHANNEL_MAXFAMILYCLIENTS</span></a> setting. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_invalid_order">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba723ae2e5be466aed71ec18268fd5ea36"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_invalid_order</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_invalid_order" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid value for the <a class="reference internal" href="properties.html#public__definitions_8h_1ab1d8599705a3a954dc5dce71774488fcab4931253c7874c495221af8af8dc9bc8"><span class="std std-ref">CHANNEL_ORDER</span></a> property. The specified channel must exist on the server and be on the same level. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_no_filetransfer_supported">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba825df18caf3759b048c2c1f5104399c1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_no_filetransfer_supported</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_no_filetransfer_supported" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid CHANNEL_FILEPATH set for the channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_invalid_password">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba269751b5133547d5be6e48a300aab66a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_invalid_password</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_invalid_password" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Channel has a password not matching the password supplied in the call. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_channel_invalid_security_hash">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baee74803436141a307eef443fcbb8bab0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_channel_invalid_security_hash</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_channel_invalid_security_hash" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_invalid_id">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bae02456e21f595703223fbd3a85c3e15c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_invalid_id</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_invalid_id" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Chosen virtual server does not exist or is offline. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_running">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baca7351badb76c7895c63d07079e76b67"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_running</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_running" title="Permalink to this definition"></a><br /></dt>
+<dd><p>attempting to delete a server that is running. Stop the server before deleting it. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_is_shutting_down">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba827c53fe9659b78396cb1bb97bddf62f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_is_shutting_down</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_is_shutting_down" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Client disconnected because the server is going offline. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_maxclients_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba240d6fd73a45ab175b579aa4bf53cc3d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_maxclients_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_maxclients_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Given in the onConnectStatusChange event when the server has reached its maximum number of clients as defined by the <a class="reference internal" href="properties.html#public__definitions_8h_1adcce9c82f0123acf4ab8f75ef5be93f9a9180608480ee799278f4ed5bb82b7f24"><span class="std std-ref">VIRTUALSERVER_MAXCLIENTS</span></a> property. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_invalid_password">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bae610d682cebd45a374eb9c70f3ee6d04"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_invalid_password</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_invalid_password" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Specified server password is wrong. Provide the correct password in the <a class="reference internal" href="client_api.html#clientlib_8h_1adfbe2bbf01269057c6deb2b41f4ffe70"><span class="std std-ref">ts3client_startConnection</span></a> / <a class="reference internal" href="client_api.html#clientlib_8h_1af2cb8d2c19b5ea36fe2d4445cbd7488e"><span class="std std-ref">ts3client_startConnectionWithChannelID</span></a> call. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_is_virtual">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba82b1303ca57c16471ac98c1833902727"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_is_virtual</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_is_virtual" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Server is in virtual status. The attempted action is not possible in this state. Start the virtual server first. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_is_not_running">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baa96dd591ec27c2008d8291c41fbcb3ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_is_not_running</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_is_not_running" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to stop a server that is not online. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_is_booting">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba7b241231e3700565cd503baa1eebcd55"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_is_booting</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_is_booting" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_status_invalid">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba504f662916f663cc80241be943a7d510"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_status_invalid</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_status_invalid" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_version_outdated">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1d0c01977d76ae74abc66e43e065bc51"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_version_outdated</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_version_outdated" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to connect to an outdated server version. The server needs to be updated. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_server_duplicate_running">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bafa2fef7e23070540909e1f7f928cdaf7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_server_duplicate_running</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_server_duplicate_running" title="Permalink to this definition"></a><br /></dt>
+<dd><p>This server is already running within the instance. Each virtual server may only exist once. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_quote">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baae833911c1b5f45ebc5c63eb66e987e2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_quote</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_quote" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_invalid_count">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba466b4ae23105261fe08a8a6af02c40c0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_invalid_count</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_invalid_count" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to flush changes without previously calling set*VariableAs* since the last flush. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_invalid">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba36643fe80c5cd5e60b36174f4d029e4c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_invalid</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_invalid" title="Permalink to this definition"></a><br /></dt>
+<dd><p>At least one of the supplied parameters did not meet the criteria for that parameter. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_not_found">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba3af5d4aadf34f917eaff34125e98311f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_not_found</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_not_found" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to supply all the necessary parameters. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_convert">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba5b66ee448e4b7318bdcd5f1ec2f07185"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_convert</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_convert" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid type supplied for a parameter, such as passing a string (ie. “five”) that expects a number. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_invalid_size">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba27a9cce27350873bb4a5aebda427e38b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_invalid_size</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_invalid_size" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Value out of allowed range. Such as strings are too long/short or numeric values outside allowed range. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_missing">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7babeefa1186c9dd9c0bb7aafbb003bd01a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_missing</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_missing" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Neglecting to specify a required parameter. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_parameter_checksum">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba3624d352218d77abafa6fe3e7d2e8863"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_parameter_checksum</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_parameter_checksum" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to deploy a modified snapshot. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_vs_critical">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba7aff4d0954818acda8e37334e2dbe272"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_vs_critical</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_vs_critical" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to create default channel. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_connection_lost">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba8dff6e0c9f7dbe863fb1423ff12bfe3a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_connection_lost</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_connection_lost" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Generic error with the connection. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_not_connected">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bad0ed2f56358ac6cd8ff60e2606cafc3f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_not_connected</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_not_connected" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to call functions with a serverConnectionHandler that is not connected. You can use <a class="reference internal" href="client_api.html#clientlib_8h_1a5ce146788e0d253d26e3be882ee71865"><span class="std std-ref">ts3client_getConnectionStatus</span></a> to check whether the connection handler is connected to a server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_no_cached_connection_info">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba301423929779fe41f794ccdd66c05348"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_no_cached_connection_info</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_no_cached_connection_info" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to query connection information (bandwidth usage, ping, etc) without requesting them first using <a class="reference internal" href="client_api.html#clientlib_8h_1a70dbf9fbdae6bb1c85da531a57a85273"><span class="std std-ref">ts3client_requestConnectionInfo</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_currently_not_possible">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab5f581b7e75e6d938d25d5cc2c90d726"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_currently_not_possible</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_currently_not_possible" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Requested information is not currently available. You may have to call <a class="reference internal" href="client_api.html#clientlib_8h_1ab53d33b3474b18c761b47d4f56c5614c"><span class="std std-ref">ts3client_requestClientVariables</span></a> or <a class="reference internal" href="client_api.html#clientlib_8h_1a1bcd5739aac4310b5f50c602f2f01fa8"><span class="std std-ref">ts3client_requestServerVariables</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_failed_connection_initialisation">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba62b66f6454dd2c5a7222f078c40111f4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_failed_connection_initialisation</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_failed_connection_initialisation" title="Permalink to this definition"></a><br /></dt>
+<dd><p>No TeamSpeak server running on the specified IP address and port. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_could_not_resolve_hostname">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab392e13550aabb5800e849b7d68ac388"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_could_not_resolve_hostname</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_could_not_resolve_hostname" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to resolve the specified hostname to an IP address. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_invalid_server_connection_handler_id">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba854f8851baaab0dec03798763b04b1a6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_invalid_server_connection_handler_id</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_invalid_server_connection_handler_id" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempting to perform actions on a non-existent server connection handler. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_could_not_initialise_input_manager">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba19fc92c827a39b6a57ba00e8f167512d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_could_not_initialise_input_manager</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_could_not_initialise_input_manager" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_clientlibrary_not_initialised">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba48c379ba3bb527bf4ca4fa2807eb00bb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_clientlibrary_not_initialised</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_clientlibrary_not_initialised" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Calling client library functions without successfully calling <a class="reference internal" href="client_api.html#clientlib_8h_1ad0184863f627de56107b7706020982f1"><span class="std std-ref">ts3client_initClientLib</span></a> before. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_serverlibrary_not_initialised">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba0c63c60b756890bd438f8f94d5895096"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_serverlibrary_not_initialised</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_serverlibrary_not_initialised" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Calling server library functions without successfully calling <a class="reference internal" href="server_api.html#serverlib_8h_1aed29cecb457870bb86d5a015c7e2d5c1"><span class="std std-ref">ts3server_initServerLib</span></a> before. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_whisper_too_many_targets">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba807efe85f9011fe33fccd69e340eec7a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_whisper_too_many_targets</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_whisper_too_many_targets" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Using a whisper list that contain more clients than the servers VIRTUALSERVER_MIN_CLIENTS_IN_CHANNEL_BEFORE_FORCED_SILENCE property. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_whisper_no_targets">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1ab3202796565d50f3d44fa7701d1c7d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_whisper_no_targets</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_whisper_no_targets" title="Permalink to this definition"></a><br /></dt>
+<dd><p>The active whisper list is empty or no clients matched the whisper list (e.g. all channels in the list are empty) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_connection_ip_protocol_missing">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9fba1161cf5c48fcffc94a3b87010283"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_connection_ip_protocol_missing</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_connection_ip_protocol_missing" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid or unsupported protocol (e.g. attempting an IPv6 connection on an IPv4 only machine) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_handshake_failed">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacc591396f954338df2fd781a4a51b028"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_handshake_failed</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_handshake_failed" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_illegal_server_license">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba40b41daf9d8f0a93d0bbc40ce230f443"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_illegal_server_license</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_illegal_server_license" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_name">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba4712eb91dfba9e49fc5e8c901de29ccb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_name</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_name" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid UTF8 string or not a valid file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_permissions">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba3813fb2722247ba801690751992375a9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_permissions</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_permissions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Permissions prevent opening the file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_already_exists">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac14790d3cad1d69c5114f28599b96ec6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_already_exists</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_already_exists" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Target path already exists as a directory. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_not_found">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba3761ca8db259ac41fa31393aac569d33"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_not_found</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_not_found" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to access or move non existing file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_io_error">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bafe583e6b43b5b8d9ea22ebfdb54b8576"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_io_error</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_io_error" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Generic file input / output error. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_transfer_id">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac196b1a74f5c3067568aa0a7dd24a77e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_transfer_id</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_transfer_id" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to get information about a file transfer after it has already been cleaned up. File transfer information is not available indefinitely after the transfer completed. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_path">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba5cff793813a72c718f2683524fd1ce40"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_path</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_path" title="Permalink to this definition"></a><br /></dt>
+<dd><p>specified path contains invalid characters or does not start with “/” </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_no_files_available">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba219b06bb6ea2e6e0f7d12bb529583ba5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_no_files_available</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_no_files_available" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_overwrite_excludes_resume">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf04a96e99a429ecf9e899e84c0c78ef7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_overwrite_excludes_resume</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_overwrite_excludes_resume" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File overwrite and resume are mutually exclusive. Only one or neither can be 1. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_size">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba6407456a1979c03568b86026c6c95fc1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_size</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_size" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to write more bytes than claimed file size. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_already_in_use">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba71ca3017ff85641deec41a38328c36da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_already_in_use</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_already_in_use" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File is currently not available, try again later. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_could_not_open_connection">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bad5d0d8997601a266c8e4d76c1332000d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_could_not_open_connection</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_could_not_open_connection" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Generic failure in file transfer connection / other party did not conform to file transfer protocol. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_no_space_left_on_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7babb5dd31e7cc5808bcfb7d2792db8a0c5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_no_space_left_on_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_no_space_left_on_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Operating system reports hard disk is full. May be caused by quota limitations. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_exceeds_file_system_maximum_size">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba532ebcaa27eadc04ba4a0b35f52a9702"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_exceeds_file_system_maximum_size</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_exceeds_file_system_maximum_size" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File is too large for the file system of the target device. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_connection_timeout">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba420cc0de4c84ec296a1aefb2ed4997d4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_connection_timeout</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_connection_timeout" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_connection_lost">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac2fb5f534664ac9143f2a22b17f8de0d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_connection_lost</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_connection_lost" title="Permalink to this definition"></a><br /></dt>
+<dd><p>File input / output timeout or connection failure. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_exceeds_supplied_size">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba251551ddd8a31e274139606c9449e206"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_exceeds_supplied_size</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_exceeds_supplied_size" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_complete">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7babfe30f5caea97c703f77fd462cef40ad"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_complete</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_complete" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Indicates successful completion. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_canceled">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba39ceec3fd3a4f4cf667246ededf8a753"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_canceled</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_canceled" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Transfer was cancelled through <a class="reference internal" href="client_api.html#clientlib_8h_1a69ce3a18f467228cc9ffbd4b99e39527"><span class="std std-ref">ts3client_haltTransfer</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_interrupted">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9d06593834fdd59385d29f23d2df06d9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_interrupted</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_interrupted" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Transfer failed because the server is shutting down, or network connection issues. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_server_quota_exceeded">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba503f02f04934afcbd5d578b6baa9cb5a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_server_quota_exceeded</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_server_quota_exceeded" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Transfer terminated due to server bandwidth quota being exceeded. No client can transfer files. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_client_quota_exceeded">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba37b7d56e81cab799dcf79ea8255625c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_client_quota_exceeded</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_client_quota_exceeded" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to transfer more data than allowed by this clients’ bandwidth quota. Other clients may continue to transfer files. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_reset">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacda63b75e4ac8a2ae8f48109e7ff8907"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_reset</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_reset" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba964a5e01015116f7c1413d6dee179df3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Too many file transfers are in progress. Try again later. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_storage_class">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacdff445f3a0af1f459ac12b3e8f99b91"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_storage_class</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_storage_class" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_invalid_dimension">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1250b1b457307c1810453f6d49f2b678"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_invalid_dimension</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_invalid_dimension" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Avatar image exceeds maximum width or height accepted by the server. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_file_transfer_channel_quota_exceeded">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba4fb9a15fc0fa315064836805df6239c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_file_transfer_channel_quota_exceeded</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_file_transfer_channel_quota_exceeded" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Transfer failed because the channel quota was exceeded. Uploading to this channel is not possible, but other channels may be fine. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_preprocessor_disabled">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba0428abff73158d2d3530a63e707955ac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_preprocessor_disabled</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_preprocessor_disabled" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Cannot set or query pre processor variables with preprocessing disabled. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_internal_preprocessor">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba040ddfe3791da752f0b65adedeb73f44"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_internal_preprocessor</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_internal_preprocessor" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_internal_encoder">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba422d8bbd86451c2df1ea2790e4b97a04"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_internal_encoder</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_internal_encoder" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_internal_playback">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac140face3b67258ec5da3e25803ce2af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_internal_playback</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_internal_playback" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_no_capture_device_available">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba3f5e2f05b60d569c145b67f3d20becb8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_no_capture_device_available</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_no_capture_device_available" title="Permalink to this definition"></a><br /></dt>
+<dd><p>No audio capture devices are available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_no_playback_device_available">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba2e688e63b482a9182c6b59bb91832382"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_no_playback_device_available</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_no_playback_device_available" title="Permalink to this definition"></a><br /></dt>
+<dd><p>No audio playback devices are available. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_could_not_open_capture_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba50d2f6c1c72108c26bfc6a9251607ae3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_could_not_open_capture_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_could_not_open_capture_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Error accessing audio device, or audio device does not support the requested mode. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_could_not_open_playback_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac77c88d56f1297638fee5d9e619d47ca"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_could_not_open_playback_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_could_not_open_playback_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Error accessing audio device, or audio device does not support the requested mode. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_handler_has_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf40d72cd7377487d14fdcafd3c669947"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_handler_has_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_handler_has_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to open a sound device on a connection handler which already has an open device. Close the already open device first using <a class="reference internal" href="client_api.html#clientlib_8h_1a25e6167263ee758386720110862f8b72"><span class="std std-ref">ts3client_closeCaptureDevice</span></a> or <a class="reference internal" href="client_api.html#clientlib_8h_1aee37dae1b01c6d849745bb1c35087dfa"><span class="std std-ref">ts3client_closePlaybackDevice</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_invalid_capture_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba602d024a37bf9c061b78a59ca29c8fec"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_invalid_capture_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_invalid_capture_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to use a device for capture that does not support capturing audio. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_invalid_playback_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1b508f72bba23af1ce6a131c745e7817"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_invalid_playback_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_invalid_playback_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to use a device for playback that does not support playback of audio. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_invalid_wave">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba51a8384e81719fc8a8499907b347d541"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_invalid_wave</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_invalid_wave" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to use a non WAV file in <a class="reference internal" href="client_api.html#clientlib_8h_1ac01e282e0177d957e2a44af56bf3d88f"><span class="std std-ref">ts3client_playWaveFile</span></a> or <a class="reference internal" href="client_api.html#clientlib_8h_1a96d9a7a84409b0ecf06851399029b4dc"><span class="std std-ref">ts3client_playWaveFileHandle</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_unsupported_wave">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba66b7d03c6d717433245fb40858b89bc8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_unsupported_wave</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_unsupported_wave" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Unsupported wave file used in <a class="reference internal" href="client_api.html#clientlib_8h_1ac01e282e0177d957e2a44af56bf3d88f"><span class="std std-ref">ts3client_playWaveFile</span></a> or <a class="reference internal" href="client_api.html#clientlib_8h_1a96d9a7a84409b0ecf06851399029b4dc"><span class="std std-ref">ts3client_playWaveFileHandle</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_open_wave">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bab9ea0a5ee57d391047f35742e694d394"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_open_wave</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_open_wave" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to open the specified sound file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_internal_capture">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baea1ba3434225cad5ead75d0d66a53178"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_internal_capture</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_internal_capture" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_device_in_use">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac43006d309451c7fc439ea0fcc1a1164"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_device_in_use</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_device_in_use" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to unregister a custom device that is being used. Close the device first using <a class="reference internal" href="client_api.html#clientlib_8h_1a25e6167263ee758386720110862f8b72"><span class="std std-ref">ts3client_closeCaptureDevice</span></a> or <a class="reference internal" href="client_api.html#clientlib_8h_1aee37dae1b01c6d849745bb1c35087dfa"><span class="std std-ref">ts3client_closePlaybackDevice</span></a>. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_device_already_registerred">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba5b67bd221cd7f5402fcdaf7bbb885ed0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_device_already_registerred</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_device_already_registerred" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to register a custom device with a device id that has already been used in a previous call. Device ids must be unique. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_unknown_device">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba146b4adaa544cb318b7cb6021f20751b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_unknown_device</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_unknown_device" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to open, close, unregister or use a device which is not known. Custom devices must be registered before being used (see <a class="reference internal" href="client_api.html#clientlib_8h_1a4dcc01743a5de17b4fd608c31022aeee"><span class="std std-ref">ts3client_registerCustomDevice</span></a>) </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_unsupported_frequency">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba341e3565cf050ee323994371d69108c6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_unsupported_frequency</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_unsupported_frequency" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_invalid_channel_count">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bad7fc4adc243de3adbe2b7747a887994d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_invalid_channel_count</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_invalid_channel_count" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Invalid device audio channel count, must be &gt; 0. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_read_wave">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf125ca9607fbcd37ec8f6fff35ad8ddf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_read_wave</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_read_wave" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to read sound samples from an opened wave file. Is this a valid wave file? </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_need_more_data">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baee50a92748b782c4d6d7c1651689ac41"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_need_more_data</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_need_more_data" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_device_busy">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba74aa7b1155b0b55476194dc6c58dd787"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_device_busy</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_device_busy" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_no_data">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9f5d4ccfe20024837482ca334902a7ac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_no_data</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_no_data" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Indicates there is currently no data for playback, e.g. nobody is speaking right now. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_sound_channel_mask_mismatch">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bafd3d9de6922c48a8149c20ec68257012"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_sound_channel_mask_mismatch</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_sound_channel_mask_mismatch" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Opening a device with an unsupported channel count. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_permissions_client_insufficient">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bae8f468204af739a7c332d0e6c1c1589a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_permissions_client_insufficient</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_permissions_client_insufficient" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Not enough permissions to perform the requested activity. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_permissions">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_permissions</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_permissions" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Permissions to use sound device not granted by operating system, e.g. Windows denied microphone access. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_virtualserver_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba166f70d5d6dbf8b13ee02eea617f1f00"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_virtualserver_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_virtualserver_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to use more virtual servers than allowed by the license. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_slot_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba111ecbf35b3667e599497bd140af3daf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_slot_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_slot_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to set more slots than allowed by the license. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_license_file_not_found">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba9da11ce4a7df3ef34d34c27c62acbac6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_license_file_not_found</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_license_file_not_found" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_license_date_not_ok">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf09b9b4b2416d49cf4f897e1743b22e8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_license_date_not_ok</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_license_date_not_ok" title="Permalink to this definition"></a><br /></dt>
+<dd><p>License expired or not valid yet. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_unable_to_connect_to_server">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baa77e4f5578ac9f0d6f1fa23a34f0b383"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_unable_to_connect_to_server</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_unable_to_connect_to_server" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to communicate with accounting backend. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_unknown_error">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baf157d1aab957f3daf2ced23a4c3bc22b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_unknown_error</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_unknown_error" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Failure to write update license file. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_server_error">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba0d355ddfcfedcb909197e5821d43fa6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_server_error</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_server_error" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_instance_limit_reached">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baba641adf24afcc6b11da9591c625c1b6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_instance_limit_reached</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_instance_limit_reached" title="Permalink to this definition"></a><br /></dt>
+<dd><p>More than one process of the server is running. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_instance_check_error">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bac1bbe4f5306535fc3ab3a3e34b63a1ae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_instance_check_error</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_instance_check_error" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Shared memory access failure. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_license_file_invalid">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba573317e4df454fc43b02006a0ec84e84"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_license_file_invalid</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_license_file_invalid" title="Permalink to this definition"></a><br /></dt>
+<dd><p>License is not a TeamSpeak license. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_running_elsewhere">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7baa9e428411c579adbbc44308b3eb2e068"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_running_elsewhere</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_running_elsewhere" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A copy of this server is already running in another instance. Each server may only exist once. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_instance_duplicated">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba169e6d7277db543ac9d88706e942f836"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_instance_duplicated</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_instance_duplicated" title="Permalink to this definition"></a><br /></dt>
+<dd><p>A copy of this server is running already in this process. Each server may only exist once. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_already_started">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba0c2a45d767c839bf041a525c68a32884"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_already_started</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_already_started" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Attempt to start a server that is already running. </p>
+</dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_not_started">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1c2d0e35fe06f7b1adbb6b9edeccbf9d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_not_started</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_not_started" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="c enumerator">
+<dt class="sig sig-object c" id="c.Ts3ErrorType.ERROR_accounting_to_many_starts">
+<span class="target" id="public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba1aaba8197278ab98cc2f544c8a6eb1ed"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ERROR_accounting_to_many_starts</span></span></span><a class="headerlink" href="#c.Ts3ErrorType.ERROR_accounting_to_many_starts" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Starting instance / virtual servers too often in too short a time period. </p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to TeamSpeak SDK’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="properties.html" class="btn btn-neutral float-right" title="Property Enums" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

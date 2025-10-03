@@ -1,0 +1,21 @@
+#
+# Makefile to build TeamSpeak 3 SDK Server Sample on Mac OS X
+#
+
+CFLAGS = -Wall -g -O0
+
+all: ts3_server
+
+ts3_server: id_io.o main.o
+	gcc -o tmp_ts3_server id_io.o main.o -L../ts3_sdk_3.0.4/bin/mac -lts3server
+	install_name_tool -change /usr/local/lib/libts3server.dylib ../ts3_sdk_3.0.4/bin/mac/libts3server.dylib tmp_ts3_server
+	mv tmp_ts3_server ts3_server
+
+main.o: main.c
+	gcc -c -I../ts3_sdk_3.0.4/include main.c $(CFLAGS)
+
+id_io.o: id_io.c
+	gcc -c -I../ts3_sdk_3.0.4/include id_io.c $(CFLAGS)
+
+clean:
+	rm -f *.o ts3_server tmp_ts3_server

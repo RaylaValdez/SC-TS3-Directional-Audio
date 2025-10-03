@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion setup.compileSdk
+
+    defaultConfig {
+        applicationId "com.teamspeak.sdk.example"
+        minSdkVersion setup.minSdk
+        targetSdkVersion setup.targetSdk
+        versionCode 5
+        versionName "1.12"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-fexceptions"
+                arguments '-DANDROID_STL=c++_shared', '-DANDROID_TOOLCHAIN=clang'
+            }
+        }
+        ndkVersion '20.0.5594570'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+    namespace 'com.teamspeak.ts3sdkclient'
+}
+
+dependencies {
+    implementation project(':teamnative_http')
+    implementation project(":soundbackend")
+    implementation project(":common")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "androidx.core:core-ktx:$versions.corektx"
+    implementation "androidx.activity:activity-ktx:$versions.activity"
+    implementation "androidx.fragment:fragment-ktx:$versions.fragment"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$versions.coordinatorlayout"
+
+    testImplementation 'junit:junit:4.13.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+}
+repositories {
+    mavenCentral()
+}

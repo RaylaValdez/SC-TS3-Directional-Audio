@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing server connections &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logging" href="logging.html" />
+    <link rel="prev" title="Getting started" href="basic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Managing server connections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-connection-handler">Creating a connection handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removing-a-connection-handler">Removing a connection handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-connection-handlers">List connection handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-identity">Creating an identity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-a-server">Connecting to a server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connection-change-notification">Connection change notification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disconnecting">Disconnecting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Managing server connections</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="managing-server-connections">
+<h1>Managing server connections<a class="headerlink" href="#managing-server-connections" title="Permalink to this heading"></a></h1>
+<p>Before connecting to a TeamSpeak 3 server, a server connection
+handler needs to be spawned. Each handler is identified by a unique ID
+(usually called <cite>serverConnectionHandlerID</cite> internally).</p>
+<p>For each connection handler one connection can be established.
+Connection handlers can be re-used as needed as long as they exist.
+So for simply reconnecting to the same server or connecting to another
+server after disconnecting, no new handler needs to be spawned but
+existing ones can be reused.</p>
+<p>However if you need multiple simultaneous connections, you need one
+server connection handler per simultaneous connection.</p>
+<section id="creating-a-connection-handler">
+<h2>Creating a connection handler<a class="headerlink" href="#creating-a-connection-handler" title="Permalink to this heading"></a></h2>
+<p>A connection handler is created using</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_spawnNewServerConnectionHandler">
+<span class="target" id="clientlib_8h_1a6da55ee2076c2c5e8e73af1e5a9b1cbf"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_spawnNewServerConnectionHandler</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">port</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_spawnNewServerConnectionHandler" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Creates a new server connection handler to connect to servers. </p>
+<p>A connection handler is what handles and identifies server connections to the client library. There can be many of these at the same time and every single one of them can be connected to any server. The client library identifies them by the id placed in the result param. When you receive callbacks, or need to change things, on a specific server you will also specify which server you would like to use by providing the corresponding serverConnectionHandlerId to the client library function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> – the local port to use. Specify 0 to use an ephemeral port. </p></li>
+<li><p><strong>result</strong> – Address of a variable to store the id of the connection handler in. Use this to reference the connection handler in future calls to client lib functions. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not specify a non-zero value for <code class="docutils literal notranslate"><span class="pre">port</span></code> unless you absolutely
+need a specific port. Passing zero is the better way in most use cases.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When no longer needed a connection handler should be destroyed</p>
+</div>
+</section>
+<section id="removing-a-connection-handler">
+<h2>Removing a connection handler<a class="headerlink" href="#removing-a-connection-handler" title="Permalink to this heading"></a></h2>
+<p>To destroy a server connection handler call</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_destroyServerConnectionHandler">
+<span class="target" id="clientlib_8h_1aaf250e4ca6d1faa0e7469e493acb7a26"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_destroyServerConnectionHandler</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_destroyServerConnectionHandler" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Destroys a connection handler. </p>
+<p>After destruction the connection handler is invalid and cannot be used any longer. Must not be called from within a callback!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – which connection handler to destroy </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Destroying invalidates the handler ID, so it must not be used anymore
+afterwards.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not destroy a server connection handler from within a callback.</p>
+</div>
+</section>
+<section id="list-connection-handlers">
+<h2>List connection handlers<a class="headerlink" href="#list-connection-handlers" title="Permalink to this heading"></a></h2>
+<p>A client can connect to multiple servers. To list all currently existing
+server connection handlers call:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getServerConnectionHandlerList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get a list of all connection handlers </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable to receive a zero terminated array of connection handlers, like {1, 5, …, 0} Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="creating-an-identity">
+<h2>Creating an identity<a class="headerlink" href="#creating-an-identity" title="Permalink to this heading"></a></h2>
+<p>To connect to a server, a client application is required to request an
+identity from the Client Lib.
+This string should be requested only once and then locally stored in the
+applications configuration. The next time the application connects to a
+server, the identity should be read from the configuration and reused again.</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_createIdentity">
+<span class="target" id="clientlib_8h_1a6189c75702e4829fe509d718ccb5dfa7"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_createIdentity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_createIdentity" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Create a new identity to use for connecting to a server. </p>
+<p>Identities identify a client to the server. The identity should be stored and reused for sessions by the same user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – Address of a variable to store the identity in. Memory is allocated by the client lib and caller must free it using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="connecting-to-a-server">
+<h2>Connecting to a server<a class="headerlink" href="#connecting-to-a-server" title="Permalink to this heading"></a></h2>
+<p>Once a connection handler and identity are available, you can attempt to
+connect to a server using either of these two functions</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_startConnection">
+<span class="target" id="clientlib_8h_1adfbe2bbf01269057c6deb2b41f4ffe70"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_startConnection</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">identity</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ip</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">port</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">nickname</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">defaultChannelArray</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">defaultChannelPassword</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverPassword</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_startConnection" title="Permalink to this definition"></a><br /></dt>
+<dd><p>initiates a connection to a TeamSpeak server. </p>
+<p>When using a hostname instead of an IP address, this function will block until the client lib resolved the host name.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1af2cb8d2c19b5ea36fe2d4445cbd7488e"><span class="std std-ref">ts3client_startConnectionWithChannelID</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to connect on, as created by ts3client_spawnNewServerConnectionHandler </p></li>
+<li><p><strong>identity</strong> – an identity string, as created by ts3client_createIdentity </p></li>
+<li><p><strong>ip</strong> – the server address to connect to. Can be a hostname or an IPv4 or IPv6 address </p></li>
+<li><p><strong>port</strong> – UDP port on which the TeamSpeak server is listening </p></li>
+<li><p><strong>nickname</strong> – a utf8 encoded c string used to display this client to other clients on the server. Not guaranteed to be the final name. </p></li>
+<li><p><strong>defaultChannelArray</strong> – An array describing the path to a channel to join after connect. Pass NULL when not used </p></li>
+<li><p><strong>defaultChannelPassword</strong> – The password for the channel in defaultChannelArray. Pass empty string if unused </p></li>
+<li><p><strong>serverPassword</strong> – server password. Pass empty string if the server does not have a password set </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>If you would rather specify the default channel with its channel id rather
+than the channel names array you can use</p>
+<dl class="c function">
+<dt class="sig sig-object c" id="c.ts3client_startConnectionWithChannelID">
+<span class="target" id="clientlib_8h_1af2cb8d2c19b5ea36fe2d4445cbd7488e"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_startConnectionWithChannelID</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">identity</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">ip</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">port</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">nickname</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">defaultChannelId</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">defaultChannelPassword</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">serverPassword</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.ts3client_startConnectionWithChannelID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>initiates a connection to a TeamSpeak server. </p>
+<p>When using a hostname instead of an IP address, this function will block until the client lib resolved the host name.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1adfbe2bbf01269057c6deb2b41f4ffe70"><span class="std std-ref">ts3client_startConnection</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to connect on, as created by ts3client_spawnNewServerConnectionHandler </p></li>
+<li><p><strong>identity</strong> – an identity string, as created by ts3client_createIdentity </p></li>
+<li><p><strong>ip</strong> – the server address to connect to. Can be a hostname or an IPv4 or IPv6 address </p></li>
+<li><p><strong>port</strong> – UDP port on which the TeamSpeak server is listening </p></li>
+<li><p><strong>nickname</strong> – a utf8 encoded c string used to display this client to other clients on the server. Not guaranteed to be the final name. </p></li>
+<li><p><strong>defaultChannelId</strong> – The channel id of the channel to join on connect. Pass 0 to join server default channel </p></li>
+<li><p><strong>defaultChannelPassword</strong> – The password for the channel in defaultChannelId. Pass empty string if unused </p></li>
+<li><p><strong>serverPassword</strong> – server password. Pass empty string if the server does not have a password set </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Passing a domain name into the <code class="docutils literal notranslate"><span class="pre">ip</span></code> parameter of either
+function will force the client lib to resolve the name to an
+IP address.</p>
+<p>Both functions will block until the name has been resolved,
+which may cause an unusually long delay for these functions to return.</p>
+<p>If you rely on quick return, we would suggest to asynchronously
+resolve the domain name to an IP address and call the above function
+with the IP address.</p>
+</div>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>Example code to request a connection to a TeamSpeak 3 server:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="n">uint64</span><span class="w"> </span><span class="n">scHandlerID</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">identity</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_spawnNewServerConnectionHandler</span><span class="p">(</span><span class="o">&amp;</span><span class="n">scHandlerID</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error spawning server conection handler: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_createIdentity</span><span class="p">(</span><span class="o">&amp;</span><span class="n">identity</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Application should store and reuse the identity */</span>
+<span class="linenos">12</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">13</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error creating identity: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos">14</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">15</span><span class="p">}</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_startConnection</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">identity</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my-teamspeak-server.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">9987</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gandalf&quot;</span><span class="p">,</span>
+<span class="linenos">18</span><span class="w">                  </span><span class="nb">NULL</span><span class="p">,</span><span class="w">      </span><span class="c1">// Join servers default channel</span>
+<span class="linenos">19</span><span class="w">                  </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1">// Empty default channel password</span>
+<span class="linenos">20</span><span class="w">                  </span><span class="s">&quot;secret&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Server password</span>
+<span class="linenos">21</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">    </span><span class="c1">// Handle the error</span>
+<span class="linenos">23</span><span class="p">}</span>
+<span class="linenos">24</span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">identity</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Don&#39;t need this anymore */</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="connection-change-notification">
+<h2>Connection change notification<a class="headerlink" href="#connection-change-notification" title="Permalink to this heading"></a></h2>
+<p>After calling <a class="reference internal" href="#c.ts3client_startConnection" title="ts3client_startConnection"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_startConnection()</span></code></a>, the client will be informed
+of the connection status changes through the callback</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onConnectStatusChangeEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">newStatus</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">errorNumber</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when the status of a connection changes </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the status has changed </p>
+</dd>
+<dt class="field-even">Param newStatus<span class="colon">:</span></dt>
+<dd class="field-even"><p>the current status of the connection. One of the values from the ConnectStatus enum </p>
+</dd>
+<dt class="field-odd">Param errorNumber<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the state change was caused by an error this is set to one of the values from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>This callback will be called every time the connection advances or changes
+state.
+Valid states are described in <a class="reference internal" href="../enumerations.html#c.ConnectStatus" title="ConnectStatus"><code class="xref c c-enum docutils literal notranslate"><span class="pre">ConnectStatus</span></code></a></p>
+<p>You may want to query certain server variables like
+<a class="reference internal" href="../properties.html#c.VirtualServerProperties.VIRTUALSERVER_WELCOMEMESSAGE" title="VirtualServerProperties.VIRTUALSERVER_WELCOMEMESSAGE"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">VIRTUALSERVER_WELCOMEMESSAGE</span></code></a> when the
+status is <a class="reference internal" href="../enumerations.html#c.ConnectStatus.STATUS_CONNECTED" title="ConnectStatus.STATUS_CONNECTED"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">STATUS_CONNECTED</span></code></a> for display purposes.
+You will also be informed about existing channels by means of the
+<a class="reference internal" href="../client_api.html#c.ClientUIFunctions.onNewChannelEvent" title="ClientUIFunctions.onNewChannelEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onNewChannelEvent()</span></code></a> callback as well as visible clients
+by means of the <a class="reference internal" href="channel-join.html#c.ClientUIFunctions.onClientMoveEvent" title="ClientUIFunctions.onClientMoveEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onClientMoveEvent()</span></code></a> callback.</p>
+<p>If the server is shut down, in addition to the above, the following
+callback will be called</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onServerStopEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">shutdownMessage</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when the server was stopped </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param shutdownMessage<span class="colon">:</span></dt>
+<dd class="field-even"><p>utf8 encoded c string containing the provided reason for the shutdown </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="disconnecting">
+<h2>Disconnecting<a class="headerlink" href="#disconnecting" title="Permalink to this heading"></a></h2>
+<p>To disconnect from a TeamSpeak 3 server call</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_stopConnection</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">quitMessage</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Disconnect from a TeamSpeak server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler to disconnect on </p></li>
+<li><p><strong>quitMessage</strong> – an optional utf8 encoded message to display to other clients. Pass empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="basic.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="logging.html" class="btn btn-neutral float-right" title="Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting started &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="List available clients, channels, servers" href="list-items.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-callback-mechanism">The callback mechanism</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-callback-example-in-c">A callback example in C:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing">Initializing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#querying-the-library-version">Querying the library version</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shutting-down">Shutting down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting started</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<section id="the-callback-mechanism">
+<h2>The callback mechanism<a class="headerlink" href="#the-callback-mechanism" title="Permalink to this heading"></a></h2>
+<p>The communication from the Server Lib to the server application takes
+place using callbacks. The server application has to define a
+series of function pointers using the <a class="reference internal" href="encryption.html#c.ServerLibFunctions" title="ServerLibFunctions"><code class="xref c c-struct docutils literal notranslate"><span class="pre">ServerLibFunctions</span></code></a> struct.
+These callbacks are used to let the server application
+hook into the library and receive notifications on certain actions.</p>
+<section id="a-callback-example-in-c">
+<h3>A callback example in C:<a class="headerlink" href="#a-callback-example-in-c" title="Permalink to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">my_onClientConnected_callback</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">serverID</span><span class="p">,</span><span class="w"> </span><span class="n">anyID</span><span class="w"> </span><span class="n">clientID</span><span class="p">,</span><span class="w"> </span><span class="n">uint64</span><span class="w"> </span><span class="n">channelID</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">removeClientError</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Client %u connected on virtual server %u joining channel %u&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clientID</span><span class="p">,</span><span class="w"> </span><span class="n">serverID</span><span class="p">,</span><span class="w"> </span><span class="n">channelID</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>C++ developers can also use static member functions for the callbacks.</p>
+<p>Before calling <a class="reference internal" href="#c.ts3server_initServerLib" title="ts3server_initServerLib"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_initServerLib()</span></code></a>, create an instance of <a class="reference internal" href="encryption.html#c.ServerLibFunctions" title="ServerLibFunctions"><code class="xref c c-struct docutils literal notranslate"><span class="pre">ServerLibFunctions</span></code></a>
+, initialize all function pointers with NULL and point
+the structs function pointers to your implemented callback functions:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="cm">/* Create struct */</span>
+<span class="linenos"> 4</span><span class="n">ServerLibFunctions</span><span class="w"> </span><span class="n">slFuncs</span><span class="p">;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="cm">/* Initialize all function pointers with NULL */</span>
+<span class="linenos"> 7</span><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">slFuncs</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ServerLibFunctions</span><span class="p">));</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="cm">/* Assign those function pointers you implemented */</span>
+<span class="linenos">10</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onVoiceDataEvent</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">my_onVoiceDataEvent_callback</span><span class="p">;</span>
+<span class="linenos">11</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onClientStartTalkingEvent</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">my_onClientStartTalkingEvent_callback</span><span class="p">;</span>
+<span class="linenos">12</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onClientStopTalkingEvent</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">my_onClientStopTalkingEvent_callback</span><span class="p">;</span>
+<span class="linenos">13</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onClientConnected</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">my_onClientConnected_callback</span><span class="p">;</span>
+<span class="linenos">14</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onClientDisconnected</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">my_onClientDisconnected_callback</span><span class="p">;</span>
+<span class="linenos">15</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onClientMoved</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="n">my_onClientMoved_callback</span><span class="p">;</span>
+<span class="linenos">16</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onChannelCreated</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">my_onChannelCreated_callback</span><span class="p">;</span>
+<span class="linenos">17</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onChannelEdited</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">my_onChannelEdited_callback</span><span class="p">;</span>
+<span class="linenos">18</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onChannelDeleted</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">my_onChannelDeleted_callback</span><span class="p">;</span>
+<span class="linenos">19</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onServerTextMessageEvent</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">my_onServerTextMessageEvent_callback</span><span class="p">;</span>
+<span class="linenos">20</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onChannelTextMessageEvent</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">my_onChannelTextMessageEvent_callback</span><span class="p">;</span>
+<span class="linenos">21</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onUserLoggingMessageEvent</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">my_onUserLoggingMessageEvent_callback</span><span class="p">;</span>
+<span class="linenos">22</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onAccountingErrorEvent</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">my_onAccountingErrorEvent_callback</span><span class="p">;</span>
+<span class="linenos">23</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onCustomPacketEncryptEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">  </span><span class="c1">// Not used by your application</span>
+<span class="linenos">24</span><span class="n">slFuncs</span><span class="p">.</span><span class="n">onCustomPacketDecryptEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">  </span><span class="c1">// Not used by your application</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span><span class="cm">/* Initialize library with callback function pointers */</span>
+<span class="linenos">27</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3server_initServerLib</span><span class="p">(</span><span class="o">&amp;</span><span class="n">slFuncs</span><span class="p">,</span><span class="w"> </span><span class="n">LogType_FILE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">LogType_CONSOLE</span><span class="p">);</span>
+<span class="linenos">28</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">29</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error initializing serverlib: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="linenos">30</span><span class="w">    </span><span class="p">(...)</span>
+<span class="linenos">31</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>As long as you initialize unimplemented callbacks with NULL, the
+Server Lib won’t attempt to call those function pointers. However, if
+you leave unimplemented callbacks undefined, the Server Lib will attempt to call
+them, crashing the application.</p>
+</div>
+<p>The individual callbacks are described in <a class="reference internal" href="encryption.html#c.ServerLibFunctions" title="ServerLibFunctions"><code class="xref c c-struct docutils literal notranslate"><span class="pre">ServerLibFunctions</span></code></a>.</p>
+</section>
+</section>
+<section id="initializing">
+<h2>Initializing<a class="headerlink" href="#initializing" title="Permalink to this heading"></a></h2>
+<p>When starting the server application, initialize the Server Lib with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_initServerLib</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="encryption.html#c.ServerLibFunctions" title="ServerLibFunctions"><span class="n"><span class="pre">ServerLibFunctions</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">functionPointers</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">usedLogTypes</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">logFileFolder</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>initializes the server library and defines callback functions </p>
+<p>This is the first function you need to call, before this all calls to the server library will fail. In this call you will also set the functions you would like to have called when certain changes or events happen. This function must not be called multiple times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>functionPointers</strong> – defines which functions in your code are to be called on specific events. Zero initialize it and assign the desired function to call to the respective members of the <a class="reference internal" href="../server_api.html#struct_server_lib_functions"><span class="std std-ref">ServerLibFunctions</span></a> struct </p></li>
+<li><p><strong>usedLogTypes</strong> – a combination of values from the <a class="reference internal" href="../enumerations.html#logtypes_8h_1a0e4c244f5254ca12ffeadcaf83e225b4"><span class="std std-ref">LogTypes</span></a> enum. Specifies which type(s) of logging you would like to use. </p></li>
+<li><p><strong>logFileFolder</strong> – path in which to create log files. Pass 0 to use the default of using a folder called logs in the working directory. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This function must not be called more than once.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Logging to console can slow down the application on Windows. Hence
+we do not recommend to log to the console on Windows other than in
+debug builds.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>During initialization the serverlib will attempt to connect to the
+TeamSpeak licensing server. This function may block if the licensing
+server is unreachable.</p>
+</div>
+</section>
+<section id="querying-the-library-version">
+<h2>Querying the library version<a class="headerlink" href="#querying-the-library-version" title="Permalink to this heading"></a></h2>
+<p>The Server Lib version can be queried with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getServerLibVersion</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the server version string. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable to receive the server version. Memory is allocated by the server library and must be freed by caller using <a class="reference internal" href="../server_api.html#serverlib_8h_1a6993000e98ccfa4ecf0a6f3d92406e5e"><span class="std std-ref">ts3server_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To get only the version number, which is a part of the complete version
+string, as numeric value use</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getServerLibVersionNumber</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the server version number. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>result</strong> – address of a variable to receive the server version number. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>Query the Server Lib version:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3server_getServerLibVersion</span><span class="p">(</span><span class="o">&amp;</span><span class="n">version</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error querying serverlib version: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Server library version: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Print version */</span>
+<span class="n">ts3server_freeMemory</span><span class="p">(</span><span class="n">version</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Release string */</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="shutting-down">
+<h2>Shutting down<a class="headerlink" href="#shutting-down" title="Permalink to this heading"></a></h2>
+<p>Before exiting the application, the Server Lib should be shut down using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_destroyServerLib</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Destroys the server lib. Must not be called from within a callback. </p>
+<p>All clients will lose connection and timeout, all servers will terminate. This is the last function to call. After this call you will no longer be able to use any server library functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Any call to Server Lib functions after shutting down has undefined
+results.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Never destroy the Server Lib from within a callback function. This
+might result in a segmentation fault.</p>
+</div>
+</section>
+<section id="error-handling">
+<h2>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this heading"></a></h2>
+<p>Each Server Lib function returns either <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a> on success or an error
+value as defined in the <a class="reference internal" href="../errors.html#c.Ts3ErrorType" title="Ts3ErrorType"><code class="xref c c-enum docutils literal notranslate"><span class="pre">Ts3ErrorType</span></code></a> enum if the function fails.</p>
+<p>The returned error codes are organized in groups, where the first byte
+defines the error group and the second the count within the group: The
+naming convention is ERROR_&lt;group&gt;_&lt;error&gt;, for example
+ERROR_client_invalid_id.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Result variables should <strong>only</strong> be accessed if the function returned
+<a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a>. Otherwise the state of the result variable is undefined.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some Server Lib functions dynamically allocate memory which has to be
+freed by the caller using <a class="reference internal" href="../server_api.html#c.ts3server_freeMemory" title="ts3server_freeMemory"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3server_freeMemory()</span></code></a>.
+It is important to <strong>only</strong> access and release the memory if the
+function returned <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a>. Should the function return an error, the
+result variable is uninitialized, so freeing or accessing it will
+likely result in a segmentation fault.</p>
+</div>
+<p>See the section <a class="reference internal" href="intro.html#s-calling"><span class="std std-ref">Calling Server Lib functions</span></a> for
+additional notes and examples.</p>
+<p>A printable error string for a specific error code can be queried with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3server_getGlobalErrorMessage</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">globalErrorCode</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get a human readable error description string for an error code </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>globalErrorCode</strong> – the error code to retrieve the description for. One of the values from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum. </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the error description as a utf8 encoded c string. Memory is allocated by the server library and must be freed by caller using <a class="reference internal" href="../server_api.html#serverlib_8h_1a6993000e98ccfa4ecf0a6f3d92406e5e"><span class="std std-ref">ts3server_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">welcomeMsg</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="cm">/* welcomeMsg memory is allocated if error is ERROR_ok */</span>
+<span class="linenos"> 5</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3server_getVirtualServerVariableAsString</span><span class="p">(</span><span class="n">serverID</span><span class="p">,</span><span class="w"> </span><span class="n">VIRTUALSERVER_WELCOMEMESSAGE</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">welcomeMsg</span><span class="p">);</span>
+<span class="linenos"> 6</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="cm">/* Handle error */</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="cm">/* Use welcomeMsg... */</span>
+<span class="linenos">11</span><span class="n">ts3server_freeMemory</span><span class="p">(</span><span class="n">welcomeMsg</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Release memory *only* if function did not return an error */</span>
+</pre></div>
+</div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3server_getServerLibVersion</span><span class="p">(</span><span class="o">&amp;</span><span class="n">version</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Calling some Server Lib function */</span>
+<span class="linenos"> 5</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3server_getGlobalErrorMessage</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">errorMsg</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* Query printable error */</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error querying client ID: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">);</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">ts3server_freeMemory</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Release memory only if function succeeded */</span>
+<span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="list-items.html" class="btn btn-neutral float-right" title="List available clients, channels, servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

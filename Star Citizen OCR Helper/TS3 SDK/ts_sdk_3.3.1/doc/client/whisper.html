@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisper lists &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Channel voice data encryption" href="voice-encryption.html" />
+    <link rel="prev" title="3D Sound" href="3dsound.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Whisper lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#control-who-can-whisper-you">Control who can whisper you</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-to-allow-list">Add to allow list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-from-allow-list">Remove from allow list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Whisper lists</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="whisper-lists">
+<h1>Whisper lists<a class="headerlink" href="#whisper-lists" title="Permalink to this heading"></a></h1>
+<p id="c-whisper">A client with a whisper list set can talk to the specified clients and
+channels. Whisper lists can be defined for individual clients. A whisper
+list consists of an array of client IDs and/or an array of channel IDs.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Setting a whisper list will stop regular voice transmission to the current channel
+of the client.</p>
+<p>Clients that have a whisper list set will <strong>only</strong> be heard by the clients
+specified in the whisper list.</p>
+</div>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestClientSetWhisperList</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">targetChannelIDArray</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">targetClientIDArray</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Sets the client to which to transmit voice. Stops standard channel voice transmission. </p>
+<p>The client will still receive voice from their current channel, however their voice will not be transmitted to their current channel anymore. If this call is successful (check onServerErrorEvent) then voice of the specified client will be transmitted to all specified channels and all the specified clients. Pass 0 to both target parameter arrays to restore default behavior of transmitting voice to current channel. You will receive an onServerErrorEvent with the passed returnCode indicating whether or not the operation was successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to set the whisper list </p></li>
+<li><p><strong>clientID</strong> – the client to set the whisper list for. Set to 0 or your own client ID to set your own whisper list. </p></li>
+<li><p><strong>targetChannelIDArray</strong> – a zero terminated array of channel ids to transmit voice to. </p></li>
+<li><p><strong>targetClientIDArray</strong> – a zero terminated array of client ids to transmit voice to. </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>To disable the whisper list for the given client, pass NULL to both
+<code class="docutils literal notranslate"><span class="pre">targetChannelIDArray</span></code> and <code class="docutils literal notranslate"><span class="pre">targetClientIDArray</span></code>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you pass two empty arrays, whispering is <strong>not</strong> disabled but instead one
+would still be whispering to nobody (empty lists).</p>
+</div>
+<section id="control-who-can-whisper-you">
+<h2>Control who can whisper you<a class="headerlink" href="#control-who-can-whisper-you" title="Permalink to this heading"></a></h2>
+<p>To control which client is allowed to whisper to own client, the Client
+Lib implements an internal whisper allow list mechanism. When a client
+recieves a whisper while the whispering client has not yet been added to
+the whisper allow list, the receiving client gets the following event.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Whisper voice data is not received until the sending client is
+added to the receivers whisper allow list.</p>
+</div>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onIgnoredWhisperEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when someone whispers us that is not on the list of clients we accept whispers from. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1a681bc51ec1c7bbf31e3efb4b37f1a6af"><span class="std std-ref">ts3client_allowWhispersFrom</span></a> </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1aa84d9f65091a53aef532b8ee773e403c"><span class="std std-ref">ts3client_setWhisperReceiveWhitelist</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>id of the client that tried to whisper us </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<section id="add-to-allow-list">
+<h3>Add to allow list<a class="headerlink" href="#add-to-allow-list" title="Permalink to this heading"></a></h3>
+<p>The receiving client can decide to allow whispering from the sender and
+add the sending client to the whisper allow list by calling</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_allowWhispersFrom</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Allow another client to whisper us. </p>
+<p>Adds the specified other client on the server to whisper us. Prior to this call whispers from other clients are ignored and no audio data will be made available from whispers. Can be undone using <a class="reference internal" href="../client_api.html#clientlib_8h_1ad095a69c33ca536673246d76a0d71a61"><span class="std std-ref">ts3client_removeFromAllowedWhispersFrom</span></a></p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1aa84d9f65091a53aef532b8ee773e403c"><span class="std std-ref">ts3client_setWhisperReceiveWhitelist</span></a> </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1ad095a69c33ca536673246d76a0d71a61"><span class="std std-ref">ts3client_removeFromAllowedWhispersFrom</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for the server on which the client specified by clID is located. </p></li>
+<li><p><strong>clID</strong> – the client id of another client which we want to receive whispers from. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>If the sender is not added by the receiving client, this callback continues
+to be called but no voice data is transmitted to the receiving client.</p>
+</section>
+<section id="remove-from-allow-list">
+<h3>Remove from allow list<a class="headerlink" href="#remove-from-allow-list" title="Permalink to this heading"></a></h3>
+<p>To remove a client from the whisper allow list:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_removeFromAllowedWhispersFrom</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clID</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Removes a client from the allowed whisper list. </p>
+<p>Removes the specified other client on the server from the allowed whisperer list. After this call no more audio is made available when receiving whispers from the specified client. The opposite of <a class="reference internal" href="../client_api.html#clientlib_8h_1a681bc51ec1c7bbf31e3efb4b37f1a6af"><span class="std std-ref">ts3client_allowWhispersFrom</span></a></p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1aa84d9f65091a53aef532b8ee773e403c"><span class="std std-ref">ts3client_setWhisperReceiveWhitelist</span></a> </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../client_api.html#clientlib_8h_1a681bc51ec1c7bbf31e3efb4b37f1a6af"><span class="std std-ref">ts3client_allowWhispersFrom</span></a> </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler for the server on which the client specified by clID is located. </p></li>
+<li><p><strong>clID</strong> – the client id of another client which we do not want to receive whispers from anymore. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3dsound.html" class="btn btn-neutral float-left" title="3D Sound" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="voice-encryption.html" class="btn btn-neutral float-right" title="Channel voice data encryption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

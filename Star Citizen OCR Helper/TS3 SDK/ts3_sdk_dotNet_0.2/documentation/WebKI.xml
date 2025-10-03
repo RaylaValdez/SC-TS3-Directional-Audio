@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AccountingAlreadyStarted enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingInstanceCheckError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingInstanceDuplicated enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingInstanceLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingLicenseDateNotOk enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingLicenseFileInvalid enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingLicenseFileNotFound enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingNotStarted enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingRunningElsewhere enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingServerError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingSlotLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingToManyStarts enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingUnableToConnectToServer enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingUnknownError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AccountingVirtualserverLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="AcquireData method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_AcquireData.htm" />
+  <HelpKINode Title="ActivateCaptureDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_ActivateCaptureDevice.htm" />
+  <HelpKINode Title="Active enumeration member" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+  <HelpKINode Title="Agc property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Agc.htm" />
+  <HelpKINode Title="AgcLevel property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcLevel.htm" />
+  <HelpKINode Title="AgcMaxGain property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcMaxGain.htm" />
+  <HelpKINode Title="AllChannels property" Url="html/P_TeamSpeak_Sdk_Client_Connection_AllChannels.htm" />
+  <HelpKINode Title="AllClients property" Url="html/P_TeamSpeak_Sdk_Client_Connection_AllClients.htm" />
+  <HelpKINode Title="AllowWhispersFrom method" Url="html/M_TeamSpeak_Sdk_Client_Connection_AllowWhispersFrom.htm" />
+  <HelpKINode Title="Android enumeration member" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="AverageSpeed property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_AverageSpeed.htm" />
+  <HelpKINode Title="BackCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="BackLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="BackRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="BandwidthReceivedLastMinuteControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteControl.htm" />
+  <HelpKINode Title="BandwidthReceivedLastMinuteKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteKeepalive.htm" />
+  <HelpKINode Title="BandwidthReceivedLastMinuteSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteSpeech.htm" />
+  <HelpKINode Title="BandwidthReceivedLastMinuteTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteTotal.htm" />
+  <HelpKINode Title="BandwidthReceivedLastSecondControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondControl.htm" />
+  <HelpKINode Title="BandwidthReceivedLastSecondKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondKeepalive.htm" />
+  <HelpKINode Title="BandwidthReceivedLastSecondSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondSpeech.htm" />
+  <HelpKINode Title="BandwidthReceivedLastSecondTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondTotal.htm" />
+  <HelpKINode Title="BandwidthSentLastMinuteControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteControl.htm" />
+  <HelpKINode Title="BandwidthSentLastMinuteKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteKeepalive.htm" />
+  <HelpKINode Title="BandwidthSentLastMinuteSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteSpeech.htm" />
+  <HelpKINode Title="BandwidthSentLastMinuteTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteTotal.htm" />
+  <HelpKINode Title="BandwidthSentLastSecondControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondControl.htm" />
+  <HelpKINode Title="BandwidthSentLastSecondKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondKeepalive.htm" />
+  <HelpKINode Title="BandwidthSentLastSecondSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondSpeech.htm" />
+  <HelpKINode Title="BandwidthSentLastSecondTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondTotal.htm" />
+  <HelpKINode Title="BanFlooding enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="BanInvalidId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="BytesReceivedControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedControl.htm" />
+  <HelpKINode Title="BytesReceivedKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedKeepalive.htm" />
+  <HelpKINode Title="BytesReceivedSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedSpeech.htm" />
+  <HelpKINode Title="BytesReceivedTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedTotal.htm" />
+  <HelpKINode Title="BytesSentControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentControl.htm" />
+  <HelpKINode Title="BytesSentKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentKeepalive.htm" />
+  <HelpKINode Title="BytesSentSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentSpeech.htm" />
+  <HelpKINode Title="BytesSentTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentTotal.htm" />
+  <HelpKINode Title="CaptureChannels property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureChannels.htm" />
+  <HelpKINode Title="CaptureDevice property" Url="html/P_TeamSpeak_Sdk_Client_Connection_CaptureDevice.htm" />
+  <HelpKINode Title="CaptureRate property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureRate.htm" />
+  <HelpKINode Title="CeltMono enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="Channel class">
+    <HelpKINode Title="Channel Class" Url="html/T_TeamSpeak_Sdk_Client_Channel.htm" />
+    <HelpKINode Title="about Channel class" Url="html/T_TeamSpeak_Sdk_Client_Channel.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_Channel__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Channel.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_Channel.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Channel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Channel property">
+    <HelpKINode Title="Client.Channel Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Channel.htm" />
+    <HelpKINode Title="FileInfo.Channel Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Channel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Channel.Channel constructor" Url="html/M_TeamSpeak_Sdk_Client_Channel__ctor.htm" />
+  <HelpKINode Title="Channel.ChannelEmptyTime property" Url="html/P_TeamSpeak_Sdk_Client_Channel_ChannelEmptyTime.htm" />
+  <HelpKINode Title="Channel.Channels property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Channels.htm" />
+  <HelpKINode Title="Channel.Clients property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Clients.htm" />
+  <HelpKINode Title="Channel.Codec property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Codec.htm" />
+  <HelpKINode Title="Channel.CodecIsUnencrypted property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecIsUnencrypted.htm" />
+  <HelpKINode Title="Channel.CodecLatencyFactor property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecLatencyFactor.htm" />
+  <HelpKINode Title="Channel.CodecQuality property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecQuality.htm" />
+  <HelpKINode Title="Channel.Connection property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Connection.htm" />
+  <HelpKINode Title="Channel.CreateDirectory method" Url="html/M_TeamSpeak_Sdk_Client_Channel_CreateDirectory.htm" />
+  <HelpKINode Title="Channel.Delete method" Url="html/M_TeamSpeak_Sdk_Client_Channel_Delete.htm" />
+  <HelpKINode Title="Channel.DeleteDelay property" Url="html/P_TeamSpeak_Sdk_Client_Channel_DeleteDelay.htm" />
+  <HelpKINode Title="Channel.DeleteFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_DeleteFile.htm" />
+  <HelpKINode Title="Channel.Description property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Description.htm" />
+  <HelpKINode Title="Channel.Equality operator" Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Equality.htm" />
+  <HelpKINode Title="Channel.Equals method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_Equals.htm" />
+  <HelpKINode Title="Channel.GetChannelDescription method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetChannelDescription.htm" />
+  <HelpKINode Title="Channel.GetFileInfo method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileInfo.htm" />
+  <HelpKINode Title="Channel.GetFileList method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileList.htm" />
+  <HelpKINode Title="Channel.GetHashCode method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetHashCode.htm" />
+  <HelpKINode Title="Channel.ID property" Url="html/P_TeamSpeak_Sdk_Client_Channel_ID.htm" />
+  <HelpKINode Title="Channel.Inequality operator" Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Inequality.htm" />
+  <HelpKINode Title="Channel.IsDefault property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsDefault.htm" />
+  <HelpKINode Title="Channel.IsPasswordProtected property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPasswordProtected.htm" />
+  <HelpKINode Title="Channel.IsPermanent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPermanent.htm" />
+  <HelpKINode Title="Channel.IsSemiPermanent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsSemiPermanent.htm" />
+  <HelpKINode Title="Channel.MaxClients property" Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxClients.htm" />
+  <HelpKINode Title="Channel.MaxFamilyClients property" Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxFamilyClients.htm" />
+  <HelpKINode Title="Channel.MoveFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_MoveFile.htm" />
+  <HelpKINode Title="Channel.MoveTo method" Url="html/M_TeamSpeak_Sdk_Client_Channel_MoveTo.htm" />
+  <HelpKINode Title="Channel.Name property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Name.htm" />
+  <HelpKINode Title="Channel.Order property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Order.htm" />
+  <HelpKINode Title="Channel.Parent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Parent.htm" />
+  <HelpKINode Title="Channel.Password property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Password.htm" />
+  <HelpKINode Title="Channel.RequestFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_RequestFile.htm" />
+  <HelpKINode Title="Channel.SendFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_SendFile.htm" />
+  <HelpKINode Title="Channel.SendTextMessage method" Url="html/M_TeamSpeak_Sdk_Client_Channel_SendTextMessage.htm" />
+  <HelpKINode Title="Channel.Topic property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Topic.htm" />
+  <HelpKINode Title="Channel.ToString method" Url="html/M_TeamSpeak_Sdk_Client_Channel_ToString.htm" />
+  <HelpKINode Title="ChannelAlreadyIn enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelCanNotDeleteDefault enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelChanged.htm" />
+  <HelpKINode Title="ChannelChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelChangedEventHandler.htm" />
+  <HelpKINode Title="ChannelDefaultRequirePermanent enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelDeleted event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDeleted.htm" />
+  <HelpKINode Title="ChannelDeletedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDeletedEventHandler.htm" />
+  <HelpKINode Title="ChannelDescriptionUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDescriptionUpdated.htm" />
+  <HelpKINode Title="ChannelDescriptionUpdateEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDescriptionUpdateEventHandler.htm" />
+  <HelpKINode Title="ChannelEmptyTime property" Url="html/P_TeamSpeak_Sdk_Client_Channel_ChannelEmptyTime.htm" />
+  <HelpKINode Title="ChannelInvalidFlags enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelInvalidId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelInvalidOrder enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelInvalidPassword enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelInvalidSecurityHash enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelIsPrivateChannel enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelMaxclientsReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelMaxfamilyReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMessage.htm" />
+  <HelpKINode Title="ChannelMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMessageEventHandler.htm" />
+  <HelpKINode Title="ChannelMoved event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMoved.htm" />
+  <HelpKINode Title="ChannelMoveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMoveEventHandler.htm" />
+  <HelpKINode Title="ChannelNameInuse enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelNoFiletransferSupported enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelNotEmpty enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelParentNotPermanent enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ChannelPasswordChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelPasswordChanged.htm" />
+  <HelpKINode Title="ChannelPasswordChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelPasswordChangedEventHandler.htm" />
+  <HelpKINode Title="ChannelProtocolLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Channels property">
+    <HelpKINode Title="Channel.Channels Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Channels.htm" />
+    <HelpKINode Title="Connection.Channels Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Channels.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ChannelsOnline property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ChannelsOnline.htm" />
+  <HelpKINode Title="ChannelSubscribed event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribed.htm" />
+  <HelpKINode Title="ChannelSubscribeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeEventHandler.htm" />
+  <HelpKINode Title="ChannelSubscribeFinishedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeFinishedEventHandler.htm" />
+  <HelpKINode Title="ChannelSubscribesFinished event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribesFinished.htm" />
+  <HelpKINode Title="ChannelUnsubscribed event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribed.htm" />
+  <HelpKINode Title="ChannelUnsubscribeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeEventHandler.htm" />
+  <HelpKINode Title="ChannelUnsubscribeFinishedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeFinishedEventHandler.htm" />
+  <HelpKINode Title="ChannelUnsubscribesFinished event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribesFinished.htm" />
+  <HelpKINode Title="CheckServerUniqueIdentifier event" Url="html/E_TeamSpeak_Sdk_Client_Connection_CheckServerUniqueIdentifier.htm" />
+  <HelpKINode Title="CheckServerUniqueIdentifierEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CheckServerUniqueIdentifierEventHandler.htm" />
+  <HelpKINode Title="CleanUp method" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_CleanUp.htm" />
+  <HelpKINode Title="Client class">
+    <HelpKINode Title="Client Class" Url="html/T_TeamSpeak_Sdk_Client_Client.htm" />
+    <HelpKINode Title="about Client class" Url="html/T_TeamSpeak_Sdk_Client_Client.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_Client__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Client.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_Client.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Client.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Client property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Client.htm" />
+  <HelpKINode Title="Client.Channel property" Url="html/P_TeamSpeak_Sdk_Client_Client_Channel.htm" />
+  <HelpKINode Title="Client.Client constructor" Url="html/M_TeamSpeak_Sdk_Client_Client__ctor.htm" />
+  <HelpKINode Title="Client.Connection property" Url="html/P_TeamSpeak_Sdk_Client_Client_Connection.htm" />
+  <HelpKINode Title="Client.ConnectionInfo property" Url="html/P_TeamSpeak_Sdk_Client_Client_ConnectionInfo.htm" />
+  <HelpKINode Title="Client.DefaultChannel property" Url="html/P_TeamSpeak_Sdk_Client_Client_DefaultChannel.htm" />
+  <HelpKINode Title="Client.Equality operator" Url="html/M_TeamSpeak_Sdk_Client_Client_op_Equality.htm" />
+  <HelpKINode Title="Client.Equals method" Url="html/Overload_TeamSpeak_Sdk_Client_Client_Equals.htm" />
+  <HelpKINode Title="Client.GetHashCode method" Url="html/M_TeamSpeak_Sdk_Client_Client_GetHashCode.htm" />
+  <HelpKINode Title="Client.ID property" Url="html/P_TeamSpeak_Sdk_Client_Client_ID.htm" />
+  <HelpKINode Title="Client.IdleTime property" Url="html/P_TeamSpeak_Sdk_Client_Client_IdleTime.htm" />
+  <HelpKINode Title="Client.Inequality operator" Url="html/M_TeamSpeak_Sdk_Client_Client_op_Inequality.htm" />
+  <HelpKINode Title="Client.InputHardwareEnabled property" Url="html/P_TeamSpeak_Sdk_Client_Client_InputHardwareEnabled.htm" />
+  <HelpKINode Title="Client.InputMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_InputMuted.htm" />
+  <HelpKINode Title="Client.IsInputDeactivated property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsInputDeactivated.htm" />
+  <HelpKINode Title="Client.IsRecording property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsRecording.htm" />
+  <HelpKINode Title="Client.IsTalking property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsTalking.htm" />
+  <HelpKINode Title="Client.KickFromChannel method" Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromChannel.htm" />
+  <HelpKINode Title="Client.KickFromServer method" Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromServer.htm" />
+  <HelpKINode Title="Client.MetaData property" Url="html/P_TeamSpeak_Sdk_Client_Client_MetaData.htm" />
+  <HelpKINode Title="Client.MoveTo method" Url="html/M_TeamSpeak_Sdk_Client_Client_MoveTo.htm" />
+  <HelpKINode Title="Client.Muted property" Url="html/P_TeamSpeak_Sdk_Client_Client_Muted.htm" />
+  <HelpKINode Title="Client.Nickname property" Url="html/P_TeamSpeak_Sdk_Client_Client_Nickname.htm" />
+  <HelpKINode Title="Client.OutputHardware property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputHardware.htm" />
+  <HelpKINode Title="Client.OutputMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputMuted.htm" />
+  <HelpKINode Title="Client.OutputOnlyMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputOnlyMuted.htm" />
+  <HelpKINode Title="Client.Platform property" Url="html/P_TeamSpeak_Sdk_Client_Client_Platform.htm" />
+  <HelpKINode Title="Client.RequestClientVariables method" Url="html/M_TeamSpeak_Sdk_Client_Client_RequestClientVariables.htm" />
+  <HelpKINode Title="Client.SendTextMessage method" Url="html/M_TeamSpeak_Sdk_Client_Client_SendTextMessage.htm" />
+  <HelpKINode Title="Client.Set3DAttributes method" Url="html/M_TeamSpeak_Sdk_Client_Client_Set3DAttributes.htm" />
+  <HelpKINode Title="Client.SetWhisperList method" Url="html/M_TeamSpeak_Sdk_Client_Client_SetWhisperList.htm" />
+  <HelpKINode Title="Client.ToString method" Url="html/M_TeamSpeak_Sdk_Client_Client_ToString.htm" />
+  <HelpKINode Title="Client.UniqueIdentifier property" Url="html/P_TeamSpeak_Sdk_Client_Client_UniqueIdentifier.htm" />
+  <HelpKINode Title="Client.Version property" Url="html/P_TeamSpeak_Sdk_Client_Client_Version.htm" />
+  <HelpKINode Title="Client.VolumeModificator property" Url="html/P_TeamSpeak_Sdk_Client_Client_VolumeModificator.htm" />
+  <HelpKINode Title="ClientAlreadySubscribed enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientCannotVerifyNow enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientCouldNotValidateIdentity enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientHacked enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientInvalidId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientInvalidPassword enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientInvalidType enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientIp property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientIp.htm" />
+  <HelpKINode Title="ClientIsFlooding enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientIsOnline enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientKickedFromChannel event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromChannel.htm" />
+  <HelpKINode Title="ClientKickedFromServer event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromServer.htm" />
+  <HelpKINode Title="ClientKickFromChannelEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromChannelEventHandler.htm" />
+  <HelpKINode Title="ClientKickFromServerEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromServerEventHandler.htm" />
+  <HelpKINode Title="ClientlibraryNotInitialised enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientLoginNotPermitted enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMessage.htm" />
+  <HelpKINode Title="ClientMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMessageEventHandler.htm" />
+  <HelpKINode Title="ClientMoved event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMoved.htm" />
+  <HelpKINode Title="ClientMovedSubscription event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMovedSubscription.htm" />
+  <HelpKINode Title="ClientMoveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveEventHandler.htm" />
+  <HelpKINode Title="ClientMoveSubscriptionEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveSubscriptionEventHandler.htm" />
+  <HelpKINode Title="ClientMoveTimeoutEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveTimeoutEventHandler.htm" />
+  <HelpKINode Title="ClientNicknameInuse enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientNotLoggedIn enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientNotSubscribed enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientPasswordEncrypt property">
+    <HelpKINode Title="Library.ClientPasswordEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_ClientPasswordEncrypt.htm" />
+    <HelpKINode Title="LibraryParameters.ClientPasswordEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ClientPasswordEncrypt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClientPasswordEncryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientPasswordEncryptHandler.htm" />
+  <HelpKINode Title="ClientPort property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientPort.htm" />
+  <HelpKINode Title="ClientProtocolLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Clients property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Clients.htm" />
+  <HelpKINode Title="ClientsOnline property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ClientsOnline.htm" />
+  <HelpKINode Title="ClientTimeout event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientTimeout.htm" />
+  <HelpKINode Title="ClientTooManyClonesConnected enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ClientToServerPacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossControl.htm" />
+  <HelpKINode Title="ClientToServerPacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossKeepalive.htm" />
+  <HelpKINode Title="ClientToServerPacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossSpeech.htm" />
+  <HelpKINode Title="ClientToServerPacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossTotal.htm" />
+  <HelpKINode Title="ClientUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientUpdated.htm" />
+  <HelpKINode Title="ClientVersionOutdated enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Close method">
+    <HelpKINode Title="Connection.Close Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Close.htm" />
+    <HelpKINode Title="WaveHandle.Close Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Close.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CloseCaptureDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_CloseCaptureDevice.htm" />
+  <HelpKINode Title="ClosePlaybackDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_ClosePlaybackDevice.htm" />
+  <HelpKINode Title="Codec property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Codec.htm" />
+  <HelpKINode Title="CodecEncryptionMode enumeration" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+  <HelpKINode Title="CodecEncryptionMode property" Url="html/P_TeamSpeak_Sdk_Client_Connection_CodecEncryptionMode.htm" />
+  <HelpKINode Title="CodecIsUnencrypted property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecIsUnencrypted.htm" />
+  <HelpKINode Title="CodecLatencyFactor property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecLatencyFactor.htm" />
+  <HelpKINode Title="CodecQuality property" Url="html/P_TeamSpeak_Sdk_Client_Channel_CodecQuality.htm" />
+  <HelpKINode Title="CodecType enumeration" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="CommandNotFound enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Connected enumeration member" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="ConnectedTime property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ConnectedTime.htm" />
+  <HelpKINode Title="ConnectFailedBanned enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Connecting enumeration member" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="Connection class">
+    <HelpKINode Title="Connection Class" Url="html/T_TeamSpeak_Sdk_Client_Connection.htm" />
+    <HelpKINode Title="about Connection class" Url="html/T_TeamSpeak_Sdk_Client_Connection.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_Connection__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_TeamSpeak_Sdk_Client_Connection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Connection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Connection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Connection property">
+    <HelpKINode Title="Channel.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Connection.htm" />
+    <HelpKINode Title="Client.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Connection.htm" />
+    <HelpKINode Title="ConnectionInfo.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Connection.htm" />
+    <HelpKINode Title="FileTransfer.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Connection.htm" />
+    <HelpKINode Title="Preprocessor.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Connection.htm" />
+    <HelpKINode Title="WaveHandle.Connection Property " Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Connection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Connection.ActivateCaptureDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_ActivateCaptureDevice.htm" />
+  <HelpKINode Title="Connection.AllChannels property" Url="html/P_TeamSpeak_Sdk_Client_Connection_AllChannels.htm" />
+  <HelpKINode Title="Connection.AllClients property" Url="html/P_TeamSpeak_Sdk_Client_Connection_AllClients.htm" />
+  <HelpKINode Title="Connection.AllowWhispersFrom method" Url="html/M_TeamSpeak_Sdk_Client_Connection_AllowWhispersFrom.htm" />
+  <HelpKINode Title="Connection.CaptureDevice property" Url="html/P_TeamSpeak_Sdk_Client_Connection_CaptureDevice.htm" />
+  <HelpKINode Title="Connection.ChannelChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelChanged.htm" />
+  <HelpKINode Title="Connection.ChannelDeleted event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDeleted.htm" />
+  <HelpKINode Title="Connection.ChannelDescriptionUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelDescriptionUpdated.htm" />
+  <HelpKINode Title="Connection.ChannelMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMessage.htm" />
+  <HelpKINode Title="Connection.ChannelMoved event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelMoved.htm" />
+  <HelpKINode Title="Connection.ChannelPasswordChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelPasswordChanged.htm" />
+  <HelpKINode Title="Connection.Channels property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Channels.htm" />
+  <HelpKINode Title="Connection.ChannelsOnline property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ChannelsOnline.htm" />
+  <HelpKINode Title="Connection.ChannelSubscribed event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribed.htm" />
+  <HelpKINode Title="Connection.ChannelSubscribesFinished event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelSubscribesFinished.htm" />
+  <HelpKINode Title="Connection.ChannelUnsubscribed event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribed.htm" />
+  <HelpKINode Title="Connection.ChannelUnsubscribesFinished event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ChannelUnsubscribesFinished.htm" />
+  <HelpKINode Title="Connection.CheckServerUniqueIdentifier event" Url="html/E_TeamSpeak_Sdk_Client_Connection_CheckServerUniqueIdentifier.htm" />
+  <HelpKINode Title="Connection.ClientKickedFromChannel event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromChannel.htm" />
+  <HelpKINode Title="Connection.ClientKickedFromServer event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientKickedFromServer.htm" />
+  <HelpKINode Title="Connection.ClientMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMessage.htm" />
+  <HelpKINode Title="Connection.ClientMoved event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMoved.htm" />
+  <HelpKINode Title="Connection.ClientMovedSubscription event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientMovedSubscription.htm" />
+  <HelpKINode Title="Connection.ClientsOnline property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ClientsOnline.htm" />
+  <HelpKINode Title="Connection.ClientTimeout event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientTimeout.htm" />
+  <HelpKINode Title="Connection.ClientUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ClientUpdated.htm" />
+  <HelpKINode Title="Connection.Close method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Close.htm" />
+  <HelpKINode Title="Connection.CloseCaptureDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_CloseCaptureDevice.htm" />
+  <HelpKINode Title="Connection.ClosePlaybackDevice method" Url="html/M_TeamSpeak_Sdk_Client_Connection_ClosePlaybackDevice.htm" />
+  <HelpKINode Title="Connection.CodecEncryptionMode property" Url="html/P_TeamSpeak_Sdk_Client_Connection_CodecEncryptionMode.htm" />
+  <HelpKINode Title="Connection.Connection constructor" Url="html/M_TeamSpeak_Sdk_Client_Connection__ctor.htm" />
+  <HelpKINode Title="Connection.CreateChannel method" Url="html/M_TeamSpeak_Sdk_Client_Connection_CreateChannel.htm" />
+  <HelpKINode Title="Connection.Created property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Created.htm" />
+  <HelpKINode Title="Connection.Custom3dRolloffCalculationClient event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationClient.htm" />
+  <HelpKINode Title="Connection.Custom3dRolloffCalculationWaveReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationWaveReceived.htm" />
+  <HelpKINode Title="Connection.Dispose method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Dispose.htm" />
+  <HelpKINode Title="Connection.EditCapturedVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditCapturedVoiceData.htm" />
+  <HelpKINode Title="Connection.EditMixedPlaybackVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditMixedPlaybackVoiceData.htm" />
+  <HelpKINode Title="Connection.EditPlaybackVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPlaybackVoiceData.htm" />
+  <HelpKINode Title="Connection.EditPostProcessVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPostProcessVoiceData.htm" />
+  <HelpKINode Title="Connection.FileInfoReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileInfoReceived.htm" />
+  <HelpKINode Title="Connection.FileTransferStatusReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileTransferStatusReceived.htm" />
+  <HelpKINode Title="Connection.Finalize method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Finalize.htm" />
+  <HelpKINode Title="Connection.FindClient method" Url="html/M_TeamSpeak_Sdk_Client_Connection_FindClient.htm" />
+  <HelpKINode Title="Connection.ID property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ID.htm" />
+  <HelpKINode Title="Connection.InitiateGracefulPlaybackShutdown method" Url="html/M_TeamSpeak_Sdk_Client_Connection_InitiateGracefulPlaybackShutdown.htm" />
+  <HelpKINode Title="Connection.IsVoiceRecording property" Url="html/P_TeamSpeak_Sdk_Client_Connection_IsVoiceRecording.htm" />
+  <HelpKINode Title="Connection.LocalTestMode property" Url="html/P_TeamSpeak_Sdk_Client_Connection_LocalTestMode.htm" />
+  <HelpKINode Title="Connection.MaxClients property" Url="html/P_TeamSpeak_Sdk_Client_Connection_MaxClients.htm" />
+  <HelpKINode Title="Connection.Move method" Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Move.htm" />
+  <HelpKINode Title="Connection.Mute method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Mute.htm" />
+  <HelpKINode Title="Connection.Name property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Name.htm" />
+  <HelpKINode Title="Connection.NewChannel event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannel.htm" />
+  <HelpKINode Title="Connection.NewChannelCreated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannelCreated.htm" />
+  <HelpKINode Title="Connection.OpenCapture method" Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenCapture.htm" />
+  <HelpKINode Title="Connection.OpenPlayback method" Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenPlayback.htm" />
+  <HelpKINode Title="Connection.Platform property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Platform.htm" />
+  <HelpKINode Title="Connection.PlaybackDevice property" Url="html/P_TeamSpeak_Sdk_Client_Connection_PlaybackDevice.htm" />
+  <HelpKINode Title="Connection.PlaybackShutdownCompleted event" Url="html/E_TeamSpeak_Sdk_Client_Connection_PlaybackShutdownCompleted.htm" />
+  <HelpKINode Title="Connection.PlayWaveFile method" Url="html/M_TeamSpeak_Sdk_Client_Connection_PlayWaveFile.htm" />
+  <HelpKINode Title="Connection.Preprocessor property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Preprocessor.htm" />
+  <HelpKINode Title="Connection.ProtocolVersionReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ProtocolVersionReceived.htm" />
+  <HelpKINode Title="Connection.RefreshVariables method" Url="html/M_TeamSpeak_Sdk_Client_Connection_RefreshVariables.htm" />
+  <HelpKINode Title="Connection.RemoveFromAllowedWhispersFrom method" Url="html/M_TeamSpeak_Sdk_Client_Connection_RemoveFromAllowedWhispersFrom.htm" />
+  <HelpKINode Title="Connection.Self property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Self.htm" />
+  <HelpKINode Title="Connection.SendTextMessage method" Url="html/Overload_TeamSpeak_Sdk_Client_Connection_SendTextMessage.htm" />
+  <HelpKINode Title="Connection.ServerError event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerError.htm" />
+  <HelpKINode Title="Connection.ServerIp property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerIp.htm" />
+  <HelpKINode Title="Connection.ServerMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerMessage.htm" />
+  <HelpKINode Title="Connection.ServerPort property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerPort.htm" />
+  <HelpKINode Title="Connection.ServerStop event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerStop.htm" />
+  <HelpKINode Title="Connection.ServerUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerUpdated.htm" />
+  <HelpKINode Title="Connection.Set3DListenerAttributes method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DListenerAttributes.htm" />
+  <HelpKINode Title="Connection.Set3DSettings method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DSettings.htm" />
+  <HelpKINode Title="Connection.SpeedLimitDown property" Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitDown.htm" />
+  <HelpKINode Title="Connection.SpeedLimitUp property" Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitUp.htm" />
+  <HelpKINode Title="Connection.Start method" Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Start.htm" />
+  <HelpKINode Title="Connection.Status property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Status.htm" />
+  <HelpKINode Title="Connection.StatusChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_StatusChanged.htm" />
+  <HelpKINode Title="Connection.Stop method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Stop.htm" />
+  <HelpKINode Title="Connection.Subscribe method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Subscribe.htm" />
+  <HelpKINode Title="Connection.SubscribeAll method" Url="html/M_TeamSpeak_Sdk_Client_Connection_SubscribeAll.htm" />
+  <HelpKINode Title="Connection.TalkStatusChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_TalkStatusChanged.htm" />
+  <HelpKINode Title="Connection.Timeout property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Timeout.htm" />
+  <HelpKINode Title="Connection.UniqueIdentifier property" Url="html/P_TeamSpeak_Sdk_Client_Connection_UniqueIdentifier.htm" />
+  <HelpKINode Title="Connection.Unmute method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Unmute.htm" />
+  <HelpKINode Title="Connection.Unsubscribe method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Unsubscribe.htm" />
+  <HelpKINode Title="Connection.UnsubscribeAll method" Url="html/M_TeamSpeak_Sdk_Client_Connection_UnsubscribeAll.htm" />
+  <HelpKINode Title="Connection.Uptime property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Uptime.htm" />
+  <HelpKINode Title="Connection.Version property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Version.htm" />
+  <HelpKINode Title="Connection.VolumeFactorWave property" Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeFactorWave.htm" />
+  <HelpKINode Title="Connection.VolumeModifier property" Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeModifier.htm" />
+  <HelpKINode Title="Connection.WelcomeMessage property" Url="html/P_TeamSpeak_Sdk_Client_Connection_WelcomeMessage.htm" />
+  <HelpKINode Title="Connection.WhisperIgnored event" Url="html/E_TeamSpeak_Sdk_Client_Connection_WhisperIgnored.htm" />
+  <HelpKINode Title="ConnectionEstablished enumeration member" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="ConnectionEstablishing enumeration member" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="ConnectionInfo class">
+    <HelpKINode Title="ConnectionInfo Class" Url="html/T_TeamSpeak_Sdk_Client_ConnectionInfo.htm" />
+    <HelpKINode Title="about ConnectionInfo class" Url="html/T_TeamSpeak_Sdk_Client_ConnectionInfo.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_ConnectionInfo.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ConnectionInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConnectionInfo property" Url="html/P_TeamSpeak_Sdk_Client_Client_ConnectionInfo.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastMinuteControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastMinuteKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastMinuteSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastMinuteTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastMinuteTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastSecondControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastSecondKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastSecondSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthReceivedLastSecondTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthReceivedLastSecondTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastMinuteControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastMinuteKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastMinuteSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastMinuteTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastMinuteTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastSecondControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastSecondKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastSecondSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BandwidthSentLastSecondTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BandwidthSentLastSecondTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesReceivedControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesReceivedKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesReceivedSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesReceivedTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesReceivedTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesSentControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentControl.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesSentKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesSentSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.BytesSentTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_BytesSentTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.CleanUp method" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_CleanUp.htm" />
+  <HelpKINode Title="ConnectionInfo.Client property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Client.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientIp property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientIp.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientPort property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientPort.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientToServerPacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossControl.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientToServerPacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientToServerPacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.ClientToServerPacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ClientToServerPacketlossTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.ConnectedTime property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ConnectedTime.htm" />
+  <HelpKINode Title="ConnectionInfo.Connection property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Connection.htm" />
+  <HelpKINode Title="ConnectionInfo.ConnectionInfo constructor" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo__ctor.htm" />
+  <HelpKINode Title="ConnectionInfo.FiletransferBandwidthReceived property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthReceived.htm" />
+  <HelpKINode Title="ConnectionInfo.FiletransferBandwidthSent property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthSent.htm" />
+  <HelpKINode Title="ConnectionInfo.IdleTime property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_IdleTime.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossControl.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsReceivedControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedControl.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsReceivedKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsReceivedSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsReceivedTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsSentControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentControl.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsSentKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsSentSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.PacketsSentTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentTotal.htm" />
+  <HelpKINode Title="ConnectionInfo.Ping property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Ping.htm" />
+  <HelpKINode Title="ConnectionInfo.PingDeviation property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PingDeviation.htm" />
+  <HelpKINode Title="ConnectionInfo.Refresh method" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_Refresh.htm" />
+  <HelpKINode Title="ConnectionInfo.ServerToClientPacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossControl.htm" />
+  <HelpKINode Title="ConnectionInfo.ServerToClientPacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossKeepalive.htm" />
+  <HelpKINode Title="ConnectionInfo.ServerToClientPacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossSpeech.htm" />
+  <HelpKINode Title="ConnectionInfo.ServerToClientPacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossTotal.htm" />
+  <HelpKINode Title="ConnectionIPProtocolMissing enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ConnectionLost enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Connections property" Url="html/P_TeamSpeak_Sdk_Client_Library_Connections.htm" />
+  <HelpKINode Title="ConnectStatus enumeration" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="ConnectStatusChangeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ConnectStatusChangeEventHandler.htm" />
+  <HelpKINode Title="Console enumeration member" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="Contains method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Contains.htm" />
+  <HelpKINode Title="CopyTo method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_CopyTo.htm" />
+  <HelpKINode Title="CouldNotInitialiseInputManager enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="CouldNotResolveHostname enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Count property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Count.htm" />
+  <HelpKINode Title="CreateChannel method" Url="html/M_TeamSpeak_Sdk_Client_Connection_CreateChannel.htm" />
+  <HelpKINode Title="CreateCustomDevice method" Url="html/M_TeamSpeak_Sdk_Client_Library_CreateCustomDevice.htm" />
+  <HelpKINode Title="Created property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Created.htm" />
+  <HelpKINode Title="CreateDirectory method" Url="html/M_TeamSpeak_Sdk_Client_Channel_CreateDirectory.htm" />
+  <HelpKINode Title="CreateIdentity method" Url="html/M_TeamSpeak_Sdk_Client_Library_CreateIdentity.htm" />
+  <HelpKINode Title="Critical enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="CurrentlyNotPossible enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="CurrentSpeed property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_CurrentSpeed.htm" />
+  <HelpKINode Title="Custom3dRolloffCalculationClient event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationClient.htm" />
+  <HelpKINode Title="Custom3dRolloffCalculationClientEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationClientEventHandler.htm" />
+  <HelpKINode Title="Custom3dRolloffCalculationWaveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationWaveEventHandler.htm" />
+  <HelpKINode Title="Custom3dRolloffCalculationWaveReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_Custom3dRolloffCalculationWaveReceived.htm" />
+  <HelpKINode Title="CustomDevice class">
+    <HelpKINode Title="CustomDevice Class" Url="html/T_TeamSpeak_Sdk_Client_CustomDevice.htm" />
+    <HelpKINode Title="about CustomDevice class" Url="html/T_TeamSpeak_Sdk_Client_CustomDevice.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_CustomDevice.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_CustomDevice.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CustomDevice.AcquireData method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_AcquireData.htm" />
+  <HelpKINode Title="CustomDevice.CaptureChannels property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureChannels.htm" />
+  <HelpKINode Title="CustomDevice.CaptureRate property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_CaptureRate.htm" />
+  <HelpKINode Title="CustomDevice.CustomDevice constructor" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice__ctor.htm" />
+  <HelpKINode Title="CustomDevice.Dispose method" Url="html/Overload_TeamSpeak_Sdk_Client_CustomDevice_Dispose.htm" />
+  <HelpKINode Title="CustomDevice.Finalize method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_Finalize.htm" />
+  <HelpKINode Title="CustomDevice.ID property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_ID.htm" />
+  <HelpKINode Title="CustomDevice.Mode property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Mode.htm" />
+  <HelpKINode Title="CustomDevice.Name property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Name.htm" />
+  <HelpKINode Title="CustomDevice.PlaybackChannels property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackChannels.htm" />
+  <HelpKINode Title="CustomDevice.PlaybackRate property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackRate.htm" />
+  <HelpKINode Title="CustomDevice.ProcessData method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ProcessData.htm" />
+  <HelpKINode Title="CustomDevice.ToString method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ToString.htm" />
+  <HelpKINode Title="CustomDevices property" Url="html/P_TeamSpeak_Sdk_Client_Library_CustomDevices.htm" />
+  <HelpKINode Title="CustomPacketDecrypt property">
+    <HelpKINode Title="Library.CustomPacketDecrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketDecrypt.htm" />
+    <HelpKINode Title="LibraryParameters.CustomPacketDecrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketDecrypt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CustomPacketDecryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketDecryptHandler.htm" />
+  <HelpKINode Title="CustomPacketEncrypt property">
+    <HelpKINode Title="Library.CustomPacketEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketEncrypt.htm" />
+    <HelpKINode Title="LibraryParameters.CustomPacketEncrypt Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketEncrypt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CustomPacketEncryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketEncryptHandler.htm" />
+  <HelpKINode Title="Database enumeration member">
+    <HelpKINode Title="Error Enumeration" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+    <HelpKINode Title="LogTypes Enumeration" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DatabaseConstraint enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="DatabaseDuplicateEntry enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="DatabaseEmptyResult enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="DatabaseNoModifications enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="DatabaseReinvoke enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Debug enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="DecibelLastPeriod property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_DecibelLastPeriod.htm" />
+  <HelpKINode Title="DefaultChannel property" Url="html/P_TeamSpeak_Sdk_Client_Client_DefaultChannel.htm" />
+  <HelpKINode Title="Delete method" Url="html/M_TeamSpeak_Sdk_Client_Channel_Delete.htm" />
+  <HelpKINode Title="DeleteDelay property" Url="html/P_TeamSpeak_Sdk_Client_Channel_DeleteDelay.htm" />
+  <HelpKINode Title="DeleteFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_DeleteFile.htm" />
+  <HelpKINode Title="Denoise property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Denoise.htm" />
+  <HelpKINode Title="Description property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Description.htm" />
+  <HelpKINode Title="Destroy method" Url="html/M_TeamSpeak_Sdk_Client_Library_Destroy.htm" />
+  <HelpKINode Title="Devel enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="Directory enumeration member" Url="html/T_TeamSpeak_Sdk_FileListType.htm" />
+  <HelpKINode Title="Disconnected enumeration member" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="Connection.Dispose Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Dispose.htm" />
+    <HelpKINode Title="CustomDevice.Dispose Method " Url="html/Overload_TeamSpeak_Sdk_Client_CustomDevice_Dispose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DontNotify enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Download enumeration member" Url="html/T_TeamSpeak_Sdk_TransferMode.htm" />
+  <HelpKINode Title="EchoCanceling property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_EchoCanceling.htm" />
+  <HelpKINode Title="EditCapturedVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditCapturedVoiceData.htm" />
+  <HelpKINode Title="EditCapturedVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditCapturedVoiceDataEventHandler.htm" />
+  <HelpKINode Title="EditMixedPlaybackVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditMixedPlaybackVoiceData.htm" />
+  <HelpKINode Title="EditMixedPlaybackVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditMixedPlaybackVoiceDataEventHandler.htm" />
+  <HelpKINode Title="EditPlaybackVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPlaybackVoiceData.htm" />
+  <HelpKINode Title="EditPlaybackVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPlaybackVoiceDataEventHandler.htm" />
+  <HelpKINode Title="EditPostProcessVoiceData event" Url="html/E_TeamSpeak_Sdk_Client_Connection_EditPostProcessVoiceData.htm" />
+  <HelpKINode Title="EditPostProcessVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPostProcessVoiceDataEventHandler.htm" />
+  <HelpKINode Title="Enter enumeration member" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  <HelpKINode Title="Equality operator">
+    <HelpKINode Title="Channel.Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Equality.htm" />
+    <HelpKINode Title="Client.Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_Client_op_Equality.htm" />
+    <HelpKINode Title="FileTransfer.Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Equality.htm" />
+    <HelpKINode Title="SoundDevice.Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Equality.htm" />
+    <HelpKINode Title="WaveHandle.Equality Operator " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Equality.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Equals method">
+    <HelpKINode Title="Channel.Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_Channel_Equals.htm" />
+    <HelpKINode Title="Client.Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_Client_Equals.htm" />
+    <HelpKINode Title="FileTransfer.Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_FileTransfer_Equals.htm" />
+    <HelpKINode Title="SoundDevice.Equals Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_Equals.htm" />
+    <HelpKINode Title="WaveHandle.Equals Method " Url="html/Overload_TeamSpeak_Sdk_Client_WaveHandle_Equals.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Error enumeration" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Error enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="ErrorCode property" Url="html/P_TeamSpeak_Sdk_TeamSpeakException_ErrorCode.htm" />
+  <HelpKINode Title="FailedConnectionInitialisation enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="File enumeration member">
+    <HelpKINode Title="FileListType Enumeration" Url="html/T_TeamSpeak_Sdk_FileListType.htm" />
+    <HelpKINode Title="LogTypes Enumeration" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FileAlreadyExists enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileAlreadyInUse enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileConnectionLost enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileCouldNotOpenConnection enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileExceedsFileSystemMaximumSize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileExceedsSuppliedSize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileInfo class">
+    <HelpKINode Title="FileInfo Class" Url="html/T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+    <HelpKINode Title="about FileInfo class" Url="html/T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_FileInfo__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FileInfo.Channel property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Channel.htm" />
+  <HelpKINode Title="FileInfo.FileInfo constructor" Url="html/M_TeamSpeak_Sdk_Client_FileInfo__ctor.htm" />
+  <HelpKINode Title="FileInfo.IncompleteSize property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_IncompleteSize.htm" />
+  <HelpKINode Title="FileInfo.LastModified property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_LastModified.htm" />
+  <HelpKINode Title="FileInfo.Name property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Name.htm" />
+  <HelpKINode Title="FileInfo.Path property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Path.htm" />
+  <HelpKINode Title="FileInfo.Size property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Size.htm" />
+  <HelpKINode Title="FileInfo.Type property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Type.htm" />
+  <HelpKINode Title="FileInfoEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_FileInfoEventHandler.htm" />
+  <HelpKINode Title="FileInfoReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileInfoReceived.htm" />
+  <HelpKINode Title="FileInvalidName enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileInvalidPath enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileInvalidPermissions enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileInvalidSize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileInvalidTransferId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileIoError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileListType enumeration" Url="html/T_TeamSpeak_Sdk_FileListType.htm" />
+  <HelpKINode Title="FileNoFilesAvailable enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileNoSpaceLeftOnDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileNotFound enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileOverwriteExcludesResume enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransfer class">
+    <HelpKINode Title="FileTransfer Class" Url="html/T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+    <HelpKINode Title="about FileTransfer class" Url="html/T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FileTransfer.AverageSpeed property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_AverageSpeed.htm" />
+  <HelpKINode Title="FileTransfer.Connection property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Connection.htm" />
+  <HelpKINode Title="FileTransfer.CurrentSpeed property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_CurrentSpeed.htm" />
+  <HelpKINode Title="FileTransfer.Equality operator" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Equality.htm" />
+  <HelpKINode Title="FileTransfer.Equals method" Url="html/Overload_TeamSpeak_Sdk_Client_FileTransfer_Equals.htm" />
+  <HelpKINode Title="FileTransfer.FileTransfer constructor" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer__ctor.htm" />
+  <HelpKINode Title="FileTransfer.GetHashCode method" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_GetHashCode.htm" />
+  <HelpKINode Title="FileTransfer.Halt method" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_Halt.htm" />
+  <HelpKINode Title="FileTransfer.ID property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_ID.htm" />
+  <HelpKINode Title="FileTransfer.Inequality operator" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Inequality.htm" />
+  <HelpKINode Title="FileTransfer.Mode property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Mode.htm" />
+  <HelpKINode Title="FileTransfer.Name property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Name.htm" />
+  <HelpKINode Title="FileTransfer.Path property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Path.htm" />
+  <HelpKINode Title="FileTransfer.RemotePath property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RemotePath.htm" />
+  <HelpKINode Title="FileTransfer.RunTime property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RunTime.htm" />
+  <HelpKINode Title="FileTransfer.Size property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Size.htm" />
+  <HelpKINode Title="FileTransfer.SizeDone property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SizeDone.htm" />
+  <HelpKINode Title="FileTransfer.SpeedLimit property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SpeedLimit.htm" />
+  <HelpKINode Title="FileTransfer.Status property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Status.htm" />
+  <HelpKINode Title="FiletransferBandwidthReceived property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthReceived.htm" />
+  <HelpKINode Title="FiletransferBandwidthSent property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_FiletransferBandwidthSent.htm" />
+  <HelpKINode Title="FileTransferCanceled enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferClientQuotaExceeded enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferComplete enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferConnectionTimeout enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferInterrupted enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferReset enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferServerQuotaExceeded enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="FileTransferState enumeration" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+  <HelpKINode Title="FileTransferStatusEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_FileTransferStatusEventHandler.htm" />
+  <HelpKINode Title="FileTransferStatusReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_FileTransferStatusReceived.htm" />
+  <HelpKINode Title="Finalize method">
+    <HelpKINode Title="Connection.Finalize Method " Url="html/M_TeamSpeak_Sdk_Client_Connection_Finalize.htm" />
+    <HelpKINode Title="CustomDevice.Finalize Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_Finalize.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FindClient method" Url="html/M_TeamSpeak_Sdk_Client_Connection_FindClient.htm" />
+  <HelpKINode Title="Finished enumeration member" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+  <HelpKINode Title="ForcedOff enumeration member" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+  <HelpKINode Title="ForcedOn enumeration member" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+  <HelpKINode Title="FrontCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="FrontLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="FrontLeftOfCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="FrontRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="FrontRightOfCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="FunctionRarePointers property">
+    <HelpKINode Title="Library.FunctionRarePointers Property " Url="html/P_TeamSpeak_Sdk_Client_Library_FunctionRarePointers.htm" />
+    <HelpKINode Title="LibraryParameters.FunctionRarePointers Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_FunctionRarePointers.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetCaptureDevices method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureDevices.htm" />
+  <HelpKINode Title="GetCaptureModes method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureModes.htm" />
+  <HelpKINode Title="GetChannelDescription method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetChannelDescription.htm" />
+  <HelpKINode Title="GetEnumerator method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_GetEnumerator.htm" />
+  <HelpKINode Title="GetErrorMessage method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetErrorMessage.htm" />
+  <HelpKINode Title="GetFileInfo method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileInfo.htm" />
+  <HelpKINode Title="GetFileList method" Url="html/M_TeamSpeak_Sdk_Client_Channel_GetFileList.htm" />
+  <HelpKINode Title="GetHashCode method">
+    <HelpKINode Title="Channel.GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_GetHashCode.htm" />
+    <HelpKINode Title="Client.GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_Client_GetHashCode.htm" />
+    <HelpKINode Title="FileTransfer.GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_GetHashCode.htm" />
+    <HelpKINode Title="SoundDevice.GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_GetHashCode.htm" />
+    <HelpKINode Title="WaveHandle.GetHashCode Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_GetHashCode.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetObjectData method" Url="html/M_TeamSpeak_Sdk_TeamSpeakException_GetObjectData.htm" />
+  <HelpKINode Title="GetPlaybackDevices method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackDevices.htm" />
+  <HelpKINode Title="GetPlaybackModes method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackModes.htm" />
+  <HelpKINode Title="Halt method" Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_Halt.htm" />
+  <HelpKINode Title="HeadphonesLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="HeadphonesRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="Hz0 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz16000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz192000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz22050 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz32000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz44100 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz48000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz8000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz88200 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Hz96000 enumeration member" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="ID property">
+    <HelpKINode Title="Channel.ID Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_ID.htm" />
+    <HelpKINode Title="Client.ID Property " Url="html/P_TeamSpeak_Sdk_Client_Client_ID.htm" />
+    <HelpKINode Title="Connection.ID Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_ID.htm" />
+    <HelpKINode Title="CustomDevice.ID Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_ID.htm" />
+    <HelpKINode Title="FileTransfer.ID Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_ID.htm" />
+    <HelpKINode Title="ISoundDevice.ID Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_ID.htm" />
+    <HelpKINode Title="SoundDevice.ID Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_ID.htm" />
+    <HelpKINode Title="WaveHandle.ID Property " Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_ID.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IdentityToUniqueIdentifier method" Url="html/M_TeamSpeak_Sdk_Client_Library_IdentityToUniqueIdentifier.htm" />
+  <HelpKINode Title="IdleTime property">
+    <HelpKINode Title="Client.IdleTime Property " Url="html/P_TeamSpeak_Sdk_Client_Client_IdleTime.htm" />
+    <HelpKINode Title="ConnectionInfo.IdleTime Property " Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_IdleTime.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IgnoredWhisperEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_IgnoredWhisperEventHandler.htm" />
+  <HelpKINode Title="IncompleteSize property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_IncompleteSize.htm" />
+  <HelpKINode Title="Inequality operator">
+    <HelpKINode Title="Channel.Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_Channel_op_Inequality.htm" />
+    <HelpKINode Title="Client.Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_Client_op_Inequality.htm" />
+    <HelpKINode Title="FileTransfer.Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_FileTransfer_op_Inequality.htm" />
+    <HelpKINode Title="SoundDevice.Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Inequality.htm" />
+    <HelpKINode Title="WaveHandle.Inequality Operator " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Inequality.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Info enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="Initialize method" Url="html/Overload_TeamSpeak_Sdk_Client_Library_Initialize.htm" />
+  <HelpKINode Title="Initializing enumeration member" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+  <HelpKINode Title="InitiateGracefulPlaybackShutdown method" Url="html/M_TeamSpeak_Sdk_Client_Connection_InitiateGracefulPlaybackShutdown.htm" />
+  <HelpKINode Title="InputHardwareEnabled property" Url="html/P_TeamSpeak_Sdk_Client_Client_InputHardwareEnabled.htm" />
+  <HelpKINode Title="InputMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_InputMuted.htm" />
+  <HelpKINode Title="InvalidServerConnectionHandlerId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="iOS enumeration member" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="IsDefault property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsDefault.htm" />
+  <HelpKINode Title="IsInitialized property" Url="html/P_TeamSpeak_Sdk_Client_Library_IsInitialized.htm" />
+  <HelpKINode Title="IsInputDeactivated property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsInputDeactivated.htm" />
+  <HelpKINode Title="ISoundDevice interface">
+    <HelpKINode Title="ISoundDevice Interface" Url="html/T_TeamSpeak_Sdk_Client_ISoundDevice.htm" />
+    <HelpKINode Title="about ISoundDevice interface" Url="html/T_TeamSpeak_Sdk_Client_ISoundDevice.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ISoundDevice.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ISoundDevice.ID property" Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_ID.htm" />
+  <HelpKINode Title="ISoundDevice.Mode property" Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Mode.htm" />
+  <HelpKINode Title="ISoundDevice.Name property" Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Name.htm" />
+  <HelpKINode Title="IsPasswordProtected property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPasswordProtected.htm" />
+  <HelpKINode Title="IsPermanent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsPermanent.htm" />
+  <HelpKINode Title="IsReadOnly property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_IsReadOnly.htm" />
+  <HelpKINode Title="IsRecording property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsRecording.htm" />
+  <HelpKINode Title="IsSemiPermanent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_IsSemiPermanent.htm" />
+  <HelpKINode Title="IsTalking property" Url="html/P_TeamSpeak_Sdk_Client_Client_IsTalking.htm" />
+  <HelpKINode Title="IsVoiceRecording property" Url="html/P_TeamSpeak_Sdk_Client_Connection_IsVoiceRecording.htm" />
+  <HelpKINode Title="Item property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Item.htm" />
+  <HelpKINode Title="KickFromChannel method" Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromChannel.htm" />
+  <HelpKINode Title="KickFromServer method" Url="html/M_TeamSpeak_Sdk_Client_Client_KickFromServer.htm" />
+  <HelpKINode Title="LastModified property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_LastModified.htm" />
+  <HelpKINode Title="Leave enumeration member" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  <HelpKINode Title="Library class">
+    <HelpKINode Title="Library Class" Url="html/T_TeamSpeak_Sdk_Client_Library.htm" />
+    <HelpKINode Title="about Library class" Url="html/T_TeamSpeak_Sdk_Client_Library.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_TeamSpeak_Sdk_Client_Library.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Library.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Library.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Library.ClientPasswordEncrypt property" Url="html/P_TeamSpeak_Sdk_Client_Library_ClientPasswordEncrypt.htm" />
+  <HelpKINode Title="Library.Connections property" Url="html/P_TeamSpeak_Sdk_Client_Library_Connections.htm" />
+  <HelpKINode Title="Library.CreateCustomDevice method" Url="html/M_TeamSpeak_Sdk_Client_Library_CreateCustomDevice.htm" />
+  <HelpKINode Title="Library.CreateIdentity method" Url="html/M_TeamSpeak_Sdk_Client_Library_CreateIdentity.htm" />
+  <HelpKINode Title="Library.CustomDevices property" Url="html/P_TeamSpeak_Sdk_Client_Library_CustomDevices.htm" />
+  <HelpKINode Title="Library.CustomPacketDecrypt property" Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketDecrypt.htm" />
+  <HelpKINode Title="Library.CustomPacketEncrypt property" Url="html/P_TeamSpeak_Sdk_Client_Library_CustomPacketEncrypt.htm" />
+  <HelpKINode Title="Library.Destroy method" Url="html/M_TeamSpeak_Sdk_Client_Library_Destroy.htm" />
+  <HelpKINode Title="Library.FunctionRarePointers property" Url="html/P_TeamSpeak_Sdk_Client_Library_FunctionRarePointers.htm" />
+  <HelpKINode Title="Library.GetCaptureDevices method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureDevices.htm" />
+  <HelpKINode Title="Library.GetCaptureModes method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetCaptureModes.htm" />
+  <HelpKINode Title="Library.GetErrorMessage method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetErrorMessage.htm" />
+  <HelpKINode Title="Library.GetPlaybackDevices method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackDevices.htm" />
+  <HelpKINode Title="Library.GetPlaybackModes method" Url="html/M_TeamSpeak_Sdk_Client_Library_GetPlaybackModes.htm" />
+  <HelpKINode Title="Library.IdentityToUniqueIdentifier method" Url="html/M_TeamSpeak_Sdk_Client_Library_IdentityToUniqueIdentifier.htm" />
+  <HelpKINode Title="Library.Initialize method" Url="html/Overload_TeamSpeak_Sdk_Client_Library_Initialize.htm" />
+  <HelpKINode Title="Library.IsInitialized property" Url="html/P_TeamSpeak_Sdk_Client_Library_IsInitialized.htm" />
+  <HelpKINode Title="Library.Log method" Url="html/M_TeamSpeak_Sdk_Client_Library_Log.htm" />
+  <HelpKINode Title="Library.LogFileFolder property" Url="html/P_TeamSpeak_Sdk_Client_Library_LogFileFolder.htm" />
+  <HelpKINode Title="Library.LogLevel property" Url="html/P_TeamSpeak_Sdk_Client_Library_LogLevel.htm" />
+  <HelpKINode Title="Library.NativeBinary property" Url="html/P_TeamSpeak_Sdk_Client_Library_NativeBinary.htm" />
+  <HelpKINode Title="Library.Platform property" Url="html/P_TeamSpeak_Sdk_Client_Library_Platform.htm" />
+  <HelpKINode Title="Library.ResourcesFolder property" Url="html/P_TeamSpeak_Sdk_Client_Library_ResourcesFolder.htm" />
+  <HelpKINode Title="Library.SoundDeviceListChanged event" Url="html/E_TeamSpeak_Sdk_Client_Library_SoundDeviceListChanged.htm" />
+  <HelpKINode Title="Library.SpawnNewConnection method" Url="html/M_TeamSpeak_Sdk_Client_Library_SpawnNewConnection.htm" />
+  <HelpKINode Title="Library.SpeedLimitDown property" Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitDown.htm" />
+  <HelpKINode Title="Library.SpeedLimitUp property" Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitUp.htm" />
+  <HelpKINode Title="Library.UsedLogTypes property" Url="html/P_TeamSpeak_Sdk_Client_Library_UsedLogTypes.htm" />
+  <HelpKINode Title="Library.UserLogMessage event" Url="html/E_TeamSpeak_Sdk_Client_Library_UserLogMessage.htm" />
+  <HelpKINode Title="Library.Version property" Url="html/P_TeamSpeak_Sdk_Client_Library_Version.htm" />
+  <HelpKINode Title="Library.VersionNumber property" Url="html/P_TeamSpeak_Sdk_Client_Library_VersionNumber.htm" />
+  <HelpKINode Title="LibraryParameters class">
+    <HelpKINode Title="LibraryParameters Class" Url="html/T_TeamSpeak_Sdk_Client_LibraryParameters.htm" />
+    <HelpKINode Title="about LibraryParameters class" Url="html/T_TeamSpeak_Sdk_Client_LibraryParameters.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_TeamSpeak_Sdk_Client_LibraryParameters__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_LibraryParameters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_LibraryParameters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LibraryParameters.ClientPasswordEncrypt property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ClientPasswordEncrypt.htm" />
+  <HelpKINode Title="LibraryParameters.CustomPacketDecrypt property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketDecrypt.htm" />
+  <HelpKINode Title="LibraryParameters.CustomPacketEncrypt property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_CustomPacketEncrypt.htm" />
+  <HelpKINode Title="LibraryParameters.FunctionRarePointers property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_FunctionRarePointers.htm" />
+  <HelpKINode Title="LibraryParameters.LibraryParameters constructor" Url="html/Overload_TeamSpeak_Sdk_Client_LibraryParameters__ctor.htm" />
+  <HelpKINode Title="LibraryParameters.LogFileFolder property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_LogFileFolder.htm" />
+  <HelpKINode Title="LibraryParameters.Platform property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_Platform.htm" />
+  <HelpKINode Title="LibraryParameters.PossibleNativeBinaryLocations property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_PossibleNativeBinaryLocations.htm" />
+  <HelpKINode Title="LibraryParameters.ResourcesFolder property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ResourcesFolder.htm" />
+  <HelpKINode Title="LibraryParameters.TryGetNativeBinaryName method" Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters_TryGetNativeBinaryName.htm" />
+  <HelpKINode Title="LibraryParameters.UsedLogTypes property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_UsedLogTypes.htm" />
+  <HelpKINode Title="LibraryVersion enumeration" Url="html/T_TeamSpeak_Sdk_LibraryVersion.htm" />
+  <HelpKINode Title="LibTimeLimitReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Linux enumeration member" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="LocalAndRemoteVoice enumeration member" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+  <HelpKINode Title="LocalTestMode enumeration" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+  <HelpKINode Title="LocalTestMode property" Url="html/P_TeamSpeak_Sdk_Client_Connection_LocalTestMode.htm" />
+  <HelpKINode Title="LocalVoice enumeration member" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+  <HelpKINode Title="Log method" Url="html/M_TeamSpeak_Sdk_Client_Library_Log.htm" />
+  <HelpKINode Title="LogFileFolder property">
+    <HelpKINode Title="Library.LogFileFolder Property " Url="html/P_TeamSpeak_Sdk_Client_Library_LogFileFolder.htm" />
+    <HelpKINode Title="LibraryParameters.LogFileFolder Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_LogFileFolder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LogLevel enumeration" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="LogLevel property" Url="html/P_TeamSpeak_Sdk_Client_Library_LogLevel.htm" />
+  <HelpKINode Title="LogTypes enumeration" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="LowFrequency enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="MacOSX enumeration member" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="MaxClients property">
+    <HelpKINode Title="Channel.MaxClients Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxClients.htm" />
+    <HelpKINode Title="Connection.MaxClients Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_MaxClients.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MaxFamilyClients property" Url="html/P_TeamSpeak_Sdk_Client_Channel_MaxFamilyClients.htm" />
+  <HelpKINode Title="MessageInvalidId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="MetaData property" Url="html/P_TeamSpeak_Sdk_Client_Client_MetaData.htm" />
+  <HelpKINode Title="Mode property">
+    <HelpKINode Title="CustomDevice.Mode Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Mode.htm" />
+    <HelpKINode Title="FileTransfer.Mode Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Mode.htm" />
+    <HelpKINode Title="ISoundDevice.Mode Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Mode.htm" />
+    <HelpKINode Title="SoundDevice.Mode Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Mode.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Mono enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="Move method" Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Move.htm" />
+  <HelpKINode Title="MoveFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_MoveFile.htm" />
+  <HelpKINode Title="MoveTo method">
+    <HelpKINode Title="Channel.MoveTo Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_MoveTo.htm" />
+    <HelpKINode Title="Client.MoveTo Method " Url="html/M_TeamSpeak_Sdk_Client_Client_MoveTo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Mute method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Mute.htm" />
+  <HelpKINode Title="Muted property" Url="html/P_TeamSpeak_Sdk_Client_Client_Muted.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="Channel.Name Property " Url="html/P_TeamSpeak_Sdk_Client_Channel_Name.htm" />
+    <HelpKINode Title="Connection.Name Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Name.htm" />
+    <HelpKINode Title="CustomDevice.Name Property " Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_Name.htm" />
+    <HelpKINode Title="FileInfo.Name Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Name.htm" />
+    <HelpKINode Title="FileTransfer.Name Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Name.htm" />
+    <HelpKINode Title="ISoundDevice.Name Property " Url="html/P_TeamSpeak_Sdk_Client_ISoundDevice_Name.htm" />
+    <HelpKINode Title="SoundDevice.Name Property " Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NativeBinary property" Url="html/P_TeamSpeak_Sdk_Client_Library_NativeBinary.htm" />
+  <HelpKINode Title="NewChannel event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannel.htm" />
+  <HelpKINode Title="NewChannelCreated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_NewChannelCreated.htm" />
+  <HelpKINode Title="NewChannelCreatedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelCreatedEventHandler.htm" />
+  <HelpKINode Title="NewChannelEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelEventHandler.htm" />
+  <HelpKINode Title="Nickname property" Url="html/P_TeamSpeak_Sdk_Client_Client_Nickname.htm" />
+  <HelpKINode Title="NoCachedConnectionInfo enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="None enumeration member" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="NoNetworkPortAvailable enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="NotConnected enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="NotImplemented enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="NotTalking enumeration member" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+  <HelpKINode Title="Off enumeration member" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+  <HelpKINode Title="Ok enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="OkNoUpdate enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="OpenCapture method" Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenCapture.htm" />
+  <HelpKINode Title="OpenPlayback method" Url="html/M_TeamSpeak_Sdk_Client_Connection_OpenPlayback.htm" />
+  <HelpKINode Title="OpusMusic enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="OpusVoice enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="Order property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Order.htm" />
+  <HelpKINode Title="OutputHardware property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputHardware.htm" />
+  <HelpKINode Title="OutputMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputMuted.htm" />
+  <HelpKINode Title="OutputOnlyMuted property" Url="html/P_TeamSpeak_Sdk_Client_Client_OutputOnlyMuted.htm" />
+  <HelpKINode Title="PacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossControl.htm" />
+  <HelpKINode Title="PacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossKeepalive.htm" />
+  <HelpKINode Title="PacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossSpeech.htm" />
+  <HelpKINode Title="PacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketlossTotal.htm" />
+  <HelpKINode Title="PacketsReceivedControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedControl.htm" />
+  <HelpKINode Title="PacketsReceivedKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedKeepalive.htm" />
+  <HelpKINode Title="PacketsReceivedSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedSpeech.htm" />
+  <HelpKINode Title="PacketsReceivedTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsReceivedTotal.htm" />
+  <HelpKINode Title="PacketsSentControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentControl.htm" />
+  <HelpKINode Title="PacketsSentKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentKeepalive.htm" />
+  <HelpKINode Title="PacketsSentSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentSpeech.htm" />
+  <HelpKINode Title="PacketsSentTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PacketsSentTotal.htm" />
+  <HelpKINode Title="ParameterChecksum enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterConvert enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterInvalid enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterInvalidCount enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterInvalidSize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterMissing enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterNotFound enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ParameterQuote enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Parent property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Parent.htm" />
+  <HelpKINode Title="Password property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Password.htm" />
+  <HelpKINode Title="Path property">
+    <HelpKINode Title="FileInfo.Path Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Path.htm" />
+    <HelpKINode Title="FileTransfer.Path Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Path.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Paused property" Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Paused.htm" />
+  <HelpKINode Title="PerChannel enumeration member" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+  <HelpKINode Title="PermissionDefaultGroupForbidden enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionDuplicateEntry enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionEmptyResult enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionInvalidGroupId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionInvalidPermId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionInvalidSize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionInvalidValue enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Permissions enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionsClientInsufficient enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionsGroupNotEmpty enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionsInsufficientGroupPower enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionsInsufficientPermissionPower enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PermissionTemplateGroupIsUsed enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Ping property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_Ping.htm" />
+  <HelpKINode Title="PingDeviation property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_PingDeviation.htm" />
+  <HelpKINode Title="Platform property">
+    <HelpKINode Title="Client.Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Platform.htm" />
+    <HelpKINode Title="Connection.Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Platform.htm" />
+    <HelpKINode Title="Library.Platform Property " Url="html/P_TeamSpeak_Sdk_Client_Library_Platform.htm" />
+    <HelpKINode Title="LibraryParameters.Platform Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_Platform.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PlaybackChannels property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackChannels.htm" />
+  <HelpKINode Title="PlaybackDevice property" Url="html/P_TeamSpeak_Sdk_Client_Connection_PlaybackDevice.htm" />
+  <HelpKINode Title="PlaybackRate property" Url="html/P_TeamSpeak_Sdk_Client_CustomDevice_PlaybackRate.htm" />
+  <HelpKINode Title="PlaybackShutdownCompleted event" Url="html/E_TeamSpeak_Sdk_Client_Connection_PlaybackShutdownCompleted.htm" />
+  <HelpKINode Title="PlaybackShutdownCompleteEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_PlaybackShutdownCompleteEventHandler.htm" />
+  <HelpKINode Title="PlayWaveFile method" Url="html/M_TeamSpeak_Sdk_Client_Connection_PlayWaveFile.htm" />
+  <HelpKINode Title="PortAlreadyInUse enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="PossibleNativeBinaryLocations property" Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_PossibleNativeBinaryLocations.htm" />
+  <HelpKINode Title="Preprocessor class">
+    <HelpKINode Title="Preprocessor Class" Url="html/T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+    <HelpKINode Title="about Preprocessor class" Url="html/T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_Preprocessor__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Preprocessor property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Preprocessor.htm" />
+  <HelpKINode Title="Preprocessor.Agc property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Agc.htm" />
+  <HelpKINode Title="Preprocessor.AgcLevel property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcLevel.htm" />
+  <HelpKINode Title="Preprocessor.AgcMaxGain property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_AgcMaxGain.htm" />
+  <HelpKINode Title="Preprocessor.Connection property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Connection.htm" />
+  <HelpKINode Title="Preprocessor.DecibelLastPeriod property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_DecibelLastPeriod.htm" />
+  <HelpKINode Title="Preprocessor.Denoise property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Denoise.htm" />
+  <HelpKINode Title="Preprocessor.EchoCanceling property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_EchoCanceling.htm" />
+  <HelpKINode Title="Preprocessor.Preprocessor constructor" Url="html/M_TeamSpeak_Sdk_Client_Preprocessor__ctor.htm" />
+  <HelpKINode Title="Preprocessor.Vad property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Vad.htm" />
+  <HelpKINode Title="Preprocessor.VadExtraBufferSize property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadExtraBufferSize.htm" />
+  <HelpKINode Title="Preprocessor.VadLevel property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadLevel.htm" />
+  <HelpKINode Title="PrivilegeKeyInvalid enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProcessData method" Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ProcessData.htm" />
+  <HelpKINode Title="ProtocolVersionEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ProtocolVersionEventHandler.htm" />
+  <HelpKINode Title="ProtocolVersionReceived event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ProtocolVersionReceived.htm" />
+  <HelpKINode Title="ProvisioningAlreadyConnected enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningAlreadyInitialized enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningAuthDataTooLarge enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningAuthServerNotConnected enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningConnecting enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningCouldNotConnect enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningInternalTriesExceeded enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningInvalidPassword enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningInvalidRequest enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningInvalidTimeout enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningIoError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningNoPermission enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningNoSlotsAvailable enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningNotConnected enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningNotInitialized enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningPoolMissing enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningPoolUnknown enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningTooManyReserved enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningTooManySlotsRequested enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningTs3serverNotFound enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ProvisioningUnknownIpLocation enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection class">
+    <HelpKINode Title="ReadonlyChannelCollection Class" Url="html/T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm" />
+    <HelpKINode Title="about ReadonlyChannelCollection class" Url="html/T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReadonlyChannelCollection.Contains method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Contains.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.CopyTo method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_CopyTo.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.Count property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Count.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.GetEnumerator method" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_GetEnumerator.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.IsReadOnly property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_IsReadOnly.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.Item property" Url="html/P_TeamSpeak_Sdk_Client_ReadonlyChannelCollection_Item.htm" />
+  <HelpKINode Title="ReadonlyChannelCollection.ReadonlyChannelCollection constructor" Url="html/M_TeamSpeak_Sdk_Client_ReadonlyChannelCollection__ctor.htm" />
+  <HelpKINode Title="Refresh method" Url="html/M_TeamSpeak_Sdk_Client_ConnectionInfo_Refresh.htm" />
+  <HelpKINode Title="RefreshVariables method" Url="html/M_TeamSpeak_Sdk_Client_Connection_RefreshVariables.htm" />
+  <HelpKINode Title="RemotePath property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RemotePath.htm" />
+  <HelpKINode Title="RemoveFromAllowedWhispersFrom method" Url="html/M_TeamSpeak_Sdk_Client_Connection_RemoveFromAllowedWhispersFrom.htm" />
+  <HelpKINode Title="RenameFailedBanned enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="RequestClientVariables method" Url="html/M_TeamSpeak_Sdk_Client_Client_RequestClientVariables.htm" />
+  <HelpKINode Title="RequestFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_RequestFile.htm" />
+  <HelpKINode Title="ResourcesFolder property">
+    <HelpKINode Title="Library.ResourcesFolder Property " Url="html/P_TeamSpeak_Sdk_Client_Library_ResourcesFolder.htm" />
+    <HelpKINode Title="LibraryParameters.ResourcesFolder Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_ResourcesFolder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Retain enumeration member" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  <HelpKINode Title="RunTime property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_RunTime.htm" />
+  <HelpKINode Title="SamplingRate enumeration" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="Self property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Self.htm" />
+  <HelpKINode Title="SendFile method" Url="html/Overload_TeamSpeak_Sdk_Client_Channel_SendFile.htm" />
+  <HelpKINode Title="SendTextMessage method">
+    <HelpKINode Title="Channel.SendTextMessage Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_SendTextMessage.htm" />
+    <HelpKINode Title="Client.SendTextMessage Method " Url="html/M_TeamSpeak_Sdk_Client_Client_SendTextMessage.htm" />
+    <HelpKINode Title="Connection.SendTextMessage Method " Url="html/Overload_TeamSpeak_Sdk_Client_Connection_SendTextMessage.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServerDeploymentActive enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerDuplicateRunning enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerError event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerError.htm" />
+  <HelpKINode Title="ServerErrorEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerErrorEventHandler.htm" />
+  <HelpKINode Title="ServerInvalidId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerInvalidPassword enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerIp property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerIp.htm" />
+  <HelpKINode Title="ServerIsBooting enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerIsNotRunning enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerIsShuttingDown enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerIsVirtual enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerlibraryNotInitialised enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerMaxclientsReached enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerMessage event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerMessage.htm" />
+  <HelpKINode Title="ServerMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerMessageEventHandler.htm" />
+  <HelpKINode Title="ServerModalQuit enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerPort property" Url="html/P_TeamSpeak_Sdk_Client_Connection_ServerPort.htm" />
+  <HelpKINode Title="ServerRunning enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerStatusInvalid enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerStop event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerStop.htm" />
+  <HelpKINode Title="ServerStopEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerStopEventHandler.htm" />
+  <HelpKINode Title="ServerToClientPacketlossControl property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossControl.htm" />
+  <HelpKINode Title="ServerToClientPacketlossKeepalive property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossKeepalive.htm" />
+  <HelpKINode Title="ServerToClientPacketlossSpeech property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossSpeech.htm" />
+  <HelpKINode Title="ServerToClientPacketlossTotal property" Url="html/P_TeamSpeak_Sdk_Client_ConnectionInfo_ServerToClientPacketlossTotal.htm" />
+  <HelpKINode Title="ServerUnableToStopOwnServer enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerUpdated event" Url="html/E_TeamSpeak_Sdk_Client_Connection_ServerUpdated.htm" />
+  <HelpKINode Title="ServerUpdatedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerUpdatedEventHandler.htm" />
+  <HelpKINode Title="ServerVersionOutdated enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="ServerWrongMachineid enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Set3DAttributes method">
+    <HelpKINode Title="Client.Set3DAttributes Method " Url="html/M_TeamSpeak_Sdk_Client_Client_Set3DAttributes.htm" />
+    <HelpKINode Title="WaveHandle.Set3DAttributes Method " Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Set3DAttributes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Set3DListenerAttributes method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DListenerAttributes.htm" />
+  <HelpKINode Title="Set3DSettings method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Set3DSettings.htm" />
+  <HelpKINode Title="SetWhisperList method" Url="html/M_TeamSpeak_Sdk_Client_Client_SetWhisperList.htm" />
+  <HelpKINode Title="SideLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="SideRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="Size property">
+    <HelpKINode Title="FileInfo.Size Property " Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Size.htm" />
+    <HelpKINode Title="FileTransfer.Size Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Size.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SizeDone property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SizeDone.htm" />
+  <HelpKINode Title="SoundChannelMaskMismatch enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundCouldNotOpenCaptureDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundCouldNotOpenPlaybackDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundDevice structure">
+    <HelpKINode Title="SoundDevice Structure" Url="html/T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+    <HelpKINode Title="about SoundDevice structure" Url="html/T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SoundDevice.Equality operator" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Equality.htm" />
+  <HelpKINode Title="SoundDevice.Equals method" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_Equals.htm" />
+  <HelpKINode Title="SoundDevice.GetHashCode method" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_GetHashCode.htm" />
+  <HelpKINode Title="SoundDevice.ID property" Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_ID.htm" />
+  <HelpKINode Title="SoundDevice.Inequality operator" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_op_Inequality.htm" />
+  <HelpKINode Title="SoundDevice.Mode property" Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Mode.htm" />
+  <HelpKINode Title="SoundDevice.Name property" Url="html/P_TeamSpeak_Sdk_Client_SoundDevice_Name.htm" />
+  <HelpKINode Title="SoundDevice.SoundDevice constructor" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice__ctor.htm" />
+  <HelpKINode Title="SoundDevice.ToString method" Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_ToString.htm" />
+  <HelpKINode Title="SoundDeviceAlreadyRegisterred enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundDeviceBusy enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundDeviceInUse enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundDeviceListChanged event" Url="html/E_TeamSpeak_Sdk_Client_Library_SoundDeviceListChanged.htm" />
+  <HelpKINode Title="SoundDeviceListChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_SoundDeviceListChangedEventHandler.htm" />
+  <HelpKINode Title="SoundHandlerHasDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInternalCapture enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInternalEncoder enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInternalPlayback enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInternalPreprocessor enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInvalidCaptureDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInvalidChannelCount enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInvalidPlaybackDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundInvalidWave enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundNeedMoreData enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundNoCaptureDeviceAvailable enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundNoData enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundNoPlaybackDeviceAvailable enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundOpenWave enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundPreprocessorDisabled enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundReadWave enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundUnknownDevice enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundUnsupportedFrequency enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SoundUnsupportedWave enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="SpawnNewConnection method" Url="html/M_TeamSpeak_Sdk_Client_Library_SpawnNewConnection.htm" />
+  <HelpKINode Title="Speakers enumeration" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="SpeedLimit property" Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_SpeedLimit.htm" />
+  <HelpKINode Title="SpeedLimitDown property">
+    <HelpKINode Title="Connection.SpeedLimitDown Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitDown.htm" />
+    <HelpKINode Title="Library.SpeedLimitDown Property " Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitDown.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpeedLimitUp property">
+    <HelpKINode Title="Connection.SpeedLimitUp Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_SpeedLimitUp.htm" />
+    <HelpKINode Title="Library.SpeedLimitUp Property " Url="html/P_TeamSpeak_Sdk_Client_Library_SpeedLimitUp.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SpeexNarrowband enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="SpeexUltrawideband enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="SpeexWideband enumeration member" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="Start method" Url="html/Overload_TeamSpeak_Sdk_Client_Connection_Start.htm" />
+  <HelpKINode Title="Status property">
+    <HelpKINode Title="Connection.Status Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Status.htm" />
+    <HelpKINode Title="FileTransfer.Status Property " Url="html/P_TeamSpeak_Sdk_Client_FileTransfer_Status.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StatusChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_StatusChanged.htm" />
+  <HelpKINode Title="Stop method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Stop.htm" />
+  <HelpKINode Title="Subscribe method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Subscribe.htm" />
+  <HelpKINode Title="SubscribeAll method" Url="html/M_TeamSpeak_Sdk_Client_Connection_SubscribeAll.htm" />
+  <HelpKINode Title="SupportedPlatform enumeration" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="Syslog enumeration member" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="Talking enumeration member" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+  <HelpKINode Title="TalkingWhileDisabled enumeration member" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+  <HelpKINode Title="TalkStatus enumeration" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+  <HelpKINode Title="TalkStatusChanged event" Url="html/E_TeamSpeak_Sdk_Client_Connection_TalkStatusChanged.htm" />
+  <HelpKINode Title="TalkStatusChangeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_TalkStatusChangeEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk namespace" Url="html/N_TeamSpeak_Sdk.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client namespace" Url="html/N_TeamSpeak_Sdk_Client.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Channel class" Url="html/T_TeamSpeak_Sdk_Client_Channel.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelChangedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelDeletedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDeletedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelDescriptionUpdateEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelDescriptionUpdateEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMessageEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelMoveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelMoveEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelPasswordChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelPasswordChangedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelSubscribeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelSubscribeFinishedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelSubscribeFinishedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelUnsubscribeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ChannelUnsubscribeFinishedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ChannelUnsubscribeFinishedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.CheckServerUniqueIdentifierEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CheckServerUniqueIdentifierEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Client class" Url="html/T_TeamSpeak_Sdk_Client_Client.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientKickFromChannelEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromChannelEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientKickFromServerEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientKickFromServerEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMessageEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientMoveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientMoveSubscriptionEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveSubscriptionEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientMoveTimeoutEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientMoveTimeoutEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ClientPasswordEncryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ClientPasswordEncryptHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Connection class" Url="html/T_TeamSpeak_Sdk_Client_Connection.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ConnectionInfo class" Url="html/T_TeamSpeak_Sdk_Client_ConnectionInfo.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ConnectStatusChangeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ConnectStatusChangeEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Custom3dRolloffCalculationClientEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationClientEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Custom3dRolloffCalculationWaveEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_Custom3dRolloffCalculationWaveEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.CustomDevice class" Url="html/T_TeamSpeak_Sdk_Client_CustomDevice.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.CustomPacketDecryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketDecryptHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.CustomPacketEncryptHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_CustomPacketEncryptHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.EditCapturedVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditCapturedVoiceDataEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.EditMixedPlaybackVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditMixedPlaybackVoiceDataEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.EditPlaybackVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPlaybackVoiceDataEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.EditPostProcessVoiceDataEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_EditPostProcessVoiceDataEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.FileInfo class" Url="html/T_TeamSpeak_Sdk_Client_FileInfo.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.FileInfoEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_FileInfoEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.FileTransfer class" Url="html/T_TeamSpeak_Sdk_Client_FileTransfer.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.FileTransferStatusEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_FileTransferStatusEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.IgnoredWhisperEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_IgnoredWhisperEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ISoundDevice interface" Url="html/T_TeamSpeak_Sdk_Client_ISoundDevice.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Library class" Url="html/T_TeamSpeak_Sdk_Client_Library.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.LibraryParameters class" Url="html/T_TeamSpeak_Sdk_Client_LibraryParameters.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.NewChannelCreatedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelCreatedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.NewChannelEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_NewChannelEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.PlaybackShutdownCompleteEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_PlaybackShutdownCompleteEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.Preprocessor class" Url="html/T_TeamSpeak_Sdk_Client_Preprocessor.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ProtocolVersionEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ProtocolVersionEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ReadonlyChannelCollection class" Url="html/T_TeamSpeak_Sdk_Client_ReadonlyChannelCollection.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ServerErrorEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerErrorEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ServerMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerMessageEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ServerStopEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerStopEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.ServerUpdatedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_ServerUpdatedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.SoundDevice structure" Url="html/T_TeamSpeak_Sdk_Client_SoundDevice.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.SoundDeviceListChangedEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_SoundDeviceListChangedEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.TalkStatusChangeEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_TalkStatusChangeEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.UpdateClientEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_UpdateClientEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.UserLoggingMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_UserLoggingMessageEventHandler.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Client.WaveHandle class" Url="html/T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.CodecEncryptionMode enumeration" Url="html/T_TeamSpeak_Sdk_CodecEncryptionMode.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.CodecType enumeration" Url="html/T_TeamSpeak_Sdk_CodecType.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.ConnectStatus enumeration" Url="html/T_TeamSpeak_Sdk_ConnectStatus.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Error enumeration" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.FileListType enumeration" Url="html/T_TeamSpeak_Sdk_FileListType.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.FileTransferState enumeration" Url="html/T_TeamSpeak_Sdk_FileTransferState.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.LibraryVersion enumeration" Url="html/T_TeamSpeak_Sdk_LibraryVersion.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.LocalTestMode enumeration" Url="html/T_TeamSpeak_Sdk_LocalTestMode.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.LogLevel enumeration" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.LogTypes enumeration" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.SamplingRate enumeration" Url="html/T_TeamSpeak_Sdk_SamplingRate.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Speakers enumeration" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.SupportedPlatform enumeration" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.TalkStatus enumeration" Url="html/T_TeamSpeak_Sdk_TalkStatus.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.TeamSpeakException class" Url="html/T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.TransferMode enumeration" Url="html/T_TeamSpeak_Sdk_TransferMode.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Vector structure" Url="html/T_TeamSpeak_Sdk_Vector.htm" />
+  <HelpKINode Title="TeamSpeak.Sdk.Visibility enumeration" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  <HelpKINode Title="TeamSpeakException class">
+    <HelpKINode Title="TeamSpeakException Class" Url="html/T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+    <HelpKINode Title="about TeamSpeakException class" Url="html/T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_TeamSpeak_Sdk_TeamSpeakException__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_TeamSpeakException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TeamSpeakException.ErrorCode property" Url="html/P_TeamSpeak_Sdk_TeamSpeakException_ErrorCode.htm" />
+  <HelpKINode Title="TeamSpeakException.GetObjectData method" Url="html/M_TeamSpeak_Sdk_TeamSpeakException_GetObjectData.htm" />
+  <HelpKINode Title="TeamSpeakException.TeamSpeakException constructor" Url="html/Overload_TeamSpeak_Sdk_TeamSpeakException__ctor.htm" />
+  <HelpKINode Title="Timeout property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Timeout.htm" />
+  <HelpKINode Title="TopBackCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopBackLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopBackRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopFrontCenter enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopFrontLeft enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="TopFrontRight enumeration member" Url="html/T_TeamSpeak_Sdk_Speakers.htm" />
+  <HelpKINode Title="Topic property" Url="html/P_TeamSpeak_Sdk_Client_Channel_Topic.htm" />
+  <HelpKINode Title="ToString method">
+    <HelpKINode Title="Channel.ToString Method " Url="html/M_TeamSpeak_Sdk_Client_Channel_ToString.htm" />
+    <HelpKINode Title="Client.ToString Method " Url="html/M_TeamSpeak_Sdk_Client_Client_ToString.htm" />
+    <HelpKINode Title="CustomDevice.ToString Method " Url="html/M_TeamSpeak_Sdk_Client_CustomDevice_ToString.htm" />
+    <HelpKINode Title="SoundDevice.ToString Method " Url="html/M_TeamSpeak_Sdk_Client_SoundDevice_ToString.htm" />
+    <HelpKINode Title="Vector.ToString Method " Url="html/M_TeamSpeak_Sdk_Vector_ToString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TransferMode enumeration" Url="html/T_TeamSpeak_Sdk_TransferMode.htm" />
+  <HelpKINode Title="TryGetNativeBinaryName method" Url="html/M_TeamSpeak_Sdk_Client_LibraryParameters_TryGetNativeBinaryName.htm" />
+  <HelpKINode Title="TtsUnableToInitialize enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Type property" Url="html/P_TeamSpeak_Sdk_Client_FileInfo_Type.htm" />
+  <HelpKINode Title="UnableToBindNetworkPort enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Undefined enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="UniqueIdentifier property">
+    <HelpKINode Title="Client.UniqueIdentifier Property " Url="html/P_TeamSpeak_Sdk_Client_Client_UniqueIdentifier.htm" />
+    <HelpKINode Title="Connection.UniqueIdentifier Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_UniqueIdentifier.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Unmute method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Unmute.htm" />
+  <HelpKINode Title="Unsubscribe method" Url="html/M_TeamSpeak_Sdk_Client_Connection_Unsubscribe.htm" />
+  <HelpKINode Title="UnsubscribeAll method" Url="html/M_TeamSpeak_Sdk_Client_Connection_UnsubscribeAll.htm" />
+  <HelpKINode Title="UpdateClientEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_UpdateClientEventHandler.htm" />
+  <HelpKINode Title="Upload enumeration member" Url="html/T_TeamSpeak_Sdk_TransferMode.htm" />
+  <HelpKINode Title="Uptime property" Url="html/P_TeamSpeak_Sdk_Client_Connection_Uptime.htm" />
+  <HelpKINode Title="UsedLogTypes property">
+    <HelpKINode Title="Library.UsedLogTypes Property " Url="html/P_TeamSpeak_Sdk_Client_Library_UsedLogTypes.htm" />
+    <HelpKINode Title="LibraryParameters.UsedLogTypes Property " Url="html/P_TeamSpeak_Sdk_Client_LibraryParameters_UsedLogTypes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Userlogging enumeration member" Url="html/T_TeamSpeak_Sdk_LogTypes.htm" />
+  <HelpKINode Title="UserLoggingMessageEventHandler delegate" Url="html/T_TeamSpeak_Sdk_Client_UserLoggingMessageEventHandler.htm" />
+  <HelpKINode Title="UserLogMessage event" Url="html/E_TeamSpeak_Sdk_Client_Library_UserLogMessage.htm" />
+  <HelpKINode Title="Vad property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_Vad.htm" />
+  <HelpKINode Title="VadExtraBufferSize property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadExtraBufferSize.htm" />
+  <HelpKINode Title="VadLevel property" Url="html/P_TeamSpeak_Sdk_Client_Preprocessor_VadLevel.htm" />
+  <HelpKINode Title="Vector structure">
+    <HelpKINode Title="Vector Structure" Url="html/T_TeamSpeak_Sdk_Vector.htm" />
+    <HelpKINode Title="about Vector structure" Url="html/T_TeamSpeak_Sdk_Vector.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Vector__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_TeamSpeak_Sdk_Vector.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Vector.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Vector.ToString method" Url="html/M_TeamSpeak_Sdk_Vector_ToString.htm" />
+  <HelpKINode Title="Vector.Vector constructor" Url="html/M_TeamSpeak_Sdk_Vector__ctor.htm" />
+  <HelpKINode Title="Vector.X field" Url="html/F_TeamSpeak_Sdk_Vector_X.htm" />
+  <HelpKINode Title="Vector.Y field" Url="html/F_TeamSpeak_Sdk_Vector_Y.htm" />
+  <HelpKINode Title="Vector.Z field" Url="html/F_TeamSpeak_Sdk_Vector_Z.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="0.1" Url="html/d83c93f3-0b0e-407f-ae45-823eb2ef3ac1.htm" />
+    <HelpKINode Title="0.2" Url="html/7bda83ad-356b-4c5f-bf9e-f0f098c65685.htm" />
+    <HelpKINode Title="history" Url="html/57ba9e17-48ea-4c78-b951-0cdc5fcbc84c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Version property">
+    <HelpKINode Title="Client.Version Property " Url="html/P_TeamSpeak_Sdk_Client_Client_Version.htm" />
+    <HelpKINode Title="Connection.Version Property " Url="html/P_TeamSpeak_Sdk_Client_Connection_Version.htm" />
+    <HelpKINode Title="Library.Version Property " Url="html/P_TeamSpeak_Sdk_Client_Library_Version.htm" />
+  </HelpKINode>
+  <HelpKINode Title="VersionNumber property" Url="html/P_TeamSpeak_Sdk_Client_Library_VersionNumber.htm" />
+  <HelpKINode Title="Visibility enumeration" Url="html/T_TeamSpeak_Sdk_Visibility.htm" />
+  <HelpKINode Title="VoipAlreadyInitialized enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipCannotAnswerInitiatedCall enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipInternalError enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipInvalidAccount enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipInvalidConnectionId enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipNotInitialized enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipPjsua enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VoipTooManyAccounts enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="VolumeFactorWave property" Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeFactorWave.htm" />
+  <HelpKINode Title="VolumeModificator property" Url="html/P_TeamSpeak_Sdk_Client_Client_VolumeModificator.htm" />
+  <HelpKINode Title="VolumeModifier property" Url="html/P_TeamSpeak_Sdk_Client_Connection_VolumeModifier.htm" />
+  <HelpKINode Title="VsCritical enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="V_3_0_3_2 enumeration member" Url="html/T_TeamSpeak_Sdk_LibraryVersion.htm" />
+  <HelpKINode Title="V_3_0_4 enumeration member" Url="html/T_TeamSpeak_Sdk_LibraryVersion.htm" />
+  <HelpKINode Title="Warning enumeration member" Url="html/T_TeamSpeak_Sdk_LogLevel.htm" />
+  <HelpKINode Title="WaveHandle class">
+    <HelpKINode Title="WaveHandle Class" Url="html/T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+    <HelpKINode Title="about WaveHandle class" Url="html/T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+    <HelpKINode Title="constructor" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+    <HelpKINode Title="operators" Url="html/Operators_T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_TeamSpeak_Sdk_Client_WaveHandle.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WaveHandle.Close method" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Close.htm" />
+  <HelpKINode Title="WaveHandle.Connection property" Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Connection.htm" />
+  <HelpKINode Title="WaveHandle.Equality operator" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Equality.htm" />
+  <HelpKINode Title="WaveHandle.Equals method" Url="html/Overload_TeamSpeak_Sdk_Client_WaveHandle_Equals.htm" />
+  <HelpKINode Title="WaveHandle.GetHashCode method" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_GetHashCode.htm" />
+  <HelpKINode Title="WaveHandle.ID property" Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_ID.htm" />
+  <HelpKINode Title="WaveHandle.Inequality operator" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_op_Inequality.htm" />
+  <HelpKINode Title="WaveHandle.Paused property" Url="html/P_TeamSpeak_Sdk_Client_WaveHandle_Paused.htm" />
+  <HelpKINode Title="WaveHandle.Set3DAttributes method" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle_Set3DAttributes.htm" />
+  <HelpKINode Title="WaveHandle.WaveHandle constructor" Url="html/M_TeamSpeak_Sdk_Client_WaveHandle__ctor.htm" />
+  <HelpKINode Title="Welcome" Url="html/b3c7db30-54f5-41cc-9164-fc6e456f57ba.htm" />
+  <HelpKINode Title="WelcomeMessage property" Url="html/P_TeamSpeak_Sdk_Client_Connection_WelcomeMessage.htm" />
+  <HelpKINode Title="WhisperIgnored event" Url="html/E_TeamSpeak_Sdk_Client_Connection_WhisperIgnored.htm" />
+  <HelpKINode Title="WhisperNoTargets enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="WhisperTooManyTargets enumeration member" Url="html/T_TeamSpeak_Sdk_Error.htm" />
+  <HelpKINode Title="Windows enumeration member" Url="html/T_TeamSpeak_Sdk_SupportedPlatform.htm" />
+  <HelpKINode Title="X field" Url="html/F_TeamSpeak_Sdk_Vector_X.htm" />
+  <HelpKINode Title="Y field" Url="html/F_TeamSpeak_Sdk_Vector_Y.htm" />
+  <HelpKINode Title="Z field" Url="html/F_TeamSpeak_Sdk_Vector_Z.htm" />
+</HelpKI>

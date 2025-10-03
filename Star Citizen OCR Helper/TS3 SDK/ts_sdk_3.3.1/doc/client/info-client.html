@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client information &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Channel information" href="info-channel.html" />
+    <link rel="prev" title="Retrieve and store information" href="info.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="info.html">Retrieve and store information</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Client information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requesting-updated-information">Requesting updated information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-client-information">Query client information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#own-client">Own client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-client-information">Setting client information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="info-channel.html">Channel information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info-server.html">Server information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="info.html">Retrieve and store information</a></li>
+      <li class="breadcrumb-item active">Client information</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="client-information">
+<h1>Client information<a class="headerlink" href="#client-information" title="Permalink to this heading"></a></h1>
+<p>Once connected to a server information about connected clients as well
+as your own client are available to be queried.
+Some information of your own client can also be modified.</p>
+<p>Available variables are listed in the <a class="reference internal" href="../properties.html#c.ClientProperties" title="ClientProperties"><code class="xref c c-enum docutils literal notranslate"><span class="pre">ClientProperties</span></code></a> enum.</p>
+<section id="requesting-updated-information">
+<h2>Requesting updated information<a class="headerlink" href="#requesting-updated-information" title="Permalink to this heading"></a></h2>
+<p>As the Client Lib cannot have all information for all users available
+all the time, the latest data for a given client can be requested from
+the server using</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_requestClientVariables</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Ask the server to provide additional request only variables for a client. </p>
+<p>You will receive an onUpdateClientEvent callback when the data is available to you.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which the client is located </p></li>
+<li><p><strong>clientID</strong> – the client for which to receive the client variables </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To avoid flooding the server, a mandatory delay of one second is enforced
+before this function can be called again for the same client id.</p>
+</div>
+<p>After requesting the information, the following callback is called. This
+callback is also called every time a client variable has been changed.</p>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClientUIFunctions</span></span></span><br /></dt>
+<dd><p>Defines available callbacks that you can receive. </p>
+<p>Set the members of this struct to a function to call when the specific event happens. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">onUpdateClientEvent</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">invokerID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">invokerName</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">invokerUniqueIdentifier</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called whenever a change for a client is received from the server. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverConnectionHandlerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>specifies on which connection the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>specifies the client for which variables have changed or are now available </p>
+</dd>
+<dt class="field-odd">Param invokerID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the source client that caused the update </p>
+</dd>
+<dt class="field-even">Param invokerName<span class="colon">:</span></dt>
+<dd class="field-even"><p>utf8 encoded c string containing the display name of the client causing the update </p>
+</dd>
+<dt class="field-odd">Param invokerUniqueIdentifier<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing the public identity of the client causing the update </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<p>The event does not carry the information itself, but now the Client Lib
+guarantees to have the client information available, which can be
+subsequently queried using <a class="reference internal" href="#c.ts3client_getClientVariableAsInt" title="ts3client_getClientVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_getClientVariableAsInt()</span></code></a>,
+<a class="reference internal" href="#c.ts3client_getClientVariableAsUInt64" title="ts3client_getClientVariableAsUInt64"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_getClientVariableAsUInt64()</span></code></a> and <a class="reference internal" href="#c.ts3client_getClientVariableAsString" title="ts3client_getClientVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_getClientVariableAsString()</span></code></a>
+as described below.</p>
+</section>
+<section id="query-client-information">
+<h2>Query client information<a class="headerlink" href="#query-client-information" title="Permalink to this heading"></a></h2>
+<p>To query client related information, use one of the following functions.</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientVariableAsInt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the value of a variable from a client as integer. </p>
+<p>Not all variables are available as integer. Some are only available as string or unsigned 64bit integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the client is located </p></li>
+<li><p><strong>clientID</strong> – for which client to retrieve the value </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the value on success </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientVariableAsUInt64</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the value of a variable from a client as unsigned 64bit integer. </p>
+<p>Not all variables are available as integer. Some are only available as string or integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the client is located </p></li>
+<li><p><strong>clientID</strong> – for which client to retrieve the value </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the value on success </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientVariableAsString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve the value of a variable from a client as string. </p>
+<p>Not all variables are available as integer. Some are only available as integer or unsigned 64bit integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which the client is located </p></li>
+<li><p><strong>clientID</strong> – for which client to retrieve the value </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the value on success. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="own-client">
+<h3>Own client<a class="headerlink" href="#own-client" title="Permalink to this heading"></a></h3>
+<p>Once a connection to a TeamSpeak 3 server has been established, a
+client ID is assigned by the server. This ID can be queried with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientID</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>get your own client id on a server </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to retrieve your own client id </p></li>
+<li><p><strong>result</strong> – address of a variable to receive your client id on success </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>In addition to the functions discussed above, the client lib offers
+convenience functions to query the own client information that does
+not require a clientID parameter to be specified.
+Various information related about the own client can be checked with:</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientSelfVariableAsInt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve value of a variable of your own client as an integer. </p>
+<p>Not all variables are available as integer. Some are only available as string. NOTE: Not all variables are available using this function, some are only available using ts3client_getClientVariableAsInt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to retrieve information </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive. One of the values from the ClientProperties enum </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the value on success </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_getClientSelfVariableAsString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">result</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Retrieve value of a variable of your own client as string. </p>
+<p>Not all variables are available as integer. Some are only available as integer. NOTE: Not all variables are available using this function, some are only available using ts3client_getClientVariableAsString</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to retrieve information </p></li>
+<li><p><strong>flag</strong> – specifies which variable to receive. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>result</strong> – address of a variable to receive the value on success. Memory is allocated by the client lib and must be freed by caller using <a class="reference internal" href="../client_api.html#clientlib_8h_1a783cbda7046acfc0173c669821702619"><span class="std std-ref">ts3client_freeMemory</span></a> </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all variables are available using these functions. Some
+will require using the functions for any client discussed above.</p>
+</div>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<p>Example 1: Query client nickname</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">nickname</span><span class="p">;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getClientSelfVariableAsString</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_NICKNAME</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nickname</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;My nickname is: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+<span class="linenos">5</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Example 2: Check if own client is currently talking (to be exact: sending voice data)</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">int</span><span class="w"> </span><span class="n">talking</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_getClientSelfVariableAsInt</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_FLAG_TALKING</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">talking</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">talking</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">STATUS_TALKING</span><span class="p">:</span>
+<span class="linenos"> 6</span><span class="w">            </span><span class="c1">// I am currently talking</span>
+<span class="linenos"> 7</span><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">STATUS_NOT_TALKING</span><span class="p">:</span>
+<span class="linenos"> 9</span><span class="w">            </span><span class="c1">// I am currently not talking</span>
+<span class="linenos">10</span><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos">11</span><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">STATUS_TALKING_WHILE_DISABLED</span><span class="p">:</span>
+<span class="linenos">12</span><span class="w">            </span><span class="c1">// I am talking while microphone is disabled</span>
+<span class="linenos">13</span><span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="linenos">14</span><span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="linenos">15</span><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Invalid value for CLIENT_FLAG_TALKING</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">16</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">17</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="setting-client-information">
+<h2>Setting client information<a class="headerlink" href="#setting-client-information" title="Permalink to this heading"></a></h2>
+<p>Information related to the own client can be modified with</p>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setClientSelfVariableAsInt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change the value of an integer variable on your own client. </p>
+<p>After having changed all variables desired, call ts3client_flushClientSelfUpdates to publish the changes to the server Not all variables can be changed, many are read only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to set the value </p></li>
+<li><p><strong>flag</strong> – specifies which variable to change. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>value</strong> – the new value to set </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_setClientSelfVariableAsString</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n"><span class="pre">flag</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">value</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Change the value of a string variable on your own client. </p>
+<p>After having changed all variables desired, call ts3client_flushClientSelfUpdates to publish the changes to the server Not all variables can be changed, many are read only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – the connection handler on which to set the value </p></li>
+<li><p><strong>flag</strong> – specifies which variable to change. One of the values from the ClientProperties or ClientPropertiesRare enums </p></li>
+<li><p><strong>value</strong> – the new value to set </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>After modifying one or more client variables, you <strong>must</strong> flush the
+changes. Flushing ensures the changes are sent to the TeamSpeak 3
+server.</p>
+</div>
+<dl class="c function">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ts3client_flushClientSelfUpdates</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverConnectionHandlerID</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">returnCode</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Send changes to the local client to the server. </p>
+<p>Publish changes previously set using <a class="reference internal" href="../client_api.html#clientlib_8h_1ae74d626a2ab941d5908c42adda8617ba"><span class="std std-ref">ts3client_setClientSelfVariableAsInt</span></a> and <a class="reference internal" href="../client_api.html#clientlib_8h_1a414b3cd49dd610a6a06983f1aadd43f8"><span class="std std-ref">ts3client_setClientSelfVariableAsString</span></a> on the connection handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverConnectionHandlerID</strong> – connection handler on which to publish changes </p></li>
+<li><p><strong>returnCode</strong> – a c string to identify this request in callbacks. Pass an empty string if unused. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An Error code from the <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7b"><span class="std std-ref">Ts3ErrorType</span></a> enum indicating either success or the failure reason </p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>The idea behind flushing is, one can modify multiple values by calling
+<a class="reference internal" href="#c.ts3client_setClientSelfVariableAsString" title="ts3client_setClientSelfVariableAsString"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_setClientSelfVariableAsString()</span></code></a> and
+<a class="reference internal" href="#c.ts3client_setClientSelfVariableAsInt" title="ts3client_setClientSelfVariableAsInt"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_setClientSelfVariableAsInt()</span></code></a> and then apply all changes in one step.</p>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>For example, to change the own nickname:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/* Modify data */</span>
+<span class="linenos"> 2</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_setClientSelfVariableAsString</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_NICKNAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Joe&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error setting client variable</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="cm">/* Flush changes */</span>
+<span class="linenos"> 8</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_flushClientSelfUpdates</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error flushing client updates&quot;</span><span class="p">);</span>
+<span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Example for doing two changes:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/* Modify data 1 */</span>
+<span class="linenos"> 2</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_setClientSelfVariableAsString</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_NICKNAME</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SDK User&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error setting nickname</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="cm">/* Modify data 2 */</span>
+<span class="linenos"> 8</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_setClientSelfVariableAsString</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_META_DATA</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Lunch&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error setting meta data</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">11</span><span class="p">}</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="cm">/* Flush changes */</span>
+<span class="linenos">14</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_flushClientSelfUpdates</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">15</span><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error flushing client updates&quot;</span><span class="p">);</span>
+<span class="linenos">16</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Example to mute and unmute the microphone:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kt">bool</span><span class="w"> </span><span class="n">shouldTalk</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">shouldTalk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isPushToTalkButtonPressed</span><span class="p">();</span><span class="w">  </span><span class="c1">// Your key detection implementation</span>
+<span class="linenos"> 5</span><span class="k">if</span><span class="p">((</span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts3client_setClientSelfVariableAsInt</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">CLIENT_INPUT_DEACTIVATED</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="w">                                                 </span><span class="n">shouldTalk</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">INPUT_ACTIVE</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">INPUT_DEACTIVATED</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">;</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ts3client_getErrorMessage</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">errorMsg</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error toggling push-to-talk: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">);</span>
+<span class="linenos">10</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span>
+<span class="linenos">11</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos">13</span><span class="p">}</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="k">if</span><span class="p">(</span><span class="n">ts3client_flushClientSelfUpdates</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">;</span>
+<span class="linenos">17</span><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">ts3client_getErrorMessage</span><span class="p">(</span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">errorMsg</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">18</span><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error flushing after toggling push-to-talk: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">errorMsg</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span>
+<span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">21</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="faq.html#c-faq"><span class="std std-ref">FAQ</span></a> section for further details on implementing
+Push-To-Talk.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="info.html" class="btn btn-neutral float-left" title="Retrieve and store information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="info-channel.html" class="btn btn-neutral float-right" title="Channel information" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

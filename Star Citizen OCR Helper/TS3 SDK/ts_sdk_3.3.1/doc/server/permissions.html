@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Permission checks &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Security salts and hashes" href="security-salt.html" />
+    <link rel="prev" title="Custom passwords" href="passwords.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Permission checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#available-callbacks">Available callbacks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-permission-callbacks">Standard Permission callbacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filetransfer-permission-callbacks">FileTransfer permission callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Permission checks</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="permission-checks">
+<h1>Permission checks<a class="headerlink" href="#permission-checks" title="Permalink to this heading"></a></h1>
+<p>The TeamSpeak SDK offers an optional custom permission system, allowing
+SDK users to gain more control over allowed user actions on a
+TeamSpeak server. The custom permissions system is implemented in the
+Server Lib by adding callback functions which will be called, if
+implemented, when a certain user action occurs. In this callback the
+developer can allow or deny the action.</p>
+<p>The callbacks should return <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a> to allow the action or
+<code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_permission</span></code> to deny it.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If a callback is not implemented, the action will be allowed by default.</p>
+</div>
+<section id="available-callbacks">
+<h2>Available callbacks<a class="headerlink" href="#available-callbacks" title="Permalink to this heading"></a></h2>
+<section id="standard-permission-callbacks">
+<h3>Standard Permission callbacks<a class="headerlink" href="#standard-permission-callbacks" title="Permalink to this heading"></a></h3>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ServerLibFunctions</span></span></span><br /></dt>
+<dd><p>Server callbacks. Zero initialize and set members to functions that are to be called when the event in question happens. Every callback you use should exit quickly to avoid stalling the server. If you need any expensive activity upon receiving callbacks, consider starting the activity in a new thread and allow the callback to exit quickly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientCanConnect</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client is about to connect. Can be used to deny clients from connecting. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the client on the server, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server the client wants to connect to </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client trying to connect </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientCanGetChannelDescription</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client requests channel description of a channel using <a class="reference internal" href="../client_api.html#clientlib_8h_1a806652361900fb894016df2c14bddc6d"><span class="std std-ref">ts3client_requestChannelDescription</span></a>. Can be used to deny access to channel descriptions. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server on which the request was received </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client requesting the channel description </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientUpdate</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">clientID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.VariablesExport" title="VariablesExport"><span class="n"><span class="pre">VariablesExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client wants to update a clients variables. Used to deny or allow updating certain client variables </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param clientID<span class="colon">:</span></dt>
+<dd class="field-even"><p>the client for which the variables are attempted to be changed. </p>
+</dd>
+<dt class="field-odd">Param variables<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_variables_export"><span class="std std-ref">VariablesExport</span></a> containing the variables, new and old values of the client. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientKickFromChannel</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">toKickCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">toKickClients</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reasonText</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called before a client is kicked from the channel. Allows you to control whether clients are allowed to kick another client </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client attempting to kick another client. </p>
+</dd>
+<dt class="field-odd">Param toKickCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of clients that are supposed to be kicked </p>
+</dd>
+<dt class="field-even">Param toKickClients<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the clients to be kicked </p>
+</dd>
+<dt class="field-odd">Param reasonText<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing the reason for the kick provided. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientKickFromServer</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">toKickCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">toKickClients</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reasonText</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called before a client is kicked from the server. Allows you to control whether clients are allowed to kick another client </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client attempting to kick another client. </p>
+</dd>
+<dt class="field-odd">Param toKickCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of clients that are supposed to be kicked </p>
+</dd>
+<dt class="field-even">Param toKickClients<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the clients to be kicked </p>
+</dd>
+<dt class="field-odd">Param reasonText<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing the provided reason for the kick. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permClientMove</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">toMoveCount</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">toMoveClients</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newChannel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">reasonText</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client requests to move one or more other clients. Allows you to control whether a client can move the clients. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server on which the move is attempted. </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>pointer to a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client attempting to move the client(s). </p>
+</dd>
+<dt class="field-odd">Param toMoveCount<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of clients that are being moved. </p>
+</dd>
+<dt class="field-even">Param toMoveClients<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing which clients are being moved. </p>
+</dd>
+<dt class="field-odd">Param newChannel<span class="colon">:</span></dt>
+<dd class="field-odd"><p>id of the channel the clients are to be moved in to. </p>
+</dd>
+<dt class="field-even">Param reasonText<span class="colon">:</span></dt>
+<dd class="field-even"><p>utf8 encoded c string containing the reason provided for the move. </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permChannelMove</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">newParentChannelID</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client attempts to move a channel. Allows you to control whether the client is allowed to move the channel. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client attempting to move the channel. </p>
+</dd>
+<dt class="field-odd">Param channelID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the channel to be moved. </p>
+</dd>
+<dt class="field-even">Param newParentChannelID<span class="colon">:</span></dt>
+<dd class="field-even"><p>the new parent channel of the channel </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permSendTextMessage</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">anyID</span></span><span class="w"> </span><span class="n"><span class="pre">targetMode</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">targetClientOrChannel</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">textMessage</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client tries to send a message. Allows you to control whether the client is allowed to send the message. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client attempting to send the message </p>
+</dd>
+<dt class="field-odd">Param targetMode<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describing the type of message attempting to be sent. One of the values from the <a class="reference internal" href="../enumerations.html#public__definitions_8h_1a2773a2b8004cd45e398baa89bb2acef8"><span class="std std-ref">TextMessageTargetMode</span></a> enum </p>
+</dd>
+<dt class="field-even">Param targetClientOrChannel<span class="colon">:</span></dt>
+<dd class="field-even"><p>id of the channel or client (depending of the targetMode) that the message is sent to. </p>
+</dd>
+<dt class="field-odd">Param textMessage<span class="colon">:</span></dt>
+<dd class="field-odd"><p>utf8 encoded c string containing the message to be sent. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permServerRequestConnectionInfo</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when server connection information is requested using <a class="reference internal" href="../client_api.html#clientlib_8h_1a20a6cc2a8dba1a0faf5f031a27ad4102"><span class="std std-ref">ts3client_requestServerConnectionInfo</span></a>. Can be used to deny access. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client requesting the action </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permSendConnectionInfo</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">mayViewIpPort</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">targetClient</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client attempts to request another clients connection variables using <a class="reference internal" href="../client_api.html#clientlib_8h_1a70dbf9fbdae6bb1c85da531a57a85273"><span class="std std-ref">ts3client_requestConnectionInfo</span></a> </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client requesting the other clients information </p>
+</dd>
+<dt class="field-odd">Param mayViewIpPort<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to a variable that controls whether the IP and port of the target client may be seen by the client. Set to 1 to allow the requesting client to see the IP and port. Set to 0 to deny IP and port. </p>
+</dd>
+<dt class="field-even">Param targetClient<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client that the connection information is requested for. </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permChannelCreate</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">parentChannelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.VariablesExport" title="VariablesExport"><span class="n"><span class="pre">VariablesExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client attempts to create a channel. Allows you to control whether or not the client may create the desired channel. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server on which the client attempts to create the channel </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client trying to create a channel </p>
+</dd>
+<dt class="field-odd">Param parentChannelID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the channel that is the parent channel of the channel to be created. 0 if the channel to be created will be a root channel. </p>
+</dd>
+<dt class="field-even">Param variables<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_variables_export"><span class="std std-ref">VariablesExport</span></a> struct that describes the channel to be created. </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permChannelEdit</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.VariablesExport" title="VariablesExport"><span class="n"><span class="pre">VariablesExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a channel is about to be edited by a client. Allows you to prevent channel edits. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client trying to edit the channel </p>
+</dd>
+<dt class="field-odd">Param parentChannelID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the channel that is to be edited. </p>
+</dd>
+<dt class="field-even">Param variables<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_variables_export"><span class="std std-ref">VariablesExport</span></a> struct that describes the channel after the edit. </p>
+</dd>
+<dt class="field-odd">Return<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permChannelDelete</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called before a channel is deleted by a client. Allows you to deny a client deleting channels. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server on which the channel is to be deleted </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client trying to delete the channel </p>
+</dd>
+<dt class="field-odd">Param channelID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the channel that is to be deleted </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permChannelSubscribe</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">channelID</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client requests to subscribe a channel. Allows you to deny subscribing to a channel. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server on which the client attempts to subscribe to the channel. </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>a <a class="reference internal" href="../enumerations.html#struct_client_mini_export"><span class="std std-ref">ClientMiniExport</span></a> describing the client trying to subscribe the channel </p>
+</dd>
+<dt class="field-odd">Param channelID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the channel that is to be subscribed </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+<section id="filetransfer-permission-callbacks">
+<h3>FileTransfer permission callbacks<a class="headerlink" href="#filetransfer-permission-callbacks" title="Permalink to this heading"></a></h3>
+<dl class="c struct">
+<dt class="sig sig-object c">
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ServerLibFunctions</span></span></span><br /></dt>
+<dd><p>Server callbacks. Zero initialize and set members to functions that are to be called when the event in question happens. Every callback you use should exit quickly to avoid stalling the server. If you need any expensive activity upon receiving callbacks, consider starting the activity in a new thread and allow the callback to exit quickly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferInitUpload</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftinitupload" title="ts3sc_ftinitupload"><span class="n"><span class="pre">ts3sc_ftinitupload</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a file is to be uploaded. Allows you to deny a client from uploading files, files above a certain size, etc. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client that attempts to upload the file. </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the file to be uploaded. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferInitDownload</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftinitdownload" title="ts3sc_ftinitdownload"><span class="n"><span class="pre">ts3sc_ftinitdownload</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a file is to be downloaded. Allows you to deny a client from downloading files, files above a certain size, etc. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client that attempts to download the file </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the file to be downloaded. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferGetFileInfo</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftgetfileinfo" title="ts3sc_ftgetfileinfo"><span class="n"><span class="pre">ts3sc_ftgetfileinfo</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client requests file information using <a class="reference internal" href="../client_api.html#clientlib_8h_1ae8c0b60065102c7010517b09769692af"><span class="std std-ref">ts3client_requestFileInfo</span></a>. Allows to deny clients from getting file information. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client attempting to get information of the file. </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the file that information is requested for. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferGetFileList</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftgetfilelist" title="ts3sc_ftgetfilelist"><span class="n"><span class="pre">ts3sc_ftgetfilelist</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client requests a directory listing using <a class="reference internal" href="../client_api.html#clientlib_8h_1a2f4af115935ecae757bdbcb8443de7db"><span class="std std-ref">ts3client_requestFileList</span></a>. Allows to deny listing files and directories in channels / directories. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferDeleteFile</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftdeletefile" title="ts3sc_ftdeletefile"><span class="n"><span class="pre">ts3sc_ftdeletefile</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a client attempts to delete one or more files using <a class="reference internal" href="../client_api.html#clientlib_8h_1ad51a44944e06592bea370599ba282f44"><span class="std std-ref">ts3client_requestDeleteFile</span></a>. Allows denying clients deleting files. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client attempting to delete the file </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the file to be deleted </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferCreateDirectory</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftcreatedir" title="ts3sc_ftcreatedir"><span class="n"><span class="pre">ts3sc_ftcreatedir</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a directory is to be created using <a class="reference internal" href="../client_api.html#clientlib_8h_1af5c0dbb932a7f25b11d19602a4f70cf7"><span class="std std-ref">ts3client_requestCreateDirectory</span></a>. Allows to deny creating certain directories. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client attempting to create the directory </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the directory to create. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="c var">
+<dt class="sig sig-object c">
+<span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">permFileTransferRenameFile</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">uint64</span></span><span class="w"> </span><span class="n"><span class="pre">serverID</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ClientMiniExport" title="ClientMiniExport"><span class="n"><span class="pre">ClientMiniExport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="../enumerations.html#c.ts3sc_ftrenamefile" title="ts3sc_ftrenamefile"><span class="n"><span class="pre">ts3sc_ftrenamefile</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">)</span></span><br /></dt>
+<dd><p>called when a file is to be renamed or moved using <a class="reference internal" href="../client_api.html#clientlib_8h_1ab13be97ad87ab9b10c38f75d5ad74c41"><span class="std std-ref">ts3client_requestRenameFile</span></a>. Allows to deny moving files or even renaming files. </p>
+<p>Return <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow the action, or <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to reject it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param serverID<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the server for which the callback was called </p>
+</dd>
+<dt class="field-even">Param client<span class="colon">:</span></dt>
+<dd class="field-even"><p>describes the client attempting to rename or move the file. </p>
+</dd>
+<dt class="field-odd">Param params<span class="colon">:</span></dt>
+<dd class="field-odd"><p>describes the file to be renamed or moved, and where the file should be moved to if it’s being moved. </p>
+</dd>
+<dt class="field-even">Return<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7ba21e7fdf5a31623bfa8042865df880a9d"><span class="std std-ref">ERROR_ok</span></a> to allow, <a class="reference internal" href="../errors.html#public__errors_8h_1a0bcf1e0a5e32989890f6e85064327f7bacd0d64c660d7e6009b05bbba5631607d"><span class="std std-ref">ERROR_permissions</span></a> to deny </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>Example code to check if a client can connect to the server:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// Create the function pointer passed to ts3server_initServerLib</span>
+<span class="linenos"> 2</span><span class="n">funcs</span><span class="p">.</span><span class="n">permClientCanConnect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">onPermClientCanConnect</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">// Custom callback</span>
+<span class="linenos"> 5</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">onPermClientCanConnect</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">serverID</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ClientMiniExport</span><span class="o">*</span><span class="w"> </span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="c1">// Forbid client with nickname &quot;client&quot; to connect</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">client</span><span class="o">-&gt;</span><span class="n">nickname</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;client&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 8</span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_permissions</span><span class="p">;</span><span class="w">  </span><span class="c1">// Deny</span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">10</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">;</span><span class="w">  </span><span class="c1">// Allow</span>
+<span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Please see the <cite>server_permissions</cite> example for a demonstration of
+this mechanism.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="passwords.html" class="btn btn-neutral float-left" title="Custom passwords" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="security-salt.html" class="btn btn-neutral float-right" title="Security salts and hashes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

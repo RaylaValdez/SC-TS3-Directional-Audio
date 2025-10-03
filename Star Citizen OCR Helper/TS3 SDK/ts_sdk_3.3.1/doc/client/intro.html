@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; TeamSpeak SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting started" href="basic.html" />
+    <link rel="prev" title="FAQ" href="../server/faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TeamSpeak SDK
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">TeamSpeak Error Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../properties.html">Property Enums</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enumerations.html">Structures &amp; Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client_api.html">TeamSpeak Client Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_api.html">TeamSpeak Server Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/list-items.html">List available clients, channels, servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/vserver-manage.html">Create and stop virtual servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/advanced-create.html">Advanced virtual server creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/channels.html">Managing channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/clients.html">Managing clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/permissions.html">Permission checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/security-salt.html">Security salts and hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/disable-commands.html">Disabling protocol commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-header-files">Overview of header files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calling-client-lib-functions">Calling Client Lib functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#return-code">Return code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connections.html">Managing server connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audio.html">Client Audio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wave-files.html">Playing wave files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3dsound.html">3D Sound</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whisper.html">Whisper lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voice-encryption.html">Channel voice data encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="info.html">Retrieve and store information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-list.html">List clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-kick.html">Kicking clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local-mute.html">Muting other clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textmessages.html">Text chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer.html">Filetransfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encryption.html">Custom encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passwords.html">Custom passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TeamSpeak SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
+<p>This document describes client-side programming with the TeamSpeak 3 SDK.
+This library, the so-called client lib, encapsulates client-side functionality
+while keeping the user interface separated and modular.</p>
+<section id="system-requirements">
+<h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h2>
+<p>For developing third-party clients with the TeamSpeak 3 Client Lib the
+following system requirements apply:</p>
+<ul class="simple">
+<li><p>Windows 7, 8.1, 10</p></li>
+<li><p>Mac OS X 10.6 and above</p></li>
+<li><p>Any recent Linux distribution with libstdc++ 6</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The calling convention used in the functions exported by the shared
+TeamSpeak 3 SDK libaries is <strong>cdecl</strong>. You must not use another calling
+convention, like stdcall on Windows, when declaring function pointers
+to the TeamSpeak 3 SDK libraries. Otherwise stack corruption at
+runtime may occur.</p>
+</div>
+</section>
+<section id="overview-of-header-files">
+<h2>Overview of header files<a class="headerlink" href="#overview-of-header-files" title="Permalink to this heading"></a></h2>
+<p>The following header files are deployed to SDK developers</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientlib.h</span></code></p>
+<p>Declares the function prototypes and callbacks for the communication
+between Client Lib and Client UI. While the Client UI makes function
+calls into the Client Lib using the declared prototypes, the Client
+Lib calls the Client UI via callbacks.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clientlib_publicdefinitions.h</span></code></p>
+<p>Defines various enums and structs used by the Client UI and Client
+Lib. These definitions are used by the functions and callbacks
+declared in <code class="docutils literal notranslate"><span class="pre">clientlib.h</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public_definitions.h</span></code></p>
+<p>Defines various enums and structs used by both client- and
+server-side.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public_errors.h</span></code></p>
+<p>Defines the error codeserror codes returned by every Client Lib
+function and <code class="docutils literal notranslate"><span class="pre">onServerErrorEvent</span></code>. Error codes are organized in
+several groups. The first byte of the error code defines the error
+group, the second the count within the group.</p>
+</li>
+</ul>
+</section>
+<section id="calling-client-lib-functions">
+<h2>Calling Client Lib functions<a class="headerlink" href="#calling-client-lib-functions" title="Permalink to this heading"></a></h2>
+<p>Client Lib functions follow a common pattern. They always return an
+error code from the <a class="reference internal" href="../errors.html#c.Ts3ErrorType" title="Ts3ErrorType"><code class="xref c c-enum docutils literal notranslate"><span class="pre">Ts3ErrorType</span></code></a> or <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="Ts3ErrorType.ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a> on success.
+If there is a result variable, it is always the last variable in the functions
+parameters list.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="w"> </span><span class="nf">ts3client_FUNCNAME</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Result variables should <strong>only</strong> be accessed if the function returned
+<a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="Ts3ErrorType.ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a>. Otherwise the state of the result variable is undefined.</p>
+<p>In those cases where the result variable is a basic type (int, float
+etc.), the memory for the result variable has to be declared by the
+caller. Simply pass the address of the variable to the Client Lib
+function <a class="reference internal" href="../client_api.html#c.ts3client_freeMemory" title="ts3client_freeMemory"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_freeMemory()</span></code></a>.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">ts3client_XXX</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Use result variable */</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Handle error, result variable is undefined */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the result variable is a pointer type (C strings, arrays etc.), the
+memory is allocated by the Client Lib function. In that case, the caller
+has to release the allocated memory later by using <a class="reference internal" href="../client_api.html#c.ts3client_freeMemory" title="ts3client_freeMemory"><code class="xref c c-func docutils literal notranslate"><span class="pre">ts3client_freeMemory()</span></code></a>.</p>
+<p>It is important to <strong>only</strong> access and release the memory if the function
+returned <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="Ts3ErrorType.ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a>. Should the function return an error, the result
+variable is uninitialized, so freeing or accessing it could crash the application.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ts3client_XXX</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="w"> </span><span class="n">arg2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Use result variable */</span>
+<span class="w">    </span><span class="n">ts3client_freeMemory</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Release result variable */</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Handle error, result variable is undefined. Do not access or release it. */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Client Lib functions are <strong>thread-safe</strong>. It is possible to access the
+Client Lib from several threads at the same time.</p>
+</div>
+</section>
+<section id="return-code">
+<h2>Return code<a class="headerlink" href="#return-code" title="Permalink to this heading"></a></h2>
+<p>Client Lib functions that interact with the server take an additional
+parameter <code class="docutils literal notranslate"><span class="pre">returnCode</span></code>, which can be used to find out which action
+results in a later server error. If you pass a custom string as return
+code, the <a class="reference internal" href="basic.html#c.ClientUIFunctions.onServerErrorEvent" title="ClientUIFunctions.onServerErrorEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onServerErrorEvent()</span></code></a> callback will
+receive the same custom string in its <code class="docutils literal notranslate"><span class="pre">returnCode</span></code> parameter.
+If no error occured, <a class="reference internal" href="basic.html#c.ClientUIFunctions.onServerErrorEvent" title="ClientUIFunctions.onServerErrorEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onServerErrorEvent()</span></code></a> will
+indicate success by passing the error code <a class="reference internal" href="../errors.html#c.Ts3ErrorType.ERROR_ok" title="Ts3ErrorType.ERROR_ok"><code class="xref c c-enumerator docutils literal notranslate"><span class="pre">ERROR_ok</span></code></a> if a
+return code was specified.</p>
+<p>Pass NULL as <code class="docutils literal notranslate"><span class="pre">returnCode</span></code> if you do not need the feature. In this
+case, if no error occurs <a class="reference internal" href="basic.html#c.ClientUIFunctions.onServerErrorEvent" title="ClientUIFunctions.onServerErrorEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onServerErrorEvent()</span></code></a>
+will <strong>not</strong> be called.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>An example, request moving a client:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ts3client_requestClientMove</span><span class="p">(</span><span class="n">scHandlerID</span><span class="p">,</span><span class="w"> </span><span class="n">clientID</span><span class="p">,</span><span class="w"> </span><span class="n">newChannelID</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MyClientMoveReturnCode&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If an error occurs, the <a class="reference internal" href="basic.html#c.ClientUIFunctions.onServerErrorEvent" title="ClientUIFunctions.onServerErrorEvent"><code class="xref c c-func docutils literal notranslate"><span class="pre">onServerErrorEvent()</span></code></a>
+callback is called:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">my_onServerErrorEvent</span><span class="p">(</span><span class="n">uint64</span><span class="w"> </span><span class="n">serverConnectionHandlerID</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">errorMessage</span><span class="p">,</span>
+<span class="w">                           </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">returnCode</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">extraMessage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">returnCode</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;MyClientMoveReturnCode&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* We know this error is the reaction to above called function as we got the same returnCode */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* Success */</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../server/faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="basic.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, TeamSpeak Systems GmbH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
