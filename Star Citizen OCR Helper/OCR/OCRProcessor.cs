@@ -5,113 +5,106 @@ using System.IO;
 
 namespace SC_TS3_Directional_Audio.OCR
 {
+    /// <summary>
+    /// Takes an already-cropped HUD strip (from ScreenCapture), scales if needed,
+    /// converts to grayscale (and optionally binarizes), then OCRs.
+    /// </summary>
     public static class OCRProcessor
     {
-        private static readonly string tessdataPath = Path.Combine(AppContext.BaseDirectory, "TesseractLangData");
+        private static readonly string TessdataPath =
+            Path.Combine(AppContext.BaseDirectory, "TesseractLangData");
 
-        public static Mat Preprocess(Mat mat)
+        // Minimum size so Tesseract has enough pixels to chew on
+        public const int MinOcrWidth = 100;
+        public const int MinOcrHeight = 30;
+
+        /// <summary>
+        /// Prepare an *already-cropped* HUD image for OCR:
+        /// - upscale to minimum size
+        /// - grayscale
+        /// - optional binarization (helps when bloom/HDR is rough)
+        /// </summary>
+        public static Mat Preprocess(Mat hudCrop, bool binarize = false)
         {
-            if (mat.Empty())
-                throw new Exception("Input Mat is empty.");
+            if (hudCrop is null || hudCrop.Empty())
+                return new Mat();
 
-            // --- Determine dynamic crop for top-right lines ---
-            int windowWidth = mat.Width;
-            int windowHeight = mat.Height;
-
-            // Estimate line height as ~1% of window height
-            int lineHeight = Math.Max(15, (int)(windowHeight * 0.015));
-            int numLines = 2;
-            int cropHeight = lineHeight * numLines;
-
-            // Grab right 50% of window width
-            int cropWidth = Math.Max(100, windowWidth / 2);
-
-            // X/Y for top-right
-            int x = Math.Max(0, windowWidth - cropWidth);
-            int y = 0;
-
-            // Clamp width/height to stay inside the window
-            cropWidth = Math.Min(cropWidth, windowWidth - x);
-            cropHeight = Math.Min(cropHeight, windowHeight - y);
-
-            if (cropWidth <= 0 || cropHeight <= 0)
-            {
-                Console.WriteLine("Preprocess returned empty image: ROI out of bounds");
-                return new Mat(); // empty Mat
-            }
-
-            var roi = new OpenCvSharp.Rect(x, y, cropWidth, cropHeight);
-            Mat cropped = new Mat(mat, roi);
-
-            // --- Scale up if too small for Tesseract ---
-            const int minWidth = 100;
-            const int minHeight = 30;
-            int scaleX = Math.Max(1, minWidth / cropped.Width);
-            int scaleY = Math.Max(1, minHeight / cropped.Height);
+            // --- Scale up if needed ---
+            int scaleX = Math.Max(1, MinOcrWidth / Math.Max(hudCrop.Width, 1));
+            int scaleY = Math.Max(1, MinOcrHeight / Math.Max(hudCrop.Height, 1));
             int scale = Math.Max(scaleX, scaleY);
 
+            Mat work;
             if (scale > 1)
             {
-                Mat resized = new Mat();
-                Cv2.Resize(cropped, resized, new Size(cropped.Width * scale, cropped.Height * scale), 0, 0, InterpolationFlags.Cubic);
-                cropped.Dispose();
-                cropped = resized;
-            }
-
-            // --- Convert to grayscale ---
-            Mat matGray = new Mat();
-            switch (cropped.Channels())
-            {
-                case 1: matGray = cropped.Clone(); break;
-                case 3: Cv2.CvtColor(cropped, matGray, ColorConversionCodes.BGR2GRAY); break;
-                case 4: Cv2.CvtColor(cropped, matGray, ColorConversionCodes.BGRA2GRAY); break;
-                default:
-                    cropped.Dispose();
-                    throw new Exception($"Unsupported channel count: {cropped.Channels()}");
-            }
-
-            cropped.Dispose();
-            return matGray;
-        }
-
-
-        public static Pix MatToPix(Mat mat)
-        {
-            Mat matGray;
-            if (mat.Channels() == 1)
-            {
-                matGray = mat.Clone();
-            }
-            else if (mat.Channels() == 3)
-            {
-                matGray = new Mat();
-                Cv2.CvtColor(mat, matGray, ColorConversionCodes.BGR2GRAY);
-            }
-            else if (mat.Channels() == 4)
-            {
-                matGray = new Mat();
-                Cv2.CvtColor(mat, matGray, ColorConversionCodes.BGRA2GRAY);
+                work = new Mat();
+                Cv2.Resize(hudCrop, work,
+                    new Size(hudCrop.Width * scale, hudCrop.Height * scale),
+                    0, 0, InterpolationFlags.Cubic);
             }
             else
             {
-                throw new Exception($"Unsupported channel count: {mat.Channels()}");
+                work = hudCrop.Clone();
             }
 
-            using (matGray)
+            // --- Grayscale ---
+            if (work.Channels() != 1)
             {
-                Cv2.ImEncode(".png", matGray, out byte[] pngBytes);
-                return Pix.LoadFromMemory(pngBytes);
+                var gray = new Mat();
+                if (work.Channels() == 3)
+                    Cv2.CvtColor(work, gray, ColorConversionCodes.BGR2GRAY);
+                else if (work.Channels() == 4)
+                    Cv2.CvtColor(work, gray, ColorConversionCodes.BGRA2GRAY);
+                else { work.Dispose(); return new Mat(); }
+
+                work.Dispose();
+                work = gray;
+            }
+
+            // --- Optional binarization (robustness toggle) ---
+            if (binarize)
+            {
+                // Light CLAHE + Otsu threshold for clarity
+                using var clahe = Cv2.CreateCLAHE(clipLimit: 2.0, new Size(8, 8));
+                var eq = new Mat();
+                clahe.Apply(work, eq);
+                work.Dispose();
+
+                var th = new Mat();
+                Cv2.Threshold(eq, th, 0, 255, ThresholdTypes.Binary | ThresholdTypes.Otsu);
+                eq.Dispose();
+                work = th;
+            }
+
+            return work;
+        }
+
+        /// <summary> Convert grayscale Mat to Tesseract Pix via PNG bytes. </summary>
+        public static Pix MatToPix(Mat mat)
+        {
+            if (mat is null || mat.Empty())
+                throw new ArgumentException("MatToPix: empty input");
+
+            if (mat.Channels() != 1)
+                throw new ArgumentException("MatToPix: expect grayscale Mat (run Preprocess first)");
+
+            using (mat)
+            {
+                Cv2.ImEncode(".png", mat, out byte[] png);
+                return Pix.LoadFromMemory(png);
             }
         }
 
-        public static string PerformOCR(Mat mat)
+        /// <summary> OCR the preprocessed (grayscale) Mat and return raw text. </summary>
+        public static string PerformOCR(Mat preprocessed)
         {
-            using var engine = new TesseractEngine(tessdataPath, "eng", EngineMode.Default);
-            using Pix pix = MatToPix(mat);
+            if (preprocessed is null || preprocessed.Empty())
+                return string.Empty;
 
-            // Auto page segmentation works better for live multi-line crops
-            using Page page = engine.Process(pix, PageSegMode.Auto);
-            return page.GetText();
+            using var engine = new TesseractEngine(TessdataPath, "eng", EngineMode.Default);
+            using var pix = MatToPix(preprocessed);
+            using var page = engine.Process(pix, PageSegMode.Auto);
+            return page.GetText() ?? string.Empty;
         }
     }
 }

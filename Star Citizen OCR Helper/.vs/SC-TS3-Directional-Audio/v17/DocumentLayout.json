@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\",
+  "WorkspaceRootPath": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\Star Citizen OCR Helper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\ocr\\ocrprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:ocr\\ocrprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\star citizen ocr helper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\capture\\screencapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\star citizen ocr helper\\capture\\screencapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:capture\\screencapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|c:\\users\\rayla\\documents\\visual studio projects\\sc-ts3-directional-audio\\sc-ts3-directional-audio\\parsing\\scpositionparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAC41517-BBC3-44F7-AC0F-A8E1E75BF497}|SC-TS3-Directional-Audio.csproj|solutionrelative:parsing\\scpositionparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SCPositionParser.cs",
-              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Parsing\\SCPositionParser.cs",
-              "RelativeDocumentMoniker": "Parsing\\SCPositionParser.cs",
-              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Parsing\\SCPositionParser.cs",
-              "RelativeToolTip": "Parsing\\SCPositionParser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\Star Citizen OCR Helper\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\Star Citizen OCR Helper\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAADwv5gAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T20:04:53.471Z",
+              "WhenOpened": "2025-10-03T19:49:00.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAASwCcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T19:33:26.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OCRProcessor.cs",
-              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\OCR\\OCRProcessor.cs",
-              "RelativeDocumentMoniker": "OCR\\OCRProcessor.cs",
-              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\OCR\\OCRProcessor.cs",
-              "RelativeToolTip": "OCR\\OCRProcessor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T19:52:29.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ScreenCapture.cs",
-              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Capture\\ScreenCapture.cs",
+              "DocumentMoniker": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\Star Citizen OCR Helper\\Capture\\ScreenCapture.cs",
               "RelativeDocumentMoniker": "Capture\\ScreenCapture.cs",
-              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\SC-TS3-Directional-Audio\\Capture\\ScreenCapture.cs",
+              "ToolTip": "C:\\Users\\Rayla\\Documents\\Visual Studio Projects\\SC-TS3-Directional-Audio\\Star Citizen OCR Helper\\Capture\\ScreenCapture.cs",
               "RelativeToolTip": "Capture\\ScreenCapture.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAABBwAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAADwv6gAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T19:45:55.065Z",
+              "WhenOpened": "2025-10-03T19:47:00.237Z",
               "EditorCaption": ""
             }
           ]

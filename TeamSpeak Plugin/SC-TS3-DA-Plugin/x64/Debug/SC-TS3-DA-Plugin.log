@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+  plugin.cpp
+  Generating Code...
+     Creating library C:\Users\Rayla\Documents\Visual Studio Projects\SC-TS3-Directional-Audio\Star Citizen OCR Helper\x64\Debug\SC-TS3-DA-Plugin.lib and object C:\Users\Rayla\Documents\Visual Studio Projects\SC-TS3-Directional-Audio\Star Citizen OCR Helper\x64\Debug\SC-TS3-DA-Plugin.exp
+  SC-TS3-DA-Plugin.vcxproj -> C:\Users\Rayla\Documents\Visual Studio Projects\SC-TS3-Directional-Audio\Star Citizen OCR Helper\x64\Debug\SC-TS3-DA-Plugin.dll
+  copies plugin dll for testing
+          1 file(s) copied.

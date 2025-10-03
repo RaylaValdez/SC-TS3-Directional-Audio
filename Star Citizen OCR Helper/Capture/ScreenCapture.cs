@@ -9,126 +9,103 @@ using System.IO;
 
 namespace SC_TS3_Directional_Audio.Capture
 {
-    internal class ScreenCapture
+    internal static class ScreenCapture
     {
-        /// <summary>
-        /// Capture the top-right OCR region of Star Citizen if focused, empty Mat otherwise
-        /// </summary>
-        public static Mat CaptureTopRightRegionIfStarCitizenFocused()
+        public struct WinRect
         {
-            if (OperatingSystem.IsWindows())
-                return CaptureWindowsTopRight();
-            else if (OperatingSystem.IsLinux())
-                return CaptureLinuxTopRight();
-            else
-                throw new PlatformNotSupportedException("Screen capture only supported on Windows or Linux.");
+            public int Left, Top, Right, Bottom;
+            public int Width => Right - Left;
+            public int Height => Bottom - Top;
         }
 
-        #region Windows
-
-        private static Mat CaptureWindowsTopRight()
+        /// <summary> Returns the SC window rect if focused; null otherwise. </summary>
+        public static WinRect? GetStarCitizenWindowRect()
         {
-            IntPtr handle = GetForegroundWindow();
-            if (!IsStarCitizenWindow(handle))
-                return new Mat(); // empty
+            if (OperatingSystem.IsWindows())
+            {
+                IntPtr hWnd = GetForegroundWindow();
+                if (!IsStarCitizenWindow(hWnd)) return null;
+                if (!GetWindowRect(hWnd, out RECT r)) return null;
+                return new WinRect { Left = r.Left, Top = r.Top, Right = r.Right, Bottom = r.Bottom };
+            }
+            else if (OperatingSystem.IsLinux())
+            {
+                if (!IsStarCitizenFocusedLinux()) return null;
+                var r = GetStarCitizenWindowRectLinux();
+                if (r == null) return null;
+                return new WinRect { Left = r.X, Top = r.Y, Right = r.X + r.Width, Bottom = r.Y + r.Height };
+            }
+            else return null;
+        }
 
-            if (!GetWindowRect(handle, out RECT rect))
+        /// <summary> Captures the **full** SC window if focused; empty Mat otherwise. </summary>
+        public static Mat CaptureFullWindowIfStarCitizenFocused()
+        {
+            if (OperatingSystem.IsWindows())
+                return CaptureFullWindows();
+            else if (OperatingSystem.IsLinux())
+                return CaptureFullLinux();
+            else
                 return new Mat();
+        }
 
-            int width = rect.Right - rect.Left;
-            int height = rect.Bottom - rect.Top;
-            if (width <= 0 || height <= 0)
-                return new Mat();
+        // ----------------- Windows -----------------
+        private static Mat CaptureFullWindows()
+        {
+            IntPtr hWnd = GetForegroundWindow();
+            if (!IsStarCitizenWindow(hWnd)) return new Mat();
 
-            // --- Crop fractions for top-right region (tune as needed) ---
-            double topFraction = 0.007;
-            double rightFraction = 0.5;
-            double heightFraction = 0.015;
+            if (!GetWindowRect(hWnd, out RECT rect)) return new Mat();
+            int w = rect.Right - rect.Left, h = rect.Bottom - rect.Top;
+            if (w <= 0 || h <= 0) return new Mat();
 
-            int cropWidth = (int)(width * rightFraction);
-            int cropHeight = (int)(height * heightFraction);
-            int x = rect.Left + width - cropWidth;
-            int y = rect.Top + (int)(height * topFraction);
-
-            using Bitmap bmp = new Bitmap(cropWidth, cropHeight, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            using Graphics g = Graphics.FromImage(bmp);
-            g.CopyFromScreen(x, y, 0, 0, new System.Drawing.Size(cropWidth, cropHeight));
-
+            using var bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.CopyFromScreen(rect.Left, rect.Top, 0, 0, new System.Drawing.Size(w, h));
+            }
             return BitmapConverter.ToMat(bmp);
         }
 
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetForegroundWindow();
-
+        [DllImport("user32.dll")] private static extern IntPtr GetForegroundWindow();
         [DllImport("user32.dll", SetLastError = true)]
         private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct RECT { public int Left, Top, Right, Bottom; }
+        [DllImport("user32.dll")] private static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
+        [StructLayout(LayoutKind.Sequential)] private struct RECT { public int Left, Top, Right, Bottom; }
 
         private static bool IsStarCitizenWindow(IntPtr hWnd)
         {
-            if (hWnd == IntPtr.Zero)
-                return false;
-
-            const int nChars = 256;
-            StringBuilder buff = new StringBuilder(nChars);
-            if (GetWindowText(hWnd, buff, nChars) > 0)
-                return buff.ToString().Contains("Star Citizen", StringComparison.OrdinalIgnoreCase);
-
+            if (hWnd == IntPtr.Zero) return false;
+            var sb = new StringBuilder(256);
+            if (GetWindowText(hWnd, sb, sb.Capacity) > 0)
+                return sb.ToString().Contains("Star Citizen", StringComparison.OrdinalIgnoreCase);
             return false;
         }
 
-        #endregion
+        // ----------------- Linux -----------------
+        private class RectLinux { public int X, Y, Width, Height; }
 
-        #region Linux
-
-        private static Mat CaptureLinuxTopRight()
+        private static Mat CaptureFullLinux()
         {
-            if (!IsStarCitizenFocusedLinux())
-                return new Mat();
-
+            if (!IsStarCitizenFocusedLinux()) return new Mat();
             var rect = GetStarCitizenWindowRectLinux();
-            if (rect == null)
-                return new Mat();
+            if (rect == null) return new Mat();
 
-            // --- Crop fractions for top-right region ---
-            double topFraction = 0.007;
-            double rightFraction = 0.5;
-            double heightFraction = 0.015;
-
-            int cropWidth = (int)(rect.Width * rightFraction);
-            int cropHeight = (int)(rect.Height * heightFraction);
-            int x = rect.X + rect.Width - cropWidth;
-            int y = rect.Y + (int)(rect.Height * topFraction);
-
-            string tempFile = Path.Combine(Path.GetTempPath(), "sc_capture.png");
-            string cmd = $"import -window root -crop {cropWidth}x{cropHeight}+{x}+{y} {tempFile}";
+            string tmp = Path.Combine(Path.GetTempPath(), "sc_full.png");
+            string cmd = $"import -window root -crop {rect.Width}x{rect.Height}+{rect.X}+{rect.Y} {tmp}";
 
             var psi = new ProcessStartInfo
             {
                 FileName = "bash",
                 Arguments = $"-c \"{cmd}\"",
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
+                UseShellExecute = false
             };
+            using var p = Process.Start(psi);
+            p?.WaitForExit();
 
-            using var proc = Process.Start(psi);
-            proc.WaitForExit();
-
-            if (!File.Exists(tempFile))
-                return new Mat();
-
-            return Cv2.ImRead(tempFile, ImreadModes.Color);
+            if (!File.Exists(tmp)) return new Mat();
+            return Cv2.ImRead(tmp, ImreadModes.Color);
         }
-
-        private class RectLinux { public int X, Y, Width, Height; }
 
         private static bool IsStarCitizenFocusedLinux()
         {
@@ -139,67 +116,53 @@ namespace SC_TS3_Directional_Audio.Capture
                     FileName = "xdotool",
                     Arguments = "getwindowfocus getwindowname",
                     RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
+                    UseShellExecute = false
                 };
-                using var proc = Process.Start(psi);
-                string title = proc.StandardOutput.ReadToEnd().Trim();
-                proc.WaitForExit();
+                using var p = Process.Start(psi);
+                string title = p!.StandardOutput.ReadToEnd().Trim();
+                p.WaitForExit();
                 return title.Contains("Star Citizen", StringComparison.OrdinalIgnoreCase);
             }
-            catch
-            {
-                return false;
-            }
+            catch { return false; }
         }
 
         private static RectLinux? GetStarCitizenWindowRectLinux()
         {
             try
             {
-                // Get active window id
                 var psiId = new ProcessStartInfo
                 {
                     FileName = "xdotool",
                     Arguments = "getactivewindow",
                     RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
+                    UseShellExecute = false
                 };
-                using var procId = Process.Start(psiId);
-                string windowId = procId.StandardOutput.ReadToEnd().Trim();
-                procId.WaitForExit();
+                using var p1 = Process.Start(psiId);
+                string id = p1!.StandardOutput.ReadToEnd().Trim();
+                p1.WaitForExit();
 
-                // Get geometry
                 var psiGeom = new ProcessStartInfo
                 {
                     FileName = "xdotool",
-                    Arguments = $"getwindowgeometry --shell {windowId}",
+                    Arguments = $"getwindowgeometry --shell {id}",
                     RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
+                    UseShellExecute = false
                 };
-                using var procGeom = Process.Start(psiGeom);
-                string output = procGeom.StandardOutput.ReadToEnd();
-                procGeom.WaitForExit();
+                using var p2 = Process.Start(psiGeom);
+                string output = p2!.StandardOutput.ReadToEnd();
+                p2.WaitForExit();
 
                 int x = 0, y = 0, w = 0, h = 0;
                 foreach (var line in output.Split('\n'))
                 {
-                    if (line.StartsWith("X=")) x = int.Parse(line.Substring(2));
-                    if (line.StartsWith("Y=")) y = int.Parse(line.Substring(2));
-                    if (line.StartsWith("WIDTH=")) w = int.Parse(line.Substring(6));
-                    if (line.StartsWith("HEIGHT=")) h = int.Parse(line.Substring(7));
+                    if (line.StartsWith("X=")) int.TryParse(line[2..], out x);
+                    if (line.StartsWith("Y=")) int.TryParse(line[2..], out y);
+                    if (line.StartsWith("WIDTH=")) int.TryParse(line[6..], out w);
+                    if (line.StartsWith("HEIGHT=")) int.TryParse(line[7..], out h);
                 }
-
                 return new RectLinux { X = x, Y = y, Width = w, Height = h };
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
-
-        #endregion
     }
 }
