@@ -11,7 +11,6 @@ public record ParsedPos(string Zone, double X_m, double Y_m, double Z_m, string 
 
 public static class Parser
 {
-    // Tolerant regex: handles ":" or ";", flexible whitespace, unicode minus, km/m units, and stray punctuation.
     private static readonly Regex Rx = new Regex(
         @"Zo?ne\s*[:;]\s*(?<zone>.+?)\s+" +
         @"Po?s\s*[:;]\s*" +
@@ -22,7 +21,6 @@ public static class Parser
 
     private static double ToMeters(string value, string unit)
     {
-        // Normalize decimal comma
         var v = value.Replace(',', '.');
         if (!double.TryParse(v, NumberStyles.Float, CultureInfo.InvariantCulture, out var d))
             return double.NaN;
@@ -34,10 +32,7 @@ public static class Parser
         if (string.IsNullOrWhiteSpace(text)) return string.Empty;
         var sb = new StringBuilder(text.Length);
         foreach (var ch in text)
-        {
-            // Normalize unicode minus to ASCII hyphen-minus
             sb.Append(ch == '−' ? '-' : ch);
-        }
         return sb.ToString();
     }
 
@@ -52,9 +47,7 @@ public static class Parser
             var y = ToMeters(m.Groups["y"].Value, m.Groups["uy"].Value);
             var z = ToMeters(m.Groups["z"].Value, m.Groups["uz"].Value);
             if (double.IsFinite(x) && double.IsFinite(y) && double.IsFinite(z))
-            {
                 list.Add(new ParsedPos(zone, x, y, z, m.Value));
-            }
         }
         return list;
     }
@@ -65,17 +58,86 @@ public static class Parser
         var best = items.FirstOrDefault();
         if (best is null) return string.Empty;
 
-        // Convert back to km if magnitude is large for readability
         static (double v, string unit) Pretty(double meters)
-        {
-            if (Math.Abs(meters) >= 10000) return (meters / 1000.0, "km");
-            return (meters, "m");
-        }
+            => Math.Abs(meters) >= 10000 ? (meters / 1000.0, "km") : (meters, "m");
 
         var (px, ux) = Pretty(best.X_m);
         var (py, uy) = Pretty(best.Y_m);
         var (pz, uz) = Pretty(best.Z_m);
 
         return $"Zone: {best.Zone}  Pos: {px:0.###} {ux} {py:0.###} {uy} {pz:0.###} {uz}";
+    }
+}
+
+public static class TelemetryHelpers
+{
+    public static (ParsedPos? local, ParsedPos? system) ClassifyPositions(IEnumerable<ParsedPos> items)
+    {
+        ParsedPos? local = null, system = null;
+
+        foreach (var p in items)
+        {
+            var mag = Math.Max(Math.Abs(p.X_m), Math.Max(Math.Abs(p.Y_m), Math.Abs(p.Z_m)));
+            bool looksLocal =
+                mag < 10_000 ||
+                p.Zone.Contains("ObjectContainer", StringComparison.OrdinalIgnoreCase) ||
+                p.Zone.Contains("hab", StringComparison.OrdinalIgnoreCase);
+
+            bool looksSystem =
+                !looksLocal ||
+                p.Zone.Contains("OOC_", StringComparison.OrdinalIgnoreCase);
+
+            if (looksLocal && local is null) local = p;
+            else if (looksSystem && system is null) system = p;
+            else if (system is null) system = p;
+        }
+        return (local, system);
+    }
+
+    public static string FormatPosShort(ParsedPos? p)
+    {
+        if (p is null) return "N/A";
+
+        static (double v, string unit) Pretty(double meters)
+            => Math.Abs(meters) >= 10_000 ? (meters / 1000.0, "km") : (meters, "m");
+
+        var (x, ux) = Pretty(p.X_m);
+        var (y, uy) = Pretty(p.Y_m);
+        var (z, uz) = Pretty(p.Z_m);
+        return $"{x:0.###} {ux}, {y:0.###} {uy}, {z:0.###} {uz}";
+    }
+}
+
+/// Camera-angle parser (degrees), resilient to OCR noise.
+/// Finds any line mentioning "cam" and grabs the first 3-angle window with |deg|<=360.
+public static class CamParse
+{
+    public static bool TryParseCamAngles(string text, out (double X, double Y, double Z)? camDeg)
+    {
+        camDeg = null;
+        if (string.IsNullOrWhiteSpace(text)) return false;
+
+        string? line = text.Split('\n')
+            .FirstOrDefault(l => l.IndexOf("cam", StringComparison.OrdinalIgnoreCase) >= 0);
+        if (line is null) return false;
+
+        line = line.Replace('\u2212', '-').Replace(',', '.');
+
+        var matches = Regex.Matches(line, @"-?\d+(?:\.\d+)?");
+        if (matches.Count < 3) return false;
+
+        static double D(string s) =>
+            double.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out var v) ? v : 0.0;
+
+        var nums = matches.Select(m => D(m.Value)).ToList();
+
+        for (int i = 0; i <= nums.Count - 3; i++)
+        {
+            var a = nums[i]; var b = nums[i + 1]; var c = nums[i + 2];
+            if (Math.Abs(a) <= 360 && Math.Abs(b) <= 360 && Math.Abs(c) <= 360)
+            { camDeg = (a, b, c); return true; }
+        }
+        camDeg = (nums[0], nums[1], nums[2]);
+        return true;
     }
 }

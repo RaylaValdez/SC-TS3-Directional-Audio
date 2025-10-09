@@ -1,7 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="StarCitizenDirectionalAudioOCR.MainWindow"
-        Width="560" Height="360" Title="SC Directional Audio Debug Menu">
+        Width="560" Height="550" Title="SC Directional Audio Debug Menu">
   <StackPanel Spacing="12" Margin="16">
     <TextBlock Text="SC Directional Audio Debug Menu" FontSize="20" />
     <StackPanel Orientation="Horizontal" Spacing="8">
@@ -20,6 +20,27 @@
 
     <TextBlock Text="Last Parsed:" FontWeight="Bold" Margin="0,16,0,0"/>
     <TextBlock x:Name="ParsedText" Text="(none)" FontFamily="Consolas" TextWrapping="Wrap"/>
+
+    <!-- Telemetry (new) -->
+    <TextBlock Text="Telemetry:" FontWeight="Bold" Margin="0,8,0,0"/>
+    <StackPanel Spacing="4">
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="Camera Direction - " FontWeight="SemiBold"/>
+        <TextBlock x:Name="CamDirLine" Text="N/A"/>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="Local Container Position - " FontWeight="SemiBold"/>
+        <TextBlock x:Name="LocalPosLine" Text="N/A"/>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <TextBlock Text="System Position - " FontWeight="SemiBold"/>
+        <TextBlock x:Name="SystemPosLine" Text="N/A"/>
+      </StackPanel>
+    </StackPanel>
+
+
 
     <CheckBox x:Name="BinarizeCheck" Content="Binarize pre-processing" />
     <TextBlock Text="Tick Rate (Hz):" />

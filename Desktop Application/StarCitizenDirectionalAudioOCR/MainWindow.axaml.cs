@@ -1,6 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;   // for RangeBase & ToggleButton
+using Avalonia.Controls.Primitives;
 using Avalonia.Threading;
 using System;
 using System.Diagnostics;
@@ -10,26 +10,36 @@ using System.Threading.Tasks;
 
 namespace StarCitizenDirectionalAudioOCR;
 
-public partial class MainWindow : Avalonia.Controls.Window
+public partial class MainWindow : Window
 {
     private readonly RoiStore _roi = new();
     private readonly CaptureService _cap = new();
     private readonly OcrService _ocr = new();
     private CancellationTokenSource? _cts;
 
-    // Output targets (bind whatever your XAML actually uses)
-    private TextBlock? _parsedA;   // ParsedText
-    private TextBlock? _parsedB;   // LastParsed
-    private TextBlock? _parsedC;   // LastParsedText
-    private TextBlock? _parsedD;   // LastParsedBlock
+    // Output targets
+    private TextBlock? _parsedA;
+    private TextBlock? _parsedB;
+    private TextBlock? _parsedC;
+    private TextBlock? _parsedD;
+    private TextBlock? _camDirLine;
+    private TextBlock? _localPosLine;
+    private TextBlock? _systemPosLine;
 
-    // Thread-safe mirror of TickSlider.Value so the STA loop never touches the UI
+    // Tick rate (mirror slider)
     private volatile int _tickRate = 10;
 
-    // Only show last valid parsed output
+    // Keep showing last VALID parsed text
     private string _lastValidParsed = "";
-    // Staleness tracking (last time we got a valid parse)
     private DateTime _lastValidAt = DateTime.MinValue;
+
+    // NEW: cache last good telemetry + freshness
+    private (double X, double Y, double Z)? _lastCam;
+    private DateTime _lastCamAt = DateTime.MinValue;
+    private ParsedPos? _lastLocal;
+    private DateTime _lastLocalAt = DateTime.MinValue;
+    private ParsedPos? _lastSystem;
+    private DateTime _lastSystemAt = DateTime.MinValue;
 
     public MainWindow()
     {
@@ -39,24 +49,24 @@ public partial class MainWindow : Avalonia.Controls.Window
         StopBtn.Click += (_, __) => Stop();
         CalibrateBtn.Click += async (_, __) => await CalibrateAsync();
 
-        // "Stay on top" toggle
         var topBtn = this.FindControl<ToggleButton>("TopmostToggle");
         if (topBtn != null)
         {
-            topBtn.IsChecked = this.Topmost; // reflect current state
+            topBtn.IsChecked = this.Topmost;
             topBtn.Checked += (_, __) => this.Topmost = true;
             topBtn.Unchecked += (_, __) => this.Topmost = false;
         }
 
-        // Grab output labels and wire up slider on the UI thread
         Dispatcher.UIThread.Post(() =>
         {
             _parsedA = this.FindControl<TextBlock>("ParsedText");
             _parsedB = this.FindControl<TextBlock>("LastParsed");
             _parsedC = this.FindControl<TextBlock>("LastParsedText");
             _parsedD = this.FindControl<TextBlock>("LastParsedBlock");
+            _camDirLine = this.FindControl<TextBlock>("CamDirLine");
+            _localPosLine = this.FindControl<TextBlock>("LocalPosLine");
+            _systemPosLine = this.FindControl<TextBlock>("SystemPosLine");
 
-            // Seed and mirror tick rate (RangeBase.Value is double)
             _tickRate = (int)Math.Clamp(TickSlider.Value, 1, 60);
             TickSlider.PropertyChanged += (_, e) =>
             {
@@ -74,15 +84,17 @@ public partial class MainWindow : Avalonia.Controls.Window
         StopBtn.IsEnabled = true;
         StatusText.Text = "Locating Star Citizen…";
 
-        // Clear last valid on start (keeps UI blank until first valid)
         _lastValidParsed = "";
-        _lastValidAt = DateTime.UtcNow;   // start the staleness clock
-        SetOutput(""); // parsed-only setter (will keep blank until valid)
+        _lastValidAt = DateTime.UtcNow;
+        SetOutput("");
+
+        _lastCam = null;
+        _lastLocal = null;
+        _lastSystem = null;
 
         _cts = new();
         Log.Info("Start OCR clicked.");
 
-        // Locate once with timeout
         var locateTask = _cap.WaitForStarCitizenRectAsync();
         var finished = await Task.WhenAny(locateTask, Task.Delay(TimeSpan.FromSeconds(10), _cts.Token));
         if (finished != locateTask)
@@ -104,12 +116,10 @@ public partial class MainWindow : Avalonia.Controls.Window
         StatusText.Text = $"Found SC @ {winRect.Value.Left},{winRect.Value.Top}  {winRect.Value.Width}x{winRect.Value.Height}";
         Log.Info($"Found SC window: L={winRect.Value.Left} T={winRect.Value.Top} W={winRect.Value.Width} H={winRect.Value.Height}");
 
-        // Compute absolute ROI
         var roiFractions = _roi.LoadOrDefault();
         var absRoi = _cap.ComputeAbsoluteRoi(winRect.Value, roiFractions);
         Log.Info($"ABS ROI: X={absRoi.X} Y={absRoi.Y} W={absRoi.Width} H={absRoi.Height}");
 
-        // One-shot probe on UI thread (kept)
         try
         {
             using var testFrame = _cap.CaptureScreenRect(absRoi);
@@ -117,21 +127,27 @@ public partial class MainWindow : Avalonia.Controls.Window
             using var eng = _ocr.CreateEngine(out var info);
             Log.Info("Engine OK (one-shot). " + info);
 
-            int h = testFrame.Rows, mid = Math.Max(1, h / 2);
-            var top = new OpenCvSharp.Mat(testFrame, new OpenCvSharp.Rect(0, 0, testFrame.Cols, mid));
-            var bot = new OpenCvSharp.Mat(testFrame, new OpenCvSharp.Rect(0, mid, testFrame.Cols, h - mid));
+            int h = testFrame.Rows;
+            int h3 = Math.Max(1, h / 3);
+            int h2 = Math.Max(1, h - 2 * h3);
 
-            // For one-shot show both lines too (parsed-only)
-            string parsedBoth = TryParseBoth(eng, top, bot, out var rawTop, out var rawBot);
-            SetOutput(parsedBoth);
+            var top = new OpenCvSharp.Mat(testFrame, new OpenCvSharp.Rect(0, 0, testFrame.Cols, h3));
+            var mid = new OpenCvSharp.Mat(testFrame, new OpenCvSharp.Rect(0, h3, testFrame.Cols, h2));
+            var bot = new OpenCvSharp.Mat(testFrame, new OpenCvSharp.Rect(0, h3 + h2, testFrame.Cols, h - (h3 + h2)));
+
+            string parsedThree = TryParseThree(eng, top, mid, bot,
+                                               out var rawTop, out var rawMid, out var rawBot);
+            SetOutput(parsedThree);
 
             Log.Info($"One-shot TOP raw: '{TrimForLog(rawTop, 160)}'");
+            Log.Info($"One-shot MID raw: '{TrimForLog(rawMid, 160)}'");
             Log.Info($"One-shot BOT raw: '{TrimForLog(rawBot, 160)}'");
-            Log.Info($"One-shot parsed both: '{parsedBoth}'");
+            Log.Info($"One-shot parsed: '{parsedThree}'");
+
+            UpdateTelemetryFromRaw(rawTop, rawMid, rawBot);
         }
         catch (Exception ex) { Log.Info("One-shot OCR failed: " + ex); }
 
-        // ---- Background OCR loop on a dedicated STA thread ----
         Log.Info("Starting background OCR loop (STA)...");
         var staThread = new Thread(() =>
         {
@@ -156,43 +172,32 @@ public partial class MainWindow : Avalonia.Controls.Window
                         continue;
                     }
 
-                    // Split lines
-                    int hTick = frame.Rows, midTick = Math.Max(1, hTick / 2);
-                    using var topTick = new OpenCvSharp.Mat(frame, new OpenCvSharp.Rect(0, 0, frame.Cols, midTick));
-                    using var botTick = new OpenCvSharp.Mat(frame, new OpenCvSharp.Rect(0, midTick, frame.Cols, hTick - midTick));
+                    int hTick = frame.Rows;
+                    int h3 = Math.Max(1, hTick / 3);
+                    int h2 = Math.Max(1, hTick - 2 * h3);
 
-                    // OCR and parse both lines independently; prefer parsed
-                    string parsed = TryParseBoth(engine, topTick, botTick, out var rawTop, out var rawBot);
+                    using var topTick = new OpenCvSharp.Mat(frame, new OpenCvSharp.Rect(0, 0, frame.Cols, h3));
+                    using var midTick = new OpenCvSharp.Mat(frame, new OpenCvSharp.Rect(0, h3, frame.Cols, h2));
+                    using var botTick = new OpenCvSharp.Mat(frame, new OpenCvSharp.Rect(0, h3 + h2, frame.Cols, hTick - (h3 + h2)));
 
-                    // UI update (parsed-only) + stale indicator
+                    string parsed = TryParseThree(engine, topTick, midTick, botTick,
+                                                  out var rawTop, out var rawMid, out var rawBot);
+
+                    // Update telemetry from all three raw slices every tick
+                    UpdateTelemetryFromRaw(rawTop, rawMid, rawBot);
+
                     Dispatcher.UIThread.Post(() =>
                     {
                         var stale = (DateTime.UtcNow - _lastValidAt).TotalSeconds >= 2.0;
                         StatusText.Text = $"Running @ {tps} Hz{(stale ? " (stale)" : "")}";
-                        // If we've been stale for 5s+, save a debug snapshot of both lines once.
-                        if ((DateTime.UtcNow - _lastValidAt).TotalSeconds >= 5.0)
-                        {
-                            try
-                            {
-                                var p1 = Log.DataPath($"stale_top_{DateTime.Now:HHmmss}.png");
-                                var p2 = Log.DataPath($"stale_bot_{DateTime.Now:HHmmss}.png");
-                                OpenCvSharp.Cv2.ImWrite(p1, topTick);
-                                OpenCvSharp.Cv2.ImWrite(p2, botTick);
-                                // Prevent spamming; bump _lastValidAt so we don’t save again immediately
-                                _lastValidAt = DateTime.UtcNow.AddSeconds(-3);
-                                Log.Info($"Saved stale debug: {p1} / {p2}");
-                            }
-                            catch { }
-                        }
-
                         SetOutput(parsed);
                     });
 
-                    // Log ~1/sec (keep for debugging)
                     if (sw.ElapsedMilliseconds - lastLog >= 1000)
                     {
                         lastLog = sw.ElapsedMilliseconds;
                         Log.Info($"Tick TOP: '{TrimForLog(rawTop, 160)}'");
+                        Log.Info($"Tick MID: '{TrimForLog(rawMid, 160)}'");
                         Log.Info($"Tick BOT: '{TrimForLog(rawBot, 160)}'");
                     }
 
@@ -211,30 +216,34 @@ public partial class MainWindow : Avalonia.Controls.Window
         staThread.Start();
     }
 
-    // OCR a line twice (bin on/off), return the better text and its parsed display
-    // OCR both lines using multiple preprocess variants per line.
-    // Returns combined parsed text (may be one or two lines).
-    private string TryParseBoth(Tesseract.TesseractEngine engine, OpenCvSharp.Mat top, OpenCvSharp.Mat bot,
-                                out string rawTopBest, out string rawBotBest)
-    {
-        var (rawT, parsedT) = OcrBestOfVariants(engine, top);
-        var (rawB, parsedB) = OcrBestOfVariants(engine, bot);
-
-        rawTopBest = rawT;
-        rawBotBest = rawB;
-
-        return CombineLines(parsedT, parsedB);
-    }
-
-
-    private static string CombineLines(string a, string b)
+    private static string CombineLines(string a, string b, string c)
     {
         bool ea = string.IsNullOrWhiteSpace(a);
         bool eb = string.IsNullOrWhiteSpace(b);
-        if (ea && eb) return "";
-        if (ea) return b;
-        if (eb) return a;
-        return a + Environment.NewLine + b;
+        bool ec = string.IsNullOrWhiteSpace(c);
+        if (ea && eb && ec) return "";
+        var parts = new System.Collections.Generic.List<string>(3);
+        if (!ea) parts.Add(a);
+        if (!eb) parts.Add(b);
+        if (!ec) parts.Add(c);
+        return string.Join(Environment.NewLine, parts);
+    }
+
+    private string TryParseThree(Tesseract.TesseractEngine engine,
+                                 OpenCvSharp.Mat top,
+                                 OpenCvSharp.Mat mid,
+                                 OpenCvSharp.Mat bot,
+                                 out string rawTopBest, out string rawMidBest, out string rawBotBest)
+    {
+        var (rawT, parsedT) = OcrBestOfVariants(engine, top);
+        var (rawM, parsedM) = OcrBestOfVariants(engine, mid);
+        var (rawB, parsedB) = OcrBestOfVariants(engine, bot);
+
+        rawTopBest = rawT;
+        rawMidBest = rawM;
+        rawBotBest = rawB;
+
+        return CombineLines(parsedT, parsedM, parsedB);
     }
 
     private void Stop()
@@ -262,14 +271,12 @@ public partial class MainWindow : Avalonia.Controls.Window
         Dispatcher.UIThread.InvokeAsync(() =>
             new Window { Content = new TextBlock { Text = msg, Margin = new Thickness(16) }, Width = 320, Height = 120 }.ShowDialog(this));
 
-    // --- helpers ---
     private void SetOutput(string parsedOnly)
     {
-        // Only update when we have a valid parse; otherwise keep showing the previous good one.
         if (!string.IsNullOrWhiteSpace(parsedOnly))
         {
             _lastValidParsed = parsedOnly;
-            _lastValidAt = DateTime.UtcNow;  // mark fresh
+            _lastValidAt = DateTime.UtcNow;
 
             _parsedA?.SetCurrentValue(TextBlock.TextProperty, _lastValidParsed);
             _parsedB?.SetCurrentValue(TextBlock.TextProperty, _lastValidParsed);
@@ -278,21 +285,76 @@ public partial class MainWindow : Avalonia.Controls.Window
         }
     }
 
-    private static string TrimForLog(string s, int n) => string.IsNullOrEmpty(s) ? "" : (s.Length <= n ? s : s.Substring(0, n).Replace("\n", " ") + "…");
+    // -------- Telemetry update with caching & staleness (UI-thread safe) --------
+    private void UpdateTelemetryFromRaw(string rawTop, string rawMid, string rawBot)
+    {
+        try
+        {
+            var combined = (rawTop ?? string.Empty) + "\n" +
+                           (rawMid ?? string.Empty) + "\n" +
+                           (rawBot ?? string.Empty);
+
+            // Parse positions & classify (off-thread OK)
+            var items = Parser.ParseAll(combined);
+            var (local, system) = TelemetryHelpers.ClassifyPositions(items);
+
+            var now = DateTime.UtcNow;
+
+            if (local != null) { _lastLocal = local; _lastLocalAt = now; }
+            if (system != null) { _lastSystem = system; _lastSystemAt = now; }
+
+            if (CamParse.TryParseCamAngles(combined, out var cam))
+            {
+                _lastCam = cam;
+                _lastCamAt = now;
+            }
+
+            // Build strings here (still off-thread)
+            string camStr = "N/A";
+            if (_lastCam is { } c)
+            {
+                bool stale = (now - _lastCamAt).TotalSeconds > 2.0;
+                camStr = $"{c.X:0.#}°, {c.Y:0.#}°, {c.Z:0.#}°" + (stale ? " (stale)" : "");
+            }
+
+            string localStr = TelemetryHelpers.FormatPosShort(_lastLocal);
+            if (_lastLocal != null && (now - _lastLocalAt).TotalSeconds > 2.0)
+                localStr += " (stale)";
+
+            string sysStr = TelemetryHelpers.FormatPosShort(_lastSystem);
+            if (_lastSystem != null && (now - _lastSystemAt).TotalSeconds > 2.0)
+                sysStr += " (stale)";
+
+            // Push to UI on the UI thread
+            Dispatcher.UIThread.Post(() =>
+            {
+                _camDirLine?.SetCurrentValue(TextBlock.TextProperty, camStr);
+                _localPosLine?.SetCurrentValue(TextBlock.TextProperty, localStr);
+                _systemPosLine?.SetCurrentValue(TextBlock.TextProperty, sysStr);
+            });
+        }
+        catch
+        {
+            // keep loop resilient
+        }
+    }
+
+
+    private static string TrimForLog(string s, int n) =>
+        string.IsNullOrEmpty(s) ? "" : (s.Length <= n ? s.Replace("\n", " ") : s.Substring(0, n).Replace("\n", " ") + "…");
 
     private static class Log
     {
         private static readonly string Dir =
-            System.IO.Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                "SC-TS3-Directional-Audio");
-        private static readonly string PathLog = System.IO.Path.Combine(Dir, "app.log");
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                         "SC-TS3-Directional-Audio");
+        private static readonly string PathLog = Path.Combine(Dir, "app.log");
         private static readonly object Gate = new();
 
         public static string DataPath(string fileName)
         {
             Directory.CreateDirectory(Dir);
-            return System.IO.Path.Combine(Dir, fileName);
+            return Path.Combine(Dir, fileName);
         }
 
         public static void Info(string msg)
@@ -303,11 +365,11 @@ public partial class MainWindow : Avalonia.Controls.Window
                 var line = $"{DateTime.Now:HH:mm:ss.fff}  {msg}";
                 lock (Gate) File.AppendAllText(PathLog, line + Environment.NewLine);
             }
-            catch { /* ignore */ }
+            catch { }
         }
     }
 
-    // Try several preprocess variants for one line, pick the best by parse-count then length.
+    // Variants per slice: pick best by (#parsed, then raw length)
     private (string raw, string parsed) OcrBestOfVariants(Tesseract.TesseractEngine eng, OpenCvSharp.Mat line)
     {
         var bestRaw = "";
@@ -337,5 +399,4 @@ public partial class MainWindow : Avalonia.Controls.Window
         }
         return (bestRaw, bestParsed);
     }
-
 }
